@@ -1,0 +1,11 @@
+{% extends 'Front/static_pages/about.html.twig' %}
+
+{% block body_about %}
+
+    <ul>
+        {% for word in words  %}
+            <li>{{ word }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'Front/static_pages/layout.html.twig' %}
+
+{% block title %}About page{% endblock %}
+
+{% block content %}
+
+    {{ include('Front/static_pages/about_title.html.twig') }}
+
+    {% block body_about %}Bbbb{% endblock %}
+
+    {{ include('Front/static_pages/about_footer.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{# templates/Front/static_pages/layout.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>
+        {% if app.request.get('_route') == 'homepage' %}
+            <a href="{{ path('app_static_about') }}">
+        {% else %}
+            <a href="{{ path('homepage') }}">
+        {% endif %}
+            SyMinOrder</a> Application
+    </h1>
+
+    {% block content %}{% endblock %}
+{% endblock %}
