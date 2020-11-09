@@ -1,15 +1,31 @@
 security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        users_in_memory: { memory: null }
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            # The authenticator manager no longer has "anonymous" security.
+            # anonymous: true
             lazy: true
-            provider: users_in_memory
+            provider: app_user_provider
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: app_login # app_any_route
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -20,5 +36,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # matches /admin/users/*
+        - { path: '^/admin/users', roles: ROLE_ADMIN }
+
+        # matches /admin/* except for anything matching the above rule
+        - { path: '^/admin', roles: ROLE_WAITER }
+
+    # Symfony version 5.1: Authenticator-based security
+    enable_authenticator_manager: true

@@ -11,23 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201102153811.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StaticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/product/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,17 +155,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/Admin/product" />
-      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/templates/Front" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/src/Entity" />
       <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates/static_pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+      <recent name="$PROJECT_DIR$/templates/Admin/product" />
+      <recent name="$PROJECT_DIR$/templates/Front" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -196,7 +183,8 @@
       <workItem from="1604496864232" duration="25843000" />
       <workItem from="1604824593985" duration="30501000" />
       <workItem from="1604869616079" duration="992000" />
-      <workItem from="1604916091821" duration="1618000" />
+      <workItem from="1604916091821" duration="6068000" />
+      <workItem from="1604934110387" duration="9711000" />
     </task>
     <servers />
   </component>
@@ -244,9 +232,9 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1604860570836" />
-    <state x="378" y="27" width="945" height="741" key="find.popup" timestamp="1604870020873">
+    <state x="378" y="27" width="945" height="741" key="find.popup" timestamp="1604945359566">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="378" y="27" width="945" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1604870020873" />
+    <state x="378" y="27" width="945" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1604945359566" />
   </component>
 </project>
