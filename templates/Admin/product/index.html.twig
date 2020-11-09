@@ -13,7 +13,7 @@
                 <th>Description</th>
                 <th>FavoriteCount</th>
                 <th>Price</th>
-                <th>ImageUrl</th>
+                <th>ImageFilename</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,7 +25,12 @@
                 <td>{{ product.description }}</td>
                 <td>{{ product.favoriteCount }}</td>
                 <td>{{ product.price }}</td>
-                <td>{{ product.imageUrl }}</td>
+                <td>{% if product.picture and product.picture.imageName %}
+                        {{ product.picture.imageName }}
+                    {% else %}
+                        No image!
+                    {% endif %}
+                </td>
                 <td>
                     <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
                     <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>

@@ -6,10 +6,11 @@ use App\Service\ProductImagesUploader;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @Vich\Uploadable
  */
 class Product
 {
@@ -41,17 +42,33 @@ class Product
     private $price;
 
     /**
-     * @ORM\Column(name="image_url", type="string", length=255, nullable=true)
      *
-     * @Assert\Image(
-     *     minWidth = 100,
-     *     maxWidth = 600,
-     *     minHeight = 100,
-     *     maxHeight = 600
-     *     )
+     * @ORM\OneToOne(targetEntity="App\Entity\ProductPicture", mappedBy="product", cascade={"persist", "remove"})
+     *
      */
-    protected $imageUrl;
+    private $picture;
 
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture(ProductPicture $picture): self
+    {
+        $this->picture = $picture;
+        // set (or unset) the owning side of the relation if necessary
+        $newProduct = $picture === null ? null : $this;
+        if ($newProduct !== $picture->getProduct()) {
+            $picture->setProduct($newProduct);
+        }
+        return $this;
+    }
 
     public function getId(): ?int
     {
@@ -121,21 +138,5 @@ class Product
     public function setPrice($price): void
     {
         $this->price = $price;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImageUrl()
-    {
-        return $this->imageUrl;
-    }
-
-    /**
-     * @param mixed $imageUrl
-     */
-    public function setImageUrl($imageUrl = null): void
-    {
-        $this->imageUrl = $imageUrl;
     }
 }

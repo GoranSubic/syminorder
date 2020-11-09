@@ -14,8 +14,7 @@ class StaticController extends AbstractController
     */
     public function about()
     {
-        $words = ['sky', 'blue', 'cloud', 'symfony', 'forest'];
-
+        $words = ['minute', 'order', 'drink', 'food', 'coffee', '...'];
         return $this->render('Front/static_pages/about_body.html.twig', [
             'words' => $words
         ]);

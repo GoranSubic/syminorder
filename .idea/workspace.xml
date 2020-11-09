@@ -11,13 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201102153811.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StaticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/product/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +149,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -151,22 +163,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Entity" />
-      <recent name="$PROJECT_DIR$/src/Form" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/templates/static_pages" />
-      <recent name="$PROJECT_DIR$/templates/StaticPages" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/Admin/product" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
       <recent name="$PROJECT_DIR$/templates/Front" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/src/Entity" />
+      <recent name="$PROJECT_DIR$/src/Form" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/templates/static_pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -181,7 +193,10 @@
       <workItem from="1604327571114" duration="4554000" />
       <workItem from="1604412729513" duration="10755000" />
       <workItem from="1604434358455" duration="6192000" />
-      <workItem from="1604496864232" duration="836000" />
+      <workItem from="1604496864232" duration="25843000" />
+      <workItem from="1604824593985" duration="30501000" />
+      <workItem from="1604869616079" duration="992000" />
+      <workItem from="1604916091821" duration="1618000" />
     </task>
     <servers />
   </component>
@@ -205,21 +220,33 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="119" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1323.741@0.27.1323.741" timestamp="1604437680192" />
+    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1604857639232">
+      <screen x="0" y="27" width="1323" height="741" />
+    </state>
+    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.1323.741@0.27.1323.741" timestamp="1604857639232" />
     <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604420769607">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1323.741@0.27.1323.741" timestamp="1604420769607" />
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604506399684">
+      <screen x="0" y="27" width="1323" height="741" />
+    </state>
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1604506399684" />
     <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604439842095">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1323.741@0.27.1323.741" timestamp="1604439842095" />
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1604420503191">
+    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1604500229210">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1604420503191" />
-    <state x="552" y="27" width="771" height="741" key="find.popup" timestamp="1604440314037">
+    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1323.741@0.27.1323.741" timestamp="1604500229210" />
+    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1604860570836">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="552" y="27" width="771" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1604440314037" />
+    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1604860570836" />
+    <state x="378" y="27" width="945" height="741" key="find.popup" timestamp="1604870020873">
+      <screen x="0" y="27" width="1323" height="741" />
+    </state>
+    <state x="378" y="27" width="945" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1604870020873" />
   </component>
 </project>

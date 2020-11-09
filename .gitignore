@@ -14,10 +14,11 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###> my files to exclude
+/public/images
 /src/**/BackProduct*.php
 /templates/**/back*.html.twig
-###> my files to exclude
-
 ###> my files to exclude
 
 

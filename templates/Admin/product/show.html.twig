@@ -28,8 +28,24 @@
                 <td>{{ product.price }}</td>
             </tr>
             <tr>
-                <th>ImageUrl</th>
-                <td>{{ product.imageUrl }}</td>
+                <th>ImageFilename</th>
+{#                <td>{{ product.imageName }}</td>#}
+                <td>
+                    {% if product.picture and product.picture.imageName %}
+                        {{ product.picture.imageName }}
+                    {% else %}
+                        No image!
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>
+                    {% if product.picture %}
+                        <img src="{{ vich_uploader_asset(product.picture, 'imageFile') }}" alt="{{ product.picture.imageName }}" /></td>
+                    {% else %}
+                        No image!
+                    {% endif %}
             </tr>
         </tbody>
     </table>

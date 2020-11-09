@@ -6,8 +6,10 @@ use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProductType extends AbstractType
 {
@@ -16,19 +18,13 @@ class ProductType extends AbstractType
         $builder
             ->add('product')
             ->add('description')
-            ->add('favoriteCount')
+            /*->add('favoriteCount', [
+                'required' => false
+            ])*/
             ->add('price')
-            ->add('imageUrl')//, FileType::class, array('data_class' => null))
+            ->add('picture', ProductPictureType::class)
+            ->add('save', SubmitType::class)
         ;
-
-        $builder->get('imageUrl')->addModelTransformer(new CallbackTransformer(
-            function($imageUrl) {
-                return null;
-            },
-            function($imageUrl) {
-                return $imageUrl;
-            }
-        ));
     }
 
     public function configureOptions(OptionsResolver $resolver)
