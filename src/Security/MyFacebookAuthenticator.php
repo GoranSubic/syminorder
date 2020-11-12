@@ -61,7 +61,6 @@ class MyFacebookAuthenticator extends SocialAuthenticator
         $facebookUser = $this->getFacebookClient()
             ->fetchUserFromToken($credentials);
 
-        var_dump($facebookUser);
         $email = $facebookUser->getEmail();
 
         // 1) have they logged in with Facebook before? Easy!
@@ -79,6 +78,7 @@ class MyFacebookAuthenticator extends SocialAuthenticator
         // a User object
         if ($userByEmail) {
             $userByEmail->setFacebookId($facebookUser->getId());
+            $userByEmail->setPictureUrl($facebookUser->getPictureUrl());
             $this->em->persist($userByEmail);
             $this->em->flush();
             return $userByEmail;
