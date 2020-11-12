@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class StaticController extends AbstractController
 {
     /**
-    * @Route("/about")
+    * @Route("/about", name="app_static_about")
     */
     public function about()
     {

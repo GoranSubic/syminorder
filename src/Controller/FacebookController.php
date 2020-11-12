@@ -39,22 +39,22 @@ class FacebookController extends AbstractController
         // leave this method blank and create a Guard authenticator
         // (read below)
 
-        /** @var \KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient $client */
-        $client = $clientRegistry->getClient('facebook_main');
-
-        try {
-            // the exact class depends on which provider you're using
-            /** @var \League\OAuth2\Client\Provider\FacebookUser $user */
-            $user = $client->fetchUser();
-
-            // do something with all this new power!
-            // e.g. $name = $user->getFirstName();
-            var_dump($user); die;
-            // ...
-        } catch (IdentityProviderException $e) {
-            // something went wrong!
-            // probably you should return the reason to the user
-            var_dump($e->getMessage()); die;
-        }
+//        /** @var \KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient $client */
+//        $client = $clientRegistry->getClient('facebook_main');
+//
+//        try {
+//            // the exact class depends on which provider you're using
+//            /** @var \League\OAuth2\Client\Provider\FacebookUser $user */
+//            $user = $client->fetchUser();
+//
+//            // do something with all this new power!
+//            // e.g. $name = $user->getFirstName();
+//            var_dump($user); die;
+//            // ...
+//        } catch (IdentityProviderException $e) {
+//            // something went wrong!
+//            // probably you should return the reason to the user
+//            var_dump($e->getMessage()); die;
+//        }
     }
 }

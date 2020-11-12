@@ -11,14 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201109114026.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FacebookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FacebookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StaticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +26,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <interpreter composer="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,6 +39,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -163,22 +175,31 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Security" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/templates/Admin/product" />
-      <recent name="$PROJECT_DIR$/templates/Front" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/src/Entity" />
       <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates/static_pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Security" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+      <recent name="$PROJECT_DIR$/templates/Admin/product" />
+      <recent name="$PROJECT_DIR$/templates/Front" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -198,6 +219,8 @@
       <workItem from="1604869616079" duration="992000" />
       <workItem from="1604916091821" duration="6068000" />
       <workItem from="1604934110387" duration="9711000" />
+      <workItem from="1605119538603" duration="5061000" />
+      <workItem from="1605176338400" duration="6902000" />
     </task>
     <servers />
   </component>
@@ -221,10 +244,10 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="119" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1323.741@0.27.1323.741" timestamp="1604437680192" />
-    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1604857639232">
+    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1605180636951">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.1323.741@0.27.1323.741" timestamp="1604857639232" />
+    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.1323.741@0.27.1323.741" timestamp="1605180636950" />
     <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604420769607">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
@@ -237,17 +260,25 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1323.741@0.27.1323.741" timestamp="1604439842095" />
-    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1604500229210">
+    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1605123690730">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1323.741@0.27.1323.741" timestamp="1604500229210" />
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1604860570836">
+    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1323.741@0.27.1323.741" timestamp="1605123690730" />
+    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1605121634668">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1604860570836" />
-    <state x="315" y="27" width="1008" height="741" key="find.popup" timestamp="1605105596077">
+    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1605121634668" />
+    <state x="150" y="31" key="SettingsEditor" timestamp="1605176640310">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="315" y="27" width="1008" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605105596077" />
+    <state x="150" y="31" key="SettingsEditor/0.27.1323.741@0.27.1323.741" timestamp="1605176640310" />
+    <state x="315" y="27" width="1008" height="741" key="find.popup" timestamp="1605182708944">
+      <screen x="0" y="27" width="1323" height="741" />
+    </state>
+    <state x="315" y="27" width="1008" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605182708944" />
+    <state x="325" y="175" key="run.anything.popup" timestamp="1605181472250">
+      <screen x="0" y="27" width="1323" height="741" />
+    </state>
+    <state x="325" y="175" key="run.anything.popup/0.27.1323.741@0.27.1323.741" timestamp="1605181472250" />
   </component>
 </project>
