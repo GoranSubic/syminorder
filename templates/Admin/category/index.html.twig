@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category index{% endblock %}
+
+{% block body %}
+    <h1>Category index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Lft</th>
+                <th>Lvl</th>
+                <th>Rgt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>{{ category.lft }}</td>
+                <td>{{ category.lvl }}</td>
+                <td>{{ category.rgt }}</td>
+                <td>
+                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
+                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <br /> <br />
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Lft</th>
+            <th>Lvl</th>
+            <th>Rgt</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cat in categoriesTree %}
+            <tr>
+                <td>{{ cat.id }}</td>
+                <td>{{ cat.name }}</td>
+                <td>{{ cat.lft }}</td>
+                <td>{{ cat.lvl }}</td>
+                <td>{{ cat.rgt }}</td>
+                <td>
+                    <a href="{{ path('category_show', {'id': cat.id}) }}">show</a>
+                    <a href="{{ path('category_edit', {'id': cat.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('category_new') }}">Create new</a>
+{% endblock %}

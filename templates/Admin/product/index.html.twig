@@ -21,8 +21,15 @@
         {% for product in products %}
             <tr>
                 <td>{{ product.id }}</td>
-                <td>{{ product.product }}</td>
+                <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
+                <td>
+                    {% if product.category and product.category.name %}
+                        <a href="{{ path('category_show', {'id' : product.category.id}) }}">{{ product.category.name }}</a>
+                    {% else %}
+                        No cattegory chosen!
+                    {% endif %}
+                </td>
                 <td>{{ product.favoriteCount }}</td>
                 <td>{{ product.price }}</td>
                 <td>{% if product.picture and product.picture.imageName %}

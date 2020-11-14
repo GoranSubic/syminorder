@@ -11,15 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/MyFacebookAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/MyFacebookAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201111202800.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201112115108.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201112131159.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPicture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +174,9 @@
       <path value="$PROJECT_DIR$/vendor/league/oauth2-facebook" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
+      <path value="$PROJECT_DIR$/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -179,7 +189,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Security" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Command" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -192,18 +202,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+      <recent name="$PROJECT_DIR$/src/Controller" />
+      <recent name="$PROJECT_DIR$/templates/Admin" />
+      <recent name="$PROJECT_DIR$/src/Security" />
+      <recent name="$PROJECT_DIR$/templates/Admin/product" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/src/Command" />
       <recent name="$PROJECT_DIR$/src/Entity" />
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/templates/static_pages" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Security" />
-      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/templates/Admin/product" />
-      <recent name="$PROJECT_DIR$/templates/Front" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -226,6 +237,9 @@
       <workItem from="1605119538603" duration="5061000" />
       <workItem from="1605176338400" duration="10924000" />
       <workItem from="1605206036240" duration="4695000" />
+      <workItem from="1605211428842" duration="268000" />
+      <workItem from="1605272900838" duration="13392000" />
+      <workItem from="1605346729921" duration="16407000" />
     </task>
     <servers />
   </component>
@@ -257,10 +271,10 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1323.741@0.27.1323.741" timestamp="1604420769607" />
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604506399684">
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605360271189">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1604506399684" />
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1605360271189" />
     <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604439842095">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
@@ -269,21 +283,25 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1323.741@0.27.1323.741" timestamp="1605123690730" />
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1605121634668">
+    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1605289875133">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1605121634668" />
+    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1605289875133" />
     <state x="150" y="31" key="SettingsEditor" timestamp="1605176640310">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="150" y="31" key="SettingsEditor/0.27.1323.741@0.27.1323.741" timestamp="1605176640310" />
-    <state x="315" y="27" width="1008" height="741" key="find.popup" timestamp="1605182708944">
+    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605362168282">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="315" y="27" width="1008" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605182708944" />
-    <state x="325" y="175" key="run.anything.popup" timestamp="1605181472250">
+    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1323.741@0.27.1323.741" timestamp="1605362168282" />
+    <state x="315" y="27" width="1008" height="741" key="find.popup" timestamp="1605289380246">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="325" y="175" key="run.anything.popup/0.27.1323.741@0.27.1323.741" timestamp="1605181472250" />
+    <state x="315" y="27" width="1008" height="741" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605289380246" />
+    <state x="325" y="175" key="run.anything.popup" timestamp="1605363479208">
+      <screen x="0" y="27" width="1323" height="741" />
+    </state>
+    <state x="325" y="175" key="run.anything.popup/0.27.1323.741@0.27.1323.741" timestamp="1605363479208" />
   </component>
 </project>

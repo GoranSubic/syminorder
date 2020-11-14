@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category{% endblock %}
+
+{% block body %}
+    <h1>Category</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ category.name }}</td>
+            </tr>
+            <tr>
+                <th>Lft</th>
+                <td>{{ category.lft }}</td>
+            </tr>
+            <tr>
+                <th>Lvl</th>
+                <td>{{ category.lvl }}</td>
+            </tr>
+            <tr>
+                <th>Rgt</th>
+                <td>{{ category.rgt }}</td>
+            </tr>
+            <tr>
+                <th>ImageFilename</th>
+                <td>
+                    {% if category.picture and category.picture.imageName %}
+                        {{ category.picture.imageName }}
+                    {% else %}
+                        No image!
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>
+                    {% if category.picture %}
+                    <img src="{{ vich_uploader_asset(category.picture, 'imageFile') }}" alt="{{ category.picture.imageName }}" /></td>
+                {% else %}
+                    No image!
+                {% endif %}
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_index') }}">back to list</a>
+
+    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+
+    {{ include('Admin/category/_delete_form.html.twig') }}
+
+    <br /> <br />
+    Subcategory list:
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Lft</th>
+            <th>Lvl</th>
+            <th>Rgt</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cat in categoryChildren %}
+            <tr>
+                <td>{{ cat.id }}</td>
+                <td>{{ cat.name }}</td>
+                <td>{{ cat.lft }}</td>
+                <td>{{ cat.lvl }}</td>
+                <td>{{ cat.rgt }}</td>
+                <td>
+                    <a href="{{ path('category_show', {'id': cat.id}) }}">show</a>
+                    <a href="{{ path('category_edit', {'id': cat.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br /> <br />
+    Products list:
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>
+                    <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
+                    <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use App\Service\ProductImagesUploader;
+use App\Entity\ProductPicture;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use App\Entity\Category;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -22,9 +24,9 @@ class Product
     private $id;
 
     /**
-     * @ORM\Column(name="product", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $product;
+    private $name;
 
     /**
      * @ORM\Column(name="description", type="string", length=255)
@@ -47,6 +49,12 @@ class Product
      *
      */
     private $picture;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
 
     /**
      * @return mixed
@@ -78,17 +86,17 @@ class Product
     /**
      * @return mixed
      */
-    public function getProduct()
+    public function getName()
     {
-        return $this->product;
+        return $this->name;
     }
 
     /**
-     * @param mixed $product
+     * @param mixed $name
      */
-    public function setProduct($product): void
+    public function setName($name): void
     {
-        $this->product = $product;
+        $this->name = $name;
     }
 
 
@@ -138,5 +146,21 @@ class Product
     public function setPrice($price): void
     {
         $this->price = $price;
+    }
+
+    /**
+     * @return null|Category
+     */
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param Category $category
+     */
+    public function setCategory(Category $category): void
+    {
+        $this->category = $category;
     }
 }

@@ -2,43 +2,41 @@
 
 namespace App\Form;
 
-use App\Entity\Product;
 use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class ProductType extends AbstractType
+class CategoryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name')
-            ->add('description')
-            /*->add('favoriteCount', [
-                'required' => false
+            /*->add('lft')
+            ->add('lvl')
+            ->add('rgt')
+            ->add('root', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => function ($category) {
+                    return $category->getName();
+                }
             ])*/
-            ->add('category', EntityType::class, [
+            ->add('parent', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => function ($category) {
                     return $category->getName();
                 }
             ])
-            ->add('price')
             ->add('picture', ProductPictureType::class)
-            ->add('save', SubmitType::class)
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Product::class,
+            'data_class' => Category::class,
         ]);
     }
 }

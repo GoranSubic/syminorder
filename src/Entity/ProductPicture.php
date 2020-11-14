@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\Product;
+use App\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -27,6 +28,13 @@ class ProductPicture
      *
      */
     private $product;
+
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="App\Entity\Category", inversedBy="picture", cascade={"persist", "remove"})
+     *
+     */
+    private $category;
 
     /**
      *
@@ -87,7 +95,7 @@ class ProductPicture
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      *
-     * @return Product
+     * @return Product|Category
      */
     public function setImageFile(?File $image = null): void
     {
@@ -133,5 +141,15 @@ class ProductPicture
     public function getProduct()
     {
         return $this->product;
+    }
+
+    public function setCategory(Category $category)
+    {
+        $this->category = $category;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

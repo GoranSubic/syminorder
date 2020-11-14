@@ -12,17 +12,36 @@
                 <td>{{ product.id }}</td>
             </tr>
             <tr>
+                <th>Category</th>
+                <td>
+                    {% if product.category and product.category.name %}
+                        {{ product.category.name }}</td>
+                    {% else %}
+                        ..is not set!
+                    {% endif %}
+            </tr>
+            <tr>
                 <th>Product</th>
-                <td>{{ product.product }}</td>
+                <td>{{ product.name }}</td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>{{ product.description }}</td>
             </tr>
             <tr>
-                <th>FavoriteCount</th>
-                <td>{{ product.favoriteCount }}</td>
+                <th>Category</th>
+                <td>
+                    {% if product.category and product.category.name %}
+                    <a href="{{ path('category_show', {'id' : product.category.id}) }}">{{ product.category.name }}</a>
+                    {% else %}
+                        No cattegory chosen!
+                    {% endif %}
+                </td>
             </tr>
+{#            <tr>#}
+{#                <th>FavoriteCount</th>#}
+{#                <td>{{ product.favoriteCount }}</td>#}
+{#            </tr>#}
             <tr>
                 <th>Price</th>
                 <td>{{ product.price }}</td>
