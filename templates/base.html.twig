@@ -3,10 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body>
+
+        <div class="js-user-rating" data-is-authenticated="{{ app.user ? 'true' : 'false' }}"
+            data-user-profile="{{ app.user ? app.user.username|json_encode|e('html_attr') }}" >
+            Hello!
+        </div>
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>

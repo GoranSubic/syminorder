@@ -64,7 +64,6 @@ class CategoryController extends AbstractController
      */
     public function show(Category $category): Response
     {
-        dump($category);
         return $this->render('Admin/category/show.html.twig', [
             'category' => $category,
             'categoryChildren' => $category->getChildren(),
