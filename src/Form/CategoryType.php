@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,6 +15,10 @@ class CategoryType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('enabled', CheckboxType::class, [
+                'label'    => 'Show this entry publicly?',
+                'required' => false,
+            ])
             /*->add('lft')
             ->add('lvl')
             ->add('rgt')

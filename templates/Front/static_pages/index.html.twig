@@ -4,8 +4,10 @@
 
 {% block content %}
 
-    <img src="front_image.jpg" alt="Dring and Food"
-         width="500" height="600"
-         style="border:5px solid black; float:left">
+    {% if categories|default and categories|length > 0 %}
+            {{ include('Front/products_list/category_macro.twig', { categories : categories }) }}
+    {% else %}
+        {{ include('Front/no_content_image.html.twig') }}
+    {% endif %}
 
 {% endblock %}

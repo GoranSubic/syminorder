@@ -7,6 +7,7 @@ use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,6 +20,10 @@ class ProductType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('enabled', CheckboxType::class, [
+                'label'    => 'Show this entry publicly?',
+                'required' => false,
+            ])
             ->add('description')
             /*->add('favoriteCount', [
                 'required' => false

@@ -1,0 +1,24 @@
+{% macro recursiveCategory(category, param_to_hide=null) %}
+    {% import _self as self %}
+
+        <div class="container category-{{ category.id }}">
+            {{ include('Front/products_list/categories_data.html.twig') }}
+
+            {% if category.children|length %}
+                {% for child in category.children %}
+                    {% set param_to_hide = 1 %}
+                    {{ self.recursiveCategory(child, param_to_hide) }}
+                {% endfor %}
+            {% endif %}
+        </div>
+{% endmacro %}
+
+{% from _self import recursiveCategory %}
+
+<div id="categories">
+    {% for category in categories %}
+        <div class="first">
+            {{ recursiveCategory(category) }}
+        </div>
+    {% endfor %}
+</div>

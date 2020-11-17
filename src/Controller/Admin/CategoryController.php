@@ -26,13 +26,33 @@ class CategoryController extends AbstractController
         $em->getConfiguration()->addCustomHydrationMode('tree', 'Gedmo\Tree\Hydrator\ORM\TreeObjectHydrator');
         $repo = $em->getRepository('App\Entity\Category');
 
+        $node = $repo->findOneBy(['name' => 'Home']);
+
+        $options = array(
+            'decorate' => true,
+            'rootOpen' => '<ul>',
+            'rootClose' => '</ul>',
+            'childOpen' => '<li>',
+            'childClose' => '</li>',
+            'nodeDecorator' => function($node) {
+                return '<a href="/admin/category/'.$node['id'].'">'.$node['name'].'</a>';
+            }
+        );
+        $htmlTree = $repo->childrenHierarchy(
+            $node, /* starting from root nodes */
+            false, /* true: load all children, false: only direct */
+            $options,
+            false
+        );
+
         $tree = $repo->createQueryBuilder('node')->getQuery()
             ->setHint(\Doctrine\ORM\Query::HINT_INCLUDE_META_COLUMNS, true)
             ->getResult('tree');
 
         return $this->render('Admin/category/index.html.twig', [
-            'categories' => $nestedTreeRepository->findAll(),
-            'categoriesTree' => $tree[0]->getChildren()
+//            'categories' => $nestedTreeRepository->findAll(),
+            'htmlTree' => $htmlTree,
+            'categoriesTree' => $tree[0]->getChildren(),
         ]);
     }
 

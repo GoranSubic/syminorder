@@ -12,12 +12,22 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/assets.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/assets.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPicture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CategoryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/category/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/category/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/product/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +44,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -181,7 +192,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/themes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/themes/BootstrapTheme/SyliusShopBundle/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -196,11 +207,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/BootstrapTheme/SyliusShopBundle/views" />
+      <recent name="$PROJECT_DIR$/templates/Front/products_list" />
+      <recent name="$PROJECT_DIR$/templates/Front/product" />
+      <recent name="$PROJECT_DIR$/templates/Front" />
       <recent name="$PROJECT_DIR$/themes" />
-      <recent name="$PROJECT_DIR$/src/Command" />
-      <recent name="$PROJECT_DIR$/src/Entity" />
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/src/Form" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
@@ -233,7 +244,11 @@
       <workItem from="1605211428842" duration="268000" />
       <workItem from="1605272900838" duration="13392000" />
       <workItem from="1605346729921" duration="21458000" />
-      <workItem from="1605428597190" duration="17146000" />
+      <workItem from="1605428597190" duration="17283000" />
+      <workItem from="1605517446861" duration="22095000" />
+      <workItem from="1605551146955" duration="18305000" />
+      <workItem from="1605595867130" duration="156000" />
+      <workItem from="1605603575716" duration="3084000" />
     </task>
     <servers />
   </component>
@@ -257,18 +272,18 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="119" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1323.741@0.27.1323.741" timestamp="1604437680192" />
-    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1605180636951">
+    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1605535155949">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.1323.741@0.27.1323.741" timestamp="1605180636950" />
+    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.1323.741@0.27.1323.741" timestamp="1605535155949" />
     <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604420769607">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1323.741@0.27.1323.741" timestamp="1604420769607" />
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605360271189">
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605536484675">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1605360271189" />
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1605536484675" />
     <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604439842095">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
@@ -285,14 +300,14 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="150" y="31" key="SettingsEditor/0.27.1323.741@0.27.1323.741" timestamp="1605176640310" />
-    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605362168282">
+    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605531719828">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1323.741@0.27.1323.741" timestamp="1605362168282" />
-    <state x="315" y="147" width="1008" height="621" key="find.popup" timestamp="1605465354579">
+    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1323.741@0.27.1323.741" timestamp="1605531719828" />
+    <state x="226" y="165" width="1037" height="603" key="find.popup" timestamp="1605604520917">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="315" y="147" width="1008" height="621" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605465354579" />
+    <state x="226" y="165" width="1037" height="603" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605604520917" />
     <state x="325" y="175" key="run.anything.popup" timestamp="1605363479208">
       <screen x="0" y="27" width="1323" height="741" />
     </state>

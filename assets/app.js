@@ -15,9 +15,14 @@ console.log('Hello Webpack Encore! Edit me in assets/app.js');
 
 // loads the jquery package from node_modules
 var $ = require('jquery');
+// create global $ and jQuery variables
+global.$ = global.jQuery = $;
+
 // this "modifies" the jquery module: adding behavior to it
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
+
+require('./product-list');
 
 // import the function from greet.js (the .js extension is optional)
 // ./ (or ../) means to look for a local file

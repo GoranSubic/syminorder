@@ -39,7 +39,11 @@ class ProductPicture
     /**
      *
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
-     * @Assert\File(
+     * @Assert\Image(
+     *     minWidth = 200,
+     *     maxWidth = 400,
+     *     minHeight = 200,
+     *     maxHeight = 400,
      *     maxSize = "1024k",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"
