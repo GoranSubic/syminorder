@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|slice(0, 2) }}">
     <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        {% block metatags %}
+        {% endblock %}
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-            {{ encore_entry_link_tags('appBootstrap') }}
         {% endblock %}
     </head>
     <body>
-
-        <div class="js-user-rating" data-is-authenticated="{{ app.user ? 'true' : 'false' }}"
-            data-user-profile="{{ app.user ? app.user.username|json_encode|e('html_attr') }}" >
-            Hello!
-        </div>
-
         {% block body %}{% endblock %}
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

@@ -21,6 +21,9 @@
 /templates/**/back*.html.twig
 ###> my files to exclude
 
+### !!! Temporary dir to exclude until delete it !!!
+/templates/Common
+
 
 
 ###> symfony/webpack-encore-bundle ###

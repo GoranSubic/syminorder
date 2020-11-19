@@ -10,6 +10,7 @@ use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -24,7 +25,11 @@ class ProductType extends AbstractType
                 'label'    => 'Show this entry publicly?',
                 'required' => false,
             ])
-            ->add('description')
+            ->add('description', TextareaType::class, [
+                'required'   => true,
+                'empty_data' => 'Enter description for this product!!!',
+                'attr' => ['class' => 'tinymce'],
+            ])
             /*->add('favoriteCount', [
                 'required' => false
             ])*/

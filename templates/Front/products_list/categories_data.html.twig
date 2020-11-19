@@ -1,17 +1,13 @@
 {% if category.children|length > 0 or category.products|length > 0 %}
-
-    <hr />
-
-    <div class="row category" id="category-{{ category.id }}"
+    <div class="row category {% if param_is_first %}first{% endif %}" id="category-{{ category.id }}"
         {% if param_to_hide %}
             style="display: none;"
         {% endif %}
     >
-        <div class="col-xs-2 col-sm-2 col-md-2">
+        <div class="tblcol col-xs-12 col-sm-4 col-md-4">
             {% if category.picture %}
                 <img
                     class="img-fluid"
-                    style="padding-top: 5px"
                     src="{{ vich_uploader_asset(category.picture, 'imageFile') }}"
                     alt="{{ category.picture.imageName }}"
                 />
@@ -19,19 +15,11 @@
                 No image!
             {% endif %}
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-4">
+        <div class="tblcol col-xs-12 col-sm-8 col-md-8">
             <table class="table">
                 <tbody>
                 <tr>
-                    <th>Id</th>
-                    <td>{{ category.id }}</td>
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <td>{{ category.name }}</td>
-                </tr>
-                <tr>
-                    <th>Description</th>
+                    <th>{{ category.name }}</th>
                     <td>
                         {{ category.description }}
                     </td>
@@ -43,12 +31,10 @@
 
     {% for product in category.products|filter(product => product.enabled) %}
         <div class="row product category-{{ category.id }}" style="display: none;">
-            <div class="col-xs-2 col-sm-2 col-md-2">
-                Product!!!
+            <div class="tblcol col-xs-12 col-sm-3 col-md-3">
                 {% if product.picture %}
                     <img
                             class="img-fluid"
-                            style="padding-top: 5px"
                             src="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
                             alt="{{ product.picture.imageName }}"
                     />
@@ -56,15 +42,11 @@
                     No image!
                 {% endif %}
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4">
+            <div class="tblcol col-xs-12 col-sm-9 col-md-9">
                 <table class="table">
                     <tbody>
                     <tr>
-                        <th>Name</th>
-                        <td>{{ product.name }}</td>
-                    </tr>
-                    <tr>
-                        <th>Description</th>
+                        <th>{{ product.name }}</th>
                         <td>
                             {{ product.description }}
                         </td>

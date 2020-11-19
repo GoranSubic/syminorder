@@ -1,3 +1,111 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    background-color: lightgray;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.footer {
+    flex-grow: 0;
+    display: block;
+}
+
+.main .greet.categories {
+    background-image: url("../media/greet-bckg.jpg");
+    border: 2px solid black;
+    padding: 25px;
+    background-color: white;
+    height: 95vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.greet.categories .js-user-name {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*color: white;*/
+}
+
+.greet.categories .btn-outline-primary {
+    text-align: center;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+
+#categories {
+    min-height: 95vh;
+}
+
+/*#categories {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 95vh;
+    position: relative;
+}
+
+#categories .categories {
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}*/
+
+#categories .container {
+    padding-right: 0;
+}
+
+#categories .row.category:not(.first) {
+    box-shadow: 0 2px 4px #e80909, 0 2px 4px #e80909;
+    margin: 10px 0 10px 10px;
+    padding: 5px 0 5px 0px;
+}
+
+#categories .first.row.category {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 2px 4px rgba(0, 0, 0, .23);
+    margin: 50px 0 25px 10px;
+    padding: 5px 0 5px 0px;
+    border: 2px solid #e80909;
+}
+
+#categories .row.product {
+    margin: 10px 0 10px 10px;
+    padding: 5px 0 5px 0px;
+}
+
+#categories img, table {
+    border-radius: 2px;
+    border: 0;
+    width: 100vh;
+    height: 100%;
+
+    min-height: 150px;
+    max-height: 200px;
+    margin-bottom: 0;
+}
+
+#categories .tblcol {
+    padding: 3px;
+}
+
+#categories .first.row.category img, #categories .first.row.category table {
+    box-shadow: 0 2px 4px #e80909, 0 1px 2px #e80909;
+}
+#categories .product img, #categories .product table {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 2px 4px rgba(0, 0, 0, .23);
 }

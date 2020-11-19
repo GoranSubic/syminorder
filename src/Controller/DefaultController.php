@@ -22,7 +22,7 @@ class DefaultController extends AbstractController
             ->setHint(\Doctrine\ORM\Query::HINT_INCLUDE_META_COLUMNS, true)
             ->getResult('tree');
 
-        return $this->render('Front/static_pages/index.html.twig', [
+        return $this->render('Front/products_list/index.html.twig', [
             'categories' => $tree[0]->getChildren(),
         ]);
     }

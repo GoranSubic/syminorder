@@ -1,0 +1,13 @@
+{% extends 'Front/products_list/layout.html.twig' %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+
+        {% if categories|default and categories|length > 0 %}
+                {{ include('Front/products_list/category_macro.twig', { categories : categories }) }}
+        {% else %}
+            {{ include('Front/no_content_image.html.twig') }}
+        {% endif %}
+
+{% endblock %}

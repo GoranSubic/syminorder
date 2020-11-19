@@ -14,9 +14,14 @@ class StaticController extends AbstractController
     */
     public function about()
     {
-        $words = ['minute', 'order', 'drink', 'food', 'coffee', '...'];
-        return $this->render('Front/static_pages/about_body.html.twig', [
-            'words' => $words
-        ]);
+        return $this->render('Front/static_pages/about.html.twig');
+    }
+
+    /**
+     * @Route("/orders", name="app_static_orders")
+     */
+    public function orders()
+    {
+        return $this->render('Front/static_pages/orders.html.twig');
     }
 }

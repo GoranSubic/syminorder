@@ -24,5 +24,5 @@ webpack_encore:
     # Put in config/packages/prod/webpack_encore.yaml
     # cache: true
 
-    builds:
-        bootstrapTheme: '%kernel.project_dir%/public/bootstrap-theme'
+#    builds:
+#        bootstrapTheme: '%kernel.project_dir%/public/bootstrap-theme'
