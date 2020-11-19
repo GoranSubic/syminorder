@@ -16,16 +16,14 @@
             {% endif %}
         </div>
         <div class="tblcol col-xs-12 col-sm-8 col-md-8">
-            <table class="table">
-                <tbody>
-                <tr>
-                    <th>{{ category.name }}</th>
-                    <td>
-                        {{ category.description }}
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="cat-name"><h3>{{ category.name }}</h3></div>
+                </div>
+                <div class="panel-body">
+                    <div class="cat-desc"><h4>{{ category.description }}</h4></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -43,20 +41,15 @@
                 {% endif %}
             </div>
             <div class="tblcol col-xs-12 col-sm-9 col-md-9">
-                <table class="table">
-                    <tbody>
-                    <tr>
-                        <th>{{ product.name }}</th>
-                        <td>
-                            {{ product.description }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Price</th>
-                        <td>{{ product.price }}</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="float-left col col-xs-8 col-sm-8 col-md-8 prod-name"><u><h3>{{ product.name }}</h3></u></div>
+                        <div class="float-right col col-xs-4 col-sm-4 col-md-4 prod-price"><u><h3>{{ product.price }} RSD</h3></u></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="prod-desc"><h4>{{ product.description }}</h4></div>
+                    </div>
+                </div>
             </div>
         </div>
     {% endfor %}
