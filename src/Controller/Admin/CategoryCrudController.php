@@ -31,6 +31,7 @@ class CategoryCrudController extends AbstractCrudController
             BooleanField::new('enabled'),
             TextField::new('name'),
             TextEditorField::new('description'),
+            AssociationField::new('parent')->autocomplete(),
         ];
 
         if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {

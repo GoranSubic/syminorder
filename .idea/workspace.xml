@@ -11,20 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/greet.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/greet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/front_image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201114140035.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116135615.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201116135944.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201121105040.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201121105342.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Front/no_content_image.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/no_content_image.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/about.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +252,7 @@
       <workItem from="1605806751846" duration="1964000" />
       <workItem from="1605815514570" duration="5847000" />
       <workItem from="1605868371534" duration="32862000" />
-      <workItem from="1605955201917" duration="16994000" />
+      <workItem from="1605955201917" duration="21781000" />
     </task>
     <servers />
   </component>
@@ -312,10 +308,10 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1323.741@0.27.1323.741" timestamp="1605531719828" />
-    <state x="210" y="206" width="1037" height="542" key="find.popup" timestamp="1605979275436">
+    <state x="210" y="206" width="1037" height="542" key="find.popup" timestamp="1605982303464">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="210" y="206" width="1037" height="542" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605979275436" />
+    <state x="210" y="206" width="1037" height="542" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605982303464" />
     <state x="325" y="175" key="run.anything.popup" timestamp="1605363479208">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
