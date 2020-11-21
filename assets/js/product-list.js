@@ -15,9 +15,9 @@ $(".row.category").click(function(){
 $("#categories .first.row.category").click(function (){
     if($(this).hasClass("animated")) {
         $(this).removeClass("animated");
-        $(this).animate({ width: "100%" }, 1000 );
+        $(this).animate({ width: "99%" }, 1000 );
     } else {
         $(this).addClass("animated");
-        $(this).animate({ width: "98%" }, 1000 );
+        $(this).animate({ width: "95%" }, 1000 );
     }
 });

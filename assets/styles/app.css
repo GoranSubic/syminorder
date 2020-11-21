@@ -81,13 +81,17 @@ body {
     margin-bottom: 0;
 }
 
-#categories .category img, #categories .category .panel {
-    min-height: 150px;
-    max-height: 200px;
+#categories .row.category:not(.first) img, #categories .row.category:not(.first) .panel {
+    min-height: 130px;
+    max-height: 150px;
+}
+#categories .first.row.category img, #categories .first.row.category .panel {
+    min-height: 160px;
+    max-height: 180px;
 }
 #categories .product img, #categories .product .panel {
     min-height: 100px;
-    max-height: 120px;
+    max-height: 130px;
 }
 
 #categories .tblcol {
@@ -101,9 +105,15 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 2px 4px rgba(0, 0, 0, .23);
 }
 
+.panel, .panel-heading {
+    padding: 1px;
+    height: 20%;
+}
+
 .panel, .panel-body {
-    height: 100%;
     padding: 5px;
+    height: 80%;
+    overflow: hidden;
 }
 
 .prod-name, .prod-price, .cat-name {

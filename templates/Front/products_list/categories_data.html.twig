@@ -21,7 +21,7 @@
                     <div class="cat-name"><h3>{{ category.name }}</h3></div>
                 </div>
                 <div class="panel-body">
-                    <div class="cat-desc"><h4>{{ category.description }}</h4></div>
+                    <div class="cat-desc">{{ category.description|raw }}</div>
                 </div>
             </div>
         </div>
@@ -43,11 +43,11 @@
             <div class="tblcol col-xs-12 col-sm-9 col-md-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="float-left col col-xs-8 col-sm-8 col-md-8 prod-name"><u><h3>{{ product.name }}</h3></u></div>
-                        <div class="float-right col col-xs-4 col-sm-4 col-md-4 prod-price"><u><h3>{{ product.price }} RSD</h3></u></div>
+                        <div class="float-left col col-xs-6 col-sm-6 col-md-8 prod-name"><u>{{ product.name }}</u></div>
+                        <div class="float-right col col-xs-6 col-sm-6 col-md-4 prod-price"><u>{{ product.price }} RSD</u></div>
                     </div>
                     <div class="panel-body">
-                        <div class="prod-desc"><h4>{{ product.description }}</h4></div>
+                        <div class="prod-desc">{{ product.description|raw }}</div>
                     </div>
                 </div>
             </div>
