@@ -10,18 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201114140035.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201116135615.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201116135944.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201121105040.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201121105342.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/no_content_image.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/no_content_image.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -252,7 +241,7 @@
       <workItem from="1605806751846" duration="1964000" />
       <workItem from="1605815514570" duration="5847000" />
       <workItem from="1605868371534" duration="32862000" />
-      <workItem from="1605955201917" duration="21781000" />
+      <workItem from="1605955201917" duration="22389000" />
     </task>
     <servers />
   </component>
