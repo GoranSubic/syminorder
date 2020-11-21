@@ -18,6 +18,22 @@ body {
     display: block;
 }
 
+.header .navbar-brand {
+    content: url("../media/logo.png");
+    width: 65px;
+    display: inline-block;
+    opacity: 0.5;
+    padding: 0 10px 0 10px;
+}
+
+.nav-opacity {
+    opacity: 0.8 !important;
+}
+
+#navbarSupportedContent {
+    padding-left: 10px;;
+}
+
 .main .greet.categories {
     background-image: url("../media/greet-bckg.jpg");
     border: 2px solid black;
@@ -124,3 +140,6 @@ body {
     text-align: justify;
 }
 
+.food-and-drinks {
+    background-image: url("../media/greet-bckg.jpg");
+}

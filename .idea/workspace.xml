@@ -11,14 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/greet.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/greet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front_image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/no_content_image.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/no_content_image.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/about.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +192,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -200,19 +206,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/Common" />
-      <recent name="$PROJECT_DIR$/templates/Front/static_pages" />
-      <recent name="$PROJECT_DIR$/assets/media" />
-      <recent name="$PROJECT_DIR$/templates/Front" />
-      <recent name="$PROJECT_DIR$/templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/js" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
       <recent name="$PROJECT_DIR$/src/Controller" />
       <recent name="$PROJECT_DIR$/templates/Admin" />
       <recent name="$PROJECT_DIR$/src/Security" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/js" />
+      <recent name="$PROJECT_DIR$/assets/media" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/templates/Common" />
+      <recent name="$PROJECT_DIR$/templates/Front/static_pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -248,7 +254,9 @@
       <workItem from="1605719881631" duration="21955000" />
       <workItem from="1605778171323" duration="24060000" />
       <workItem from="1605806751846" duration="1964000" />
-      <workItem from="1605815514570" duration="5348000" />
+      <workItem from="1605815514570" duration="5847000" />
+      <workItem from="1605868371534" duration="32862000" />
+      <workItem from="1605955201917" duration="16994000" />
     </task>
     <servers />
   </component>
@@ -280,18 +288,18 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1323.741@0.27.1323.741" timestamp="1604420769607" />
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605649766881">
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605915147190">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1605649766881" />
+    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1605915147190" />
     <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604439842095">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1323.741@0.27.1323.741" timestamp="1604439842095" />
-    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1605123690730">
+    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1605977243326">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1323.741@0.27.1323.741" timestamp="1605123690730" />
+    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1323.741@0.27.1323.741" timestamp="1605977243326" />
     <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1605289875133">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
@@ -304,10 +312,10 @@
       <screen x="0" y="27" width="1323" height="741" />
     </state>
     <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1323.741@0.27.1323.741" timestamp="1605531719828" />
-    <state x="210" y="206" width="1037" height="542" key="find.popup" timestamp="1605804923348">
+    <state x="210" y="206" width="1037" height="542" key="find.popup" timestamp="1605979275436">
       <screen x="0" y="27" width="1323" height="741" />
     </state>
-    <state x="210" y="206" width="1037" height="542" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605804923348" />
+    <state x="210" y="206" width="1037" height="542" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1605979275436" />
     <state x="325" y="175" key="run.anything.popup" timestamp="1605363479208">
       <screen x="0" y="27" width="1323" height="741" />
     </state>

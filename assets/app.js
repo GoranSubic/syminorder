@@ -27,8 +27,6 @@ import './styles/static.css';
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
 
-console.log('Hello Webpack Encore! Edit me in assets/app.js');
-
 // loads the jquery package from node_modules
 var $ = require('jquery');
 // create global $ and jQuery variables
@@ -40,17 +38,18 @@ require('bootstrap');
 
 
 require('./js/product-list');
+require('./js/front');
 
 // import the function from greet.js (the .js extension is optional)
 // ./ (or ../) means to look for a local file
-var greet = require('./greet');
+var greet = require('./js/greet');
 
 $(document).ready(function() {
 
     $('[data-toggle="popover"]').popover();
 
     var isAuthenticated = $('.js-user-name').data('isAuthenticated');
-    var userName = 'guest';
+    var userName = '';//'guest';
     if (isAuthenticated) {
         userName = $('.js-user-name').data('userProfile');
     }
