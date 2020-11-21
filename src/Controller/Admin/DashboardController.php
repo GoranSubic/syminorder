@@ -2,6 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Category;
+use App\Entity\Product;
+use App\Entity\ProductPicture;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -11,23 +15,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractDashboardController
 {
-//    /**
-//     * @Route("/admin", name="admin")
-//     */
-//    public function index(): Response
-//    {
-//        return parent::index();
-//    }
-
     /**
-     * @Route("/admin")
+     * @Route("/admin", name="admin_dashboard")
      */
     public function index(): Response
     {
         // redirect to some CRUD controller
         $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
 
-        return $this->redirect($routeBuilder->setController(ProductCrudController::class)->generateUrl());
+        return $this->redirect($routeBuilder->setController(CategoryCrudController::class)->generateUrl());
 
         // you can also redirect to different pages depending on the current user
         if ('waiter1' === $this->getUser()->getUsername()) {
@@ -42,12 +38,38 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Syminorder');
+            ->setTitle('Syminorder')
+
+            // you can include HTML contents too (e.g. to link to an image)
+//            ->setTitle('<img src="..."> ACME <span class="text-small">Corp.</span>')
+
+            // the path defined in this method is passed to the Twig asset() function
+//            ->setFaviconPath('favicon.svg')
+
+            // the domain used by default is 'messages'
+//            ->setTranslationDomain('admin')
+            ;
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'icon class', EntityClass::class);
+        return [
+            MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+
+            MenuItem::section('Category'),
+            MenuItem::linkToCrud('Categories', 'fa fa-tags', Category::class),
+
+            MenuItem::section('Product'),
+            MenuItem::linkToCrud('Products', 'fa fa-tags', Product::class),
+
+            MenuItem::section('Images'),
+            MenuItem::linkToCrud('Products images', 'fa fa-file', ProductPicture::class),
+
+            MenuItem::section('Users'),
+            MenuItem::linkToCrud('Users List', 'fa fa-file', User::class),
+
+            MenuItem::section("Logout"),
+            MenuItem::linkToLogout('Logout', 'fa fa-exit'),
+            ];
     }
 }

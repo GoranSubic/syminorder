@@ -40,7 +40,7 @@ class Category
     private $enabled;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="name", type="string", length=30)
      */
     private $name;
 
@@ -76,7 +76,7 @@ class Category
 
     /**
      * @Gedmo\TreeParent()
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="children")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="cascade")
      */
     private $parent;
@@ -246,4 +246,8 @@ class Category
         return $this;
     }
 
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }

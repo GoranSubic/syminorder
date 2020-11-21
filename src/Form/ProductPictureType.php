@@ -30,6 +30,8 @@ class ProductPictureType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => ProductPicture::class,
+            'upload_dir' => 'product_image',
+            'upload_filename' => '[name]-[day]/[month]/[year]',
         ]);
     }
 }

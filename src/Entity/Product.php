@@ -29,12 +29,12 @@ class Product
     private $enabled;
 
     /**
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=30)
      */
     private $name;
 
     /**
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=150)
      */
     private $description;
 

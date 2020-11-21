@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Product;
+use App\Entity\Category;
 use App\Form\ProductPictureType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -14,11 +14,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class ProductCrudController extends AbstractCrudController
+class CategoryCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Product::class;
+        return Category::class;
     }
 
     public function configureFields(string $pageName): iterable
@@ -31,7 +31,6 @@ class ProductCrudController extends AbstractCrudController
             BooleanField::new('enabled'),
             TextField::new('name'),
             TextEditorField::new('description'),
-            AssociationField::new('category')->autocomplete(),
         ];
 
         if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {

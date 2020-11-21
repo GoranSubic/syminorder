@@ -15,6 +15,11 @@ use Symfony\Component\HttpFoundation\File\File;
  */
 class ProductPicture
 {
+    /*public function __construct()
+    {
+        $this->updatedAt = new \DateTime();
+    }*/
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -155,5 +160,10 @@ class ProductPicture
     public function getCategory()
     {
         return $this->category;
+    }
+
+    public function __toString(): string
+    {
+        return $this->imageFile ? $this->imageFile : '';
     }
 }
