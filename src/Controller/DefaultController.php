@@ -21,10 +21,8 @@ class DefaultController extends AbstractController
         $tree = $repo->createQueryBuilder('node')->getQuery()
             ->setHint(\Doctrine\ORM\Query::HINT_INCLUDE_META_COLUMNS, true)
             ->getResult('tree');
-dump($tree);
-        $categories = $tree ? $tree[0]->getChildren() : [];
-dump($categories);
 
+        $categories = $tree ? $tree[0]->getChildren() : [];
         return $this->render('Front/products_list/index.html.twig', [
             'categories' => $categories
         ]);
