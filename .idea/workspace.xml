@@ -11,14 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +191,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -256,6 +251,15 @@
       <workItem from="1606038858290" duration="530000" />
       <workItem from="1606039458053" duration="6256000" />
       <workItem from="1606065320659" duration="7773000" />
+      <workItem from="1606147206715" duration="598000" />
+      <workItem from="1606228298192" duration="552000" />
+      <workItem from="1606511326228" duration="1678000" />
+      <workItem from="1606513829587" duration="16000" />
+      <workItem from="1606514029173" duration="155000" />
+      <workItem from="1606514902532" duration="72000" />
+      <workItem from="1606556133890" duration="106000" />
+      <workItem from="1607601627900" duration="2959000" />
+      <workItem from="1608023863734" duration="1042000" />
     </task>
     <servers />
   </component>
@@ -273,51 +277,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="119" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604437680192">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="119" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1323.741@0.27.1323.741" timestamp="1604437680192" />
-    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser" timestamp="1605535155949">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="436" y="106" width="441" height="581" key="#com.intellij.ide.util.MemberChooser/0.27.1323.741@0.27.1323.741" timestamp="1605535155949" />
-    <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604420769607">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="268" y="27" width="766" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1323.741@0.27.1323.741" timestamp="1604420769607" />
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605915147190">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="394" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1323.741@0.27.1323.741" timestamp="1605915147190" />
-    <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604439842095">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="397" y="249" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1323.741@0.27.1323.741" timestamp="1604439842095" />
-    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl" timestamp="1605977243326">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="633" y="155" width="424" height="484" key="FileChooserDialogImpl/0.27.1323.741@0.27.1323.741" timestamp="1605977243326" />
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog" timestamp="1605289875133">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="459" y="207" width="633" height="561" key="NewPhpClassDialog/0.27.1323.741@0.27.1323.741" timestamp="1605289875133" />
-    <state x="150" y="31" key="SettingsEditor" timestamp="1605176640310">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="150" y="31" key="SettingsEditor/0.27.1323.741@0.27.1323.741" timestamp="1605176640310" />
-    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605531719828">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="271" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1323.741@0.27.1323.741" timestamp="1605531719828" />
-    <state x="63" y="114" width="1037" height="542" key="find.popup" timestamp="1606052159166">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="63" y="114" width="1037" height="542" key="find.popup/0.27.1323.741@0.27.1323.741" timestamp="1606052159166" />
-    <state x="325" y="175" key="run.anything.popup" timestamp="1605363479208">
-      <screen x="0" y="27" width="1323" height="741" />
-    </state>
-    <state x="325" y="175" key="run.anything.popup/0.27.1323.741@0.27.1323.741" timestamp="1605363479208" />
   </component>
 </project>
