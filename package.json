@@ -1,6 +1,8 @@
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.31.0",
+        "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
+        "@vue/babel-preset-jsx": "^1.2.4",
         "bootstrap": "^4.5.0",
         "core-js": "^3.0.0",
         "jquery": "^3.5.1",
@@ -8,6 +10,9 @@
         "popper.js": "^1.16.1",
         "regenerator-runtime": "^0.13.2",
         "sass-loader": "^9.0.3",
+        "vue": "^2.5",
+        "vue-loader": "^15",
+        "vue-template-compiler": "^2.6.12",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",

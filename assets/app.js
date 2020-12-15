@@ -35,6 +35,9 @@ require('bootstrap');
 require('./js/product-list');
 require('./js/front');
 
+// Vue.js app.js file
+require('./js/app');
+
 // import the function from greet.js (the .js extension is optional)
 // ./ (or ../) means to look for a local file
 var greet = require('./js/greet');
