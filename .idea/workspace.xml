@@ -12,18 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/greet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/about.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +263,8 @@
       <workItem from="1608048808513" duration="7699000" />
       <workItem from="1608056837062" duration="7337000" />
       <workItem from="1608106575978" duration="10688000" />
-      <workItem from="1608129554695" duration="2145000" />
+      <workItem from="1608129554695" duration="4051000" />
+      <workItem from="1608137736940" duration="853000" />
     </task>
     <servers />
   </component>
