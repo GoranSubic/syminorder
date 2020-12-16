@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -28,10 +29,13 @@ class ProductCrudController extends AbstractCrudController
         $image = ImageField::new('picture.imageName')
             ->setBasePath('/images/products');
         $fields = [
-            BooleanField::new('enabled'),
-            TextField::new('name'),
-            TextEditorField::new('description'),
-            AssociationField::new('category')->autocomplete(),
+            BooleanField::new('enabled', 'Uključeno'),
+            TextField::new('name', 'Naziv'),
+            TextEditorField::new('description', 'Opis'),
+            NumberField::new('price', 'Cena')
+                ->setRequired(true)
+                ->setNumDecimals(2),
+            AssociationField::new('category', 'Kategorija')->autocomplete(),
         ];
 
         if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
