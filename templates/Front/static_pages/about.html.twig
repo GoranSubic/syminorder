@@ -3,12 +3,12 @@
 {% block title %}O nama{% endblock %}
 
 {% block greet_info %}
-    <div class="static greet text-center">
-        <div class="js-user-name" data-is-authenticated="{{ app.user ? 'true' : 'false' }}"
-             data-user-profile="{{ app.user ? app.user.username|json_encode|e('html_attr') }}" >
-            {#Hello!#}
-        </div>
-    </div>
+<!--    <div class="text-center">
+        <main-image
+                v-bind:datauname="dataUname"
+                header-height="height:100vh;"
+        ></main-image>
+    </div>-->
 {% endblock %}
 
 {% block content %}

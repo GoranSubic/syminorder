@@ -61,8 +61,8 @@ Encore
 
     //enable vue.js
     .enableVueLoader(() => {}, {
-        runtimeCompilerBuild: false,
-        useJsx: true
+        // runtimeCompilerBuild: false,
+        // useJsx: true
     })
 
     // uncomment if you use TypeScript

@@ -1,0 +1,129 @@
+<template>
+  <div @scroll="scrollMe">
+    <!--<div id="scrollcounter">0px</div>-->
+    <div class="greet" id="headerimage" :style="headerHeight">
+      <h2>{{ welcome }} {{ datauname }}</h2>
+      <div class="subtitle" id="subtitleBox">
+        <div class="sub1">{{ meal }}</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "MainImage",
+  computed: {
+    welcome: function () {
+      if (this.hour < 10) return "Dobro jutro";
+      else if (this.hour < 12) return "Dobar dan";
+      else if (this.hour < 17) return "Prijatno poslepodne";
+      else return "Dobro veče";
+    },
+    meal: function () {
+      if (this.hour < 10) return "želimo Vam prijatno jutro, pogledajte našu ponudu za doručak";
+      else if (this.hour < 12) return "odaberite najbolji ručak";
+      else if (this.hour < 17) return "odaberite obrok za kasni ručak ili ranu večeru";
+      else return "želimo Vam prijatno veče, pogledajte našu ponudu za večeru";
+    },
+    date: function () { return new Date() },
+    hour: function () { return this.date.getHours() },
+  },
+  props: {
+    datauname: String,
+    headerHeight: String
+  },
+  created: function () {
+    window.addEventListener("scroll", this.scrollMe);
+  },
+  methods: {
+    scrollMe: function () {
+      //var scrolledElem = document.getElementById("scrollelm");
+      var scrolledValue = window.scrollY;// scrolledElem.offsetTop - window.scrollY;
+      var topElem = document.getElementById("headerimage");
+      if (scrolledValue >= 50) {
+        topElem.classList.add('slim');
+        document.getElementById("subtitleBox").classList.add('hideIt');
+        document.getElementById("btnOutline").classList.add('hideBtn');
+      } else {
+        topElem.classList.remove('slim');
+        document.getElementById("subtitleBox").classList.remove("hideIt");
+        document.getElementById("btnOutline").classList.remove("hideBtn");
+      }
+      //var scrlCounter = document.getElementById("scrollcounter");
+      //scrlCounter.innerHTML = scrolledValue + "px";
+    }
+  }
+}
+</script>
+
+
+<style scoped>
+.greet {
+  height: 100vh; /*15vh;*/
+  width: 100%;
+  top: 50px;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+  background-image: url('../../media/greet-bckg.jpg');
+  filter: grayscale(50%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  transition-duration: 0.5s;
+}
+.greet h2 {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 3px 5px 5px black;
+  position: absolute;
+  top: 40%;
+  margin: -0.5% 0 0 5%;
+  left: 0;
+  right: 0;
+  text-align: left;
+}
+.greet div.subtitle {
+  font-size: 2em;
+  color: #fff;
+  text-shadow: 3px 5px 5px black;
+  position: absolute;
+  top: 50%;
+  margin: 0.5% 0 0 5%;
+  left: 0;
+  right: 0;
+  text-align: left;
+}
+.greet #subtitleBox {
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.greet #subtitleBox.hideIt {
+  height: 0px !important;
+}
+.greet.slim {
+  height: 15vh !important;
+  top: 0;
+}
+/*#scrollelm {
+    margin: 30vh auto 0 auto !important;
+    font-size: 15px;
+    line-height: 18px;
+}*/
+/*#scrollcounter {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    background: red;
+    padding: 10px;
+    color: #fff;
+    z-index: 999;
+}*/
+</style>

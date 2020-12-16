@@ -32,24 +32,12 @@ global.$ = global.jQuery = $;
 require('bootstrap');
 
 
+// Vue.js app.js file
+require('./js/main');
+
 require('./js/product-list');
 require('./js/front');
 
-// Vue.js app.js file
-require('./js/app');
-
-// import the function from greet.js (the .js extension is optional)
-// ./ (or ../) means to look for a local file
-var greet = require('./js/greet');
-
 $(document).ready(function() {
-
     $('[data-toggle="popover"]').popover();
-
-    var isAuthenticated = $('.js-user-name').data('isAuthenticated');
-    var userName = '';//'guest';
-    if (isAuthenticated) {
-        userName = $('.js-user-name').data('userProfile');
-    }
-    $('.js-user-name').html(greet(userName));
 });

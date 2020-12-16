@@ -3,12 +3,7 @@
 {% block title %}Poručite{% endblock %}
 
 {% block greet_info %}
-    <div class="static greet text-center">
-        <div class="js-user-name" data-is-authenticated="{{ app.user ? 'true' : 'false' }}"
-             data-user-profile="{{ app.user ? app.user.username|json_encode|e('html_attr') }}" >
-            {#Hello!#}
-        </div>
-    </div>
+
 {% endblock %}
 
 {% block content %}

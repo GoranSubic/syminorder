@@ -14,7 +14,11 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="image" data-is-authenticated="{{ app.user ? 'true' : 'false' }}"
+             data-user-name={{ app.user ? app.user.username|json_encode|e('html_attr')|replace({'&quot;':''})|raw }}
+        >
+            {% block body %}{% endblock %}
+        </div>
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

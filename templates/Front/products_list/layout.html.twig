@@ -8,24 +8,28 @@
         {% endblock %}
     </div>
 
-    <div class="main container categories">
+    <div class="main container categories" id="parentScrollelm">
         {% block greet_info %}
-            <div class="categories greet text-center">
-                <div class="js-user-name" data-is-authenticated="{{ app.user ? 'true' : 'false' }}"
-                     data-user-profile="{{ app.user ? app.user.username|json_encode|e('html_attr') }}" >
-                    {#Hello!#}
-                </div>
+            <div class="categories text-center">
+                <main-image
+                    v-bind:datauname="dataUname"
+                    header-height="height:100vh;"
+                ></main-image>
 
-                <a href="#categories" class="btn btn-outline-primary">
+                <a href="#categories" class="btn btn-outline-primary" id="btnOutline">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                         <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                     </svg>
                 </a>
             </div>
+
         {% endblock %}
 
-        {% block content %}{% endblock %}
+        <div id="scrollelm">
+            {% block content %}{% endblock %}
+        </div>
+
     </div>
 
     <div class="footer container">
@@ -33,5 +37,4 @@
             {{ include('Front/footer.html.twig') }}
         {% endblock %}
     </div>
-
 {% endblock %}
