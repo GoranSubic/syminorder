@@ -63,6 +63,11 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isStaff = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -195,4 +200,21 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function isStaff(): bool
+    {
+        return $this->isStaff;
+    }
+
+    /**
+     * @param bool $isStaff
+     */
+    public function setIsStaff(bool $isStaff): void
+    {
+        $this->isStaff = $isStaff;
+    }
+
 }
