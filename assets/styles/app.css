@@ -24,7 +24,7 @@ body {
     right: 0;
     position: fixed;
     z-index: 2;
-    min-height: 50px;
+    min-height: 40px;
 }
 .header .navbar-brand {
     content: url("../media/logo.png");
@@ -56,7 +56,7 @@ body {
 }
 
 #scrollelm {
-    margin: 30vh auto 0 auto !important;
+    margin: 35vh auto 0 auto !important;
     font-size: 15px;
     line-height: 18px;
 }

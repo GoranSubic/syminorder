@@ -62,7 +62,7 @@ export default {
 .greet {
   height: 100vh; /*15vh;*/
   width: 100%;
-  top: 50px;
+  top: 40px;
   left: 0;
   right: 0;
   position: fixed;
@@ -81,7 +81,7 @@ export default {
   text-shadow: 3px 5px 5px black;
   position: absolute;
   top: 40%;
-  margin: -0.5% 0 0 5%;
+  margin: 0 0 0 5%;
   left: 0;
   right: 0;
   text-align: left;
@@ -110,7 +110,7 @@ export default {
 }
 .greet.slim {
   height: 15vh !important;
-  top: 0;
+  top: 40px;
 }
 /*#scrollelm {
     margin: 30vh auto 0 auto !important;
