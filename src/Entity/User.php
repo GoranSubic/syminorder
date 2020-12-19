@@ -38,6 +38,12 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @var string The non-hashed password
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $plainPass;
+
+    /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
      * @Assert\NotBlank()
      * @Assert\Email(
@@ -62,11 +68,6 @@ class User implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isStaff = false;
 
     public function getId(): ?int
     {
@@ -122,6 +123,22 @@ class User implements UserInterface
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPass(): string
+    {
+        return $this->plainPass;
+    }
+
+    /**
+     * @param string $plainPass
+     */
+    public function setPlainPass(string $plainPass): void
+    {
+        $this->plainPass = $plainPass;
     }
 
     /**
@@ -199,22 +216,6 @@ class User implements UserInterface
         $this->isVerified = $isVerified;
 
         return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isStaff(): bool
-    {
-        return $this->isStaff;
-    }
-
-    /**
-     * @param bool $isStaff
-     */
-    public function setIsStaff(bool $isStaff): void
-    {
-        $this->isStaff = $isStaff;
     }
 
 }

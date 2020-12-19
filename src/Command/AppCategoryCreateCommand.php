@@ -52,19 +52,22 @@ class AppCategoryCreateCommand extends Command
         // level 0: Home
         $home = new Category();
         $home->setName('Home');
+        $home->setDescription('Home Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
 
         // level 1: Drinks, Food
-        $drinks = new Category();
-        $drinks->setName('Drinks');
-        $drinks->setParent($home);
-
         $food = new Category();
         $food->setName('Food');
+        $food->setDescription('Food Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
         $food->setParent($home);
 
+        $drinks = new Category();
+        $drinks->setName('Drinks');
+        $drinks->setDescription('Drinks Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
+        $drinks->setParent($home);
+
         $this->entityManager->persist($home);
-        $this->entityManager->persist($drinks);
         $this->entityManager->persist($food);
+        $this->entityManager->persist($drinks);
 
         $this->entityManager->flush();
 
@@ -72,28 +75,34 @@ class AppCategoryCreateCommand extends Command
 
         $water = new Category();
         $water->setName('Water');
+        $water->setDescription('Water Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
         $repository->persistAsLastChildOf($water, $drinks);
 
         $springWater = new Category();
         $springWater->setName('Spring Water');
+        $springWater->setDescription('Spring Water Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
         $repository->persistAsLastChildOf($springWater, $water);
 
         $regularWater = new Category();
         $regularWater->setName('Regular Water');
+        $regularWater->setDescription('Regular Water Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
         $repository->persistAsNextSiblingOf($regularWater, $springWater);
 
         $coffee = new Category();
         $coffee->setName('Coffee');
+        $coffee->setDescription('Coffee Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
         $repository->persistAsNextSiblingOf($coffee, $water);
 
         // children of Wheels & Tyres
 
         $breakfast = new Category();
         $breakfast->setName('Breakfast');
+        $breakfast->setDescription('Breakfast Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
         $repository->persistAsLastChildOf($breakfast, $food);
 
         $mainMeal = new Category();
         $mainMeal->setName('Main meal');
+        $mainMeal->setDescription('Main meal Description commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.');
         $repository->persistAsNextSiblingOf($mainMeal, $breakfast);
 
         $this->entityManager->flush();
