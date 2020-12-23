@@ -1,6 +1,12 @@
 import Vue from 'vue';
+import store from './store/index';
 
 import MainImage from "./components/MainImage";
+import Shopping from "./components/Shopping";
+import Product from "./components/Product";
+import ModalPlugin from 'bootstrap-vue';
+
+Vue.use(ModalPlugin);
 
 /**
  * Create a fresh Vue Application instance
@@ -8,7 +14,10 @@ import MainImage from "./components/MainImage";
 new Vue({
     el: '#image',
     components: {
-        MainImage
+        store,
+        MainImage,
+        Shopping,
+        Product,
     },
     data() {
         return {

@@ -1,6 +1,14 @@
 <nav class="bg-dark navbar navbar-expand-lg navbar-dark" id="mainNavbar">
-    <div class="container">
+    <div class="container"
+         style="position: relative;"
+    >
         <a class="navbar-brand" href="{{ path('homepage') }}"><strong>Olala</strong></a>
+
+        <shopping id="shopping"
+                style="position: absolute; margin-left: 60%; top: 10px;"
+          minussign="{{ asset("build/images/minus-solid.svg") }}"
+        ></shopping>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

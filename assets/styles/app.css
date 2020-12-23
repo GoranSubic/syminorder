@@ -103,7 +103,7 @@ body {
     min-height: 160px;
     max-height: 180px;
 }
-#categories .product img, #categories .product .panel {
+#categories .product img.prod-img, #categories .product .panel {
     min-height: 100px;
     max-height: 130px;
 }
@@ -115,7 +115,7 @@ body {
 #categories .first.row.category img, #categories .first.row.category .panel {
     box-shadow: 0 2px 4px #e80909, 0 1px 2px #e80909;
 }
-#categories .product img, #categories .product .panel {
+#categories .product img.prod-img, #categories .product .panel {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 2px 4px rgba(0, 0, 0, .23);
 }
 
@@ -140,4 +140,50 @@ body {
 
 .food-and-drinks {
     background-image: url("../media/greet-bckg.jpg");
+}
+
+/* Products add to cart */
+.quantity {
+    padding-top: 20px;
+    margin-right: 60px;
+}
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 30px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+}
+button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.minus-btn img {
+    margin-bottom: 3px;
+}
+.plus-btn img {
+    margin-top: 2px;
+}
+
+button:focus,
+input:focus {
+    outline:0;
+}
+/* End of Products add to cart */
+
+.modal-backdrop {
+    opacity: 0 !important;
+}
+#modal-cart.modal {
+    top: 70px !important;
+}
+button, .btn {
+    width: auto;
+    border: 2px solid;
 }

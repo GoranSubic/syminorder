@@ -1,3 +1,5 @@
+{% set user_is_logged_in = app.user ? true : false %}
+
 {% if category.children|length > 0 or category.products|length > 0 %}
     <div class="row category {% if param_is_first %}first{% endif %}" id="category-{{ category.id }}"
         {% if param_to_hide %}
@@ -32,7 +34,7 @@
             <div class="tblcol col-xs-12 col-sm-3 col-md-3">
                 {% if product.picture %}
                     <img
-                            class="img-fluid"
+                            class="img-fluid prod-img"
                             src="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
                             alt="{{ product.picture.imageName }}"
                     />
@@ -40,7 +42,7 @@
                     No image!
                 {% endif %}
             </div>
-            <div class="tblcol col-xs-12 col-sm-9 col-md-9">
+            <div class="tblcol col-10 col-sm-7 col-md-7">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="float-left col-6 col-sm-6 col-md-8 prod-name"><u>{{ product.name }}</u></div>
@@ -51,6 +53,22 @@
                     </div>
                 </div>
             </div>
+
+            {% if user_is_logged_in %}
+            <div class="tblcol col-2">
+                <div class="panel">
+                    <product
+                            v-bind:id="{{ product.id }}"
+                            name="{{ product.name }}"
+                            image="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
+                            v-bind:price="{{ product.price }}"
+                            plussign="{{ asset("build/images/plus-solid.svg") }}"
+                            minussign="{{ asset("build/images/minus-solid.svg") }}"
+                    >
+                    </product>
+                </div>
+            </div>
+            {% endif %}
         </div>
     {% endfor %}
 

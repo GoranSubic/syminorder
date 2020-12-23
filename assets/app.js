@@ -6,17 +6,14 @@
  */
 
 /* From Sylius Bootstrap Theme */
-
-// Main styles file
-import './scss/index.scss';
-
 // Font awesome icons
 import './js/fontawesome';
 /* From Sylius Bootstrap Theme */
 
+import './styles/global.scss';
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css'; // Now using syliys scss index file
+import './styles/app.css';
 import './styles/static.css';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
