@@ -32,6 +32,9 @@ export default {
       dataId: this.id,
     }
   },
+  beforeCreate() {
+    this.$store.dispatch('initialiseStore');
+  },
   props: {
     "id" : Number,
     "name": String,
