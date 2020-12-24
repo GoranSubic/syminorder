@@ -1,20 +1,20 @@
 <template>
-  <div class="container">
+  <div class="container btncontainer">
     <div class="row">
-        <b-button :pressed="true" variant="success" class="col col-12" @click="addToCart(id, name, image, price)">
+        <b-button variant="success" class="col col-12" @click="addToCart(id, name, image, price)">
           <img class="sign plus" :src="plussign" alt="++" />
         </b-button>
     </div>
     <div class="row">
-      <b-button-group>
-        <b-button :pressed="true" variant="danger" @click="remFromCart(id)">
+      <b-button-group class="col col-12 btnsgroup">
+        <b-button class="col col-6" variant="danger" @click="remFromCart(id)">
           X
         </b-button>
-        <b-button variant="outline-secondary" disabled v-if="prodAmmount > 0">{{prodAmmount}}</b-button>
+        <b-button class="col col-6" variant="outline-secondary" disabled v-if="prodAmmount > 0">{{prodAmmount}}</b-button>
       </b-button-group>
     </div>
     <div class="row">
-        <b-button :pressed="true" variant="warning" class="col col-12" @click="decOneFromCart(id)">
+        <b-button variant="warning" class="col col-12" @click="decOneFromCart(id)">
           <img class="sign minus" :src="minussign" alt="--" />
         </b-button>
     </div>
@@ -69,9 +69,9 @@ export default {
 </script>
 
 <style scoped>
-button {
-  width: auto;
-  border: 2px solid;
+.btncontainer, .btnsgroup {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .row {
@@ -80,6 +80,7 @@ button {
 }
 
 img.sign {
+  height: 10px !important;
   width: auto !important;
 }
 </style>

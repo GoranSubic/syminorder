@@ -90,11 +90,6 @@ export default {
 </script>
 
 <style scoped>
-button {
-  width: auto;
-  border: 2px solid;
-}
-
 img {
   width: 100%;
 }
