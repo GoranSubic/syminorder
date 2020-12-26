@@ -10,26 +10,53 @@
         <span v-if="cartCount > 0">Prosledite porudžbinu ili o</span>
         <span v-else>O</span>daberite još iz ponude
       </h4>
+      <form>
+        <div v-for="(item, index) in cart" :key="index">
+          <div class="row">
+            <div class="col-2">{{ item.name }}</div>
+            <div class="col-2"><img :src="item.image" :alt="item.name" /></div>
 
-      <div v-for="(item, index) in cart" :key="index">
-        <div class="row">
-          <div class="col-2">{{ item.name }}</div>
-          <div class="col-2"><img :src="item.image" :alt="item.name" /></div>
-
-          <div class="col-2">{{ item.price }}</div>
-          <div class="col-2" v-if="item.ammount !== undefined">{{ ' x ' + item.ammount }}</div>
-          <div class="col-2" v-if="item.price && item.ammount">
-            {{ (item.price * item.ammount) + 'Din' }}
-          </div>
-          <div class="col-2">
-            <b-button style="width: 100%;" variant="outline-danger" @click="removeItem(item.id)">
-              X
-            </b-button>
+            <div class="col-2">{{ item.price }}</div>
+            <div class="col-2" v-if="item.ammount !== undefined">{{ ' x ' + item.ammount }}</div>
+            <div class="col-2" v-if="item.price && item.ammount">
+              {{ (item.price * item.ammount) + 'Din' }}
+            </div>
+            <div class="col-2">
+              <b-button style="width: 100%;" variant="outline-danger" @click="removeItem(item.id)">
+                X
+              </b-button>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div class="form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="cartNoteLabel">
+              <i class="fas fa-tasks prefix"></i>
+            </span>
+          </div>
+          <textarea type="text" id="cartNote" class="form-control form-control-sm" aria-describedby="cartNoteLabel"
+                    rows="2" placeholder="Kratka napomena"></textarea>
+        </div>
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="cartUserNameLabel">
+              <i class="fas fa-table prefix"></i>
+            </span>
+          </div>
+          <input type="text" id="cartUserName" class="form-control" aria-describedby="cartUserNameLabel"
+                 :data-user-id="userid" :value="datauname" aria-label="Username" disabled>
+
+          <input v-if="tableid === 0" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
+                 aria-label="Address" placeholder="Adresa za dostavu">
+          <input v-else-if="tableid !== 0" type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
+                 :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
+        </div>
+
+        <b-button v-if="cartCount > 0" variant="outline-success" block type="submit">Prosledi</b-button>
+      </form>
     </div>
-    <b-button v-if="cartCount > 0" variant="outline-success" block type="submit">Submit</b-button>
   </b-modal>
 </div>
 </template>
@@ -42,7 +69,11 @@ export default {
   name: "Shopping",
 
   props: {
-    "minussign": String,
+    minussign: String,
+    datauname: String,
+    userid: Number,
+    tablename: String,
+    tableid: Number,
   },
   computed: {
     titleText() {

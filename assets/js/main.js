@@ -6,6 +6,12 @@ import Shopping from "./components/Shopping";
 import Product from "./components/Product";
 import ModalPlugin from 'bootstrap-vue';
 
+/*import library from '@fortawesome/fontawesome-svg-core';
+import faUser from '@fortawesome/free-solid-svg-icons';
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+library.add(faUser);
+Vue.component('font-awesome-icon', FontAwesomeIcon);*/
+
 Vue.use(ModalPlugin);
 
 /**
