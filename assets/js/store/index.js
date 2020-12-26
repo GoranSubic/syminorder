@@ -7,12 +7,27 @@ export default new Vuex.Store({
     state: {
         products: [],
         StoreCart: [],
+        storeCreated: new Date(),
     },
     getters: {
         products: (state) => state.products,
         StoreCart: (state) => state.StoreCart,
+        storeCreated: (state) => state.storeCreated,
     },
     mutations: {
+        checkAndClearStore(state) {
+            //check if store is older than 1 hour
+            var now = new Date();
+            var storeDate = new Date(state.storeCreated);
+            var diff = parseInt(now - storeDate)/60000;
+            if(diff > 60) {
+                //reset localStorage and state
+                localStorage.removeItem('store');
+                state.products = [];
+                state.StoreCart = [];
+                state.storeCreated = new Date();
+            }
+        },
         Initialise_Store(state) {
             // Check if the ID exists
             if(localStorage.getItem('store')) {
@@ -20,6 +35,8 @@ export default new Vuex.Store({
                 this.replaceState(
                     Object.assign(state, JSON.parse(localStorage.getItem('store')))
                 );
+            } else {
+                state.storeCreated = new Date();
             }
         },
         ADD_Item(state, product) {
@@ -63,17 +80,21 @@ export default new Vuex.Store({
     actions: {
         initialiseStore(context) {
             context.commit("Initialise_Store");
+            context.commit("checkAndClearStore");
         },
 
         addItem(context, product) {
+            context.commit("checkAndClearStore");
             context.commit("ADD_Item", product);
         },
 
         removeItem(context, id) {
+            context.commit("checkAndClearStore");
             context.commit("REMOVE_ItemById", id);
         },
 
         decreaseItem(context, id) {
+            context.commit("checkAndClearStore");
             context.commit("REMOVE_One_Item", id);
         },
     },
