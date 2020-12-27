@@ -26,6 +26,21 @@ class Order
     private $items;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $noteCart;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $noteAdmin;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $address;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $status = self::STATUS_CART;
@@ -37,6 +52,11 @@ class Order
      */
     const STATUS_CART = 'cart';
 
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $cartAt;
 
     /**
      * @ORM\Column(type="datetime")
@@ -112,6 +132,54 @@ class Order
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getNoteCart()
+    {
+        return $this->noteCart;
+    }
+
+    /**
+     * @param mixed $noteCart
+     */
+    public function setNoteCart($noteCart): void
+    {
+        $this->noteCart = $noteCart;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNoteAdmin()
+    {
+        return $this->noteAdmin;
+    }
+
+    /**
+     * @param mixed $noteAdmin
+     */
+    public function setNoteAdmin($noteAdmin): void
+    {
+        $this->noteAdmin = $noteAdmin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address): void
+    {
+        $this->address = $address;
+    }
+
     public function getStatus(): ?string
     {
         return $this->status;
@@ -122,6 +190,22 @@ class Order
         $this->status = $status;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCartAt()
+    {
+        return $this->cartAt;
+    }
+
+    /**
+     * @param mixed $cartAt
+     */
+    public function setCartAt($cartAt): void
+    {
+        $this->cartAt = $cartAt;
     }
 
     public function getCreatedAt(): ?\DateTimeInterface
