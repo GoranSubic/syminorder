@@ -22,7 +22,7 @@ class ProductRepository extends ServiceEntityRepository
     public function modify(Product $product) {
         return [
             'id' => (int) $product->getId(),
-            'product' =>  (string) $product->getProduct(),
+            'product' =>  (string) $product->getName(),
             'description' => (string) $product->getDescription(),
             'favoriteCount' =>  (int) $product->getFavoriteCount(),
             'price' =>  (string) $product->getPrice(),
