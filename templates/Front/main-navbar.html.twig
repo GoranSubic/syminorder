@@ -16,6 +16,12 @@
                       v-bind:tableid="{{ table_id }}"
                       tablename="{{ table_name }}"
             ></shopping>
+        {% else %}
+        <ul class="navbar-nav mr-auto" id="loginbutton" style="position: absolute; margin: 5px 0 0 50%; top: 0;">
+            <li class="nav-item">
+                <a class="navbar-link" href="{{ path('app_login') }}"><strong>Login to order</strong></a>
+            </li>
+        </ul>
         {% endif %}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +40,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">
+                {% if user_is_logged_in %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}"><strong>LogOut</strong></a>
+                    </li>
+                {% endif %}
                 <li class="nav-item">
                     <a href="https://www.facebook.com/olalazr/" target="_blank" class="nav-link"><i class="fab fa-facebook"> </i></a>
                 </li>
