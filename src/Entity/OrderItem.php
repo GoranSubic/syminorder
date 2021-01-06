@@ -2,11 +2,25 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\OrderItemRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=OrderItemRepository::class)
+ * @ORM\HasLifecycleCallbacks()
+ *
+ * @ApiResource(
+ *  collectionOperations={"get"={"normalization_context"={"groups"="orderitem:list"}}},
+ *  itemOperations={"get"={"normalization_context"={"groups"="orderitem:item"}}},
+ *  order={"product"="DESC"},
+ *  paginationEnabled=false
+ * )
+ *
+ * @ApiFilter(SearchFilter::class, properties={"conference": "exact"})
  */
 class OrderItem
 {
@@ -14,23 +28,31 @@ class OrderItem
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *
+     * @Groups({"orderitem:list", "orderitem:item"})
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=Product::class)
      * @ORM\JoinColumn(nullable=false)
+     *
+     * @Groups({"orderitem:list", "orderitem:item"})
      */
     private $product;
 
     /**
      * @ORM\Column(type="integer")
+     *
+     * @Groups({"orderitem:list", "orderitem:item"})
      */
     private $quantity;
 
     /**
      * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="items")
      * @ORM\JoinColumn(nullable=false)
+     *
+     * @Groups({"orderitem:list", "orderitem:item"})
      */
     private $orderRef;
 

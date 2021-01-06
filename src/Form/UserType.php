@@ -26,6 +26,7 @@ class UserType extends AbstractType
                 'expanded' => false,
                 'choices'  => [
                     'User' => 'ROLE_USER',
+                    'Driver' => 'ROLE_DRIVER',
                     'Table' => 'ROLE_TABLE',
                     'Waiter' => 'ROLE_WAITER',
                     'Admin' => 'ROLE_ADMIN',

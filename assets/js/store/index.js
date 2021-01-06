@@ -8,11 +8,15 @@ export default new Vuex.Store({
         products: [],
         StoreCart: [],
         storeCreated: new Date(),
+        storeCartNote: String,
+        storeCartAddress: String,
     },
     getters: {
         products: (state) => state.products,
         StoreCart: (state) => state.StoreCart,
         storeCreated: (state) => state.storeCreated,
+        storeCartNote: (state) => state.storeCartNote,
+        storeCartAddress: (state) => state.storeCartAddress,
     },
     mutations: {
         checkAndClearStore(state, init) {
@@ -26,6 +30,8 @@ export default new Vuex.Store({
                 state.products = [];
                 state.StoreCart = [];
                 state.storeCreated = new Date();
+                state.storeCartNote = '';
+                state.storeCartAddress = '';
                 //reload page after add, remove item if store older than 1 hour
                 if(typeof init === 'undefined' || init !== 'init') location.reload();
             }
@@ -79,6 +85,14 @@ export default new Vuex.Store({
                 }
             }
         },
+
+        SET_note(state, txt) {
+            state.storeCartNote = txt;
+        },
+
+        SET_address(state, txt) {
+            state.storeCartAddress = txt;
+        },
     },
     actions: {
         initialiseStore(context) {
@@ -100,6 +114,13 @@ export default new Vuex.Store({
             context.commit("checkAndClearStore");
             context.commit("REMOVE_One_Item", id);
         },
+
+        changeTextData(context, txtnote, txtaddress) {
+            context.commit("checkAndClearStore");
+
+            context.commit("SET_note", txtnote);
+            context.commit("SET_address", txtaddress);
+        }
     },
     modules: {},
 });

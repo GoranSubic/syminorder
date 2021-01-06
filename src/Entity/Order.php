@@ -2,6 +2,10 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use App\Repository\OrderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -10,6 +14,22 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
  * @ORM\Table(name="`order`")
+ *
+ * @ApiResource(
+ *  collectionOperations={
+ *     "get"={"normalization_context"={"groups"="order:list"}},
+ *     "post"={"security"="is_granted('ROLE_USER')"},
+ *     },
+ *  itemOperations={
+ *     "get"={"normalization_context"={"groups"="order:item"}},
+ *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
+ *     "put"={"security"="is_granted('ROLE_USER') and object.getOwner() == user",
+ *              "security_message"="Only the creator can edit a order!"
+ *      },
+ *     },
+ *  order={"createdAt"="DESC"},
+ *  paginationEnabled=false
+ * )
  */
 class Order
 {
@@ -17,37 +37,51 @@ class Order
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $customer;
 
     /**
      * @ORM\OneToMany(targetEntity=OrderItem::class, mappedBy="orderRef", cascade={"persist", "remove"}, orphanRemoval=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $items;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $noteCart;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $noteAdmin;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $status = self::STATUS_CART;
 
@@ -61,31 +95,43 @@ class Order
 
     /**
      * @ORM\Column(type="datetime")
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $cartAt;
 
     /**
      * @ORM\Column(type="datetime")
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $processAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $transportAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $deliveredAt;
 
     /**
      * @ORM\Column(type="datetime")
+     *
+     * @Groups({"order:list", "order:item"})
      */
     private $updatedAt;
 
@@ -157,7 +203,7 @@ class Order
     /**
      * @return mixed
      */
-    public function getNoteCart()
+    public function getNoteCart(): ?string
     {
         return $this->noteCart;
     }
@@ -165,7 +211,7 @@ class Order
     /**
      * @param mixed $noteCart
      */
-    public function setNoteCart($noteCart): void
+    public function setNoteCart($noteCart = null): void
     {
         $this->noteCart = $noteCart;
     }
@@ -173,7 +219,7 @@ class Order
     /**
      * @return mixed
      */
-    public function getNoteAdmin()
+    public function getNoteAdmin(): ?string
     {
         return $this->noteAdmin;
     }
@@ -181,7 +227,7 @@ class Order
     /**
      * @param mixed $noteAdmin
      */
-    public function setNoteAdmin($noteAdmin): void
+    public function setNoteAdmin($noteAdmin = null): void
     {
         $this->noteAdmin = $noteAdmin;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -10,6 +11,20 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ApiResource(
+ *  attributes={"security"="is_granted('ROLE_USER')"},
+ *  collectionOperations={
+ *     "get"={"security"="is_granted('ROLE_USER')"},
+ *     "post"
+ *     },
+ *  itemOperations={
+ *     "get"={"security"="is_granted('ROLE_USER')"},
+ *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
+ *     "put"={"security"="is_granted('ROLE_USER') and object == user",
+ *              "security_message"="Only the user can edit their data!"
+ *      },
+ *     },
+ * )
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
@@ -139,7 +154,7 @@ class User implements UserInterface
     /**
      * @return string
      */
-    public function getPlainPass(): string
+    public function getPlainPass(): ?string
     {
         return $this->plainPass;
     }
@@ -155,7 +170,7 @@ class User implements UserInterface
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -171,7 +186,7 @@ class User implements UserInterface
     /**
      * @return string
      */
-    public function getFacebookId(): string
+    public function getFacebookId(): ?string
     {
         return $this->facebookId;
     }
@@ -187,7 +202,7 @@ class User implements UserInterface
     /**
      * @return string
      */
-    public function getPictureUrl(): string
+    public function getPictureUrl(): ?string
     {
         return $this->pictureUrl;
     }
@@ -240,7 +255,7 @@ class User implements UserInterface
     /**
      * @param mixed $orders
      */
-    public function setOrders($orders): void
+    public function setOrders($orders = null): void
     {
         $this->orders = $orders;
     }
