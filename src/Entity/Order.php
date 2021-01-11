@@ -16,6 +16,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="`order`")
  *
  * @ApiResource(
+ *
+ *     denormalizationContext={"groups"={"order:write"}},
+ *
  *  collectionOperations={
  *     "get"={"normalization_context"={"groups"="order:list"}},
  *     "post"={"security"="is_granted('ROLE_USER')"},
@@ -46,42 +49,42 @@ class Order
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
      * @ORM\JoinColumn(nullable=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $customer;
 
     /**
      * @ORM\OneToMany(targetEntity=OrderItem::class, mappedBy="orderRef", cascade={"persist", "remove"}, orphanRemoval=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $items;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $noteCart;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $noteAdmin;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $status = self::STATUS_CART;
 
@@ -96,14 +99,14 @@ class Order
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $cartAt;
 
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $createdAt;
 
@@ -131,7 +134,7 @@ class Order
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write"})
      */
     private $updatedAt;
 
@@ -293,7 +296,7 @@ class Order
         return $this->processAt;
     }
 
-    public function setProcessAt(?\DateTimeInterface $processAt): self
+    public function setProcessAt(?\DateTimeInterface $processAt = null): self
     {
         $this->processAt = $processAt;
 
@@ -305,7 +308,7 @@ class Order
         return $this->transportAt;
     }
 
-    public function setTransportAt(?\DateTimeInterface $transportAt): self
+    public function setTransportAt(?\DateTimeInterface $transportAt = null): self
     {
         $this->transportAt = $transportAt;
 
@@ -317,7 +320,7 @@ class Order
         return $this->deliveredAt;
     }
 
-    public function setDeliveredAt(?\DateTimeInterface $deliveredAt): self
+    public function setDeliveredAt(?\DateTimeInterface $deliveredAt = null): self
     {
         $this->deliveredAt = $deliveredAt;
 

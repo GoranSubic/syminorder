@@ -2,15 +2,26 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Service\ProductImagesUploader;
 use App\Entity\ProductPicture;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use App\Entity\Category;
 
 /**
+ * @ApiResource(
+ *  attributes={"security"="is_granted('ROLE_USER')"},
+ *  collectionOperations={
+ *     "get"={"security"="is_granted('ROLE_USER')", "normalization_context"={"groups"="product:list"}},
+ *     },
+ *  itemOperations={
+ *     "get"={"security"="is_granted('ROLE_USER')", "normalization_context"={"groups"="product:item"}},
+ *     },
+ * )
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  * @Vich\Uploadable
  */
@@ -30,6 +41,8 @@ class Product
 
     /**
      * @ORM\Column(name="name", type="string", length=30)
+     *
+     * @Groups({"product:list", "product:item"})
      */
     private $name;
 
@@ -44,7 +57,7 @@ class Product
     private $favoriteCount;
 
     /**
-     * @ORM\Column(name="price", type="float", length=255, nullable=true)
+     * @ORM\Column(name="price", type="integer", nullable=false)
      */
     private $price;
 
@@ -164,7 +177,7 @@ class Product
     /**
      * @param mixed $price
      */
-    public function setPrice($price): void
+    public function setPrice($price = 0): void
     {
         $this->price = $price;
     }

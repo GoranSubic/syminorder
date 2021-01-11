@@ -37,16 +37,23 @@ class OrderItem
      * @ORM\ManyToOne(targetEntity=Product::class)
      * @ORM\JoinColumn(nullable=false)
      *
-     * @Groups({"orderitem:list", "orderitem:item"})
+     * @Groups({"orderitem:list", "orderitem:item", "order:write"})
      */
     private $product;
 
     /**
      * @ORM\Column(type="integer")
      *
-     * @Groups({"orderitem:list", "orderitem:item"})
+     * @Groups({"orderitem:list", "orderitem:item", "order:write"})
      */
     private $quantity;
+
+    /**
+     * @ORM\Column(name="ordered_item_price", type="integer", nullable=false)
+     *
+     * @Groups({"orderitem:list", "orderitem:item", "order:write"})
+     */
+    private $orderedItemPrice;
 
     /**
      * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="items")
@@ -83,6 +90,22 @@ class OrderItem
         $this->quantity = $quantity;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOrderedItemPrice()
+    {
+        return $this->orderedItemPrice;
+    }
+
+    /**
+     * @param mixed $orderedItemPrice
+     */
+    public function setOrderedItemPrice($orderedItemPrice): void
+    {
+        $this->orderedItemPrice = $orderedItemPrice;
     }
 
     public function getOrderRef(): ?Order

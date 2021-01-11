@@ -10,8 +10,8 @@
         <span v-if="cartCount > 0">Prosledite porudžbinu ili o</span>
         <span v-else>O</span>daberite još iz ponude
       </h4>
-<!--      <form v-on:submit.prevent="handleSubmit">-->
-      <form>
+      <form v-on:submit.prevent="handleSubmit">
+<!--      <form>-->
         <div v-if="error" class="alert alert-danger">
           {{ error }}
         </div>
@@ -110,7 +110,7 @@ export default {
         sum += (prod.price * prod.ammount);
       });
       return (sum !== 'undefined' && sum > 0) ? (sum) : '';
-    }
+    },
   },
   methods: {
     showModal() {
@@ -134,8 +134,21 @@ export default {
 
       this.$store.dispatch("changeTextData", this.datanote, this.dataaddress);
     },
+
+    itemsArray() {
+      var itemsArray = [];
+      this.$store.getters.products.forEach(prod => {
+        var obj = {
+          "product": "api/products/"+prod.id,
+          "quantity": prod.ammount,
+          "orderedItemPrice": prod.price
+        };
+        itemsArray.push(obj);
+      });
+      return JSON.stringify(itemsArray);
+    },
     handleSubmit() {
-      event.preventDefault();
+      // event.preventDefault();
 
       this.isLoading = true;
       this.error = '';
@@ -145,21 +158,19 @@ export default {
         .post('/api/orders', {
           /*
           tableid: this.tableid,
-          products: this.$store.getters.products,
           */
-
           "customer": "api/users/"+this.userid,
-          "items": [],
+          "items": JSON.parse(this.itemsArray()),
           "noteCart": this.datanote,
           "noteAdmin": "",
           "address": this.dataaddress,
           "status": "cart",
           "cartAt": new Date(),
           "createdAt": this.$store.getters.storeCreated,
-          "processAt": this.$store.getters.storeCreated,
-          "transportAt": this.$store.getters.storeCreated,
-          "deliveredAt": this.$store.getters.storeCreated,
-          "updatedAt": this.$store.getters.storeCreated
+          "processAt": null,
+          "transportAt": null,
+          "deliveredAt": null,
+          "updatedAt": new Date(),
         })
         .then(response => {
           console.log(response.data);
