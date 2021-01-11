@@ -13,7 +13,6 @@
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +311,7 @@
       <workItem from="1609884305565" duration="1190000" />
       <workItem from="1609928522372" duration="8568000" />
       <workItem from="1610356549951" duration="18895000" />
-      <workItem from="1610388848039" duration="5005000" />
+      <workItem from="1610388848039" duration="9098000" />
     </task>
     <servers />
   </component>
@@ -342,6 +341,12 @@
             <option name="methodName" value="configureFields" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/js/components/Shopping.vue</url>
+          <line>151</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -12,8 +12,16 @@
       </h4>
 <!--      <form v-on:submit.prevent="handleSubmit">-->
       <form>
-        <div v-if="error" class="alert alert-danger">
-          {{ error }}
+        <div>
+          <b v-if="error || validationErrors.length">Morate ispraviti grešku/e:</b>
+          <div v-if="error" class="alert alert-danger">
+            {{ error }}
+          </div>
+          <div v-if="validationErrors.length">
+            <ul>
+              <li v-for="err in validationErrors">{{ err }}</li>
+            </ul>
+          </div>
         </div>
         <div v-for="(item, index) in cart" :key="index">
           <div class="row">
@@ -52,13 +60,13 @@
           <input type="text" id="cartUserName" class="form-control" aria-describedby="cartUserNameLabel"
                  :data-user-id="userid" :value="datauname" aria-label="Username" disabled>
 
-          <input v-if="tableid === 0" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
+          <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
                  aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
-          <input v-else-if="tableid !== 0" type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
+          <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
                  :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
         </div>
 
-        <b-button v-if="cartCount > 0" @click="handleSubmit" variant="outline-success" block type="button">Prosledi</b-button>
+        <b-button v-if="cartCount > 0" @click="checkForm" variant="outline-success" block type="button">Prosledi</b-button>
       </form>
     </div>
   </b-modal>
@@ -77,6 +85,7 @@ export default {
       dataaddress: '',
       datanote: '',
       error: '',
+      validationErrors: [],
       isLoading: false,
     }
   },
@@ -126,6 +135,22 @@ export default {
     },
     removeItem(id) {
       this.$store.dispatch("removeItem", id);
+    },
+
+    checkForm(e) {
+      if (this.dataaddress || this.tableid) {
+        // return true;
+        this.handleSubmit();
+      }
+
+      this.validationErrors = [];
+
+      if ((!this.dataaddress || this.dataaddress === '') && !this.tableid) {
+        this.validationErrors.push('Adresa je obavezna!');
+      }
+
+      // e.preventDefault();
+
     },
 
     formChanged() {
@@ -180,7 +205,7 @@ export default {
           }
       }).finally(() => {
         this.isLoading = false;
-        // this.hideModal();
+        this.hideModal();
         this.$store.dispatch('clearStore');
       })
     },
