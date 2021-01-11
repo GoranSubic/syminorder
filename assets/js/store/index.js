@@ -26,15 +26,19 @@ export default new Vuex.Store({
             var diff = parseInt(now - storeDate)/60000;
             if(diff > 60) {
                 //reset localStorage and state
-                localStorage.removeItem('store-olala');
-                state.products = [];
-                state.StoreCart = [];
-                state.storeCreated = new Date();
-                state.storeCartNote = '';
-                state.storeCartAddress = '';
-                //reload page after add, remove item if store older than 1 hour
-                if(typeof init === 'undefined' || init !== 'init') location.reload();
+                this.Clear_Store(state, init);
             }
+        },
+        Clear_Store(state, init) {
+            //reset localStorage and state
+            localStorage.removeItem('store-olala');
+            state.products = [];
+            state.StoreCart = [];
+            state.storeCreated = new Date();
+            state.storeCartNote = '';
+            state.storeCartAddress = '';
+            //reload page after add, remove item if store older than 1 hour
+            if(typeof init === 'undefined' || init !== 'init') location.reload();
         },
         Initialise_Store(state) {
             var createdDate = state.storeCreated;
@@ -98,6 +102,10 @@ export default new Vuex.Store({
         initialiseStore(context) {
             context.commit("Initialise_Store");
             context.commit("checkAndClearStore", "init");
+        },
+
+        clearStore(context) {
+            context.commit("Clear_Store");
         },
 
         addItem(context, product) {

@@ -10,8 +10,8 @@
         <span v-if="cartCount > 0">Prosledite porudžbinu ili o</span>
         <span v-else>O</span>daberite još iz ponude
       </h4>
-      <form v-on:submit.prevent="handleSubmit">
-<!--      <form>-->
+<!--      <form v-on:submit.prevent="handleSubmit">-->
+      <form>
         <div v-if="error" class="alert alert-danger">
           {{ error }}
         </div>
@@ -148,8 +148,6 @@ export default {
       return JSON.stringify(itemsArray);
     },
     handleSubmit() {
-      // event.preventDefault();
-
       this.isLoading = true;
       this.error = '';
 
@@ -182,6 +180,8 @@ export default {
           }
       }).finally(() => {
         this.isLoading = false;
+        // this.hideModal();
+        this.$store.dispatch('clearStore');
       })
     },
   },
