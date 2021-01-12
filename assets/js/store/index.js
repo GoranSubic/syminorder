@@ -19,26 +19,22 @@ export default new Vuex.Store({
         storeCartAddress: (state) => state.storeCartAddress,
     },
     mutations: {
-        checkAndClearStore(state, init) {
+        CHECK_And_Clear_Store(state, init) {
             //check if store is older than 1 hour
             var now = new Date();
             var storeDate = new Date(state.storeCreated);
             var diff = parseInt(now - storeDate)/60000;
-            if(diff > 60) {
+            if(diff > 60 || (typeof init !== 'undefined' && init === 'restart')) {
                 //reset localStorage and state
-                this.Clear_Store(state, init);
+                localStorage.removeItem('store-olala');
+                state.products = [];
+                state.StoreCart = [];
+                state.storeCreated = new Date();
+                state.storeCartNote = '';
+                state.storeCartAddress = '';
+                //reload page after add, remove item if store older than 1 hour and after submit form
+                if(typeof init === 'undefined' || init !== 'init' || init === 'restart') location.reload();
             }
-        },
-        Clear_Store(state, init) {
-            //reset localStorage and state
-            localStorage.removeItem('store-olala');
-            state.products = [];
-            state.StoreCart = [];
-            state.storeCreated = new Date();
-            state.storeCartNote = '';
-            state.storeCartAddress = '';
-            //reload page after add, remove item if store older than 1 hour
-            if(typeof init === 'undefined' || init !== 'init') location.reload();
         },
         Initialise_Store(state) {
             var createdDate = state.storeCreated;
@@ -101,30 +97,30 @@ export default new Vuex.Store({
     actions: {
         initialiseStore(context) {
             context.commit("Initialise_Store");
-            context.commit("checkAndClearStore", "init");
+            context.commit("CHECK_And_Clear_Store", "init");
         },
 
         clearStore(context) {
-            context.commit("Clear_Store");
+            context.commit("CHECK_And_Clear_Store", "restart");
         },
 
         addItem(context, product) {
-            context.commit("checkAndClearStore");
+            context.commit("CHECK_And_Clear_Store");
             context.commit("ADD_Item", product);
         },
 
         removeItem(context, id) {
-            context.commit("checkAndClearStore");
+            context.commit("CHECK_And_Clear_Store");
             context.commit("REMOVE_ItemById", id);
         },
 
         decreaseItem(context, id) {
-            context.commit("checkAndClearStore");
+            context.commit("CHECK_And_Clear_Store");
             context.commit("REMOVE_One_Item", id);
         },
 
         changeTextData(context, txtnote, txtaddress) {
-            context.commit("checkAndClearStore");
+            context.commit("CHECK_And_Clear_Store");
 
             context.commit("SET_note", txtnote);
             context.commit("SET_address", txtaddress);

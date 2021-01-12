@@ -66,7 +66,7 @@
                  :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
         </div>
 
-        <b-button v-if="cartCount > 0" @click="checkForm" variant="outline-success" block type="button">Prosledi</b-button>
+        <b-button v-if="cartCount > 0" id="btnFormSbm" @click="checkForm" variant="outline-success" block type="button">Prosledi</b-button>
       </form>
     </div>
   </b-modal>
@@ -173,6 +173,10 @@ export default {
       return JSON.stringify(itemsArray);
     },
     handleSubmit() {
+      var btn = document.getElementById('btnFormSbm');
+      btn.disabled = true;
+      btn.innerText = 'Slanje podataka...';
+
       this.isLoading = true;
       this.error = '';
 
@@ -203,6 +207,9 @@ export default {
           } else {
             this.error = 'Unkown error!';
           }
+
+        btn.disabled = false;
+        btn.innerText = 'Ponovi slanje...';
       }).finally(() => {
         this.isLoading = false;
         this.hideModal();
