@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Entity\Product;
 use App\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
@@ -62,6 +63,8 @@ class ProductPicture
      * @ORM\Column(type="string", length=255, name="image_name", nullable=true)
      *
      * @var string|null
+     *
+     * @Groups({"order:list", "suborder"})
      */
     private $imageName;
 

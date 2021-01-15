@@ -1,0 +1,273 @@
+<template>
+<div class="ordersdata" v-if="ordersTotalNum > 0">
+  <div class="d-block text-center">
+    <h4>
+      Lista porudžbina za dostavu - ukupno {{ ordersTotalNum }}
+    </h4>
+
+    <div v-if="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+
+    <div class="ordertable table-responsive-md">
+      <table class="table table-striped"  id="orders-list">
+        <tr>
+          <th>Index</th>
+          <th>Slika</th>
+          <th>Kupac</th>
+          <th>Napomena</th>
+          <th>Adresa</th>
+          <th>Prosledi</th>
+        </tr>
+        <tbody>
+        <template v-for="(ord, index) in orders">
+          <tr :key="index">
+            <td>
+              {{ index + 1 }}
+              <a v-on:click="showOrderItems(ord, index)"><b :id="'show-hide-' + index">Prikazi</b></a>
+            </td>
+            <td>
+              <img class="img-thumbnail" :src="ord.customer.pictureUrl" :alt="ord.customer.username">
+            </td>
+            <td>{{ ord.customer.username }}</td>
+            <td>{{ ord.noteCart }}</td>
+            <td>{{ ord.address }}</td>
+            <td>
+              <b-button @click="forwardStatusTo(ord, index)" value="Prosledi" type="button" :id="'btn-sand-' + index">
+                {{ ord.status }}
+              </b-button>
+            </td>
+          </tr>
+
+          <tr style="display: none" :id="'items-row-' + index">
+            <td colspan="5">
+              <table class="table table-bordered">
+              <tr>
+                <th>Index</th>
+                <th>Slika</th>
+                <th>Naziv</th>
+                <th>Kolicina</th>
+                <th>Cena</th>
+                <th>Ukupno</th>
+              </tr>
+              <tr v-for="(item, indexitem) in orderItems" :key="indexitem">
+                <td>
+                  {{ index + 1 }}
+                </td>
+                <td>
+                  <img class="img-thumbnail" :src="item.image" :alt="item.name">
+                </td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.itemSum }}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>Suma:</b></td>
+                <td><b>{{ orderSum }}</b></td>
+              </tr>
+            </table>
+            </td>
+          </tr>
+        </template>
+        </tbody>
+      </table>
+    </div>
+
+    <b-pagination
+        @change="handlePageChange"
+        v-model="currentPage"
+        :total-rows="ordersTotalNum"
+        :per-page="paginationItemsPerPage"
+        pills
+        first-text="First"
+        prev-text="Prev"
+        next-text="Next"
+        last-text="Last"
+    ></b-pagination>
+
+  </div>
+</div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+name: "OrdersTable",
+  data() {
+    return {
+      pagePagin: 1,
+      currentPage: 1,
+      paginationItemsPerPage: 10,
+
+      patchValues: {},
+      orders: [],
+      ordersTotalNum: 0,
+      orderItems: [],
+      orderSum: 0,
+      // errors: [],
+      error: '',
+    }
+  },
+
+  props: {
+    searchby: String,
+
+    userid: Number,
+    datauname: String,
+  },
+
+  computed: {
+
+  },
+
+  methods: {
+    handlePageChange(value) {
+      this.pagePagin = value;
+
+      this.retrieveAdminOrders();
+    },
+
+    forwardStatusTo(ord, index) {
+      this.patchValues = {};
+      switch (ord.status) {
+        case 'cart':
+          this.patchValues['processAt'] = new Date();
+          this.patchValues['updatedAt'] = new Date();
+          ord.processAt = new Date();
+          ord.updatedAt = new Date();
+          this.patchStatus(ord.id, 'processing', index)
+          break;
+        case 'processing':
+          this.patchValues['transportAt'] = new Date();
+          this.patchValues['updatedAt'] = new Date();
+          ord.transportAt = new Date();
+          ord.updatedAt = new Date();
+          this.patchStatus(ord.id, 'driving', index)
+          break;
+        case 'driving':
+          this.patchValues['deliveredAt'] = new Date();
+          this.patchValues['updatedAt'] = new Date();
+          this.patchValues['isDelivered'] = true;
+          ord.deliveredAt = new Date();
+          ord.updatedAt = new Date();
+          ord.isDelivered = true;
+          this.patchStatus(ord.id, 'delivered', index)
+          break;
+        default:
+          console.log('Order should be delivered! Status is: ', ord.status);
+          this.error = 'Porudžbina je već isporučena!';
+          break;
+      }
+    },
+
+    patchStatus(orderId, status, index) {
+      this.patchValues["status"] = status;
+      var url = 'api/orders/' + orderId;
+      require('axios').create({
+        headers: {
+          patch: {
+            'Content-Type': 'application/ld+json'
+          }
+        },
+      }).request({
+        url: url,
+        method: 'patch',
+        data: JSON.stringify(
+            this.patchValues
+        )
+      }).then(response => {
+        var btnSandStatus = document.getElementById('btn-sand-' + index);
+        btnSandStatus.innerHTML = status;
+        // todo remove this row or reload
+        location.reload();
+      }).catch(error => {
+          // this.errors.push(error);
+
+          if (error.response.data.error) {
+            this.error = error.response.data.error;
+          } else {
+            this.error = 'Unkown error!';
+          }
+        });
+    },
+
+    showOrderItems(ord, index) {
+      var itemsArr = [];
+      var orderSumM = 0;
+      var itemsRow = document.getElementById('items-row-' + index);
+      var showHide = document.getElementById('show-hide-' + index);
+
+      if (ord.show !== 'undefined' && ord.show === true) {
+        ord.show = false;
+        itemsRow.style.display = 'none';
+        showHide.innerHTML = 'Prikazi';
+      } else {
+        ord.items.forEach(itm => {
+          var itemSum = itm.quantity * itm.product.price;
+          orderSumM += itemSum;
+          var obj = {
+            "image": '/images/products/' + itm.product.picture.imageName,
+            "name": itm.product.name,
+            "price": itm.product.price,
+            "quantity": itm.quantity,
+            "itemSum": itemSum,
+          };
+          itemsArr.push(obj);
+          this.orderSum = orderSumM;
+        });
+        // return itemsArr;
+        this.orderItems = itemsArr;
+        ord.show = true;
+        itemsRow.style.display = 'table-row';
+        showHide.innerHTML = 'Sakri';
+      }
+    },
+
+    retrieveAdminOrders() {
+      var paramsGet = {};
+      if (this.pagePagin) paramsGet["page"] = this.pagePagin;
+      if (this.searchby !== 'undefined' && this.searchby !== '') paramsGet["status"] = this.searchby;
+      paramsGet["isDelivered"] = false;
+
+      axios.get(`api/orders`, {
+        params: paramsGet
+      })
+          .then(response => {
+            // JSON responses are automatically parsed.
+            this.orders = response.data["hydra:member"];
+            this.ordersTotalNum = response.data["hydra:totalItems"]
+          })
+          .catch(e => {
+            this.errors.push(e)
+          });
+    },
+  },
+
+  // Fetches orders when the component is created.
+  created() {
+      this.retrieveAdminOrders();
+  }
+}
+</script>
+
+<style scoped>
+.ordersdata {
+  margin: 50px 0 50px 0;
+}
+
+.ordertable {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+}
+
+.ordertable img {
+  width: 30%;
+}
+</style>

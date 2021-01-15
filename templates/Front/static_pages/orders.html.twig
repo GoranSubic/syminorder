@@ -1,5 +1,18 @@
 {% extends 'Front/static_pages/layout.html.twig' %}
 
+{% set user_is_logged_in = app.user ? true : false %}
+{% if user_is_logged_in %}
+    {% if 'ROLE_ADMIN' in app.user.roles %}
+        {% set search_by = '' %}
+    {% elseif 'ROLE_WAITER' in app.user.roles %}
+        {% set search_by = 'processing' %}
+    {% elseif 'ROLE_DRIVER' in app.user.roles %}
+        {% set search_by = 'driving' %}
+    {% elseif 'ROLE_USER' in app.user.roles %}
+        {% set search_by = 'userOrders' %}
+    {% endif %}
+{% endif %}
+
 {% block title %}Poručite{% endblock %}
 
 {% block greet_info %}
@@ -9,6 +22,28 @@
 {% block content %}
     <div id="orders">
         <div class="orders container">
+
+            {% if user_is_logged_in %}
+                <div class="orders list">
+                    {% if search_by == 'userOrders' %}
+                        <orders-table-user id="orders-table-user"
+                                      searchby="{{ search_by }}"
+                                      v-bind:datauname="dataUname"
+                                      v-bind:userid="{{ app.user.id }}"
+                        >
+
+                        </orders-table-user>
+                    {% else %}
+                        <orders-table id="orders-table"
+                                      searchby="{{ search_by }}"
+                                      v-bind:datauname="dataUname"
+                        >
+
+                        </orders-table>
+                    {% endif %}
+                </div>
+            {% endif %}
+
             <div class="orders content">
                 Dobro došli,
                 <br /><br />
@@ -19,4 +54,3 @@
         </div>
     </div>
 {% endblock %}
-

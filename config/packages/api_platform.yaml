@@ -3,5 +3,9 @@ api_platform:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:
         json: ['application/merge-patch+json']
+#        json: ['application/json']
+        jsonld: ['application/ld+json']
+        html: ['text/html']
+        jsonapi: [ 'application/vnd.api+json' ]
     swagger:
         versions: [3]

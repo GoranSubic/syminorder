@@ -148,9 +148,6 @@ export default {
       if ((!this.dataaddress || this.dataaddress === '') && !this.tableid) {
         this.validationErrors.push('Adresa je obavezna!');
       }
-
-      // e.preventDefault();
-
     },
 
     formChanged() {

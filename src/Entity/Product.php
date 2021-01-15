@@ -42,7 +42,7 @@ class Product
     /**
      * @ORM\Column(name="name", type="string", length=30)
      *
-     * @Groups({"product:list", "product:item"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder"})
      */
     private $name;
 
@@ -58,6 +58,8 @@ class Product
 
     /**
      * @ORM\Column(name="price", type="integer", nullable=false)
+     *
+     * @Groups({"order:list", "suborder"})
      */
     private $price;
 
@@ -65,6 +67,7 @@ class Product
      *
      * @ORM\OneToOne(targetEntity="App\Entity\ProductPicture", mappedBy="product", cascade={"persist", "remove"})
      *
+     * @Groups({"order:list", "suborder"})
      */
     private $picture;
 

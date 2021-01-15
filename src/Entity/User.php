@@ -3,27 +3,40 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
  *  attributes={"security"="is_granted('ROLE_USER')"},
  *  collectionOperations={
- *     "get"={"security"="is_granted('ROLE_USER')"},
+ *     "get"={
+ *              "security"="is_granted('ROLE_USER') and object == user",
+ *              "security_message"="Only the user can see their data!",
+ *      },
  *     "post"
  *     },
  *  itemOperations={
- *     "get"={"security"="is_granted('ROLE_USER')"},
+ *     "get"={
+ *              "security"="is_granted('ROLE_ADMIN')",
+ *     },
  *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
- *     "put"={"security"="is_granted('ROLE_USER') and object == user",
+ *     "put"={
+ *              "security"="is_granted('ROLE_USER') and object == user",
  *              "security_message"="Only the user can edit their data!"
  *      },
  *     },
+ *  order={"createdAt"="DESC"},
+ *  paginationEnabled=true,
+ *  attributes={
+ *      "pagination_items_per_page"=10,
+ *  }
  * )
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
@@ -39,6 +52,8 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     *
+     * @Groups({"order:list"})
      */
     private $username;
 
@@ -77,6 +92,8 @@ class User implements UserInterface
     /**
      * @var string
      * @ORM\Column(name="picture_url", type="string", nullable=true)
+     *
+     * @Groups({"order:list"})
      */
     private $pictureUrl;
 
@@ -87,6 +104,8 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="customer")
+     *
+     * @ApiSubresource()
      */
     private $orders;
 

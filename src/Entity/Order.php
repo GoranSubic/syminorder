@@ -2,7 +2,10 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -10,29 +13,55 @@ use App\Repository\OrderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\SerializedName;
+use Symfony\Component\Validator\Constraints as Assert;
+use function Webmozart\Assert\Tests\StaticAnalysis\false;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
  * @ORM\Table(name="`order`")
  *
  * @ApiResource(
- *
- *     denormalizationContext={"groups"={"order:write"}},
- *
  *  collectionOperations={
- *     "get"={"normalization_context"={"groups"="order:list"}},
- *     "post"={"security"="is_granted('ROLE_USER')"},
+ *     "get"={
+ *          "security"="is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *          "normalization_context"={"groups"="order:list"},
+ *     },
+ *     "post"={
+ *          "security"="is_granted('ROLE_USER')",
+ *          "denormalization_context"={"groups"={"order:write"}},
+ *      },
  *     },
  *  itemOperations={
- *     "get"={"normalization_context"={"groups"="order:item"}},
+ *     "get"={
+ *              "security"="is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *              "normalization_context"={"groups"="order:item"},
+ *     },
  *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
  *     "put"={"security"="is_granted('ROLE_USER') and object.getOwner() == user",
  *              "security_message"="Only the creator can edit a order!"
  *      },
+ *     "patch"={
+ *              "input_formats"={"json"={"application/ld+json"}},
+ *              "method"="PATCH",
+ *              "security"="is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *              "denormalization_context"={"groups"={"order:write"}},
+ *      },
  *     },
- *  order={"createdAt"="DESC"},
- *  paginationEnabled=false
+ *  order={"createdAt"="ASC"},
+ *  paginationEnabled=true,
+ *  attributes={
+ *      "pagination_items_per_page"=10,
+ *  },
+ *  subresourceOperations={
+ *     "api_users_orders_get_subresource"={
+ *         "method"="GET",
+ *         "normalization_context"={"groups"={"suborder"}}
+ *     }
+ *  }
  * )
+ * @ApiFilter(SearchFilter::class, properties={"status": "exact"})
+ * @ApiFilter(BooleanFilter::class, properties={"isDelivered"})
  */
 class Order
 {
@@ -49,42 +78,44 @@ class Order
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
      * @ORM\JoinColumn(nullable=true)
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $customer;
 
     /**
      * @ORM\OneToMany(targetEntity=OrderItem::class, mappedBy="orderRef", cascade={"persist", "remove"}, orphanRemoval=true)
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Assert\Valid()
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $items;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $noteCart;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $noteAdmin;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Assert\NotBlank()
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $status = self::STATUS_CART;
 
@@ -99,42 +130,49 @@ class Order
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $cartAt;
 
     /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $processAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $transportAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      *
-     * @Groups({"order:list", "order:item"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $deliveredAt;
 
     /**
+     * @ORM\Column(type="boolean", nullable=true)
+     *
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
+     */
+    private $isDelivered = false;
+
+    /**
      * @ORM\Column(type="datetime")
      *
-     * @Groups({"order:list", "order:item", "order:write"})
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $updatedAt;
 
@@ -325,6 +363,22 @@ class Order
         $this->deliveredAt = $deliveredAt;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsDelivered()
+    {
+        return $this->isDelivered;
+    }
+
+    /**
+     * @param mixed $isDelivered
+     */
+    public function setIsDelivered($isDelivered = false): void
+    {
+        $this->isDelivered = $isDelivered;
     }
 
     /**

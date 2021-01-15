@@ -4,6 +4,8 @@ import store from './store/index';
 import MainImage from "./components/MainImage";
 import Shopping from "./components/Shopping";
 import Product from "./components/Product";
+import OrdersTable from "./components/OrdersTable";
+import OrdersTableUser from "./components/OrdersTableUser";
 import ModalPlugin from 'bootstrap-vue';
 
 Vue.use(ModalPlugin);
@@ -18,6 +20,8 @@ new Vue({
         MainImage,
         Shopping,
         Product,
+        OrdersTable,
+        OrdersTableUser
     },
     data() {
         return {

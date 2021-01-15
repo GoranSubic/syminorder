@@ -37,14 +37,14 @@ class OrderItem
      * @ORM\ManyToOne(targetEntity=Product::class)
      * @ORM\JoinColumn(nullable=false)
      *
-     * @Groups({"orderitem:list", "orderitem:item", "order:write"})
+     * @Groups({"orderitem:list", "orderitem:item", "order:list", "order:write", "suborder"})
      */
     private $product;
 
     /**
      * @ORM\Column(type="integer")
      *
-     * @Groups({"orderitem:list", "orderitem:item", "order:write"})
+     * @Groups({"orderitem:list", "orderitem:item", "order:list", "order:write", "suborder"})
      */
     private $quantity;
 

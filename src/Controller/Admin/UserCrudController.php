@@ -50,6 +50,7 @@ class UserCrudController extends AbstractCrudController
                 ->setChoices([
                     'User' => 'ROLE_USER',
                     'Table' => 'ROLE_TABLE',
+                    'Driver' => 'ROLE_DRIVER',
                     'Waiter' => 'ROLE_WAITER',
                     'Admin' => 'ROLE_ADMIN',
                 ])->allowMultipleChoices(),

@@ -19,16 +19,16 @@ class FilterActiveOrdersQueryExtension implements QueryCollectionExtensionInterf
     public function applyToCollection(QueryBuilder $queryBuilder, QueryNameGeneratorInterface $queryNameGenerator, string $resourceClass, string $operationName = null)
     {
         // TODO: Implement applyToCollection() method.
-        if(Order::class === $resourceClass) {
+        /*if(Order::class === $resourceClass) {
             $queryBuilder->andWhere(sprintf("%s.status = 'cart'", $queryBuilder->getRootAliases()[0]));
-        }
+        }*/
     }
 
     public function applyToItem(QueryBuilder $queryBuilder, QueryNameGeneratorInterface $queryNameGenerator, string $resourceClass, array $identifiers, string $operationName = null, array $context = [])
     {
         // TODO: Implement applyToItem() method.
-        if(Order::class === $resourceClass) {
+        /*if(Order::class === $resourceClass) {
             $queryBuilder->andWhere(sprintf("%s.status = 'cart'", $queryBuilder->getRootAliases()[0]));
-        }
+        }*/
     }
 }
