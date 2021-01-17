@@ -11,20 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Product.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Api/FilterActiveOrdersQueryExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api/FilterActiveOrdersQueryExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPicture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +191,7 @@
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/fig/link-util" />
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -204,7 +205,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -223,11 +224,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/src/Controller" />
       <recent name="$PROJECT_DIR$/assets/media" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/assets/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/js/store" />
@@ -339,6 +340,11 @@
       <workItem from="1610663647029" duration="1022000" />
       <workItem from="1610667744432" duration="129000" />
       <workItem from="1610706039466" duration="2491000" />
+      <workItem from="1610789359913" duration="1069000" />
+      <workItem from="1610791023436" duration="28557000" />
+      <workItem from="1610826645423" duration="2134000" />
+      <workItem from="1610829537707" duration="4453000" />
+      <workItem from="1610873138714" duration="4834000" />
     </task>
     <servers />
   </component>
@@ -371,8 +377,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/js/components/OrdersTable.vue</url>
-          <line>235</line>
+          <line>236</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php</url>
+          <line>37</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php</url>
+          <line>40</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,7 +1,7 @@
 <template>
 <div>
   <b-button :pressed="true" v-if="cartCount > 0" id="toggle-btn" @click="toggleModal" variant="secondary">
-    {{ cartCount + 'kom - ' + cartSum + 'rsd' }}
+    {{ cartCount + 'kom - ' + formatter.format(cartSum / 100) }}
   </b-button>
 
   <b-modal ref="my-modal" hide-footer :title="titleText" id="modal-cart">
@@ -28,10 +28,10 @@
             <div class="col-2">{{ item.name }}</div>
             <div class="col-2"><img :src="item.image" :alt="item.name" /></div>
 
-            <div class="col-2">{{ item.price }}</div>
+            <div class="col-2">{{ formatter.format(item.priceNumeric/100) }}</div>
             <div class="col-2" v-if="item.ammount !== undefined">{{ ' x ' + item.ammount }}</div>
-            <div class="col-2" v-if="item.price && item.ammount">
-              {{ (item.price * item.ammount) + 'Din' }}
+            <div class="col-2" v-if="item.priceNumeric && item.ammount">
+              {{ formatter.format(item.priceNumeric * item.ammount/100) }}
             </div>
             <div class="col-2">
               <b-button style="width: 100%;" variant="outline-danger" @click="removeItem(item.id)">
@@ -82,6 +82,7 @@ export default {
   name: "Shopping",
   data() {
     return {
+      formatter: Function,
       dataaddress: '',
       datanote: '',
       error: '',
@@ -100,7 +101,7 @@ export default {
     titleText() {
       var txt = 'U korpi imate ' + this.cartCount + ' artikal(a)';
       if(this.cartCount > 0) {
-        txt += ' u iznosu od ' + this.cartSum + 'rsd';
+        txt += ' u iznosu od ' + this.formatter.format(this.cartSum / 100);
       }
       return txt;
     },
@@ -116,7 +117,7 @@ export default {
     cartSum() {
       var sum = 0;
       this.$store.getters.products.forEach(prod => {
-        sum += (prod.price * prod.ammount);
+        sum += (prod.priceNumeric * prod.ammount);
       });
       return (sum !== 'undefined' && sum > 0) ? (sum) : '';
     },
@@ -163,7 +164,7 @@ export default {
         var obj = {
           "product": "api/products/"+prod.id,
           "quantity": prod.ammount,
-          "orderedItemPrice": prod.price
+          "orderedItemPrice": prod.priceNumeric
         };
         itemsArray.push(obj);
       });
@@ -197,7 +198,8 @@ export default {
           "updatedAt": new Date(),
         })
         .then(response => {
-          console.log(response.data);
+          // console.log(response.data);
+        //  ToDo inform customer that can track orders status on page Porudžbine
         }).catch(error => {
           if (error.response.data.error) {
             this.error = error.response.data.error;
@@ -209,10 +211,18 @@ export default {
         btn.innerText = 'Ponovi slanje...';
       }).finally(() => {
         this.isLoading = false;
-        this.hideModal();
+        // this.hideModal();
         this.$store.dispatch('clearStore');
       })
     },
+  },
+  created() {
+    this.formatter= new Intl.NumberFormat('sr', {
+      style: 'currency',
+      currency: 'RSD',
+      minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+      maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
+    });
   },
 }
 </script>

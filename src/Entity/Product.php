@@ -7,6 +7,7 @@ use App\Service\ProductImagesUploader;
 use App\Entity\ProductPicture;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -57,11 +58,20 @@ class Product
     private $favoriteCount;
 
     /**
-     * @ORM\Column(name="price", type="integer", nullable=false)
+     * @var integer
+     *
+     * @ORM\Column(name="price", type="integer")
      *
      * @Groups({"order:list", "suborder"})
      */
     private $price;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency", type="string", length=64)
+     */
+    private $currency = "RSD";
 
     /**
      *
@@ -76,6 +86,38 @@ class Product
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @return int
+     */
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param int $price
+     */
+    public function setPrice(int $price): void
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrency(): string
+    {
+        return $this->currency;
+    }
+
+    /**
+     * @param string $currency
+     */
+    public function setCurrency(string $currency = "RSD"): void
+    {
+        $this->currency = $currency;
+    }
 
     /**
      * @return mixed
@@ -167,22 +209,6 @@ class Product
     public function setFavoriteCount($favoriteCount): void
     {
         $this->favoriteCount = $favoriteCount;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * @param mixed $price
-     */
-    public function setPrice($price = 0): void
-    {
-        $this->price = $price;
     }
 
     /**

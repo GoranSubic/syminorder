@@ -1,7 +1,7 @@
 <template>
   <div class="container btncontainer">
     <div class="row">
-        <b-button variant="success" class="col col-12" @click="addToCart(id, name, image, price)">
+        <b-button variant="success" class="col col-12" @click="addToCart(id, name, image, price, pricenumeric)">
           <img class="sign plus" :src="plussign" alt="++" />
         </b-button>
     </div>
@@ -39,7 +39,8 @@ export default {
     "id" : Number,
     "name": String,
     "image": String,
-    "price": Number,
+    "price": String,
+    "pricenumeric": Number,
     "plussign": String,
     "minussign": String,
   },
@@ -52,12 +53,13 @@ export default {
     },
   },
   methods: {
-    addToCart(id, name, image, price) {
+    addToCart(id, name, image, price, priceNumeric) {
       var product = {
         id: id,
         name: name,
         image: image,
         price: price,
+        priceNumeric: priceNumeric,
       };
       this.$store.dispatch("addItem", product);
     },
@@ -67,7 +69,7 @@ export default {
     decOneFromCart(id) {
       this.$store.dispatch("decreaseItem", id);
     },
-  }
+  },
 }
 </script>
 

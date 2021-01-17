@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use App\Form\MyMoneType;
 use App\Form\ProductPictureType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -10,9 +11,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProductCrudController extends AbstractCrudController
@@ -32,9 +35,11 @@ class ProductCrudController extends AbstractCrudController
             BooleanField::new('enabled', 'Uključeno'),
             TextField::new('name', 'Naziv'),
             TextEditorField::new('description', 'Opis'),
-            NumberField::new('price', 'Cena')
-                ->setRequired(true)
-                ->setNumDecimals(2),
+            MoneyField::new('price', 'Cena Money')
+                ->setCurrency("RSD")
+                ->setNumDecimals(2)
+                ->setFormType(MoneyType::class)
+            ,
             AssociationField::new('category', 'Kategorija')->autocomplete(),
         ];
 

@@ -59,8 +59,8 @@
                 </td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.quantity }}</td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.itemSum }}</td>
+                <td>{{ formatter.format(item.price/100) }}</td>
+                <td>{{ formatter.format(item.itemSum/100) }}</td>
               </tr>
               <tr>
                 <td></td>
@@ -68,7 +68,7 @@
                 <td></td>
                 <td></td>
                 <td><b>Suma:</b></td>
-                <td><b>{{ orderSum }}</b></td>
+                <td><b>{{ formatter.format(orderSum/100) }}</b></td>
               </tr>
             </table>
             </td>
@@ -101,6 +101,7 @@ export default {
 name: "OrdersTable",
   data() {
     return {
+      formatter: Function,
       pagePagin: 1,
       currentPage: 1,
       paginationItemsPerPage: 10,
@@ -251,7 +252,14 @@ name: "OrdersTable",
 
   // Fetches orders when the component is created.
   created() {
-      this.retrieveAdminOrders();
+    this.retrieveAdminOrders();
+
+    this.formatter = new Intl.NumberFormat('sr', {
+      style: 'currency',
+      currency: 'RSD',
+      minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+      maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
+    });
   }
 }
 </script>

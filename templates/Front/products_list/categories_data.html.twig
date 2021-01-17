@@ -46,7 +46,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="float-left col-6 col-sm-6 col-md-8 prod-name"><u>{{ product.name }}</u></div>
-                        <div class="float-right col-6 col-sm-6 col-md-4 prod-price"><u>{{ product.price }} RSD</u></div>
+                        <div class="float-right col-6 col-sm-6 col-md-4 prod-price"><u>{{ (product.price/100)|format_currency("RSD", {fraction_digit: 2}) }}</u></div>
                     </div>
                     <div class="panel-body">
                         <div class="prod-desc">{{ product.description|raw }}</div>
@@ -61,7 +61,8 @@
                             v-bind:id="{{ product.id }}"
                             name="{{ product.name }}"
                             image="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
-                            v-bind:price="{{ product.price }}"
+                            price="{{ product.price|number_format(2, ',', '.') }}"
+                            v-bind:pricenumeric="{{ product.price }}"
                             plussign="{{ asset("build/images/plus-solid.svg") }}"
                             minussign="{{ asset("build/images/minus-solid.svg") }}"
                     >
