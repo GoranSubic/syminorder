@@ -67,6 +67,9 @@ class MyFacebookAuthenticator extends SocialAuthenticator
         $existingUser = $this->em->getRepository(User::class)
             ->findOneBy(['facebookId' => $facebookUser->getId()]);
         if ($existingUser) {
+            $existingUser->setPictureUrl($facebookUser->getPictureUrl());
+            $this->em->persist($existingUser);
+            $this->em->flush();
             return $existingUser;
         }
 
@@ -87,9 +90,10 @@ class MyFacebookAuthenticator extends SocialAuthenticator
         $user = new User();
         $user->setFacebookId($facebookUser->getId());
         $user->setEmail($facebookUser->getEmail());
-        $user->setUserName($facebookUser->getFirstName().$facebookUser->getLastName());
+        $user->setUserName($facebookUser->getFirstName().' '.$facebookUser->getLastName());
         $user->setPictureUrl($facebookUser->getPictureUrl());
-        $encoded = $this->passwordEncoder->encodePassword($user, "facepass");
+        $user->setPlainPass("f@ce5as7");
+        $encoded = $this->passwordEncoder->encodePassword($user, "f@ce5as7");
         $user->setPassword($encoded);
 
         $this->em->persist($user);

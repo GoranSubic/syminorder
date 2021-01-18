@@ -9,7 +9,7 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: username
+                property: email
     role_hierarchy:
         ROLE_ADMIN: [ ROLE_WAITER, ROLE_TABLE, ROLE_DRIVER ]
     firewalls:

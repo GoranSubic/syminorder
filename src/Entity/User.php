@@ -39,7 +39,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *  }
  * )
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface
 {
@@ -51,7 +51,7 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=180, nullable=false)
      *
      * @Groups({"order:list"})
      */
@@ -75,7 +75,7 @@ class User implements UserInterface
     private $plainPass;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @ORM\Column(type="string", length=255, unique=true, nullable=false)
      * @Assert\NotBlank()
      * @Assert\Email(
      *     message = "The email '{{ value }}' is not a valid email."
@@ -103,7 +103,7 @@ class User implements UserInterface
     private $isVerified = false;
 
     /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="customer")
+     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
      *
      * @ApiSubresource()
      */

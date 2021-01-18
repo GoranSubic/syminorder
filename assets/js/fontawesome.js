@@ -24,6 +24,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCi
 import { faFacebook } from '@fortawesome/free-brands-svg-icons/faFacebook';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { faGooglePlus } from '@fortawesome/free-brands-svg-icons/faGooglePlus';
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
 import { faAdjust } from '@fortawesome/free-solid-svg-icons/faAdjust';
 import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
@@ -37,7 +38,7 @@ import { faTable } from '@fortawesome/free-solid-svg-icons/faTable';
 library.add(faStar, faQuestionCircle, faShoppingBag, faCheck, faExclamationCircle,
   faInfoCircle, faChevronUp, faMapMarkerAlt, faShuttleVan, faCreditCard, faFlag,
   faCcMastercard, faCcVisa, faCcPaypal, faTimes, faSearch, faPlus, faPencilAlt,
-  faSyncAlt, faFacebook, faTwitter, faInstagram, faBan, faAdjust, faClock, faReplyAll,
+  faSyncAlt, faFacebook, faTwitter, faInstagram, faGooglePlus, faBan, faAdjust, faClock, faReplyAll,
     faUser, faAddressBook, faAddressCard, faTasks, faTable
 );
 dom.watch();

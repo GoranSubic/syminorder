@@ -35,6 +35,10 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // ToDo remove plain pass!
+            $user->setPlainPass($form->get('plainPassword')->getData());
+
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
@@ -50,9 +54,9 @@ class RegistrationController extends AbstractController
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
-                    ->from(new Address('admin@smo.smf', 'SMO Admin Mail'))
+                    ->from(new Address('info@olala.co.rs', 'Olala Registracija'))
                     ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
+                    ->subject('Olala Potvrda Registracije')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             // do anything else you need here, like send an email

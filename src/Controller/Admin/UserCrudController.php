@@ -114,8 +114,8 @@ class UserCrudController extends AbstractCrudController
             /** @var User $user */
             $user = $event->getData();
             if ($user->getPassword()) {
-                $user->setPlainPass($event->getData()->getPassword() ? $event->getData()->getPassword() : 'facepass');
                 $user->setPassword($this->passwordEncoder->encodePassword($user, $user->getPassword()));
+                $user->setPlainPass($event->getData()->getPassword() ? $event->getData()->getPassword() : 'facepass');
             }
         });
     }
