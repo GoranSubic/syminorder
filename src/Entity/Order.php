@@ -113,6 +113,14 @@ class Order
     private $address;
 
     /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     *
+     * @Assert\NotBlank()
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
+     */
+    private $phone;
+
+    /**
      * @ORM\Column(type="string", length=255)
      *
      * @Groups({"order:list", "order:item", "order:write", "suborder"})
@@ -287,6 +295,22 @@ class Order
     public function setAddress($address): void
     {
         $this->address = $address;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone): void
+    {
+        $this->phone = $phone;
     }
 
     public function getStatus(): ?string

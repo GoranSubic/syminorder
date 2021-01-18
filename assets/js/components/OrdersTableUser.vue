@@ -15,6 +15,7 @@
           <th>Index</th>
           <th>Napomena</th>
           <th>Adresa</th>
+          <th>Telefon</th>
           <th>Status</th>
         </tr>
         <tbody>
@@ -26,14 +27,15 @@
             </td>
             <td>{{ ord.noteCart }}</td>
             <td>{{ ord.address }}</td>
-            <td>
-              {{ ord.status }}
+            <td>{{ ord.phone }}</td>
+            <td :id="'cell-status-' + index" :class="'status-' + ord.status">
+              {{ bcgColorStatus(ord.status, index) }}
             </td>
           </tr>
 
           <tr style="display: none" :id="'items-row-' + index">
-            <td colspan="5">
-              <table class="table table-bordered">
+            <td colspan="6">
+              <table :class="'table table-bordered status-' + ord.status">
               <tr>
                 <th>Index</th>
                 <th>Slika</th>
@@ -70,16 +72,14 @@
       </table>
     </div>
 
-    <b-pagination
+    <b-pagination v-if="ordersTotalNum > 10"
         @change="handlePageChange"
         v-model="currentPage"
         :total-rows="ordersTotalNum"
         :per-page="paginationItemsPerPage"
         pills
-        first-text="Prva"
         prev-text="Pret"
         next-text="Sled"
-        last-text="Posl"
     ></b-pagination>
 
   </div>
@@ -118,6 +118,16 @@ name: "OrdersTable",
   },
 
   methods: {
+    bcgColorStatus: function (status, index) {
+      // var colorStatus = document.getElementById('color-status-' + index);
+      if (status !== 'undefined' && status !== null && status !== '') {
+        if (status === 'cart') return 'Poslato';
+        if (status === 'processing') return 'U pripremi';
+        if (status === 'driving') return 'U transportu';
+        if (status === 'delivered') return 'Preuzeto';
+      }
+    },
+
     handlePageChange(value) {
       this.pagePagin = value;
 
@@ -191,13 +201,26 @@ name: "OrdersTable",
 </script>
 
 <style scoped>
+.status-cart {
+  background-color: green;
+}
+.status-processing {
+  background-color: #B82227;
+}
+.status-driving {
+  background-color: darkorange;
+}
+.status-delivered {
+  background-color: lightskyblue;
+}
+
 .ordersdata {
   margin: 50px 0 50px 0;
 }
 
 .ordertable {
   width: 100%;
-  height: 300px;
+  height: 400px;
   overflow: auto;
 }
 

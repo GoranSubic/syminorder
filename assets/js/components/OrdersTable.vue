@@ -9,6 +9,18 @@
       {{ error }}
     </div>
 
+    <b-pagination
+        @change="handlePageChange"
+        v-model="currentPage"
+        :total-rows="ordersTotalNum"
+        :per-page="paginationItemsPerPage"
+        pills
+        first-text="Prva"
+        prev-text="Pret"
+        next-text="Sled"
+        last-text="Posl"
+    ></b-pagination>
+
     <div class="ordertable table-responsive-md">
       <table class="table table-striped"  id="orders-list">
         <tr>
@@ -17,6 +29,7 @@
           <th>Kupac</th>
           <th>Napomena</th>
           <th>Adresa</th>
+          <th>Telefon</th>
           <th>Prosledi</th>
         </tr>
         <tbody>
@@ -32,16 +45,17 @@
             <td>{{ ord.customer.username }}</td>
             <td>{{ ord.noteCart }}</td>
             <td>{{ ord.address }}</td>
+            <td>{{ ord.phone }}</td>
             <td>
-              <b-button @click="forwardStatusTo(ord, index)" value="Prosledi" type="button" :id="'btn-sand-' + index">
-                {{ ord.status }}
+              <b-button @click="forwardStatusTo(ord, index)" value="Prosledi" type="button" :class="'status-' + ord.status" :id="'btn-sand-' + index">
+                {{ btnColorStatus(ord.status, index) }}
               </b-button>
             </td>
           </tr>
 
           <tr style="display: none" :id="'items-row-' + index">
-            <td colspan="5">
-              <table class="table table-bordered">
+            <td colspan="6">
+              <table :class="'table table-bordered status-' + ord.status">
               <tr>
                 <th>Index</th>
                 <th>Slika</th>
@@ -77,18 +91,6 @@
         </tbody>
       </table>
     </div>
-
-    <b-pagination
-        @change="handlePageChange"
-        v-model="currentPage"
-        :total-rows="ordersTotalNum"
-        :per-page="paginationItemsPerPage"
-        pills
-        first-text="First"
-        prev-text="Prev"
-        next-text="Next"
-        last-text="Last"
-    ></b-pagination>
 
   </div>
 </div>
@@ -128,6 +130,16 @@ name: "OrdersTable",
   },
 
   methods: {
+    btnColorStatus: function (status, index) {
+      // var colorStatus = document.getElementById('btn-sand-' + index);
+      if (status !== 'undefined' && status !== null && status !== '') {
+        if (status === 'cart') return 'Nova';
+        if (status === 'processing') return 'Priprema';
+        if (status === 'driving') return 'Transport';
+        if (status === 'delivered') return 'Preuzeto';
+      }
+    },
+
     handlePageChange(value) {
       this.pagePagin = value;
 
@@ -265,6 +277,19 @@ name: "OrdersTable",
 </script>
 
 <style scoped>
+.status-cart {
+  background-color: green;
+}
+.status-processing {
+  background-color: #B82227;
+}
+.status-driving {
+  background-color: darkorange;
+}
+.status-delivered {
+  background-color: lightskyblue;
+}
+
 .ordersdata {
   margin: 50px 0 50px 0;
 }
