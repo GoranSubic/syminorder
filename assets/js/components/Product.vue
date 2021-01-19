@@ -1,23 +1,21 @@
 <template>
-  <div class="container btncontainer">
-    <div class="row">
-        <b-button variant="success" class="col col-12" @click="addToCart(id, name, image, price, pricenumeric)">
-          <img class="sign plus" :src="plussign" alt="++" />
-        </b-button>
-    </div>
-    <div class="row">
-      <b-button-group class="col col-12 btnsgroup">
-        <b-button class="col col-6" variant="danger" @click="remFromCart(id)">
-          X
-        </b-button>
-        <b-button class="col col-6" variant="outline-secondary" disabled v-if="prodAmmount > 0">{{prodAmmount}}</b-button>
-      </b-button-group>
-    </div>
-    <div class="row">
-        <b-button variant="warning" class="col col-12" @click="decOneFromCart(id)">
-          <img class="sign minus" :src="minussign" alt="--" />
-        </b-button>
-    </div>
+  <div class="container-fluid btncontainer">
+<!--    <div class="row">-->
+    <b-button-group class="btnsgroup">
+      <b-button variant="warning" @click="decOneFromCart(id)">
+        <img class="sign minus" :src="minussign" alt="--" />
+      </b-button>
+
+      <b-button class="col col-6" variant="danger" @click="remFromCart(id)">
+        X
+      </b-button>
+      <b-button class="col col-6" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
+
+      <b-button variant="success" @click="addToCart(id, name, image, price, pricenumeric)">
+        <img class="sign plus" :src="plussign" alt="++" />
+      </b-button>
+    </b-button-group>
+<!--    </div>-->
   </div>
 </template>
 
@@ -49,7 +47,7 @@ export default {
       var productAmm = this.$store.getters.products.find(prod => {
         return prod.id === this.dataId
       });
-      return (typeof productAmm !== 'undefined' && productAmm.ammount > 0) ? productAmm.ammount : 0;
+      return (typeof productAmm !== 'undefined' && productAmm.ammount > 0) ? productAmm.ammount : '';
     },
   },
   methods: {
@@ -77,6 +75,10 @@ export default {
 .btncontainer, .btnsgroup {
   padding-right: 0;
   padding-left: 0;
+}
+
+.btnsgroup button {
+  width: 40px;
 }
 
 .row {

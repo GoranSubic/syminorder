@@ -2,14 +2,14 @@ $("#categories .row.category").click(function () {
     $(this).siblings(".container").children(".row.category").toggle();
 
     if($(this).siblings(".container").children(".row.category").is(':hidden')) {
-        $(this).siblings(".container").children(".row.category").siblings(".row.product").hide();
+        $(this).siblings(".container").children(".row.category").siblings(".row.products").hide();
         $(this).siblings(".container").children(".row.category").siblings(".container").children(".row.category").hide();
-        $(this).siblings(".container").children(".row.category").siblings(".container").children(".row.category").siblings(".row.product").hide();
+        $(this).siblings(".container").children(".row.category").siblings(".container").children(".row.category").siblings(".row.products").hide();
     }
 });
 
 $(".row.category").click(function(){
-    $(this).siblings(".row.product").toggle();
+    $(this).siblings(".row.products").toggle();
 });
 
 $("#categories .first.row.category").click(function (){

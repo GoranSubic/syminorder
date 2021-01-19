@@ -29,48 +29,48 @@
         </div>
     </div>
 
-    {% for product in category.products|filter(product => product.enabled) %}
-        <div class="row product category-{{ category.id }}" style="display: none;">
-            <div class="tblcol col-xs-12 col-sm-3 col-md-3">
-                {% if product.picture %}
-                    <img
-                            class="img-fluid prod-img"
-                            src="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
-                            alt="{{ product.picture.imageName }}"
-                    />
-                {% else %}
-                    No image!
-                {% endif %}
-            </div>
-            <div class="tblcol col-10 col-sm-7 col-md-7">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="float-left col-6 col-sm-6 col-md-8 prod-name"><u>{{ product.name }}</u></div>
-                        <div class="float-right col-6 col-sm-6 col-md-4 prod-price"><u>{{ (product.price/100)|format_currency("RSD", {fraction_digit: 2}) }}</u></div>
+    <div class="row products category-{{ category.id }}" style="display: none;">
+        {% for product in category.products|filter(product => product.enabled) %}
+            <div class="container-fluid product">
+                <div class="row">
+                    <div class="tblcol col-12 col-md-6">
+                        {% if product.picture %}
+                            <img
+                                    class="img-fluid prod-img"
+                                    src="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
+                                    alt="{{ product.picture.imageName }}"
+                            />
+                        {% else %}
+                            No image!
+                        {% endif %}
                     </div>
-                    <div class="panel-body">
-                        <div class="prod-desc">{{ product.description|raw }}</div>
+                    <div class="tblcol col-12 col-md-6">
+                        <div class="row">
+                                <div class="col-12">
+                                    <div class="float-left col-12 prod-name">{{ product.name }}</div>
+                                    <div class="col-12 prod-price">{{ (product.price/100)|format_currency("RSD", {fraction_digit: 2}) }}</div>
+                                </div>
+                                <div class="col-12">
+                                    {% if user_is_logged_in %}
+                                            <product
+                                                    v-bind:id="{{ product.id }}"
+                                                    name="{{ product.name }}"
+                                                    image="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
+                                                    price="{{ product.price|number_format(2, ',', '.') }}"
+                                                    v-bind:pricenumeric="{{ product.price }}"
+                                                    plussign="{{ asset("build/images/plus-solid.svg") }}"
+                                                    minussign="{{ asset("build/images/minus-solid.svg") }}"
+                                            >
+                                            </product>
+                                    {% else %}
+                                        <div class="prod-desc">{{ product.description|raw }}</div>
+                                    {% endif %}
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            {% if user_is_logged_in %}
-            <div class="tblcol col-2">
-                <div class="panel">
-                    <product
-                            v-bind:id="{{ product.id }}"
-                            name="{{ product.name }}"
-                            image="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
-                            price="{{ product.price|number_format(2, ',', '.') }}"
-                            v-bind:pricenumeric="{{ product.price }}"
-                            plussign="{{ asset("build/images/plus-solid.svg") }}"
-                            minussign="{{ asset("build/images/minus-solid.svg") }}"
-                    >
-                    </product>
-                </div>
-            </div>
-            {% endif %}
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 
 {% endif %}
