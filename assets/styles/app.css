@@ -126,7 +126,7 @@ body {
     max-height: 130px;
 }
 
-#categories .products .tblcol {
+#categories .tblcol {
     padding: 3px;
 
     display: flex;

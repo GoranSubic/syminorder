@@ -12,8 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/product-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/product-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" afterDir="false" />
     </list>
@@ -350,7 +348,7 @@
       <workItem from="1610985229752" duration="17496000" />
       <workItem from="1611004478719" duration="7612000" />
       <workItem from="1611052198404" duration="12606000" />
-      <workItem from="1611066946840" duration="13807000" />
+      <workItem from="1611066946840" duration="14747000" />
     </task>
     <servers />
   </component>
