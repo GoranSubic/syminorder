@@ -10,7 +10,11 @@
   </b-modal>-->
 
   <b-button v-b-modal.modal-tall :pressed="true" v-if="cartCount > 0" id="toggle-btn" @click="toggleModal" variant="secondary">
-    {{ cartCount + 'kom - ' + formatter.format(cartSum / 100) }}
+    <div class="info-wrapper">
+      <i class="fa fa-shopping-bag"></i>
+      <span>{{ cartCount }}</span>
+<!--      <span>{{ cartCount + ' - ' + formatter.format(cartSum / 100) }}</span>-->
+    </div>
   </b-button>
 
   <b-modal ref="my-modal" hide-footer :title="titleText" id="modal-tall" class="fade">
@@ -73,11 +77,11 @@
             </span>
           </div>
           <input type="text" id="cartUserName" class="form-control" aria-describedby="cartUserNameLabel"
-                 :data-user-id="userid" :value="datauname" aria-label="Username" disabled>
+                 :data-user-id="userid" :value="datauname" aria-label="Username" hidden disabled>
 
           <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
                  aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
-          <input v-if="tableid === 0" required v-model="dataphone" type="text" id="cartPhone" class="form-control" aria-describedby="cartUserNameLabel"
+          <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartUserNameLabel"
                  aria-label="Phone" placeholder="Broj telefona" @keyup="formChanged" @change="formChanged">
           <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
                  :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
@@ -283,6 +287,22 @@ export default {
 </script>
 
 <style scoped>
+#toggle-btn {
+  position: relative;
+  padding: 1px 12px 1px 12px !important;
+}
+#toggle-btn span {
+  position: absolute;
+  right: 1.4em;
+  top: 1em;
+  /*to fit on small screen*/
+  font-size: 0.8rem;
+}
+#toggle-btn .fa-shopping-bag {
+  color: #e15f63;
+  font-size: 2rem;
+}
+
 img {
   width: 100%;
 }

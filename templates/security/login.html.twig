@@ -26,15 +26,15 @@
                                 <h1 class="h3 mb-3 font-weight-normal">Ulogujte se da poručite</h1>
 
 
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                                <div class="row row-buttons">
+                                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 fb-button">
                                         <a href="{{ path('connect_facebook_start') }}" class="btn btn-primary facebook">
                                             <i class="fab fa-facebook"></i> <span>Facebook Login</span>
                                         </a>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 g-button">
                                         <a href="#" class="btn btn-primary google-plus disabled" tabindex="-1">
-                                            <i class="fab fa-google-plus"></i> Google Login
+                                            <i class="fab fa-google-plus"></i> <span>Google Login</span>
                                         </a>
                                     </div>
                                 </div>
@@ -87,52 +87,6 @@
                 </div>
             </div>
         </div>
-
-{#                <form method="post">#}
-{#                    {% if error %}#}
-{#                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
-{#                    {% endif %}#}
-
-{#                    {% if app.user %}#}
-{#                        <div class="mb-3">#}
-{#                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>#}
-{#                        </div>#}
-{#                    {% endif %}#}
-
-{#                    <h1 class="h3 mb-3 font-weight-normal">Ulogujte se da poručite</h1>#}
-
-{#                    <div>#}
-{#                        <div class="container">#}
-{#                            <a class="btn btn-lg btn-social btn-facebook" href="{{ path('connect_facebook_start') }}">#}
-{#                                <i class="fa fa-facebook fa-fw"></i> Uđi pomoću Facebooka#}
-{#                            </a>#}
-{#                        </div>#}
-{#                    </div>#}
-
-{#                    <label for="inputEmail">Email</label>#}
-{#                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>#}
-{#                    <label for="inputPassword">Password</label>#}
-{#                    <input type="password" name="password" id="inputPassword" class="form-control" required>#}
-
-{#                    <input type="hidden" name="_csrf_token"#}
-{#                           value="{{ csrf_token('authenticate') }}"#}
-{#                    >#}
-
-{#                    #}{##}
-{#                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
-{#                        See https://symfony.com/doc/current/security/remember_me.html#}
-{#                    #}
-{#                        <div class="checkbox mb-3">#}
-{#                            <label>#}
-{#                                <input type="checkbox" name="_remember_me"> Remember me#}
-{#                            </label>#}
-{#                        </div>#}
-
-{#                    <button class="btn btn-lg btn-primary" type="submit">#}
-{#                        Sign in#}
-{#                    </button>#}
-{#                </form>#}
-
     </div>
 
 {% endblock %}

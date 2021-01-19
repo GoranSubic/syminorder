@@ -17,6 +17,21 @@ body {
     flex-grow: 0;
     display: block;
 }
+
+#login-shopping {
+    margin-left: 10px;
+}
+#login-shopping .login-bag {
+    font-size: 2em;
+    padding-right: 0;
+    padding-top: 0%;
+}
+#login-shopping .login-text {
+    font-size: 0.8em;
+    padding-right: 0;
+    padding-top: 5%;
+}
+
 .header #mainNavbar {
     width: 100%;
     top: 0;
@@ -355,5 +370,17 @@ p {
     /* And disable the pointer events */
     pointer-events: none;
     cursor: default;
+}
+.login_wrapper a.google-plus.disabled span {
+    /* Make the disabled links grayish*/
+    color: white;
+}
+
+.login_wrapper .row-buttons {
+    display: flex;
+    justify-content: center;
+}
+.login_wrapper .row-buttons .fb-button, .login_wrapper .row-buttons .g-button {
+    max-width: 300px;
 }
 /*Login page end*/

@@ -8,22 +8,6 @@
     >
         <a class="navbar-brand" href="{{ path('homepage') }}"><strong>Olala</strong></a>
 
-        {% if user_is_logged_in %}
-            <shopping id="shopping" style="position: absolute; margin: 5px 0 0 50%; top: 0;"
-                      minussign="{{ asset("build/images/minus-solid.svg") }}"
-                      v-bind:datauname="dataUname"
-                      v-bind:userid="{{ app.user.id }}"
-                      v-bind:tableid="{{ table_id }}"
-                      tablename="{{ table_name }}"
-            ></shopping>
-        {% else %}
-        <ul class="navbar-nav mr-auto" id="loginbutton" style="position: absolute; margin: 5px 0 0 50%; top: 0;">
-            <li class="nav-item">
-                <a class="navbar-link" href="{{ path('app_login') }}"><strong>Login to order</strong></a>
-            </li>
-        </ul>
-        {% endif %}
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,11 +24,6 @@
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">
-                {% if user_is_logged_in %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_logout') }}"><strong>LogOut</strong></a>
-                    </li>
-                {% endif %}
                 <li class="nav-item">
                     <a href="https://www.facebook.com/olalazr/" target="_blank" class="nav-link"><i class="fab fa-facebook"> </i></a>
                 </li>
@@ -54,7 +33,37 @@
                 <li class="nav-item">
                     <a href="https://www.instagram.com/olalazrenjanin/" target="_blank" class="nav-link"><i class="fab fa-instagram"> </i></a>
                 </li>
+                {% if user_is_logged_in %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}"><strong>LogOut</strong></a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
+
+        <ul class="navbar-nav mr-auto" id="login-shopping">
+            <li class="nav-item">
+            {% if user_is_logged_in %}
+                <shopping id="shopping"
+                          minussign="{{ asset("build/images/minus-solid.svg") }}"
+                          v-bind:datauname="dataUname"
+                          v-bind:userid="{{ app.user.id }}"
+                          v-bind:tableid="{{ table_id }}"
+                          tablename="{{ table_name }}"
+                ></shopping>
+            {% else %}
+                <a class="navbar-link" href="{{ path('app_login') }}">
+                    <div class="row">
+                        <div class="col-4 login-bag"><i class="fa fa-shopping-bag"></i></div>
+                        <div class="col-8 login-text">
+                            <div>LogIn</div>
+                            <div>Poručite</div>
+                        </div>
+                    </div>
+                </a>
+            {% endif %}
+            </li>
+        </ul>
+
     </div>
 </nav>

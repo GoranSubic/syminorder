@@ -162,7 +162,7 @@ name: "OrdersTable",
         this.orderItems = itemsArr;
         ord.show = true;
         itemsRow.style.display = 'table-row';
-        showHide.innerHTML = 'Sakri';
+        showHide.innerHTML = 'Skupi';
       }
     },
 
@@ -225,6 +225,15 @@ name: "OrdersTable",
 }
 
 .ordertable img {
-  width: 30%;
+  width: 100%;
+}
+
+table a {
+  color: #db4c3e !important;
+  line-height: 12px;
+  text-decoration: underline !important;
+}
+table a:hover {
+  cursor:pointer;
 }
 </style>
