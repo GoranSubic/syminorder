@@ -301,7 +301,7 @@ name: "OrdersTable",
 }
 
 .ordertable img {
-  width: 100%;
+  width: 70%;
 }
 
 table a {

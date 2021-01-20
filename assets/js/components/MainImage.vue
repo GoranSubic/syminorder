@@ -2,9 +2,11 @@
   <div @scroll="scrollMe">
     <!--<div id="scrollcounter">0px</div>-->
     <div class="greet" id="headerimage" :style="headerHeight">
-      <h2>{{ welcome }} {{ datauname }}</h2>
-      <div class="subtitle" id="subtitleBox">
-        <div class="sub1">{{ meal }}</div>
+      <div class="greet-message">
+        <h2>{{ welcome }} {{ datauname }}</h2>
+        <div class="subtitle" id="subtitleBox">
+          <div class="sub1">{{ meal }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -67,20 +69,22 @@ export default {
   right: 0;
   position: fixed;
   z-index: 1;
-  background-image: url('../../media/greet-bckg.jpg');
-  filter: grayscale(50%);
+  background-image: url('../../media/greet-home.jpeg');
+  /*filter: grayscale(50%);*/
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
   transition-duration: 0.5s;
 }
+.greet .greet-message {
+  position: absolute;
+  top: 30%;
+}
 .greet h2 {
   font-size: 3em;
   color: #fff;
   text-shadow: 3px 5px 5px black;
-  position: absolute;
-  top: 40%;
   margin: 0 0 0 5%;
   left: 0;
   right: 0;
@@ -90,8 +94,6 @@ export default {
   font-size: 2em;
   color: #fff;
   text-shadow: 3px 5px 5px black;
-  position: absolute;
-  top: 50%;
   margin: 0.5% 0 0 5%;
   left: 0;
   right: 0;

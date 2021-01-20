@@ -75,10 +75,11 @@ export default {
 .btncontainer, .btnsgroup {
   padding-right: 0;
   padding-left: 0;
+  width: 95%;
 }
 
 .btnsgroup button {
-  width: 40px;
+  width: 25%;
 }
 
 .row {

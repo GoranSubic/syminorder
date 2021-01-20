@@ -1,20 +1,12 @@
 <template>
 <div>
-<!--  <b-button v-b-modal.modal-tall>Launch overflowing modal</b-button>
-
-  <b-modal id="modal-tall" title="Overflowing Content">
-    <p class="my-4" v-for="i in 20" :key="i">
-      Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-      in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-    </p>
-  </b-modal>-->
-
   <b-button v-b-modal.modal-tall :pressed="true" v-if="cartCount > 0" id="toggle-btn" @click="toggleModal" variant="secondary">
-    <div class="info-wrapper">
+    <span class="info-wrapper">
       <i class="fa fa-shopping-bag"></i>
-      <span>{{ cartCount }}</span>
+      <span class="cart-count">{{ cartCount }}</span>
 <!--      <span>{{ cartCount + ' - ' + formatter.format(cartSum / 100) }}</span>-->
-    </div>
+    </span>
+    <span> <span class="cart-sigma">  &Sigma;</span>{{ formatter.format(cartSum / 100) }}</span>
   </b-button>
 
   <b-modal ref="my-modal" hide-footer :title="titleText" id="modal-tall" class="fade">
@@ -291,9 +283,9 @@ export default {
   position: relative;
   padding: 1px 12px 1px 12px !important;
 }
-#toggle-btn span {
+#toggle-btn span.cart-count {
   position: absolute;
-  right: 1.4em;
+  left: 1.5em;
   top: 1em;
   /*to fit on small screen*/
   font-size: 0.8rem;
@@ -301,6 +293,9 @@ export default {
 #toggle-btn .fa-shopping-bag {
   color: #e15f63;
   font-size: 2rem;
+}
+#toggle-btn span.cart-sigma {
+  font-size: 0.8rem;
 }
 
 img {
