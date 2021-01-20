@@ -7,32 +7,34 @@
 <div id="login-page">
     <div class="login-page container">
         <div class="login-page content">
-            {% if registrationInfo is defined and registrationInfo is not null and registrationInfo is not empty %}
-                <div class="alert alert-info" role="alert">{{ registrationInfo }}</div>
-            {% endif %}
-            {% for flashError in app.flashes('verify_email_error') %}
-                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-            {% endfor %}
+            <div class="row">
+                {% if registrationInfo is defined and registrationInfo is not null and registrationInfo is not empty %}
+                    <div class="alert alert-info" role="alert">{{ registrationInfo }}</div>
+                {% endif %}
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
 
-            <h1>Register</h1>
+                <h1>Register</h1>
 
-            <div class="login_wrapper">
-                {{ form_start(registrationForm) }}
-                <div class="input_fields">
-                    <div class="col-md-8">
-                        {{ form_row(registrationForm.username) }}
-                        {{ form_row(registrationForm.email) }}
-                        {{ form_row(registrationForm.plainPassword, {
-                            label: 'Password'
-                        }) }}
-                        {{ form_row(registrationForm.agreeTerms) }}
+                <div class="login_wrapper">
+                    {{ form_start(registrationForm) }}
+                    <div class="input_fields">
+                        <div class="col-md-8">
+                            {{ form_row(registrationForm.username) }}
+                            {{ form_row(registrationForm.email) }}
+                            {{ form_row(registrationForm.plainPassword, {
+                                label: 'Password'
+                            }) }}
+                            {{ form_row(registrationForm.agreeTerms) }}
 
-                        <div class="login_btn_wrapper">
-                            <button type="submit" class="btn btn-lg btn-primary login_btn">Register</button>
+                            <div class="login_btn_wrapper">
+                                <button type="submit" class="btn btn-lg btn-primary login_btn">Register</button>
+                            </div>
                         </div>
                     </div>
+                    {{ form_end(registrationForm) }}
                 </div>
-                {{ form_end(registrationForm) }}
             </div>
         </div>
     </div>

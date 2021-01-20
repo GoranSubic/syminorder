@@ -20,6 +20,7 @@ class RegistrationFormType extends AbstractType
             ->add('username')
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
+                'label' => 'Opšti uslovi',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -37,7 +38,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Password treba da bude barem {{ limit }} karaktera',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
