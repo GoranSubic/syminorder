@@ -3,7 +3,8 @@
     <!--<div id="scrollcounter">0px</div>-->
     <div class="greet" id="headerimage" :style="headerHeight">
       <div class="greet-message">
-        <h2>{{ welcome }} {{ datauname }}</h2>
+<!--        <h2>{{ welcome }} {{ datauname }}</h2>-->
+        <h2>{{ welcome }}</h2>
         <div class="subtitle" id="subtitleBox">
           <div class="sub1">{{ meal }}</div>
         </div>

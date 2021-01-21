@@ -46,6 +46,14 @@ footer address {
     padding-top: 5%;
 }
 
+li.user-logout {
+    line-height: 0.7em;
+}
+.nav-item .user-name {
+    font-size: 0.7em;
+    color: #e15f63;
+}
+
 .header #mainNavbar {
     width: 100%;
     top: 0;
