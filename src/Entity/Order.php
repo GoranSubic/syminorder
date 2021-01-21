@@ -38,7 +38,7 @@ use function Webmozart\Assert\Tests\StaticAnalysis\false;
  *              "normalization_context"={"groups"="order:item"},
  *     },
  *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
- *     "put"={"security"="is_granted('ROLE_USER') and object.getOwner() == user",
+ *     "put"={"security"="is_granted('ROLE_USER') and object.getCustomer() == user",
  *              "security_message"="Only the creator can edit a order!"
  *      },
  *     "patch"={
@@ -56,6 +56,8 @@ use function Webmozart\Assert\Tests\StaticAnalysis\false;
  *  subresourceOperations={
  *     "api_users_orders_get_subresource"={
  *         "method"="GET",
+ *     "security"="is_granted('ROLE_USER')",
+ *     "security_message"="Only workers can get collections of a orderItems!",
  *         "normalization_context"={"groups"={"suborder"}}
  *     }
  *  }

@@ -17,21 +17,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  *  attributes={"security"="is_granted('ROLE_USER')"},
  *  collectionOperations={
  *     "get"={
- *              "security"="is_granted('ROLE_USER') and object == user",
+ *              "security"="is_granted('ROLE_ADMIN')",
  *              "security_message"="Only the user can see their data!",
- *      },
- *     "post"
- *     },
+ *      }},
  *  itemOperations={
  *     "get"={
- *              "security"="is_granted('ROLE_ADMIN')",
- *     },
- *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
- *     "put"={
  *              "security"="is_granted('ROLE_USER') and object == user",
- *              "security_message"="Only the user can edit their data!"
- *      },
- *     },
+ *     }},
  *  order={"createdAt"="DESC"},
  *  paginationEnabled=true,
  *  attributes={

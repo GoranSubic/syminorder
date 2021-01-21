@@ -20,6 +20,7 @@ body {
 }
 
 footer {
+    width: 100%;
     color: #999999;
     /*background-color: #2b3c54 !important;*/
 }
@@ -32,6 +33,7 @@ footer address {
 
 #login-shopping {
     margin-left: 10px;
+    margin-right: 0 !important;
 }
 #login-shopping .login-bag {
     font-size: 2em;
@@ -57,7 +59,7 @@ footer address {
     content: url("../media/logo.png");
     width: 65px;
     display: inline-block;
-    opacity: 0.5;
+    opacity: 0.9;
     padding: 0 10px 0 10px;
 }
 
@@ -72,11 +74,12 @@ footer address {
 #btnOutline {
     text-align: center;
     position: absolute;
-    top: 55%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     /*transition: 0.5s;*/
     z-index: 2;
+    border-width: thick;
 }
 #btnOutline.hideBtn {
     visibility: hidden;
@@ -88,11 +91,11 @@ footer address {
     line-height: 18px;
 }
 
-/*#categories {
-    min-height: 95vh;
+#categories {
+    min-height: 100vh;
 }
 
-#categories .container {
+/*#categories .container {
     padding-right: 0;
 }*/
 
@@ -112,6 +115,8 @@ footer address {
 #categories .row.products .product {
     max-width: 50%;
     margin-bottom: 10px;
+    margin-left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 2px 4px rgba(0, 0, 0, .23);
 }
 #categories .row.products {
     margin: 0 !important;
@@ -126,12 +131,14 @@ footer address {
 }
 
 #categories .row.category:not(.first) img, #categories .row.category:not(.first) .panel {
-    min-height: 130px;
-    max-height: 150px;
+    /*min-height: 130px;
+    max-height: 150px;*/
+    height: 140px;
 }
 #categories .first.row.category img, #categories .first.row.category .panel {
-    min-height: 160px;
-    max-height: 180px;
+    /*min-height: 160px;
+    max-height: 180px;*/
+    height: 140px;
 }
 #categories .products .tblcol {
     /*min-height: 100px;

@@ -11,7 +11,7 @@
                 <img
                     class="img-fluid"
                     src="{{ vich_uploader_asset(category.picture, 'imageFile') }}"
-                    alt="{{ category.picture.imageName }}"
+                    alt="{{ category.name }}"
                 />
             {% else %}
                 No image!
@@ -38,7 +38,7 @@
                             <img
                                     class="img-fluid prod-img"
                                     src="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
-                                    alt="{{ product.picture.imageName }}"
+                                    alt="{{ product.name }}"
                             />
                         {% else %}
                             No image!

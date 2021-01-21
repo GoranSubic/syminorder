@@ -14,8 +14,16 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\HasLifecycleCallbacks()
  *
  * @ApiResource(
- *  collectionOperations={"get"={"normalization_context"={"groups"="orderitem:list"}}},
- *  itemOperations={"get"={"normalization_context"={"groups"="orderitem:item"}}},
+ *  collectionOperations={"get"={
+ *     "security"="(is_granted('ROLE_USER') and object.getOrderRef().getCustomer() == user) or is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *     "security_message"="Only workers can get collections of a orderItems!",
+ *     "normalization_context"={"groups"="orderitem:list"},}
+ *     },
+ *  itemOperations={"get"={
+ *     "security"="(is_granted('ROLE_USER') and object.getOrderRef().getCustomer() == user) or is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *     "security_message"="Only the creator can get orderItem!",
+ *     "normalization_context"={"groups"="orderitem:item"},}
+ *     },
  *  order={"product"="DESC"},
  *  paginationEnabled=false
  * )
