@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Entity\City;
 use App\Entity\Product;
 use App\Entity\ProductPicture;
 use App\Entity\User;
@@ -45,6 +46,7 @@ class DashboardController extends AbstractDashboardController
 
             // the path defined in this method is passed to the Twig asset() function
 //            ->setFaviconPath('favicon.svg')
+            ->setFaviconPath('favicon.ico')
 
             // the domain used by default is 'messages'
 //            ->setTranslationDomain('admin')
@@ -54,6 +56,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         return [
+            MenuItem::linktoRoute('Ponuda Front', 'fa fa-shopping-bag', 'homepage'),
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
             MenuItem::section('Category'),
@@ -67,6 +70,9 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('Users'),
             MenuItem::linkToCrud('Users List', 'fa fa-file', User::class),
+
+            MenuItem::section('Cities'),
+            MenuItem::linkToCrud('Cities list', 'fa fa-file', City::class),
 
             MenuItem::section("Logout"),
             MenuItem::linkToLogout('Logout', 'fa fa-exit'),

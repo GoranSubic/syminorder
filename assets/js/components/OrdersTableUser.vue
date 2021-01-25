@@ -53,16 +53,16 @@
                 </td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.quantity }}</td>
-                <td>{{ formatter.format(item.price/100) }}</td>
-                <td>{{ formatter.format(item.itemSum/100) }}</td>
+                <td>{{ formatterNumber.format(item.price/100) }}</td>
+                <td>{{ formatterNumber.format(item.itemSum/100) }}</td>
               </tr>
               <tr>
                 <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Dostava:</td>
+                <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
                 <td><b>Suma:</b></td>
-                <td><b>{{ formatter.format(orderSum/100) }}</b></td>
+                <td>{{ formatterNumber.format(orderSum/100) }}</td>
+                <td><b>{{ formatter.format((ord.deliveryPrice+orderSum)/100) }}</b></td>
               </tr>
             </table>
             </td>
@@ -195,6 +195,10 @@ name: "OrdersTable",
       currency: 'RSD',
       minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
       maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
+    });
+    this.formatterNumber= new Intl.NumberFormat('sr', {
+      minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+      maximumFractionDigits: 2,
     });
   }
 }

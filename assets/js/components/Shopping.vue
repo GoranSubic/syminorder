@@ -4,9 +4,8 @@
     <span class="info-wrapper">
       <i class="fa fa-shopping-bag"></i>
       <span class="cart-count">{{ cartCount }}</span>
-<!--      <span>{{ cartCount + ' - ' + formatter.format(cartSum / 100) }}</span>-->
     </span>
-    <span> <span class="cart-sigma">  &Sigma;</span>{{ formatter.format(cartSum / 100) }}</span>
+    <span> <span class="cart-sigma">  &Sigma;</span>{{ formatter.format(cartSumWithDelivery / 100) }}</span>
   </b-button>
 
   <b-modal ref="my-modal" hide-footer :title="titleText" id="modal-tall" class="fade">
@@ -78,6 +77,19 @@
           <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
                  :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
         </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="cartCityLabel">
+                <i class="fas fa-table prefix"></i>
+              </span>
+            </div>
+            <b-form-select required v-model="cityselected" :options="cities" id="cartCity" class="form-control"
+                           aria-describedby="cartCityLabel" @change="formChanged">
+            </b-form-select>
+
+            <input id="cartDeliveryPrice" class="form-control" aria-describedby="cartCityLabel"
+                          :value="formatter.format(cityDeliveryCalc / 100)" disabled>
+        </div>
 
         <b-button v-if="cartCount > 0" id="btnFormSbm" @click="checkForm" variant="outline-success" block type="button">Prosledi</b-button>
       </form>
@@ -128,6 +140,8 @@ export default {
       error: '',
       validationErrors: [],
       isLoading: false,
+      cities: [],
+      cityselected: '',
     }
   },
   props: {
@@ -141,7 +155,13 @@ export default {
     titleText() {
       var txt = 'U korpi imate ' + this.cartCount + ' artikal(a)';
       if(this.cartCount > 0) {
-        txt += ' u iznosu od ' + this.formatter.format(this.cartSum / 100);
+        txt += ' u iznosu od ' + this.formatter.format(this.cartProductsSum / 100);
+      }
+      if (this.cityDeliveryCalc > 0) {
+        txt += '\nCena dostave: ' + this.formatter.format(this.cityDeliveryCalc / 100);
+      }
+      if (this.cartSumWithDelivery > 0) {
+        txt += '\nUkupno: ' + this.formatter.format(this.cartSumWithDelivery / 100);
       }
       return txt;
     },
@@ -154,12 +174,29 @@ export default {
     cartCount() {
       return this.StoreCart.length;
     },
-    cartSum() {
+    cartProductsSum() {
       var sum = 0;
       this.$store.getters.products.forEach(prod => {
         sum += (prod.priceNumeric * prod.ammount);
       });
       return (sum !== 'undefined' && sum > 0) ? (sum) : '';
+    },
+    cityDeliveryCalc() {
+      var calc = 0;
+      if (this.cityselected !== 'undefined' && this.cityselected.price !== 'undefined') {
+        if (this.cityselected.deliveryFree === 'undefined'
+            || (this.cityselected.deliveryFree === 0)
+            || (this.cityselected.deliveryFree > this.cartProductsSum))
+          calc = this.cityselected.price;
+      }
+      return calc;
+    },
+    cartSumWithDelivery() {
+      var sum = 0;
+      if (this.cartProductsSum !== 'undefined') sum += this.cartProductsSum;
+      if (this.cityDeliveryCalc !== 'undefined') sum += this.cityDeliveryCalc;
+
+      return sum;
     },
   },
   methods: {
@@ -182,7 +219,7 @@ export default {
     },
 
     checkForm(e) {
-      if ((this.dataaddress && this.dataphone) || this.tableid) {
+      if ((this.cityselected && this.dataaddress && this.dataphone) || this.tableid) {
         // return true;
         this.handleSubmit();
       }
@@ -190,8 +227,10 @@ export default {
       this.validationErrors = [];
 
       if (!this.tableid) {
-        if (!this.dataaddress || this.dataaddress === '' || !this.dataphone || this.dataphone === '')
-        this.validationErrors.push('Adresa i telefon su obavezni!');
+        if (!this.cityselected || this.cityselected === ''
+            || !this.dataaddress || this.dataaddress === ''
+            || !this.dataphone || this.dataphone === '')
+        this.validationErrors.push('Mesto, adresa i telefon su obavezni!');
       }
     },
 
@@ -200,7 +239,7 @@ export default {
       this.dataaddress = document.getElementById("cartAddress").value;
       this.dataphone = document.getElementById("cartPhone").value;
 
-      this.$store.dispatch("changeTextData", this.datanote, this.dataaddress, this.dataphone);
+      this.$store.dispatch("changeTextData", this.datanote, this.cityselected.name, this.dataaddress, this.dataphone);
     },
 
     itemsArray() {
@@ -233,6 +272,7 @@ export default {
           "items": JSON.parse(this.itemsArray()),
           "noteCart": this.datanote,
           "noteAdmin": "",
+          "cityName": this.cityselected.name,
           "address": this.dataaddress,
           "phone": this.dataphone,
           "status": "cart",
@@ -242,6 +282,7 @@ export default {
           "transportAt": null,
           "deliveredAt": null,
           "updatedAt": new Date(),
+          "deliveryPrice": this.cityselected.price,
         })
         .then(response => {
           // console.log(response.data);
@@ -262,8 +303,32 @@ export default {
         this.$store.dispatch('clearStore');
       })
     },
+    retrieveCityList() {
+      var urlGet = 'api/cities?position[gte]=1';
+      var paramsGet = {};
+
+      axios.get(urlGet, {
+        params: paramsGet
+      })
+          .then(response => {
+            // JSON responses are automatically parsed.
+            var resp = response.data["hydra:member"];
+            resp.forEach(city => {
+              var obj = {
+                text: city.name,
+                value: city
+              };
+
+              this.cities.push(obj);
+            });
+          })
+          .catch(e => {
+            this.errors.push(e)
+          });
+    },
   },
   created() {
+    this.retrieveCityList();
     this.formatter= new Intl.NumberFormat('sr', {
       style: 'currency',
       currency: 'RSD',

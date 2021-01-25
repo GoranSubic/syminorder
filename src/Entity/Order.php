@@ -15,7 +15,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
-use function Webmozart\Assert\Tests\StaticAnalysis\false;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
@@ -105,6 +104,14 @@ class Order
     private $noteAdmin;
 
     /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     *
+     * @Assert\NotBlank()
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
+     */
+    private $cityName;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @Assert\NotBlank()
@@ -183,6 +190,13 @@ class Order
      * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(name="delivery_price", type="integer", nullable=true)
+     *
+     * @Groups({"order:list", "order:item", "order:write", "suborder"})
+     */
+    private $deliveryPrice;
 
     public function __construct()
     {
@@ -279,6 +293,22 @@ class Order
     public function setNoteAdmin($noteAdmin = null): void
     {
         $this->noteAdmin = $noteAdmin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCityName()
+    {
+        return $this->cityName;
+    }
+
+    /**
+     * @param mixed $cityName
+     */
+    public function setCityName($cityName): void
+    {
+        $this->cityName = $cityName;
     }
 
     /**
@@ -449,6 +479,22 @@ class Order
         }
 
         return $total;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeliveryPrice()
+    {
+        return $this->deliveryPrice;
+    }
+
+    /**
+     * @param mixed $deliveryPrice
+     */
+    public function setDeliveryPrice($deliveryPrice): void
+    {
+        $this->deliveryPrice = $deliveryPrice;
     }
 
 }
