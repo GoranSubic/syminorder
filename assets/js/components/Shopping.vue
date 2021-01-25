@@ -52,32 +52,34 @@
         </div>
 
         <div class="form-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="cartNoteLabel">
-              <i class="fas fa-tasks prefix"></i>
-            </span>
-          </div>
-          <textarea type="text" id="cartNote" class="form-control form-control-sm" aria-describedby="cartNoteLabel"
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="cartNoteLabel">
+                <i class="fas fa-tasks prefix"></i>
+              </span>
+            </div>
+            <textarea type="text" id="cartNote" class="form-control form-control-sm" aria-describedby="cartNoteLabel"
                     rows="2" placeholder="Kratka napomena" @keyup="formChanged" @change="formChanged"></textarea>
-        </div>
+          </div>
 
-        <div class="input-group">
-          <div class="input-group-prepend">
+
+          <div class="input-group">
+            <div class="input-group-prepend">
             <span class="input-group-text" id="cartUserNameLabel">
               <i class="fas fa-table prefix"></i>
             </span>
-          </div>
-          <input type="text" id="cartUserName" class="form-control" aria-describedby="cartUserNameLabel"
-                 :data-user-id="userid" :value="datauname" aria-label="Username" hidden disabled>
+            </div>
+            <input type="text" id="cartUserName" class="form-control" aria-describedby="cartUserNameLabel"
+                   :data-user-id="userid" :value="datauname" aria-label="Username" hidden disabled>
 
-          <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
-                 aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
-          <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartUserNameLabel"
-                 aria-label="Phone" placeholder="Broj telefona" @keyup="formChanged" @change="formChanged">
-          <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
-                 :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
-        </div>
-        <div class="input-group">
+            <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
+                   aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
+            <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartUserNameLabel"
+                   aria-label="Phone" placeholder="Broj telefona" @keyup="formChanged" @change="formChanged">
+            <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
+                   :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
+          </div>
+          <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="cartCityLabel">
                 <i class="fas fa-table prefix"></i>
@@ -88,19 +90,20 @@
             </b-form-select>
 
             <input id="cartDeliveryPrice" class="form-control" aria-describedby="cartCityLabel"
-                          :value="formatter.format(cityDeliveryCalc / 100)" disabled>
+                   :value="formatter.format(cityDeliveryCalc / 100)" disabled>
+          </div>
+
         </div>
 
         <b-button v-if="cartCount > 0" id="btnFormSbm" @click="checkForm" variant="outline-success" block type="button">Prosledi</b-button>
       </form>
 
       <div class="footer">
-        <p>Isporuka se vrši u najkraćem mogućem roku.</p>
+        <p>Rok za isporuku hrane na kućnu adresu u Zrenjaninu je 60 minuta a za okolna sela je 120 minuta.</p>
         <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Porudžbine</p>
       </div>
     </div>
   </b-modal>
-
 
   <b-modal ref="response-modal" hide-footer hide-header id="modal-response" class="fade">
     <div class="d-block text-center">
@@ -158,10 +161,10 @@ export default {
         txt += ' u iznosu od ' + this.formatter.format(this.cartProductsSum / 100);
       }
       if (this.cityDeliveryCalc > 0) {
-        txt += '\nCena dostave: ' + this.formatter.format(this.cityDeliveryCalc / 100);
+        txt += ' + Cena dostave: ' + this.formatter.format(this.cityDeliveryCalc / 100);
       }
       if (this.cartSumWithDelivery > 0) {
-        txt += '\nUkupno: ' + this.formatter.format(this.cartSumWithDelivery / 100);
+        txt += ' = Ukupno: ' + this.formatter.format(this.cartSumWithDelivery / 100);
       }
       return txt;
     },
@@ -370,6 +373,10 @@ img {
 form div.striped-row {
   background: #e0e0e0;
   margin-bottom: 3px;
+}
+
+form #cartCity, #cartDeliveryPrice, #cartAddress, #cartPhone {
+  width: 45%;
 }
 
 /*text in form*/
