@@ -37,7 +37,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *              "normalization_context"={"groups"="order:item"},
  *     },
  *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
- *     "put"={"security"="is_granted('ROLE_USER') and object.getOwner() == user",
+ *     "put"={"security"="is_granted('ROLE_USER') and object.getCustomer() == user",
  *              "security_message"="Only the creator can edit a order!"
  *      },
  *     "patch"={
@@ -55,6 +55,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *  subresourceOperations={
  *     "api_users_orders_get_subresource"={
  *         "method"="GET",
+ *     "security"="is_granted('ROLE_USER')",
+ *     "security_message"="Only workers can get collections of a orderItems!",
  *         "normalization_context"={"groups"={"suborder"}}
  *     }
  *  }
@@ -106,7 +108,6 @@ class Order
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      *
-     * @Assert\NotBlank()
      * @Groups({"order:list", "order:item", "order:write", "suborder"})
      */
     private $cityName;

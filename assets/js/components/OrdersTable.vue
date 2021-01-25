@@ -207,7 +207,7 @@ name: "OrdersTable",
           if (error.response.data.error) {
             this.error = error.response.data.error;
           } else {
-            this.error = 'Unkown error!';
+            this.error = 'Sistemska greska!';
           }
         });
     },

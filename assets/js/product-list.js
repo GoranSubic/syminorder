@@ -12,6 +12,7 @@ $(".row.category").click(function(){
     $(this).siblings(".row.products").toggle();
 });
 
+/*
 $("#categories .first.row.category").click(function (){
     if($(this).hasClass("animated")) {
         $(this).removeClass("animated");
@@ -20,4 +21,4 @@ $("#categories .first.row.category").click(function (){
         $(this).addClass("animated");
         $(this).animate({ width: "95%" }, 1000 );
     }
-});
+});*/

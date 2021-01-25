@@ -11,18 +11,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainImage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201121175728.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201227125017.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210114221143.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210114221202.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/product-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/product-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/categories_data.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/products_list/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,21 +194,21 @@
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
       <path value="$PROJECT_DIR$/vendor/webonyx/graphql-php" />
       <path value="$PROJECT_DIR$/vendor/symfony/proxy-manager-bridge" />
-      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/fig/link-util" />
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
+      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -361,7 +372,7 @@
       <workItem from="1611142523448" duration="4216000" />
       <workItem from="1611146965093" duration="5466000" />
       <workItem from="1611153978074" duration="1618000" />
-      <workItem from="1611602835906" duration="4823000" />
+      <workItem from="1611602835906" duration="5598000" />
     </task>
     <servers />
   </component>

@@ -293,7 +293,7 @@ export default {
           if (error.response.data.error) {
             this.error = error.response.data.error;
           } else {
-            this.error = 'Unkown error!';
+            this.error = 'Sistemska greska!';
           }
 
         btn.disabled = false;
@@ -385,6 +385,7 @@ form div.striped-row {
 }
 .ellipsis span {
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   white-space: nowrap;
