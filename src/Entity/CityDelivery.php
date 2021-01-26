@@ -5,7 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
-use App\Repository\CityRepository;
+use App\Repository\CityDeliveryRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -22,9 +22,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  *  order={"position"="ASC"},
  * )
  * @ApiFilter(RangeFilter::class, properties={"position"})
- * @ORM\Entity(repositoryClass=CityRepository::class)
+ * @ORM\Entity(repositoryClass=CityDeliveryRepository::class)
  */
-class City
+class CityDelivery
 {
     /**
      * @ORM\Id
@@ -40,6 +40,13 @@ class City
      * @Groups({"city:list"})
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @Groups({"city:list"})
+     */
+    private $address;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -89,6 +96,22 @@ class City
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address): void
+    {
+        $this->address = $address;
     }
 
     /**

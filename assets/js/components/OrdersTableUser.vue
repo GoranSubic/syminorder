@@ -46,7 +46,7 @@
               </tr>
               <tr v-for="(item, indexitem) in orderItems" :key="indexitem">
                 <td>
-                  {{ index + 1 }}
+                  {{ indexitem + 1 }}
                 </td>
                 <td>
                   <img class="img-thumbnail" :src="item.image" :alt="item.name">
@@ -60,7 +60,7 @@
                 <td></td>
                 <td>Dostava:</td>
                 <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
-                <td><b>Suma:</b></td>
+                <td>Suma:</td>
                 <td>{{ formatterNumber.format(orderSum/100) }}</td>
                 <td><b>{{ formatter.format((ord.deliveryPrice+orderSum)/100) }}</b></td>
               </tr>

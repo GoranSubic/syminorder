@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use App\Entity\Category;
 
@@ -43,6 +44,7 @@ class Product
     /**
      * @ORM\Column(name="name", type="string", length=30)
      *
+     * @Assert\NotBlank()
      * @Groups({"product:list", "product:item", "order:list", "suborder"})
      */
     private $name;
@@ -62,6 +64,7 @@ class Product
      *
      * @ORM\Column(name="price", type="integer")
      *
+     * @Assert\NotBlank()
      * @Groups({"order:list", "suborder"})
      */
     private $price;
@@ -77,6 +80,7 @@ class Product
      *
      * @ORM\OneToOne(targetEntity="App\Entity\ProductPicture", mappedBy="product", cascade={"persist", "remove"})
      *
+     * @Assert\NotBlank()
      * @Groups({"order:list", "suborder"})
      */
     private $picture;
@@ -86,6 +90,14 @@ class Product
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @ORM\Column(name="code", type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
+     * @Groups({"product:list", "product:item", "order:list", "suborder"})
+     */
+    private $code;
 
     /**
      * @return int
@@ -226,4 +238,21 @@ class Product
     {
         $this->category = $category;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param mixed $code
+     */
+    public function setCode($code): void
+    {
+        $this->code = $code;
+    }
+
 }

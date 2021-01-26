@@ -34,6 +34,7 @@ class ProductCrudController extends AbstractCrudController
         $fields = [
             BooleanField::new('enabled', 'Uključeno'),
             TextField::new('name', 'Naziv'),
+            TextField::new('code', 'Code'),
             TextEditorField::new('description', 'Opis'),
             MoneyField::new('price', 'Cena Money')
                 ->setCurrency("RSD")

@@ -3,7 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
-use App\Entity\City;
+use App\Entity\CityDelivery;
 use App\Entity\Product;
 use App\Entity\ProductPicture;
 use App\Entity\User;
@@ -71,8 +71,8 @@ class DashboardController extends AbstractDashboardController
             MenuItem::section('Users'),
             MenuItem::linkToCrud('Users List', 'fa fa-file', User::class),
 
-            MenuItem::section('Cities'),
-            MenuItem::linkToCrud('Cities list', 'fa fa-file', City::class),
+            MenuItem::section('City Delivery'),
+            MenuItem::linkToCrud('Lista naselja', 'fa fa-file', CityDelivery::class),
 
             MenuItem::section("Logout"),
             MenuItem::linkToLogout('Logout', 'fa fa-exit'),

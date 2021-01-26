@@ -11,7 +11,7 @@
       </b-button>
       <b-button class="col col-6" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
 
-      <b-button variant="success" @click="addToCart(id, name, image, price, pricenumeric)">
+      <b-button variant="success" @click="addToCart(id, name, productcode, image, price, pricenumeric)">
         <img class="sign plus" :src="plussign" alt="++" />
       </b-button>
     </b-button-group>
@@ -36,6 +36,7 @@ export default {
   props: {
     "id" : Number,
     "name": String,
+    "productcode": String,
     "image": String,
     "price": String,
     "pricenumeric": Number,
@@ -51,10 +52,11 @@ export default {
     },
   },
   methods: {
-    addToCart(id, name, image, price, priceNumeric) {
+    addToCart(id, name, productCode, image, price, priceNumeric) {
       var product = {
         id: id,
         name: name,
+        productCode: productCode,
         image: image,
         price: price,
         priceNumeric: priceNumeric,

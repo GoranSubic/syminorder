@@ -9,11 +9,15 @@
   </b-button>
 
   <b-modal ref="my-modal" hide-footer :title="titleText" id="modal-tall" class="fade">
-    <div class="d-block text-center">
-      <h4>
-        <span v-if="cartCount > 0">Prosledite porudžbinu ili o</span>
-        <span v-else>O</span>daberite još iz ponude
-      </h4>
+    <div class="d-block text-right">
+      <h6>
+        <div>
+          <div>{{ titleText1 }}</div>
+          <div>{{ titleText2 }}</div>
+          <div>{{ titleText3 }}</div>
+        </div>
+        <hr />
+      </h6>
 <!--      <form v-on:submit.prevent="handleSubmit">-->
       <form>
         <div>
@@ -79,7 +83,7 @@
             <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
                    :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
           </div>
-          <div class="input-group">
+          <div class="input-group" v-if="cities.length">
             <div class="input-group-prepend">
               <span class="input-group-text" id="cartCityLabel">
                 <i class="fas fa-table prefix"></i>
@@ -156,13 +160,30 @@ export default {
   },
   computed: {
     titleText() {
-      var txt = 'U korpi imate ' + this.cartCount + ' artikal(a)';
+      var txt = '';
       if(this.cartCount > 0) {
+        if (this.cartCount > 0) txt = 'Prosledite porudžbinu ili o';
+        else txt = 'O';
+        txt += 'daberite još iz ponude';
+      }
+      return txt;
+    },
+    titleText1() {
+      var txt = 'U korpi imate ' + this.cartCount + ' artikal(a)';
+      if(this.cartCount > 0 && this.cartProductsSum > 0) {
         txt += ' u iznosu od ' + this.formatter.format(this.cartProductsSum / 100);
       }
-      if (this.cityDeliveryCalc > 0) {
+      return txt;
+    },
+    titleText2() {
+      var txt = '';
+      // if (this.cityDeliveryCalc > 0) {
         txt += ' + Cena dostave: ' + this.formatter.format(this.cityDeliveryCalc / 100);
-      }
+      // }
+      return txt;
+    },
+    titleText3() {
+      var txt = '';
       if (this.cartSumWithDelivery > 0) {
         txt += ' = Ukupno: ' + this.formatter.format(this.cartSumWithDelivery / 100);
       }
@@ -222,7 +243,7 @@ export default {
     },
 
     checkForm(e) {
-      if ((this.cityselected && this.dataaddress && this.dataphone) || this.tableid) {
+      if (((this.cities.length === 0 || this.cityselected) && this.dataaddress && this.dataphone) || this.tableid) {
         // return true;
         this.handleSubmit();
       }
@@ -239,7 +260,13 @@ export default {
 
     formChanged() {
       this.datanote = document.getElementById("cartNote").value;
-      this.dataaddress = document.getElementById("cartAddress").value;
+      if (this.cityselected !== '' && this.cityselected.address !== 'undefined'
+          && this.cityselected.address !== null && this.cityselected.address !== '') {
+        document.getElementById("cartAddress").innerText = this.cityselected.address;
+        this.dataaddress = this.cityselected.address;
+      } else {
+        this.dataaddress = document.getElementById("cartAddress").value;
+      }
       this.dataphone = document.getElementById("cartPhone").value;
 
       this.$store.dispatch("changeTextData", this.datanote, this.cityselected.name, this.dataaddress, this.dataphone);
@@ -250,6 +277,7 @@ export default {
       this.$store.getters.products.forEach(prod => {
         var obj = {
           "product": "api/products/"+prod.id,
+          "productCode": prod.productCode,
           "quantity": prod.ammount,
           "orderedItemPrice": prod.priceNumeric
         };
@@ -307,7 +335,7 @@ export default {
       })
     },
     retrieveCityList() {
-      var urlGet = 'api/cities?position[gte]=1';
+      var urlGet = 'api/city_deliveries?position[gte]=1';
       var paramsGet = {};
 
       axios.get(urlGet, {

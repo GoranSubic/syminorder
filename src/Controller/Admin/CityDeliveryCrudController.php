@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\City;
+use App\Entity\CityDelivery;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -11,11 +11,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 
-class CityCrudController extends AbstractCrudController
+class CityDeliveryCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return City::class;
+        return CityDelivery::class;
     }
 
     public function configureFields(string $pageName): iterable
@@ -23,6 +23,7 @@ class CityCrudController extends AbstractCrudController
         $fields = [
             IntegerField::new('position', 'Pozicija'),
             TextField::new('name', 'Naziv'),
+            TextField::new('address', 'Adresa za lično preuzimanje'),
             MoneyField::new('price', 'Cena')
                 ->setCurrency("RSD")
                 ->setNumDecimals(2)

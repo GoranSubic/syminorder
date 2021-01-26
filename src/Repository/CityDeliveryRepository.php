@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\City;
+use App\Entity\CityDelivery;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method City|null find($id, $lockMode = null, $lockVersion = null)
- * @method City|null findOneBy(array $criteria, array $orderBy = null)
- * @method City[]    findAll()
- * @method City[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method CityDelivery|null find($id, $lockMode = null, $lockVersion = null)
+ * @method CityDelivery|null findOneBy(array $criteria, array $orderBy = null)
+ * @method CityDelivery[]    findAll()
+ * @method CityDelivery[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CityRepository extends ServiceEntityRepository
+class CityDeliveryRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, City::class);
+        parent::__construct($registry, CityDelivery::class);
     }
 
     // /**
-    //  * @return City[] Returns an array of City objects
+    //  * @return CityDelivery[] Returns an array of CityDelivery objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class CityRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?City
+    public function findOneBySomeField($value): ?CityDelivery
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')

@@ -55,6 +55,7 @@
                                             <product
                                                     v-bind:id="{{ product.id }}"
                                                     name="{{ product.name }}"
+                                                    productcode="{{ product.code }}"
                                                     image="{{ vich_uploader_asset(product.picture, 'imageFile') }}"
                                                     price="{{ product.price|number_format(2, ',', '.') }}"
                                                     v-bind:pricenumeric="{{ product.price }}"

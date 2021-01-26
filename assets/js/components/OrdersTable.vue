@@ -62,23 +62,26 @@
                 <th>Index</th>
                 <th>Slika</th>
                 <th>Naziv</th>
+                <th>Code</th>
                 <th>Kolicina</th>
                 <th>Cena</th>
                 <th>Ukupno</th>
               </tr>
               <tr v-for="(item, indexitem) in orderItems" :key="indexitem">
                 <td>
-                  {{ index + 1 }}
+                  {{ indexitem + 1 }}
                 </td>
                 <td>
                   <img class="img-thumbnail" :src="item.image" :alt="item.name">
                 </td>
                 <td>{{ item.name }}</td>
+                <td>{{ item.productCode }}</td>
                 <td>{{ item.quantity }}</td>
                 <td>{{ formatterNumber.format(item.price/100) }}</td>
                 <td>{{ formatterNumber.format(item.itemSum/100) }}</td>
               </tr>
               <tr>
+                <td></td>
                 <td></td>
                 <td>Dostava:</td>
                 <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
@@ -229,6 +232,7 @@ name: "OrdersTable",
           var obj = {
             "image": '/images/products/' + itm.product.picture.imageName,
             "name": itm.product.name,
+            "productCode": itm.product.code,
             "price": itm.product.price,
             "quantity": itm.quantity,
             "itemSum": itemSum,

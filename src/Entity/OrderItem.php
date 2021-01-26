@@ -50,6 +50,13 @@ class OrderItem
     private $product;
 
     /**
+     * @ORM\Column(name="product_code", type="string", length=255)
+     *
+     * @Groups({"orderitem:list", "orderitem:item", "order:list", "order:write"})
+     */
+    private $productCode;
+
+    /**
      * @ORM\Column(type="integer")
      *
      * @Groups({"orderitem:list", "orderitem:item", "order:list", "order:write", "suborder"})
@@ -86,6 +93,22 @@ class OrderItem
         $this->product = $product;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProductCode()
+    {
+        return $this->productCode;
+    }
+
+    /**
+     * @param mixed $productCode
+     */
+    public function setProductCode($productCode): void
+    {
+        $this->productCode = $productCode;
     }
 
     public function getQuantity(): ?int
