@@ -320,8 +320,15 @@ export default {
           this.hideModal();
           this.showModalResponse();
         }).catch(error => {
+
+          console.log(error);
+          console.log(error.response);
+          console.log(error.response.data);
+
           if (error.response.data.error) {
             this.error = error.response.data.error;
+          } else if (error.response.data && error.response.data["hydra:description"]) {
+            this.error = error.response.data["hydra:description"];
           } else {
             this.error = 'Sistemska greska!';
           }

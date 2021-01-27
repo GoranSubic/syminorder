@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 
@@ -23,6 +24,7 @@ class CityDeliveryCrudController extends AbstractCrudController
         $fields = [
             IntegerField::new('position', 'Pozicija'),
             TextField::new('name', 'Naziv'),
+            NumberField::new('postalCode', 'Poštanski broj'),
             TextField::new('address', 'Adresa za lično preuzimanje'),
             MoneyField::new('price', 'Cena')
                 ->setCurrency("RSD")

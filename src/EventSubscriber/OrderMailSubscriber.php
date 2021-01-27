@@ -39,8 +39,7 @@ final class OrderMailSubscriber implements EventSubscriberInterface
 
         $templatedEmail = (new TemplatedEmail())
                 ->from(new Address('info@olala.co.rs', 'Olala Porudžbina'))
-//                ->to(new Address('porudzbine@olala.co.rs'))
-                ->to(new Address('gsubic@gmail.com'))
+                ->to(new Address('porudzbine@olala.co.rs'))
                 ->subject('Olala Nova Porudžbina')
                 ->htmlTemplate('notification/order_notification_email.html.twig');
 
