@@ -9,16 +9,16 @@
   </b-button>
 
   <b-modal ref="my-modal" hide-footer :title="titleText" id="modal-tall" class="fade">
-    <div class="d-block text-right">
+    <div class="d-block text-center">
+      <div class="text-right">
       <h6>
-        <div>
           <div>{{ titleText1 }}</div>
           <div>{{ titleText2 }}</div>
           <div>{{ titleText3 }}</div>
-        </div>
-        <hr />
       </h6>
-<!--      <form v-on:submit.prevent="handleSubmit">-->
+      </div>
+      <hr />
+      <!--      <form v-on:submit.prevent="handleSubmit">-->
       <form>
         <div>
           <b v-if="error || validationErrors.length">Morate ispraviti grešku/e:</b>
@@ -66,23 +66,6 @@
                     rows="2" placeholder="Kratka napomena" @keyup="formChanged" @change="formChanged"></textarea>
           </div>
 
-
-          <div class="input-group">
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="cartUserNameLabel">
-              <i class="fas fa-table prefix"></i>
-            </span>
-            </div>
-            <input type="text" id="cartUserName" class="form-control" aria-describedby="cartUserNameLabel"
-                   :data-user-id="userid" :value="datauname" aria-label="Username" hidden disabled>
-
-            <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
-                   aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
-            <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartUserNameLabel"
-                   aria-label="Phone" placeholder="Broj telefona" @keyup="formChanged" @change="formChanged">
-            <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
-                   :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
-          </div>
           <div class="input-group" v-if="cities.length">
             <div class="input-group-prepend">
               <span class="input-group-text" id="cartCityLabel">
@@ -97,6 +80,22 @@
                    :value="formatter.format(cityDeliveryCalc / 100)" disabled>
           </div>
 
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="cartUserNameLabel">
+                <i class="fas fa-table prefix"></i>
+              </span>
+            </div>
+            <input type="text" id="cartUserName" class="form-control" aria-describedby="cartUserNameLabel"
+                   :data-user-id="userid" :value="datauname" aria-label="Username" hidden disabled>
+
+            <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
+                   aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
+            <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartUserNameLabel"
+                   aria-label="Phone" placeholder="Broj telefona" @keyup="formChanged" @change="formChanged">
+            <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
+                   :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
+          </div>
         </div>
 
         <b-button v-if="cartCount > 0" id="btnFormSbm" @click="checkForm" variant="outline-success" block type="button">Prosledi</b-button>

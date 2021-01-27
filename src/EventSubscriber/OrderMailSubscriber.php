@@ -39,13 +39,15 @@ final class OrderMailSubscriber implements EventSubscriberInterface
 
         $templatedEmail = (new TemplatedEmail())
                 ->from(new Address('info@olala.co.rs', 'Olala Porudžbina'))
-                ->to(new Address('porudzbine@olala.co.rs'))
+//                ->to(new Address('porudzbine@olala.co.rs'))
+                ->to(new Address('gsubic@gmail.com'))
                 ->subject('Olala Nova Porudžbina')
                 ->htmlTemplate('notification/order_notification_email.html.twig');
 
         $context = $templatedEmail->getContext();
         $context['orderId'] = $order->getId();
         $context['orderUser'] = $order->getCustomer()->getUsername() ? $order->getCustomer()->getUsername() : "NoName ;-)";
+        $context['cityName'] = $order->getCityName();
         $context['address'] = $order->getAddress();
         $context['phone'] = $order->getPhone();
         $context['note'] = $order->getNoteCart();
