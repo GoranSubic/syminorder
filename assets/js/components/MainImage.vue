@@ -4,7 +4,7 @@
     <div class="greet" id="headerimage" :style="headerHeight">
       <div class="greet-message">
 <!--        <h2>{{ welcome }} {{ datauname }}</h2>-->
-        <h2>{{ welcome }}</h2>
+        <h2 id="mainTitle">{{ welcome }}</h2>
         <div class="subtitle" id="subtitleBox">
           <div class="sub1">{{ meal }}</div>
         </div>
@@ -44,12 +44,14 @@ export default {
       //var scrolledElem = document.getElementById("scrollelm");
       var scrolledValue = window.scrollY;// scrolledElem.offsetTop - window.scrollY;
       var topElem = document.getElementById("headerimage");
-      if (scrolledValue >= 50) {
+      if (scrolledValue >= 100) {
         topElem.classList.add('slim');
+        document.getElementById("mainTitle").classList.add('hideIt');
         document.getElementById("subtitleBox").classList.add('hideIt');
         document.getElementById("btnOutline").classList.add('hideBtn');
       } else {
         topElem.classList.remove('slim');
+        document.getElementById("mainTitle").classList.remove("hideIt");
         document.getElementById("subtitleBox").classList.remove("hideIt");
         document.getElementById("btnOutline").classList.remove("hideBtn");
       }
@@ -100,7 +102,7 @@ export default {
   right: 0;
   text-align: left;
 }
-.greet #subtitleBox {
+.greet #subtitleBox, .greet #mainTitle {
   overflow: hidden;
   transition: all .5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -108,11 +110,12 @@ export default {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
 }
-.greet #subtitleBox.hideIt {
+.greet #subtitleBox.hideIt, .greet #mainTitle.hideIt {
   height: 0px !important;
 }
 .greet.slim {
-  height: 15vh !important;
+  /*height: 15vh !important;*/
+  height: 0 !important;
   top: 40px;
 }
 /*#scrollelm {

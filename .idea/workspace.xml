@@ -12,12 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CityDeliveryCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CityDeliveryCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StaticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/notification/order_notification_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/notification/order_notification_email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,6 +355,8 @@
       <workItem from="1611602835906" duration="7732000" />
       <workItem from="1611668839186" duration="12500000" />
       <workItem from="1611749137405" duration="15191000" />
+      <workItem from="1611829885842" duration="182000" />
+      <workItem from="1611831182995" duration="1386000" />
     </task>
     <servers />
   </component>
