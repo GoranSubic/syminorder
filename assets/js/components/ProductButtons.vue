@@ -24,7 +24,7 @@ import store from '../store/index';
 
 export default {
   store,
-  name: "Product",
+  name: "ProductButtons",
   data: function () {
     return {
       dataId: this.id,

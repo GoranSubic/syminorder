@@ -1,0 +1,19 @@
+{% extends 'Front/products_list/layout.html.twig' %}
+{% set user_is_logged_in = app.user ? "true" : "false" %}
+
+{% block title %}Ponuda{% endblock %}
+
+{% block content %}
+
+    {% if categoriesJSON|default and categoriesJSON|length > 0 %}
+
+        <main-categories
+                v-bind:categories="{{ categoriesJSON }}"
+                plussign="{{ asset("build/images/plus-solid.svg") }}"
+                minussign="{{ asset("build/images/minus-solid.svg") }}"
+                :user_is_logged_in="{{ user_is_logged_in }}"
+        >
+        </main-categories>
+
+    {% endif %}
+{% endblock %}

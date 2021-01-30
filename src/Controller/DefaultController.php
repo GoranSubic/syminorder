@@ -3,18 +3,21 @@
 
 namespace App\Controller;
 
+use ApiPlatform\Core\Api\IriConverterInterface;
+use App\Entity\Category;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use function Webmozart\Assert\Tests\StaticAnalysis\true;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function index(CategoryRepository $nestedTreeRepository)
+    public function index(SerializerInterface $serializer)
     {
         $em = $this->getDoctrine()->getManager();
         $em->getConfiguration()->addCustomHydrationMode('tree', 'Gedmo\Tree\Hydrator\ORM\TreeObjectHydrator');
@@ -28,11 +31,15 @@ class DefaultController extends AbstractController
             ->addCriteria($criteria)
             ->getQuery()
             ->setHint(\Doctrine\ORM\Query::HINT_INCLUDE_META_COLUMNS, true)
-            ->getResult('tree');
+            ->getResult('tree')
+        ;
 
         $categories = $tree ? $tree[0]->getChildren() : [];
-        return $this->render('Front/products_list/index.html.twig', [
-            'categories' => $categories
+        $jsonCat = $serializer->serialize($categories, 'json', ['groups' => 'category:list']);
+        return $this->render('Front/categories_list/index.html.twig', [
+//            'categories' => $categories,
+            'categoriesJSON' => $jsonCat
         ]);
     }
+
 }

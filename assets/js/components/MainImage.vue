@@ -71,7 +71,7 @@ export default {
   left: 0;
   right: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   background-image: url('../../media/greet-home.jpeg');
   /*filter: grayscale(50%);*/
   background-repeat: no-repeat;

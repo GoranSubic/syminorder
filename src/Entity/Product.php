@@ -33,11 +33,13 @@ class Product
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
      */
     private $id;
 
     /**
      * @ORM\Column(name="enabled", type="boolean", nullable=true)
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
      */
     private $enabled;
 
@@ -45,12 +47,13 @@ class Product
      * @ORM\Column(name="name", type="string", length=30)
      *
      * @Assert\NotBlank()
-     * @Groups({"product:list", "product:item", "order:list", "suborder"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
      */
     private $name;
 
     /**
      * @ORM\Column(name="description", type="string", length=150)
+     * @Groups({"category:list", "category:item"})
      */
     private $description;
 
@@ -65,7 +68,7 @@ class Product
      * @ORM\Column(name="price", type="integer")
      *
      * @Assert\NotBlank()
-     * @Groups({"order:list", "suborder"})
+     * @Groups({"order:list", "suborder", "category:list", "category:item"})
      */
     private $price;
 
@@ -81,7 +84,7 @@ class Product
      * @ORM\OneToOne(targetEntity="App\Entity\ProductPicture", mappedBy="product", cascade={"persist", "remove"})
      *
      * @Assert\NotBlank()
-     * @Groups({"order:list", "suborder"})
+     * @Groups({"order:list", "suborder", "category:list", "category:item"})
      */
     private $picture;
 
@@ -95,7 +98,7 @@ class Product
      * @ORM\Column(name="code", type="string", length=255, unique=true)
      *
      * @Assert\NotBlank()
-     * @Groups({"product:list", "product:item", "order:list", "suborder"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
      */
     private $code;
 

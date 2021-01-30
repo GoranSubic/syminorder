@@ -3,9 +3,10 @@ import store from './store/index';
 
 import MainImage from "./components/MainImage";
 import Shopping from "./components/Shopping";
-import Product from "./components/Product";
+import ProductButtons from "./components/ProductButtons";
 import OrdersTable from "./components/OrdersTable";
 import OrdersTableUser from "./components/OrdersTableUser";
+import MainCategories from "./components/MainCategories"
 import ModalPlugin from 'bootstrap-vue';
 
 Vue.use(ModalPlugin);
@@ -19,9 +20,10 @@ new Vue({
         store,
         MainImage,
         Shopping,
-        Product,
+        ProductButtons,
         OrdersTable,
-        OrdersTableUser
+        OrdersTableUser,
+        MainCategories
     },
     data() {
         return {

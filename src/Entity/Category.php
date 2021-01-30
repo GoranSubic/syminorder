@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Service\ProductImagesUploader;
 use App\Entity\ProductPicture;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -9,10 +10,20 @@ use Doctrine\Common\Collections\Collection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index as Index;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Class Category
  * @package App\Entity
+ *
+ * @ApiResource(
+ *  collectionOperations={
+ *     "get"={"normalization_context"={"groups"="category:list"}},
+ *     },
+ *  itemOperations={
+ *     "get"={"normalization_context"={"groups"="category:item"}},
+ *     },
+ * )
  *
  * @Gedmo\Tree(type="nested")
  * @ORM\Table(
@@ -31,6 +42,7 @@ class Category
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
+     * @Groups({"category:list", "category:item"})
      */
     private $id;
 
@@ -41,11 +53,13 @@ class Category
 
     /**
      * @ORM\Column(name="name", type="string", length=30)
+     * @Groups({"category:list", "category:item"})
      */
     private $name;
 
     /**
      * @ORM\Column(name="description", type="string", length=255)
+     * @Groups({"category:list", "category:item"})
      */
     private $description;
 
@@ -78,24 +92,27 @@ class Category
      * @Gedmo\TreeParent()
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="children")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="cascade")
+     * @Groups({"category:list", "category:item"})
      */
     private $parent;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="parent")
      * @ORM\OrderBy({"lft" = "ASC"})
+     * @Groups({"category:list", "category:item"})
      */
     private $children;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="category")
+     * @Groups({"category:list", "category:item"})
      */
     private $products;
 
     /**
      *
      * @ORM\OneToOne(targetEntity="App\Entity\ProductPicture", mappedBy="category", cascade={"persist", "remove"})
-     *
+     * @Groups({"category:list", "category:item"})
      */
     private $picture;
 
