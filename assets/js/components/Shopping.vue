@@ -25,7 +25,7 @@
           <div v-if="error" class="alert alert-danger">
             {{ error }}
           </div>
-          <div v-if="validationErrors.length">
+          <div v-if="validationErrors.length" class="alert alert-danger">
             <ul>
               <li v-for="err in validationErrors">{{ err }}</li>
             </ul>
@@ -48,8 +48,8 @@
               </div>
             </div>
             <div class="col-2">
-              <b-button style="width: 100%;" variant="danger" @click="removeItem(item.id)">
-                X
+              <b-button class="rem-btn" style="width: 100%;" variant="danger" @click="removeItem(item.id)">
+                <i class="fa fa-trash"></i>
               </b-button>
             </div>
           </div>
@@ -69,14 +69,19 @@
           <div class="input-group" v-if="cities.length">
             <div class="input-group-prepend">
               <span class="input-group-text" id="cartCityLabel">
-                <i class="fas fa-table prefix"></i>
+                <i class="fa fa-map-marker-alt"></i>
               </span>
             </div>
             <b-form-select required v-model="cityselected" :options="cities" id="cartCity" class="form-control"
                            aria-describedby="cartCityLabel" @change="formChanged">
             </b-form-select>
 
-            <input id="cartDeliveryPrice" class="form-control" aria-describedby="cartCityLabel"
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="cartCityPriceLabel">
+                <i class="fas fa-money-bill-wave-alt prefix"></i>
+              </span>
+            </div>
+            <input id="cartDeliveryPrice" class="form-control" aria-describedby="cartCityPriceLabel"
                    :value="formatter.format(cityDeliveryCalc / 100)" disabled>
           </div>
 
@@ -91,7 +96,13 @@
 
             <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
                    aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
-            <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartUserNameLabel"
+
+            <div class="input-group-prepend" v-if="tableid === 0">
+              <span class="input-group-text" id="cartPhoneLabel">
+                <i class="fas fa-phone-alt prefix"></i>
+              </span>
+            </div>
+            <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartPhoneLabel"
                    aria-label="Phone" placeholder="Broj telefona" @keyup="formChanged" @change="formChanged">
             <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
                    :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
@@ -350,6 +361,11 @@ export default {
           .then(response => {
             // JSON responses are automatically parsed.
             var resp = response.data["hydra:member"];
+            /*if (resp.length > 0) {
+              this.cities.push(
+                  { value: null, text: 'Dostava / Lično' },
+              )
+            }*/
             resp.forEach(city => {
               var obj = {
                 text: city.name,
@@ -400,6 +416,12 @@ export default {
   font-size: 0.8rem;
 }
 
+.rem-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 img {
   width: 100%;
 }
@@ -410,7 +432,14 @@ form div.striped-row {
 }
 
 form #cartCity, #cartDeliveryPrice, #cartAddress, #cartPhone {
-  width: 45%;
+  width: 40%;
+}
+.input-group-prepend {
+  width: 10%;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*text in form*/
@@ -432,5 +461,12 @@ form #cartCity, #cartDeliveryPrice, #cartAddress, #cartPhone {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+form input[required=required]:before,
+form select[required=required]:before
+{
+  color: red;
+  content: " *";
 }
 </style>

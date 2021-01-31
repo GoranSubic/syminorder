@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Service\ProductImagesUploader;
 use App\Entity\ProductPicture;
@@ -24,6 +26,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *     "get"={"normalization_context"={"groups"="category:item"}},
  *     },
  * )
+ * @ApiFilter(BooleanFilter::class, properties={"enabled"})
  *
  * @Gedmo\Tree(type="nested")
  * @ORM\Table(
@@ -48,6 +51,7 @@ class Category
 
     /**
      * @ORM\Column(name="enabled", type="boolean", nullable=true)
+     * @Groups({"category:list", "category:item"})
      */
     private $enabled;
 

@@ -2,19 +2,35 @@
 /*#categories {
 }*/
 #main-categories {
-    top: 50px;
+/*    top: 50px;
     position: fixed;
-    z-index: 1;
+    z-index: 1;*/
     margin: 30px auto 30px auto;
     max-height: 150px;
     overflow: auto;
     background-color: white;
 }
 
+.wait-for {
+    background-color: white;
+}
+
 .category.first {
     padding: 2px !important;
+    margin: 15px auto 15px auto;
+}
+.category.subcategory {
+    padding: 2px !important;
+    margin: 5px auto 5px auto;
 }
 .category.first .cat-border {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    padding: 1px;
+    border: 5px solid #db4c3e;
+}
+.category.subcategory .cat-border {
     display: flex;
     flex-wrap: wrap;
     height: 50px;
@@ -24,7 +40,18 @@
 .cat-name, .cat-image, .prod-image {
     max-height: 100%;
     overflow: hidden;
-    padding: 2px !important;
+    padding: 1px !important;
+    color: #db4c3e;
+}
+
+.prod-image{
+    position: relative;
+}
+.prod-image .prod-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 #products {
@@ -39,41 +66,47 @@
     margin: 0 !important;
     padding: 1px !important;
 }
-.products.prod-border {
+.products .prod-border {
     display: flex;
     flex-wrap: wrap;
     height: 100px;
     width: 100%;
     padding: 1px;
     border: 1px solid gray;
+    background-color: lightgray;
 }
 .products .prod-head, .products .prod-body {
     line-height: 1;
     height: 50%;
     overflow: hidden;
     margin: 0 !important;
-    padding: 2px !important;
+    padding: 1px !important;
 }
 .prod-info {
     height: 100px;
+    padding: 1px !important;
 }
 .prod-name, .prod-price {
     padding: 1px;
     overflow: hidden;
-    font-size: 0.8em;
 }
 .prod-name {
     height: 70%;
+    font-size: 1em;
+    color: #db4c3e;
 }
 .prod-price {
     text-align: right;
     height: 30%;
+    text-decoration: underline solid #db4c3e;
+    font-size: 0.8em;
 }
 .prod-desc {
+    height: 100%;
     line-height: 1;
     text-align: justify;
     overflow: hidden;
-    font-size: 0.8em;
+    font-size: 0.6em;
 }
 /* categories end */
 

@@ -1,20 +1,22 @@
 <template>
   <div class="container-fluid btncontainer">
 <!--    <div class="row">-->
-    <b-button-group class="btnsgroup">
-      <b-button variant="warning" @click="decOneFromCart(id)">
-        <img class="sign minus" :src="minussign" alt="--" />
-      </b-button>
+    <div class="mt-sm-3">
+      <b-button-group size="sm">
+        <b-button class="dec-btn" variant="warning" @click="decOneFromCart(id)">
+          <i class="fas fa-minus"></i>
+        </b-button>
 
-      <b-button class="col col-6" variant="danger" @click="remFromCart(id)">
-        X
-      </b-button>
-      <b-button class="col col-6" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
+        <b-button class="rem-btn" variant="danger" @click="remFromCart(id)">
+          <i class="fa fa-trash"></i>
+        </b-button>
+        <b-button class="amm-btn" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
 
-      <b-button variant="success" @click="addToCart(id, name, productcode, image, price, pricenumeric)">
-        <img class="sign plus" :src="plussign" alt="++" />
-      </b-button>
-    </b-button-group>
+        <b-button class="inc-btn" variant="success" @click="addToCart(id, name, productcode, image, price, pricenumeric)">
+          <i class="fas fa-cart-plus"></i>
+        </b-button>
+      </b-button-group>
+    </div>
 <!--    </div>-->
   </div>
 </template>
@@ -74,14 +76,25 @@ export default {
 </script>
 
 <style scoped>
-.btncontainer, .btnsgroup {
-  padding-right: 0;
-  padding-left: 0;
-  width: 95%;
+.btn-group {
+  /*padding-right: 0;*/
+  /*padding-left: 0;*/
+  width: 100%;
+
+  justify-content: center;
 }
 
-.btnsgroup button {
+button.btn {
   width: 25%;
+}
+button.btn svg {
+  padding: 1px;
+}
+
+.inc-btn, .dec-btn, .rem-btn, .amm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .row {

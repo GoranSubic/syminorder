@@ -4,7 +4,7 @@
     <div class="categories container">
 
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 wait-for">
           <div class="mt-4">
             <loading v-show="categories.length === 0" />
           </div>
@@ -22,6 +22,7 @@
 
   <category-list
       :categories="categories"
+      :parentcatdata="parentcatdata"
       :categoriesdata="categoriesdata"
       :productsdata="productsdata"
       :subcategoriesdata="subcategoriesdata"
@@ -46,9 +47,9 @@ export default {
   name: "MainCategories",
   data: function () {
     return {
-      categoriesdata: [],
+      parentcatdata: {},
+      categoriesdata: {},
       productsdata: [],
-
       subcategoriesdata: [],
     }
   },
@@ -92,7 +93,16 @@ export default {
             this.productsdata.push(prod);
           });
         }
+      } else {
+        this.subcategoriesdata = [];
       }
+console.log(this.categoriesdata['parent']);
+      if (this.categoriesdata['parent'] && this.categoriesdata['parent']['name'] !== "Home") {
+        this.parentcatdata = this.categoriesdata['parent'];
+      } else {
+        this.parentcatdata = null;
+      }
+      console.log(this.parentcatdata);
     },
   },
   mounted: function () {

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Service\ProductImagesUploader;
 use App\Entity\ProductPicture;
@@ -24,6 +26,7 @@ use App\Entity\Category;
  *     "get"={"security"="is_granted('ROLE_USER')", "normalization_context"={"groups"="product:item"}},
  *     },
  * )
+ * @ApiFilter(BooleanFilter::class, properties={"enabled"})
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  * @Vich\Uploadable
  */

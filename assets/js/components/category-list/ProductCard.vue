@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="prod-border">
       <div class="col-6 prod-image">
         <img v-if="product.picture && product.picture.imageFile"
@@ -26,9 +27,10 @@
             >
             </product-buttons>
           </div>
-          <div v-else class="prod-desc">{{ product.description }}</div>
+          <div v-else class="prod-desc" v-html="product.description"></div>
         </div>
       </div>
+  </div>
   </div>
 </template>
 
