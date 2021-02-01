@@ -49,11 +49,11 @@ export default {
         document.getElementById("mainTitle").classList.add('hideIt');
         document.getElementById("subtitleBox").classList.add('hideIt');
         document.getElementById("btnOutline").classList.add('hideBtn');
-      } else {
+      /*} else { \\Remove show MainImage again after first time scrolled
         topElem.classList.remove('slim');
         document.getElementById("mainTitle").classList.remove("hideIt");
         document.getElementById("subtitleBox").classList.remove("hideIt");
-        document.getElementById("btnOutline").classList.remove("hideBtn");
+        document.getElementById("btnOutline").classList.remove("hideBtn");*/
       }
       //var scrlCounter = document.getElementById("scrollcounter");
       //scrlCounter.innerHTML = scrolledValue + "px";
