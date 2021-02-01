@@ -94,7 +94,7 @@ li.user-logout {
 }
 
 #scrollelm {
-    min-height: 100vh;
+    min-height: 110vh;
     margin: 60px auto 0 auto !important;
     font-size: 15px;
     line-height: 18px;
