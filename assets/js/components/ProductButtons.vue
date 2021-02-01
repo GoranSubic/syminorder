@@ -3,16 +3,16 @@
 <!--    <div class="row">-->
     <div class="mt-sm-3">
       <b-button-group size="sm">
-        <b-button class="dec-btn" variant="warning" @click="decOneFromCart(id)">
+        <b-button class="dec-btn" variant="warning" @click="decOneFromCart(product.id)">
           <i class="fas fa-minus"></i>
         </b-button>
 
-        <b-button class="rem-btn" variant="danger" @click="remFromCart(id)">
+        <b-button class="rem-btn" variant="danger" @click="remFromCart(product.id)">
           <i class="fa fa-trash"></i>
         </b-button>
         <b-button class="amm-btn" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
 
-        <b-button class="inc-btn" variant="success" @click="addToCart(id, name, productcode, image, price, pricenumeric)">
+        <b-button class="inc-btn" variant="success" @click="addToCart(product)">
           <i class="fas fa-cart-plus"></i>
         </b-button>
       </b-button-group>
@@ -27,43 +27,33 @@ import store from '../store/index';
 export default {
   store,
   name: "ProductButtons",
-  data: function () {
-    return {
-      dataId: this.id,
-    }
-  },
   beforeCreate() {
     this.$store.dispatch('initialiseStore');
   },
   props: {
-    "id" : Number,
-    "name": String,
-    "productcode": String,
-    "image": String,
-    "price": String,
-    "pricenumeric": Number,
-    "plussign": String,
-    "minussign": String,
+    product: {
+      type: Object,
+      required: true,
+    },
   },
   computed: {
     prodAmmount() {
       var productAmm = this.$store.getters.products.find(prod => {
-        return prod.id === this.dataId
+        return prod.id === this.product.id
       });
       return (typeof productAmm !== 'undefined' && productAmm.ammount > 0) ? productAmm.ammount : '';
     },
   },
   methods: {
-    addToCart(id, name, productCode, image, price, priceNumeric) {
-      var product = {
-        id: id,
-        name: name,
-        productCode: productCode,
-        image: image,
-        price: price,
-        priceNumeric: priceNumeric,
+    addToCart(product) {
+      var prod = {
+        id: product.id,
+        name: product.name,
+        productCode: product.code,
+        picture: product.picture,
+        price: product.price,
       };
-      this.$store.dispatch("addItem", product);
+      this.$store.dispatch("addItem", prod);
     },
     remFromCart(id) {
       this.$store.dispatch("removeItem", id);

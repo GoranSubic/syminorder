@@ -28,8 +28,6 @@
       :subcategoriesdata="subcategoriesdata"
       :getSubCategoriesParent="getSubCategories"
       :user_is_logged_in="user_is_logged_in"
-      plussign="plussign"
-      minussign="minussign"
   >
 
   </category-list>
@@ -96,13 +94,11 @@ export default {
       } else {
         this.subcategoriesdata = [];
       }
-console.log(this.categoriesdata['parent']);
       if (this.categoriesdata['parent'] && this.categoriesdata['parent']['name'] !== "Home") {
         this.parentcatdata = this.categoriesdata['parent'];
       } else {
         this.parentcatdata = null;
       }
-      console.log(this.parentcatdata);
     },
   },
   mounted: function () {

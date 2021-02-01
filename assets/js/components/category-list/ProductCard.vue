@@ -7,7 +7,7 @@
             :src="product.picture.imageFile"
             :alt="product.name"
         />
-        <span v-else>No image!</span>
+        <span v-else>{{ product.name }}</span>
       </div>
 
       <div class="col-6 prod-info">
@@ -18,12 +18,7 @@
         <div class="prod-body">
           <div v-if="user_is_logged_in === true">
             <product-buttons
-                v-bind:id="product.id"
-                :name="product.name"
-                :productcode="product.code"
-                :image="product.picture.name"
-                :price="this.formatterNumber.format(product.price)"
-                v-bind:pricenumeric="product.price"
+                :product="product"
             >
             </product-buttons>
           </div>
