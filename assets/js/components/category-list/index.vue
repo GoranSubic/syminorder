@@ -84,8 +84,6 @@ export default {
     categoriesdata: Object,
     productsdata: Array,
     subcategoriesdata: Array,
-    "plussign": String,
-    "minussign": String,
   },
   methods: {
     getSubCategories(id) {

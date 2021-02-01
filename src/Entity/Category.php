@@ -13,6 +13,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index as Index;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Category
@@ -114,8 +115,18 @@ class Category
     private $products;
 
     /**
-     *
      * @ORM\OneToOne(targetEntity="App\Entity\ProductPicture", mappedBy="category", cascade={"persist", "remove"})
+     *
+     * @Assert\NotBlank()
+     * @Assert\Image(
+     *     minWidth = 200,
+     *     maxWidth = 400,
+     *     minHeight = 200,
+     *     maxHeight = 400,
+     *     maxSize = "1024k",
+     *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
+     *     mimeTypesMessage = "Please upload a valid valid IMAGE"
+     * )
      * @Groups({"category:list", "category:item"})
      */
     private $picture;

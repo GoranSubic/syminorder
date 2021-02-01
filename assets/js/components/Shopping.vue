@@ -33,18 +33,26 @@
         </div>
         <div v-for="(item, index) in cart" :key="index" class="items-form">
           <div class="row striped-row">
-            <div class="col-4"><img :src="item.image.imageFile" :alt="item.name" /></div>
+            <div class="col-4">
+              <img
+                  v-if="item.picture && item.picture.imageFile"
+                  class="img-fluid prod-img"
+                  :src="item.picture.imageFile"
+                  :alt="item.name"
+              />
+              <span v-else>{{ item.name }}</span>
+            </div>
             <div class="col-6">
               <div class="ellipsis">
                 <span>{{ item.name }}</span>
               </div>
               <div class="row">
                 <div class="col-8 col-sm-5 ellipsis">
-                  <span>{{ formatterNumber.format(item.priceNumeric/100) }}</span></div>
+                  <span>{{ formatterNumber.format(item.price/100) }}</span></div>
                 <div class="col-4 col-sm-2 ellipsis" v-if="item.ammount !== undefined">
                   <span>{{ 'x' + item.ammount }}</span></div>
-                <div class="col-12 col-sm-5 ellipsis" v-if="item.priceNumeric && item.ammount">
-                  <span>{{ formatterNumber.format(item.priceNumeric * item.ammount/100) }}</span></div>
+                <div class="col-12 col-sm-5 ellipsis" v-if="item.price && item.ammount">
+                  <span>{{ formatterNumber.format(item.price * item.ammount/100) }}</span></div>
               </div>
             </div>
             <div class="col-2">
@@ -162,7 +170,6 @@ export default {
     }
   },
   props: {
-    minussign: String,
     datauname: String,
     userid: Number,
     tablename: String,
@@ -211,7 +218,7 @@ export default {
     cartProductsSum() {
       var sum = 0;
       this.$store.getters.products.forEach(prod => {
-        sum += (prod.priceNumeric * prod.ammount);
+        sum += (prod.price * prod.ammount);
       });
       return (sum !== 'undefined' && sum > 0) ? (sum) : '';
     },
@@ -289,7 +296,7 @@ export default {
           "product": "api/products/"+prod.id,
           "productCode": prod.productCode,
           "quantity": prod.ammount,
-          "orderedItemPrice": prod.priceNumeric
+          "orderedItemPrice": prod.price
         };
         itemsArray.push(obj);
       });
