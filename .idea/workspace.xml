@@ -11,17 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/CategoryCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/CategoryCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/fontawesome.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/fontawesome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,13 +186,6 @@
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
       <path value="$PROJECT_DIR$/vendor/api-platform/core" />
-      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -373,6 +362,7 @@
       <workItem from="1611994202227" duration="14153000" />
       <workItem from="1612009092880" duration="9784000" />
       <workItem from="1612090909637" duration="23585000" />
+      <workItem from="1612169794352" duration="1876000" />
     </task>
     <servers />
   </component>

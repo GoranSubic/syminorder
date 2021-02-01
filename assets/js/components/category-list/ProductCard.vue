@@ -21,7 +21,7 @@
                 v-bind:id="product.id"
                 :name="product.name"
                 :productcode="product.code"
-                :image="product.picture.name"
+                :image="product.picture"
                 :price="this.formatterNumber.format(product.price)"
                 v-bind:pricenumeric="product.price"
             >

@@ -33,7 +33,7 @@
         </div>
         <div v-for="(item, index) in cart" :key="index" class="items-form">
           <div class="row striped-row">
-            <div class="col-4"><img :src="item.image" :alt="item.name" /></div>
+            <div class="col-4"><img :src="item.image.imageFile" :alt="item.name" /></div>
             <div class="col-6">
               <div class="ellipsis">
                 <span>{{ item.name }}</span>
@@ -331,11 +331,6 @@ export default {
           this.hideModal();
           this.showModalResponse();
         }).catch(error => {
-
-          console.log(error);
-          console.log(error.response);
-          console.log(error.response.data);
-
           if (error.response.data.error) {
             this.error = error.response.data.error;
           } else if (error.response.data && error.response.data["hydra:description"]) {

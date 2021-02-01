@@ -39,7 +39,7 @@ export default {
     "id" : Number,
     "name": String,
     "productcode": String,
-    "image": String,
+    "image": Object,
     "price": String,
     "pricenumeric": Number,
     "plussign": String,
