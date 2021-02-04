@@ -12,8 +12,36 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201121175728.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201227125017.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210114221143.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210114221202.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210125094033.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210125095332.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210125101007.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210125114724.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210125195346.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210125195937.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210125202418.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210126142324.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210126152040.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210126162143.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderItem.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/notification/order_notification_email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/notification/order_notification_email.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +230,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller/Admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -221,11 +249,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/templates/Front/categories_list" />
       <recent name="$PROJECT_DIR$/assets/media" />
       <recent name="$PROJECT_DIR$/assets/styles" />
-      <recent name="$PROJECT_DIR$/templates/Front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/js/store" />
@@ -365,6 +393,10 @@
       <workItem from="1611994202227" duration="14153000" />
       <workItem from="1612009092880" duration="9784000" />
       <workItem from="1612090909637" duration="23585000" />
+      <workItem from="1612366776689" duration="3207000" />
+      <workItem from="1612376012286" duration="11618000" />
+      <workItem from="1612429141561" duration="13224000" />
+      <workItem from="1612442993891" duration="1079000" />
     </task>
     <servers />
   </component>

@@ -52,8 +52,9 @@
               :user_is_logged_in="user_is_logged_in"
               :key="product['@id']"
               :product="product"
-              class="col-6 col-sm-6 col-md-4 col-lg-3 products"
+              class="col-6 col-sm-6 col-md-4 col-lg-4 products"
               :id="'product-' + product.id"
+              :additions="additions"
       >
       </product-card>
     </div>
@@ -84,11 +85,15 @@ export default {
     categoriesdata: Object,
     productsdata: Array,
     subcategoriesdata: Array,
+    additions: {
+      type: Array,
+      required: false
+    }
   },
   methods: {
     getSubCategories(id) {
       this.getSubCategoriesParent(id);
-    }
+    },
   },
 }
 </script>

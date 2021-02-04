@@ -58,7 +58,7 @@
           <tr style="display: none" :id="'items-row-' + index">
             <td colspan="6">
               <table :class="'table table-bordered status-' + ord.status">
-              <tr>
+              <tr :class="'status-' + ord.status">
                 <th>Index</th>
                 <th>Slika</th>
                 <th>Naziv</th>
@@ -74,7 +74,16 @@
                 <td>
                   <img class="img-thumbnail" :src="item.image" :alt="item.name">
                 </td>
-                <td>{{ item.name }}</td>
+                <td>
+                  <div class="row">
+                    <div class="col-12">
+                      <span>{{ item.name }}</span>
+                    </div>
+                    <div class="additions col-12" v-if="item.addselected !== ''">
+                      <span>Dodaci: <i class="addvalues">{{ item.addselected }}</i></span>
+                    </div>
+                  </div>
+                </td>
                 <td>{{ item.productCode }}</td>
                 <td>{{ item.quantity }}</td>
                 <td>{{ formatterNumber.format(item.price/100) }}</td>
@@ -235,6 +244,7 @@ name: "OrdersTable",
             "productCode": itm.product.code,
             "price": itm.product.price,
             "quantity": itm.quantity,
+            "addselected": itm.itemAdditions,
             "itemSum": itemSum,
           };
           itemsArr.push(obj);
@@ -287,21 +297,38 @@ name: "OrdersTable",
 </script>
 
 <style scoped>
-.status-cart {
-  background-color: green;
+table.status-cart {
+  color: green;
 }
-.status-processing {
-  background-color: #B82227;
+table.status-processing {
+  color: #B82227;
 }
-.status-driving {
-  background-color: darkorange;
+table.status-driving {
+  color: darkorange;
 }
-.status-delivered {
-  background-color: lightskyblue;
+table.status-delivered {
+  color: lightskyblue;
+}
+tr.status-cart, .btn.status-cart {
+  background-color: green !important;
+  color: black !important;
+}
+tr.status-processing, .btn.status-processing {
+  background-color: #B82227 !important;
+  color: black !important;
+}
+tr.status-driving, .btn.status-driving {
+  background-color: darkorange !important;
+  color: black !important;
+}
+tr.status-delivered, .btn.status-delivered {
+  background-color: lightskyblue !important;
+  color: black !important;
 }
 
 .ordersdata {
   margin: 50px 0 50px 0;
+  background-color: white;
 }
 
 .ordertable {

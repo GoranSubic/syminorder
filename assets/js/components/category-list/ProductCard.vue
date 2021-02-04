@@ -16,16 +16,18 @@
           <div class="col-12 prod-price">{{ formatter.format(product.price/100) }}</div>
         </div>
         <div class="prod-body">
-          <div v-if="user_is_logged_in === true">
-            <product-buttons
-                :product="product"
-            >
-            </product-buttons>
-          </div>
-          <div v-else class="prod-desc" v-html="product.description"></div>
+          <div class="prod-desc" v-html="product.description"></div>
         </div>
       </div>
   </div>
+
+    <div class="prod-border-buttons" v-if="user_is_logged_in === true">
+      <product-buttons
+          :product="product"
+          :additions="additions"
+      >
+      </product-buttons>
+    </div>
   </div>
 </template>
 
@@ -52,6 +54,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    additions: {
+      type: Array,
+      required: false
+    }
   },
   created() {
     this.formatter = new Intl.NumberFormat('sr', {

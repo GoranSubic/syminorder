@@ -43,8 +43,13 @@
               <span v-else>{{ item.name }}</span>
             </div>
             <div class="col-6">
-              <div class="ellipsis">
-                <span>{{ item.name }}</span>
+              <div class="row">
+                <div class="col-12 ellipsis">
+                  <span>{{ item.name }}</span>
+                </div>
+                <div class="additions col-12 ellipsis" v-if="item.addselected !== ''">
+                  <span>Dodaci: <i class="addvalues">{{ item.addselected }}</i></span>
+                </div>
               </div>
               <div class="row">
                 <div class="col-8 col-sm-5 ellipsis">
@@ -296,6 +301,7 @@ export default {
           "product": "api/products/"+prod.id,
           "productCode": prod.productCode,
           "quantity": prod.ammount,
+          "itemAdditions": prod.addselected,
           "orderedItemPrice": prod.price
         };
         itemsArray.push(obj);
@@ -411,7 +417,7 @@ export default {
   font-size: 0.8rem;
 }
 #toggle-btn .fa-shopping-bag {
-  color: #e15f63;
+  color: #db4c3e;
   font-size: 2rem;
 }
 #toggle-btn span.cart-sigma {
@@ -464,11 +470,17 @@ form #cartCity, #cartDeliveryPrice, #cartAddress, #cartPhone {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.additions {
+  font-size: 0.7em;
+}
+.additions .addvalues {
+  color: #db4c3e;
+}
 
 form input[required=required]:before,
 form select[required=required]:before
 {
-  color: red;
+  color: #db4c3e;
   content: " *";
 }
 </style>

@@ -1,16 +1,20 @@
 <template>
   <div class="container-fluid btncontainer">
-<!--    <div class="row">-->
-    <div class="mt-sm-3">
+    <!--    <div class="row">-->
+    <div class="mt-sm-3 mt-buttons">
       <b-button-group size="sm">
-        <b-button class="dec-btn" variant="warning" @click="decOneFromCart(product.id)">
+        <b-form-select class="form-control" aria-describedby=""
+                       v-if="product.showAdditions && additions.length > 0"
+                       v-model="addselected" :options="additions" multiple
+        ></b-form-select>
+
+        <b-button v-if="!product.showAdditions" class="dec-btn" variant="warning" @click="decOneFromCart(product.id)">
           <i class="fas fa-minus"></i>
         </b-button>
-
-        <b-button class="rem-btn" variant="danger" @click="remFromCart(product.id)">
+        <b-button v-if="!product.showAdditions" class="rem-btn" variant="danger" @click="remFromCart(product.id)">
           <i class="fa fa-trash"></i>
         </b-button>
-        <b-button class="amm-btn" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
+        <b-button v-if="!product.showAdditions" class="amm-btn" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
 
         <b-button class="inc-btn" variant="success" @click="addToCart(product)">
           <i class="fas fa-cart-plus"></i>
@@ -30,10 +34,19 @@ export default {
   beforeCreate() {
     this.$store.dispatch('initialiseStore');
   },
+  data() {
+    return {
+      addselected: [],
+    }
+  },
   props: {
     product: {
       type: Object,
       required: true,
+    },
+    additions: {
+      type: Array,
+      required: false
     },
   },
   computed: {
@@ -46,12 +59,20 @@ export default {
   },
   methods: {
     addToCart(product) {
+      var addstr = '';
+      if (this.addselected.length) {
+        this.addselected.forEach(addition => {
+          if (this.isNotEmptyObject(addition) && typeof addition['name'] !== 'undefined' && addition['name'] !== '')
+          addstr += addition['name'] + ' ';
+        });
+      }
       var prod = {
         id: product.id,
         name: product.name,
         productCode: product.code,
         picture: product.picture,
         price: product.price,
+        addselected: addstr,
       };
       this.$store.dispatch("addItem", prod);
     },
@@ -61,6 +82,9 @@ export default {
     decOneFromCart(id) {
       this.$store.dispatch("decreaseItem", id);
     },
+    isNotEmptyObject(obj){
+      return JSON.stringify(obj) !== '{}';
+    }
   },
 }
 </script>

@@ -61,6 +61,12 @@ class Product
     private $description;
 
     /**
+     * @ORM\Column(name="show_additions", type="boolean", nullable=true)
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
+     */
+    private $showAdditions;
+
+    /**
      * @ORM\Column(name="favorite_count", type="integer", nullable=true)
      */
     private $favoriteCount;
@@ -220,6 +226,22 @@ class Product
     public function setDescription($description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShowAdditions()
+    {
+        return $this->showAdditions;
+    }
+
+    /**
+     * @param mixed $showAdditions
+     */
+    public function setShowAdditions($showAdditions): void
+    {
+        $this->showAdditions = $showAdditions;
     }
 
     /**

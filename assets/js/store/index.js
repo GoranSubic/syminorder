@@ -55,10 +55,14 @@ export default new Vuex.Store({
             }
         },
         ADD_Item(state, product) {
-            var item = state.products.find(productItem => (productItem.id === product.id));
+            // var item = state.products.find(productItem => (productItem.id === product.id));
+            var items = state.products.filter(productItem => (productItem.id === product.id));
+            var item = items.length
+                ? items.find(productItem => (productItem.addselected === product.addselected)) : null;
+
             if(typeof item !== 'undefined' && item !== null &&
-                item.ammount !== 'undefined' && item.ammount > 0) {
-                item.ammount += 1;
+                typeof item.ammount !== 'undefined' && item.ammount > 0) {
+                    item.ammount += 1;
             } else {
                 product.ammount = 1;
                 state.products.push(product);

@@ -75,6 +75,21 @@
     border: 1px solid gray;
     background-color: lightgray;
 }
+.products .prod-border-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    height: 30px;
+    width: 100%;
+    padding: 1px;
+    border: 1px solid gray;
+    background-color: lightgray;
+}
+.products .mt-buttons {
+    margin-top: 0 !important;
+}
+.products .btn-group {
+    max-height: 25px;
+}
 .products .prod-head, .products .prod-body {
     line-height: 1;
     height: 50%;

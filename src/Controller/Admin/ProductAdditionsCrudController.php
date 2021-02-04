@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use App\Entity\ProductAdditions;
 use App\Form\MyMoneType;
 use App\Form\ProductPictureType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
@@ -18,38 +19,26 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class ProductCrudController extends AbstractCrudController
+class ProductAdditionsCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Product::class;
+        return ProductAdditions::class;
     }
 
     public function configureFields(string $pageName): iterable
     {
-        $imageFile = ImageField::new('picture')
-            ->setFormType(ProductPictureType::class);
-        $image = ImageField::new('picture.imageName')
-            ->setBasePath('/images/products');
         $fields = [
             BooleanField::new('enabled', 'Uključeno'),
             TextField::new('name', 'Naziv'),
             TextField::new('code', 'Code'),
-            TextEditorField::new('description', 'Opis'),
             MoneyField::new('price', 'Cena Money')
                 ->setCurrency("RSD")
                 ->setNumDecimals(2)
                 ->setFormType(MoneyType::class)
             ,
-            AssociationField::new('category', 'Kategorija')->autocomplete(),
-            BooleanField::new('showAdditions', 'Prikaži dodatke'),
         ];
 
-        if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
-            $fields[] = $image;
-        } else {
-            $fields[] = $imageFile;
-        }
         return $fields;
     }
 
