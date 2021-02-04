@@ -61,7 +61,7 @@
               </div>
             </div>
             <div class="col-2">
-              <b-button class="rem-btn" style="width: 100%;" variant="danger" @click="removeItem(item.id)">
+              <b-button class="rem-btn" style="width: 100%;" variant="danger" @click="removeItem(item.id, item.addcode)">
                 <i class="fa fa-trash"></i>
               </b-button>
             </div>
@@ -260,8 +260,12 @@ export default {
       // when the modal has hidden
       this.$refs['my-modal'].toggle('#toggle-btn')
     },
-    removeItem(id) {
-      this.$store.dispatch("removeItem", id);
+    removeItem(id, addcode) {
+      if (typeof addcode !== 'undefined' && addcode !== '') {
+        this.$store.dispatch("removeItemByAddcode", addcode);
+      } else {
+        this.$store.dispatch("removeItem", id);
+      }
     },
 
     checkForm(e) {

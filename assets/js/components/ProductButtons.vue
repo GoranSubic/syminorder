@@ -60,10 +60,14 @@ export default {
   methods: {
     addToCart(product) {
       var addstr = '';
+      var addcode = '';
+      addcode = product.id;
       if (this.addselected.length) {
         this.addselected.forEach(addition => {
-          if (this.isNotEmptyObject(addition) && typeof addition['name'] !== 'undefined' && addition['name'] !== '')
-          addstr += addition['name'] + ' ';
+          if (this.isNotEmptyObject(addition) && typeof addition['name'] !== 'undefined' && addition['name'] !== '') {
+            addstr += addition['name'] + ' ';
+            addcode += addition['code'];
+          }
         });
       }
       var prod = {
@@ -73,6 +77,7 @@ export default {
         picture: product.picture,
         price: product.price,
         addselected: addstr,
+        addcode: addcode,
       };
       this.$store.dispatch("addItem", prod);
     },
