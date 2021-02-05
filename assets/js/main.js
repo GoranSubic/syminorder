@@ -7,8 +7,11 @@ import ProductButtons from "./components/ProductButtons";
 import OrdersTable from "./components/OrdersTable";
 import OrdersTableUser from "./components/OrdersTableUser";
 import MainCategories from "./components/MainCategories"
-import ModalPlugin from 'bootstrap-vue';
+import ModalPlugin from 'bootstrap-vue'
+import Multiselect from 'vue-multiselect'
 
+// register globally
+Vue.component('multiselect', Multiselect)
 Vue.use(ModalPlugin);
 
 /**
@@ -23,7 +26,7 @@ new Vue({
         ProductButtons,
         OrdersTable,
         OrdersTableUser,
-        MainCategories
+        MainCategories,
     },
     data() {
         return {

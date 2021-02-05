@@ -111,15 +111,15 @@ export default {
           .then(response => {
             // JSON responses are automatically parsed.
             var resp = response.data["hydra:member"];
-            if (resp.length > 0) {
+            /*if (resp.length > 0) {
               this.additions.push(
                   { value: {}, text: 'Dodaci' },
               )
-            }
+            }*/
             resp.forEach(addition => {
               var obj = {
                 text: addition.name,
-                value: addition
+                code: addition.code
               };
 
               this.additions.push(obj);

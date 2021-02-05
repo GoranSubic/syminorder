@@ -3,10 +3,28 @@
     <!--    <div class="row">-->
     <div class="mt-sm-3 mt-buttons">
       <b-button-group size="sm">
-        <b-form-select class="form-control" aria-describedby=""
+<!--        <b-form-select class="form-control" aria-describedby=""
                        v-if="product.showAdditions && additions.length > 0"
                        v-model="addselected" :options="additions" multiple
-        ></b-form-select>
+        ></b-form-select>-->
+
+        <div v-if="product.showAdditions && additions.length > 0" class="cont-multisel">
+          <!--          <label class="typo__label">Simple select / dropdown</label>-->
+          <multiselect
+              v-model="addselected"
+              :options="additions" :multiple="true"
+              :close-on-select="false" :clear-on-select="false"
+              :preserve-search="true"
+              placeholder="Dodaci" label="text" track-by="text"
+              :preselect-first="false"
+              deselectLabel=" - " selectLabel=" + " selectedLabel="Dodato"
+          >
+                    <template slot="selection" slot-scope="{ values, search, isOpen }">
+                          <span class="multiselect__single"
+                                v-if="values.length &amp;&amp; !isOpen">Dodato {{ values.length }}</span>
+                    </template>
+          </multiselect>
+        </div>
 
         <b-button v-if="!product.showAdditions" class="dec-btn" variant="warning" @click="decOneFromCart(product.id)">
           <i class="fas fa-minus"></i>
@@ -59,13 +77,15 @@ export default {
   },
   methods: {
     addToCart(product) {
+      console.log(this.addselected);
+
       var addstr = '';
       var addcode = '';
       addcode = product.id;
       if (this.addselected.length) {
         this.addselected.forEach(addition => {
-          if (this.isNotEmptyObject(addition) && typeof addition['name'] !== 'undefined' && addition['name'] !== '') {
-            addstr += addition['name'] + ' ';
+          if (this.isNotEmptyObject(addition) && typeof addition['text'] !== 'undefined' && addition['text'] !== '') {
+            addstr += addition['text'] + ' ';
             addcode += addition['code'];
           }
         });
@@ -114,6 +134,22 @@ button.btn svg {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.cont-multisel {
+  width: 75% !important;
+}
+.cont-multisel .multiselect__single {
+  font-size: 0.7em !important;
+}
+.cont-multisel .multiselect__input {
+  font-size: 0.7em !important;
+}
+.cont-multisel .multiselect__option {
+  font-size: 0.7em !important;
+}
+.cont-multisel .multiselect__placeholder {
+  font-size: 0.7em !important;
 }
 
 .row {
