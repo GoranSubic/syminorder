@@ -6,6 +6,7 @@ namespace App\Controller;
 use ApiPlatform\Core\Api\IriConverterInterface;
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,24 +21,18 @@ class DefaultController extends AbstractController
     public function index(SerializerInterface $serializer)
     {
         $em = $this->getDoctrine()->getManager();
-        $em->getConfiguration()->addCustomHydrationMode('tree', 'Gedmo\Tree\Hydrator\ORM\TreeObjectHydrator');
         $repo = $em->getRepository('App\Entity\Category');
 
+        $rootNode = $repo->findOneBy(['name' => 'Home']);
+        /** @var ArrayCollection|Category[] $children */
+        $children = $repo->getChildren($rootNode, true, 'name');
 
-        $criteria = Criteria::create()
-            ->where(Criteria::expr()->eq('enabled', true));
+        $childrenEnabled = array_filter($children, function ($cat) {
+           return $cat->getEnabled() === true;
+        });
 
-        $tree = $repo->createQueryBuilder('node')
-            ->addCriteria($criteria)
-            ->getQuery()
-            ->setHint(\Doctrine\ORM\Query::HINT_INCLUDE_META_COLUMNS, true)
-            ->getResult('tree')
-        ;
-
-        $categories = $tree ? $tree[0]->getChildren() : [];
-        $jsonCat = $serializer->serialize($categories, 'json', ['groups' => 'category:list']);
+        $jsonCat = $serializer->serialize($childrenEnabled, 'json', ['groups' => 'category:list']);
         return $this->render('Front/categories_list/index.html.twig', [
-//            'categories' => $categories,
             'categoriesJSON' => $jsonCat
         ]);
     }
