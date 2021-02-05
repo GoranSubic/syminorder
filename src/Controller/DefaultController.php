@@ -30,8 +30,9 @@ class DefaultController extends AbstractController
         $childrenEnabled = array_filter($children, function ($cat) {
            return $cat->getEnabled() === true;
         });
+        $childrenEnabledFromZero = array_values($childrenEnabled);
 
-        $jsonCat = $serializer->serialize($childrenEnabled, 'json', ['groups' => 'category:list']);
+        $jsonCat = $serializer->serialize($childrenEnabledFromZero, 'json', ['groups' => 'category:list']);
         return $this->render('Front/categories_list/index.html.twig', [
             'categoriesJSON' => $jsonCat
         ]);
