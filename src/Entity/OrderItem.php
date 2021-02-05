@@ -78,6 +78,13 @@ class OrderItem
      */
     private $orderRef;
 
+    /**
+     * @ORM\Column(name="item_additions", type="string", length=255)
+     *
+     * @Groups({"orderitem:list", "orderitem:item", "order:list", "order:write", "suborder"})
+     */
+    private $itemAdditions;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -149,6 +156,22 @@ class OrderItem
         $this->orderRef = $orderRef;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getItemAdditions()
+    {
+        return $this->itemAdditions;
+    }
+
+    /**
+     * @param mixed $itemAdditions
+     */
+    public function setItemAdditions($itemAdditions): void
+    {
+        $this->itemAdditions = $itemAdditions;
     }
 
     /**

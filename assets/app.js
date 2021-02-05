@@ -13,6 +13,8 @@ import './js/fontawesome';
 import './styles/global.scss';
 
 // any CSS you import will output into a single css file (app.css in this case)
+import 'vue-multiselect/dist/vue-multiselect.min.css'
+
 import './styles/app.css';
 import './styles/offer.css';
 import './styles/static.css';

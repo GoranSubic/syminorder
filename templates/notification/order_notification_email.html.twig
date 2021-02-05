@@ -17,5 +17,12 @@
     Napomena: {{ note }} <br><br>
 </p>
 <p>
+    {% for item in items %}
+        Naziv: {{ item.product.name }},
+        Dodaci: {% if item.itemAdditions is not empty %}{{ item.itemAdditions }}{% else %} / {% endif %},
+        Kol: {{ item.quantity }}<br>
+    {% endfor %}
+</p>
+<p>
     Prijatno!
 </p>

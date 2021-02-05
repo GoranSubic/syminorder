@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use App\Entity\CityDelivery;
 use App\Entity\Product;
+use App\Entity\ProductAdditions;
 use App\Entity\ProductPicture;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -64,6 +65,9 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('Product'),
             MenuItem::linkToCrud('Products', 'fa fa-tags', Product::class),
+
+            MenuItem::section('Additions'),
+            MenuItem::linkToCrud('Products Additions', 'fa fa-tags', ProductAdditions::class),
 
             MenuItem::section('Images'),
             MenuItem::linkToCrud('Products images', 'fa fa-file', ProductPicture::class),

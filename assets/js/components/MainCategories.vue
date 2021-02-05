@@ -28,6 +28,7 @@
       :subcategoriesdata="subcategoriesdata"
       :getSubCategoriesParent="getSubCategories"
       :user_is_logged_in="user_is_logged_in"
+      :additions="additions"
   >
 
   </category-list>
@@ -49,6 +50,7 @@ export default {
       categoriesdata: {},
       productsdata: [],
       subcategoriesdata: [],
+      additions: [],
     }
   },
   components: {
@@ -62,11 +64,11 @@ export default {
       required: true,
     },
     user_is_logged_in: Boolean,
-    "plussign": String,
-    "minussign": String,
   },
   methods: {
     async getSubCategories(id) {
+      this.productsdata = [];
+
       var url = '/api/categories/' + id;
       var paramsGet = {};
       paramsGet['enabled'] = true;
@@ -75,7 +77,6 @@ export default {
       });
       this.categoriesdata = response.data;
 
-      this.productsdata = [];
       if (this.categoriesdata['products'].length) {
         var products = this.categoriesdata['products'];
         products.forEach(prod => {
@@ -100,8 +101,37 @@ export default {
         this.parentcatdata = null;
       }
     },
+    retrieveAdditions() {
+      var urlGet = 'api/product_additions?enabled=true';
+      var paramsGet = {};
+
+      axios.get(urlGet, {
+        params: paramsGet
+      })
+          .then(response => {
+            // JSON responses are automatically parsed.
+            var resp = response.data["hydra:member"];
+            /*if (resp.length > 0) {
+              this.additions.push(
+                  { value: {}, text: 'Dodaci' },
+              )
+            }*/
+            resp.forEach(addition => {
+              var obj = {
+                text: addition.name,
+                code: addition.code
+              };
+
+              this.additions.push(obj);
+            });
+          })
+          .catch(e => {
+            this.errors.push(e)
+          });
+    },
   },
   mounted: function () {
+    if (this.user_is_logged_in) this.retrieveAdditions();
     this.getSubCategories(this.categories['0'].id);
   },
 }

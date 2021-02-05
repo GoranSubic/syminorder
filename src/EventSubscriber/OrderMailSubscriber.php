@@ -50,6 +50,7 @@ final class OrderMailSubscriber implements EventSubscriberInterface
         $context['address'] = $order->getAddress();
         $context['phone'] = $order->getPhone();
         $context['note'] = $order->getNoteCart();
+        $context['items'] = $order->getItems();
 
         $templatedEmail->context($context);
 

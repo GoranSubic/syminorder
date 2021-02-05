@@ -55,15 +55,23 @@ export default new Vuex.Store({
             }
         },
         ADD_Item(state, product) {
-            var item = state.products.find(productItem => (productItem.id === product.id));
+            // var item = state.products.find(productItem => (productItem.id === product.id));
+            var items = state.products.filter(productItem => (productItem.id === product.id));
+            var item = items.length
+                ? items.find(productItem => (productItem.addcode === product.addcode)) : null;
+
             if(typeof item !== 'undefined' && item !== null &&
-                item.ammount !== 'undefined' && item.ammount > 0) {
-                item.ammount += 1;
+                typeof item.ammount !== 'undefined' && item.ammount > 0) {
+                    item.ammount += 1;
             } else {
                 product.ammount = 1;
                 state.products.push(product);
             }
-            state.StoreCart.push(product.id);
+            if (typeof product.addcode !== 'undefined' && product.addcode !== '') {
+                state.StoreCart.push(product.addcode);
+            } else {
+                state.StoreCart.push(product.id);
+            }
         },
 
         /*REMOVE_Item(state, index) {
@@ -71,8 +79,17 @@ export default new Vuex.Store({
         },*/
 
         REMOVE_ItemById(localStorage, id) {
-            localStorage.products = localStorage.products.filter(product => (product.id !== id));
+            localStorage.products = localStorage.products.filter(product => (
+                product.id !== id
+            ));
             localStorage.StoreCart = localStorage.StoreCart.filter(storeId => (storeId !== id));
+        },
+
+        REMOVE_ItemByAddcode(localStorage, addcode) {
+            localStorage.products = localStorage.products.filter(product => (
+                product.addcode !== addcode
+            ));
+            localStorage.StoreCart = localStorage.StoreCart.filter(storeId => (storeId !== addcode));
         },
 
         REMOVE_One_Item(state, id) {
@@ -126,6 +143,11 @@ export default new Vuex.Store({
         removeItem(context, id) {
             context.commit("CHECK_And_Clear_Store");
             context.commit("REMOVE_ItemById", id);
+        },
+
+        removeItemByAddcode(context, addcode) {
+            context.commit("CHECK_And_Clear_Store");
+            context.commit("REMOVE_ItemByAddcode", addcode);
         },
 
         decreaseItem(context, id) {
