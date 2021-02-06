@@ -7,15 +7,17 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    width: 100%;
 }
 
 .static.container .content {
     text-align: center;
-    /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
-    margin: 50px 0 50px 0;
+    margin: 100px 0 50px 0;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+.static.container .content p{
+    color: black;
+}
+.static.container .content h1 {
+    text-align: left;
 }
