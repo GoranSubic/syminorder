@@ -9,7 +9,7 @@
                 header-height="height:100vh;"
         ></main-image>
 
-        <a href="#products" class="btn btn-outline-primary" id="btnOutline">
+        <a href="#homepage" class="btn btn-outline-primary" id="btnOutline">
             <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                 <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -21,6 +21,34 @@
 {% block content %}
     <div id="homepage">
         <div class="homepage container">
+
+            <div class="homepage content">
+                <main-carousel
+                        class="carousel"
+                        img1="{{ asset('images/carousel/slide1.jpg') }}"
+                        img2="{{ asset('images/carousel/slide2.jpg') }}"
+                        img3="{{ asset('images/carousel/slide3.jpg') }}"
+                >
+
+                </main-carousel>
+            </div>
+
+<!--            <div class="homepage content">
+                <div id="gg_hours_widget-2" class="widget gg_Hours_widget box col6 boxbg" style="position: absolute; left: 240px; top: 0px;">
+                    <h3 class="widgettitle text-center">
+                        <i class="fa fa-clock-o "></i>Radno vreme
+                    </h3>
+                    <div class="text-center">
+                        <h6 class="hours-title">Ponedeljak - Četvrtak</h6>
+                        <p>08:00 - 00:00</p>
+
+                        <h6 class="hours-title">Petak - Subota</h6>
+                        <p>08:00 - 01:00</p>
+                        <h6 class="hours-title">Nedelja</h6>
+                        <p>08:00 - 00:00</p>
+                    </div>
+                </div>
+            </div>-->
 
             <div class="homepage content">
                 Dobro došli,

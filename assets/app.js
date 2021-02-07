@@ -35,7 +35,6 @@ require('bootstrap');
 // Vue.js app.js file
 require('./js/main');
 
-require('./js/product-list');
 require('./js/front');
 
 $(document).ready(function() {

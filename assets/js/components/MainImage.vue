@@ -44,7 +44,7 @@ export default {
       //var scrolledElem = document.getElementById("scrollelm");
       var scrolledValue = window.scrollY;// scrolledElem.offsetTop - window.scrollY;
       var topElem = document.getElementById("headerimage");
-      if (scrolledValue >= 100) {
+      if (scrolledValue >= 50) {
         topElem.classList.add('slim');
         document.getElementById("mainTitle").classList.add('hideIt');
         document.getElementById("subtitleBox").classList.add('hideIt');

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import store from './store/index';
 
 import MainImage from "./components/MainImage";
+import MainCarousel from "./components/MainCarousel";
 import Shopping from "./components/Shopping";
 import ProductButtons from "./components/ProductButtons";
 import OrdersTable from "./components/OrdersTable";
@@ -22,6 +23,7 @@ new Vue({
     components: {
         store,
         MainImage,
+        MainCarousel,
         Shopping,
         ProductButtons,
         OrdersTable,

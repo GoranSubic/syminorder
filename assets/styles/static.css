@@ -1,23 +1,30 @@
 .main .bckg-image.container {
     background-image: url("../media/greet-bckg.jpg");
     border: 2px solid black;
-    padding: 25px;
-    background-color: white;
+    padding: 20px !important;
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.homepage.container {
+    margin: 50px 0 50px 0;
+}
 .static.container .content {
     text-align: center;
-    margin: 100px 0 50px 0;
-    padding: 50px;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
 }
 .static.container .content p{
     color: black;
 }
 .static.container .content h1 {
     text-align: left;
+}
+#categories {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 10px;
+    border-radius: 10px;
 }

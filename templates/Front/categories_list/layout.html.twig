@@ -8,12 +8,13 @@
     </div>
 
     <div class="main container categories" id="parentScrollelm">
-        {% block greet_info %}{% endblock %}
+        <div class="bckg-image container">
+            {% block greet_info %}{% endblock %}
 
-        <div id="scrollelm">
-            {% block content %}{% endblock %}
+            <div id="scrollelm">
+                {% block content %}{% endblock %}
+            </div>
         </div>
-
     </div>
 
     <div class="footer">
