@@ -21,7 +21,13 @@
       </div>
     </div>
 
-  <div class="row category-parent">
+  <div v-if="searchtermfound !== 'undefined' && searchtermfound !== ''" class="row category-parent">
+    <div class="col-12 category-info">
+      <h4 class="col-12 category-name text-left">Pretraga po: "{{ this.searchtermfound }}"</h4>
+      <!--      <div class="col-12 category-desc text-left" v-html="searchtermfound"></div>-->
+    </div>
+  </div>
+  <div v-else class="row category-parent">
     <div class="col-2 parent-btn text-right">
       <b-button id="parentcat-btn" variant="secondary"
           :pressed="true"
@@ -88,7 +94,8 @@ export default {
     additions: {
       type: Array,
       required: false
-    }
+    },
+    searchtermfound: String
   },
   methods: {
     getSubCategories(id) {

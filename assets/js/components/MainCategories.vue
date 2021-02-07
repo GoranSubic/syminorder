@@ -2,7 +2,15 @@
 <div id="categories">
   <div id="main-categories">
     <div class="categories container">
+      <div class="row">
+        <div class="col-12">
+          <search-bar
+              @search-products="onSearchProducts"
+          >
 
+          </search-bar>
+        </div>
+      </div>
       <div class="row">
         <div class="col-12 wait-for">
           <div class="mt-4">
@@ -29,6 +37,7 @@
       :getSubCategoriesParent="getSubCategories"
       :user_is_logged_in="user_is_logged_in"
       :additions="additions"
+      :searchtermfound="searchTermFound"
   >
 
   </category-list>
@@ -41,6 +50,8 @@ import axios from 'axios';
 import Loading from "./Loading";
 import CategoryList from "./category-list"
 import CategoryCard from "./category-list/CategoryCard";
+import SearchBar from './SearchBar';
+import { fetchProducts } from "../services/products-service";
 
 export default {
   name: "MainCategories",
@@ -51,12 +62,14 @@ export default {
       productsdata: [],
       subcategoriesdata: [],
       additions: [],
+      searchTermFound: '',
     }
   },
   components: {
     Loading,
     CategoryList,
     CategoryCard,
+    SearchBar,
   },
   props: {
     categories: {
@@ -66,8 +79,34 @@ export default {
     user_is_logged_in: Boolean,
   },
   methods: {
+    /**
+     * Handles a change in the searchTerm provided by the search bar and fetches new products
+     *
+     * @param {string} term
+     */
+    onSearchProducts({term}) {
+      if (term !== null && term !== '' && term.length > 2) this.loadProducts(term);
+    },
+    async loadProducts(searchTerm) {
+      // this.loading = true;
+      let response;
+      var currentCategoryId = null;
+      try {
+        response = await fetchProducts(currentCategoryId, searchTerm);
+        // this.loading = false;
+      } catch (e) {
+        // this.loading = false;
+        return;
+      }
+      var rspdata = response.data['hydra:member'];
+      if (rspdata.length) {
+        this.productsdata = response.data['hydra:member'];
+        this.searchTermFound = searchTerm;
+      }
+    },
     async getSubCategories(id) {
       this.productsdata = [];
+      this.searchTermFound = '';
 
       var url = '/api/categories/' + id;
       var paramsGet = {};

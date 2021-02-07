@@ -28,7 +28,7 @@ use Doctrine\ORM\Mapping as ORM;
  *  paginationEnabled=false
  * )
  *
- * @ApiFilter(SearchFilter::class, properties={"conference": "exact"})
+ * @ApiFilter(SearchFilter::class, properties={"productCode": "exact"})
  */
 class OrderItem
 {

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Service\ProductImagesUploader;
 use App\Entity\ProductPicture;
@@ -18,15 +19,21 @@ use App\Entity\Category;
 
 /**
  * @ApiResource(
- *  attributes={"security"="is_granted('ROLE_USER')"},
  *  collectionOperations={
- *     "get"={"security"="is_granted('ROLE_USER')", "normalization_context"={"groups"="product:list"}},
+ *     "get"={"normalization_context"={"groups"="product:list"}},
  *     },
  *  itemOperations={
- *     "get"={"security"="is_granted('ROLE_USER')", "normalization_context"={"groups"="product:item"}},
+ *     "get"={"normalization_context"={"groups"="product:item"}},
  *     },
  * )
- * @ApiFilter(BooleanFilter::class, properties={"enabled"})
+ * @ApiFilter(BooleanFilter::class, properties={
+ *     "enabled",
+ *     "category.enabled"
+ * })
+ * @ApiFilter(SearchFilter::class, properties={
+ *     "name": "partial",
+ *     "productCode": "exact"
+ * })
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  * @Vich\Uploadable
  */
@@ -56,7 +63,7 @@ class Product
 
     /**
      * @ORM\Column(name="description", type="string", length=150)
-     * @Groups({"category:list", "category:item"})
+     * @Groups({"product:list", "category:list", "category:item"})
      */
     private $description;
 
@@ -77,7 +84,7 @@ class Product
      * @ORM\Column(name="price", type="integer")
      *
      * @Assert\NotBlank()
-     * @Groups({"order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
      */
     private $price;
 
@@ -102,13 +109,15 @@ class Product
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"
      * )
-     * @Groups({"order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
      */
     private $picture;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
+     *
+     * @Groups({"product:list", "product:item"})
      */
     private $category;
 

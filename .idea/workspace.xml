@@ -12,7 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPicture.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +205,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/media" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -220,10 +224,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/media" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/templates/Front/categories_list" />
-      <recent name="$PROJECT_DIR$/assets/media" />
       <recent name="$PROJECT_DIR$/assets/styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -370,6 +374,8 @@
       <workItem from="1612442993891" duration="1682000" />
       <workItem from="1612445519324" duration="24196000" />
       <workItem from="1612512330803" duration="14380000" />
+      <workItem from="1612624459208" duration="16379000" />
+      <workItem from="1612688771098" duration="11698000" />
     </task>
     <servers />
   </component>

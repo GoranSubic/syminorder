@@ -57,7 +57,7 @@ class ProductPicture
      *
      * @var File|null
      *
-     * @Groups({"order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
      */
     private $imageFile;
 
@@ -66,7 +66,7 @@ class ProductPicture
      *
      * @var string|null
      *
-     * @Groups({"order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
      */
     private $imageName;
 
