@@ -3,8 +3,9 @@
   <div id="main-categories">
     <div class="categories container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 searchcat">
           <search-bar
+              class="searchbar"
               @search-products="onSearchProducts"
           >
 
@@ -177,5 +178,12 @@ export default {
 </script>
 
 <style scoped>
-
+#categories .searchcat {
+  display: flex;
+  justify-content: center;
+}
+#categories .searchbar {
+  margin: 20px;
+  width: 75%;
+}
 </style>
