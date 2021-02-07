@@ -11,8 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StaticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/main-navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/product/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/orders.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,7 +381,7 @@
       <workItem from="1612512330803" duration="14380000" />
       <workItem from="1612624459208" duration="16379000" />
       <workItem from="1612688771098" duration="11835000" />
-      <workItem from="1612708671124" duration="831000" />
+      <workItem from="1612708671124" duration="9748000" />
     </task>
     <servers />
   </component>

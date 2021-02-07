@@ -16,7 +16,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/porudzbine", name="app_orders")
      */
     public function index(SerializerInterface $serializer)
     {

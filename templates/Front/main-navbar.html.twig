@@ -15,13 +15,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('homepage') }}">Ponuda<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('homepage') }}">Olala<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_orders') }}">
+                        {% if user_is_logged_in %}Porudžbine{% else %}Ponuda{% endif %}
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_static_about') }}">O nama</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_static_orders') }}">Porudžbine</a>
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">
@@ -44,7 +46,6 @@
             <li class="nav-item">
             {% if user_is_logged_in %}
                 <shopping id="shopping"
-                          minussign="{{ asset("build/images/minus-solid.svg") }}"
                           v-bind:datauname="dataUname"
                           v-bind:userid="{{ app.user.id }}"
                           v-bind:tableid="{{ table_id }}"

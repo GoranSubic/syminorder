@@ -1,7 +1,4 @@
-{# templates/Front/static_pages/layout.html.twig #}
 {% extends 'base.html.twig' %}
-
-{% block title %}{% endblock %}
 
 {% block body %}
     <div class="header container">
@@ -10,11 +7,13 @@
         {% endblock %}
     </div>
 
-    <div class="main container static">
+    <div class="main container static" id="parentScrollelm">
         <div class="bckg-image container">
             {% block greet_info %}{% endblock %}
 
-            {% block content %}{% endblock %}
+            <div id="scrollelm">
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
 

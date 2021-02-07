@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class StaticController extends AbstractController
 {
     /**
-    * @Route("/about", name="app_static_about")
+    * @Route("/onama", name="app_static_about")
     */
     public function about()
     {
@@ -20,13 +20,10 @@ class StaticController extends AbstractController
     }
 
     /**
-     * @Route("/orders/{id?}", name="app_static_orders")
-     * @ParamConverter("order", class="App\Entity\Order")
+     * @Route("/", name="homepage")
      */
-    public function orders(Order $order = null)
+    public function orders()
     {
-        return $this->render('Front/static_pages/orders.html.twig', [
-            "orderchanged" => $order
-        ]);
+        return $this->render('Front/static_pages/homepage.html.twig');
     }
 }
