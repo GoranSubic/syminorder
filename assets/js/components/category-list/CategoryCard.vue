@@ -3,9 +3,9 @@
       class="col-6 col-sm-6 col-md-4 col-lg-3 category subcategory" :id="'category-' + category.id">
     <div class="cat-border">
       <div class="col-6 cat-image">
-        <img v-if="category.picture && category.picture.imageFile"
+        <img v-if="category.picture && category.picture.imageName"
             :alt="category.name"
-            :src="category.picture.imageFile"
+            :src="'images/products/' + category.picture.imageName"
             class="img-fluid"
         />
         <span v-else>

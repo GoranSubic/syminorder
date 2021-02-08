@@ -56,8 +56,6 @@ class ProductPicture
      * )
      *
      * @var File|null
-     *
-     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
      */
     private $imageFile;
 

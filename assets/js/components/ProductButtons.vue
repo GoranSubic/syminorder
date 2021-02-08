@@ -77,8 +77,6 @@ export default {
   },
   methods: {
     addToCart(product) {
-      console.log(this.addselected);
-
       var addstr = '';
       var addcode = '';
       addcode = product.id;

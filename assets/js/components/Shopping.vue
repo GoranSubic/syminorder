@@ -35,9 +35,9 @@
           <div class="row striped-row">
             <div class="col-4">
               <img
-                  v-if="item.picture && item.picture.imageFile"
+                  v-if="item.picture && item.picture.imageName"
                   class="img-fluid prod-img"
-                  :src="item.picture.imageFile"
+                  :src="'images/products/' + item.picture.imageName"
                   :alt="item.name"
               />
               <span v-else>{{ item.name }}</span>

@@ -2,9 +2,9 @@
   <div>
   <div class="prod-border">
       <div class="col-6 prod-image">
-        <img v-if="product.picture && product.picture.imageFile"
+        <img v-if="product.picture && product.picture.imageName"
             class="img-fluid prod-img"
-            :src="product.picture.imageFile"
+             :src="'images/products/' + product.picture.imageName"
             :alt="product.name"
         />
         <span v-else>{{ product.name }}</span>
