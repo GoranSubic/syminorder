@@ -247,11 +247,13 @@ tr.status-delivered, td.status-delivered {
 .ordersdata {
   margin: 50px 0 50px 0;
   background-color: white;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .ordertable {
   width: 100%;
-  height: 400px;
+  max-height: 400px;
   overflow: auto;
 }
 
