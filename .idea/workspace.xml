@@ -14,8 +14,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/Loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Loading.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/CategoriesMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/StaticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +193,13 @@
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
       <path value="$PROJECT_DIR$/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -197,7 +213,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/carousel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Front/category" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -216,11 +232,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/Front/category" />
+      <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/public/images/carousel" />
       <recent name="$PROJECT_DIR$/assets/media" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/assets/js/components" />
-      <recent name="$PROJECT_DIR$/templates/Front/categories_list" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/js/store" />
@@ -371,6 +387,21 @@
       <workItem from="1612708671124" duration="10638000" />
       <workItem from="1612720250779" duration="17727000" />
       <workItem from="1612781204547" duration="3044000" />
+      <workItem from="1612793217894" duration="343000" />
+      <workItem from="1612870100557" duration="31000" />
+      <workItem from="1612962260401" duration="148000" />
+      <workItem from="1612969986222" duration="560000" />
+      <workItem from="1612970967691" duration="212000" />
+      <workItem from="1612971477708" duration="797000" />
+      <workItem from="1613155827908" duration="215000" />
+      <workItem from="1613158024438" duration="684000" />
+      <workItem from="1613294361592" duration="956000" />
+      <workItem from="1613307839354" duration="114000" />
+      <workItem from="1613920883628" duration="74000" />
+      <workItem from="1614330560782" duration="889000" />
+      <workItem from="1614436076970" duration="1589000" />
+      <workItem from="1614583684728" duration="13364000" />
+      <workItem from="1614605737550" duration="15157000" />
     </task>
     <servers />
   </component>

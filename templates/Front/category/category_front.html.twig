@@ -1,0 +1,33 @@
+{% extends 'Front/static_pages/layout.html.twig' %}
+
+{% set user_is_logged_in = app.user ? 'true' : 'false' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+    <div class="category-show homepage content">
+        <h1>{{ category.name }}</h1>
+
+        <div id="{{ category.id }}" class="flex-container-cat">
+
+            {{ include('Front/category/category_image.html.twig') }}
+
+            <div class="category-about">
+                {{ category.description|raw }}
+            </div>
+        </div>
+    </div>
+
+    {% if productsdata|default and productsdata != "" and productsdata|length > 0 %}
+        <div class="homepage content">
+            <category-selected
+                    v-bind:productsdata="{{ productsdata }}"
+                    :user_is_logged_in="{{ user_is_logged_in }}"
+            >
+            </category-selected>
+        </div>
+    {% endif %}
+
+    {{ include('Front/category/category_categories.html.twig') }}
+
+{% endblock %}

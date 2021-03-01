@@ -37,7 +37,7 @@
               <img
                   v-if="item.picture && item.picture.imageName"
                   class="img-fluid prod-img"
-                  :src="'images/products/' + item.picture.imageName"
+                  :src="'/images/products/' + item.picture.imageName"
                   :alt="item.name"
               />
               <span v-else>{{ item.name }}</span>
@@ -302,7 +302,7 @@ export default {
       var itemsArray = [];
       this.$store.getters.products.forEach(prod => {
         var obj = {
-          "product": "api/products/"+prod.id,
+          "product": "/api/products/"+prod.id,
           "productCode": prod.productCode,
           "quantity": prod.ammount,
           "itemAdditions": prod.addselected,
@@ -326,7 +326,7 @@ export default {
           /*
           tableid: this.tableid,
           */
-          "customer": "api/users/"+this.userid,
+          "customer": "/api/users/"+this.userid,
           "items": JSON.parse(this.itemsArray()),
           "noteCart": this.datanote,
           "noteAdmin": "",
@@ -364,7 +364,7 @@ export default {
       })
     },
     retrieveCityList() {
-      var urlGet = 'api/city_deliveries?position[gte]=1';
+      var urlGet = '/api/city_deliveries?position[gte]=1';
       var paramsGet = {};
 
       axios.get(urlGet, {

@@ -19,11 +19,4 @@ class StaticController extends AbstractController
         return $this->render('Front/static_pages/about.html.twig');
     }
 
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function orders()
-    {
-        return $this->render('Front/static_pages/homepage.html.twig');
-    }
 }

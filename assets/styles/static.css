@@ -11,7 +11,6 @@
     margin: 50px 0 50px 0;
 }
 .static.container .content {
-    text-align: center;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
@@ -21,10 +20,57 @@
     color: black;
 }
 .static.container .content h1 {
-    text-align: left;
+    text-align: center;
 }
+
+/* vue template */
 #categories {
     background-color: rgba(255, 255, 255, 0.85);
     padding: 10px;
     border-radius: 10px;
+}
+
+/* homepage categories */
+.flex-container-categories {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+/* homepage each category */
+.flex-container-cat {
+    display: flex;
+    justify-content: space-around;
+    /*max-height: 300px;*/
+    max-height: 100%;
+    flex-direction: row;
+
+    align-items: center;
+}
+.flex-container-cat.reverse {
+    flex-direction: row-reverse;
+}
+.flex-container-cat > div {
+    min-width: 50%;
+    overflow: hidden;
+
+    padding: 10px;
+    text-align: center;
+    line-height: 1em;
+    font-size: 1.25em;
+}
+@media (max-width: 800px) {
+    .flex-container-cat {
+        display: flex;
+        justify-content: space-around;
+        max-height: 100%;
+        flex-direction: column;
+    }
+
+    .flex-container-cat.reverse {
+        flex-direction: column-reverse;
+    }
+}
+.flex-container-cat .category-image img {
+    max-width: 100%;
+    max-height: 100%;
 }

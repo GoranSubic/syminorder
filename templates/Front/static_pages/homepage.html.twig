@@ -33,30 +33,15 @@
                 </main-carousel>
             </div>
 
-<!--            <div class="homepage content">
-                <div id="gg_hours_widget-2" class="widget gg_Hours_widget box col6 boxbg" style="position: absolute; left: 240px; top: 0px;">
-                    <h3 class="widgettitle text-center">
-                        <i class="fa fa-clock-o "></i>Radno vreme
-                    </h3>
-                    <div class="text-center">
-                        <h6 class="hours-title">Ponedeljak - Četvrtak</h6>
-                        <p>08:00 - 00:00</p>
-
-                        <h6 class="hours-title">Petak - Subota</h6>
-                        <p>08:00 - 01:00</p>
-                        <h6 class="hours-title">Nedelja</h6>
-                        <p>08:00 - 00:00</p>
-                    </div>
-                </div>
-            </div>-->
-
-            <div class="homepage content">
+            <div class="homepage content" style="text-align: center; font-weight: bold;">
                 Dobro došli,
                 <br /><br />
                 web prezentacija je u izdradi
                 <br /><br />
                 Hvala na poseti!!!
             </div>
+
+            {{ include('Front/category/category_categories.html.twig') }}
         </div>
     </div>
 {% endblock %}

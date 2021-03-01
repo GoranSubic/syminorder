@@ -1,0 +1,11 @@
+<div class="flex-container-categories">
+    {% for category in categories %}
+        <div class="flex-container-cat homepage content
+            {% if loop.index % 2 == 0 %} reverse{% endif %}
+        ">
+            {{ include('Front/category/category_image.html.twig') }}
+
+            {{ include('Front/category/category_about.html.twig') }}
+        </div>
+    {% endfor %}
+</div>

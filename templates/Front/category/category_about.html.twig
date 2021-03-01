@@ -1,0 +1,8 @@
+<div class="category-about">
+    <div class="category-name">
+        <a href="{{ path('category_show_front', {'id': category.id}) }}">
+            <h2>{{ category.name }}</h2>
+        </a>
+    </div>
+    <div class="category-desc">{{ category.description|raw }}</div>
+</div>

@@ -4,7 +4,7 @@
       <div class="col-6 prod-image">
         <img v-if="product.picture && product.picture.imageName"
             class="img-fluid prod-img"
-             :src="'images/products/' + product.picture.imageName"
+             :src="'/images/products/' + product.picture.imageName"
             :alt="product.name"
         />
         <span v-else>{{ product.name }}</span>

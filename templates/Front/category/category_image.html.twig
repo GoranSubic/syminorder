@@ -1,0 +1,7 @@
+<div class="category-image">
+    {% if category.picture %}
+        <img src="{{ vich_uploader_asset(category.picture, 'imageFile') }}" alt="{{ category.picture.imageName }}" /></td>
+    {% else %}
+        No image!
+    {% endif %}
+</div>

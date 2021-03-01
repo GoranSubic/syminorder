@@ -55,7 +55,7 @@ import SearchBar from './SearchBar';
 import { fetchProducts } from "../services/products-service";
 
 export default {
-  name: "MainCategories",
+  name: "CategoriesMain",
   data: function () {
     return {
       parentcatdata: {},
