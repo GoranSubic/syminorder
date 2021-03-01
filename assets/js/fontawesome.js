@@ -42,12 +42,14 @@ import {faTrash} from "@fortawesome/free-solid-svg-icons/faTrash";
 import {faPhoneAlt} from "@fortawesome/free-solid-svg-icons/faPhoneAlt";
 import {faMoneyBillWave} from "@fortawesome/free-solid-svg-icons/faMoneyBillWave";
 import {faMoneyBillWaveAlt} from "@fortawesome/free-solid-svg-icons/faMoneyBillWaveAlt";
+import {faChevronLeft} from "@fortawesome/free-solid-svg-icons/faChevronLeft";
+import {faChevronRight} from "@fortawesome/free-solid-svg-icons/faChevronRight";
 
 library.add(faStar, faQuestionCircle, faShoppingBag, faCheck, faExclamationCircle,
   faInfoCircle, faChevronUp, faMapMarkerAlt, faShuttleVan, faCreditCard, faFlag,
   faCcMastercard, faCcVisa, faCcPaypal, faTimes, faSearch, faPlus, faPencilAlt,
   faSyncAlt, faFacebook, faTwitter, faInstagram, faGooglePlus, faBan, faAdjust, faClock, faReplyAll,
     faUser, faAddressBook, faAddressCard, faTasks, faTable, faPhoneAlt, faMoneyBillWave, faMoneyBillWaveAlt,
-    faArrowLeft, faLevelUpAlt, faMinus, faCartPlus, faTrash
+    faArrowLeft, faLevelUpAlt, faMinus, faCartPlus, faTrash, faChevronLeft, faChevronRight
 );
 dom.watch();

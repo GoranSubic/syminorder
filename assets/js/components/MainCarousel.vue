@@ -1,8 +1,8 @@
 <template>
   <agile
-      :dots="false" :nav-buttons="false"
+      :dots="true" :nav-buttons="true"
       :mobile-first="true" :infinite="true"
-      :autoplay-speed="3000" :speed="1000" :fade="true"
+      :autoplay="true" :autoplay-speed="4000" :speed="2000" :fade="true"
 
   >
     <div class="slide">
@@ -19,6 +19,14 @@
 <!--      <h3>slide 3</h3>-->
       <img :src="img3" alt="slide3">
     </div>
+
+    <template slot="prevButton">
+      <i class="fas fa-chevron-left"></i>
+    </template>
+    <template slot="nextButton">
+      <i class="fas fa-chevron-right"></i>
+    </template>
+
   </agile>
 </template>
 
@@ -64,16 +72,5 @@ export default {
 </script>
 
 <style scoped>
-.carousel .slide.agile__slide.agile__slide--current.agile__slide--active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden
-}
-.slide img {
-  max-height: 500px;
-  flex-shrink: 0;
-  /*min-width: 100%;
-  min-height: 100%*/
-}
+
 </style>
