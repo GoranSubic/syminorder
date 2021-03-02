@@ -15,7 +15,7 @@
               :options="additions" :multiple="true"
               :close-on-select="false" :clear-on-select="false"
               :preserve-search="true"
-              placeholder="Dodaci" label="text" track-by="text"
+              placeholder="Prilozi" label="text" track-by="text"
               :preselect-first="false"
               deselectLabel=" - " selectLabel=" + " selectedLabel="Dodato"
           >

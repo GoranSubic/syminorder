@@ -85,9 +85,23 @@
                 <i class="fa fa-map-marker-alt"></i>
               </span>
             </div>
-            <b-form-select required v-model="cityselected" :options="cities" id="cartCity" class="form-control"
-                           aria-describedby="cartCityLabel" @change="formChanged">
-            </b-form-select>
+
+            <multiselect
+                v-model="cityselected"
+                :options="cities" id="cartCity" class="form-control"
+                aria-describedby="cartCityLabel" @select="formChanged"
+                :multiple="false"
+                :close-on-select="true"
+                :clear-on-select="false"
+                :preserve-search="false"
+                placeholder="Naselje / Grad" label="name" track-by="name"
+                :preselect-first="true"
+                deselectLabel=" - " selectLabel=" + " selectedLabel="Odabrano"
+            >
+              <template slot="singleLabel" slot-scope="{ option }" class="city-select" style="height: 30px; width: 35%;">
+                          <span v-if="option.name">{{ option.name }}</span>
+              </template>
+            </multiselect>
 
             <div class="input-group-prepend">
               <span class="input-group-text" id="cartCityPriceLabel">
@@ -171,7 +185,13 @@ export default {
       validationErrors: [],
       isLoading: false,
       cities: [],
-      cityselected: '',
+      cityselected: {
+        name: 'Naselje / Grad',
+        value: null,
+        price: 0,
+        address: null,
+        deliveryFree: 0,
+      },
     }
   },
   props: {
@@ -229,7 +249,7 @@ export default {
     },
     cityDeliveryCalc() {
       var calc = 0;
-      if (this.cityselected !== 'undefined' && this.cityselected.price !== 'undefined') {
+      if (this.cityselected !== null && this.cityselected !== 'undefined' && this.cityselected.price !== 'undefined') {
         if (this.cityselected.deliveryFree === 'undefined'
             || (this.cityselected.deliveryFree === 0)
             || (this.cityselected.deliveryFree > this.cartProductsSum))
@@ -286,7 +306,7 @@ export default {
 
     formChanged() {
       this.datanote = document.getElementById("cartNote").value;
-      if (this.cityselected !== '' && this.cityselected.address !== 'undefined'
+      if (this.cityselected !== null && this.cityselected !== '' && this.cityselected.address !== 'undefined'
           && this.cityselected.address !== null && this.cityselected.address !== '') {
         document.getElementById("cartAddress").innerText = this.cityselected.address;
         this.dataaddress = this.cityselected.address;
@@ -375,13 +395,21 @@ export default {
             var resp = response.data["hydra:member"];
             /*if (resp.length > 0) {
               this.cities.push(
-                  { value: null, text: 'Dostava / Lično' },
+                  { name: 'Dostava / Lično',
+                    value: null,
+                    price: 0,
+                    address: null,
+                    deliveryFree: 0,
+                  },
               )
             }*/
             resp.forEach(city => {
               var obj = {
-                text: city.name,
-                value: city
+                name: city.name,
+                value: city,
+                price: city.price,
+                address: city.address,
+                deliveryFree: city.deliveryFree,
               };
 
               this.cities.push(obj);
@@ -443,6 +471,11 @@ form div.striped-row {
   margin-bottom: 3px;
 }
 
+.multiselect.form-control {
+  width: 35%;
+  padding: 0;
+  height: 30px !important;
+}
 form #cartCity, #cartDeliveryPrice, #cartAddress, #cartPhone {
   width: 40%;
 }
