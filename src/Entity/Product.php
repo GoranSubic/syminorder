@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use App\Entity\Category;
@@ -60,6 +61,11 @@ class Product
      * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     */
+    private $slug;
 
     /**
      * @ORM\Column(name="description", type="string", length=150)
@@ -220,6 +226,57 @@ class Product
         $this->name = $name;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = $slug;
+    }
+
+    public function computeSlug(SluggerInterface $slugger, $em)
+    {
+        if (!$this->slug || '-' === $this->slug) {
+
+            $newSlug = (string) $slugger->slug((string) $this)->lower();
+            $this->slug = $newSlug;
+
+            /* check if exists product with same name */
+            $repo = $em->getRepository('App\Entity\Product');
+            $productsByName = $repo->findBy(['name' => $this->name]);
+
+            $foundProducts = array_filter($productsByName, function ($prod) {
+                return ($prod->getId() !== $this->getId() && $prod->getSlug() !== null);
+            });
+
+            if (count($foundProducts)) {
+                $max = 0;
+                /* extract last part of slug and check if int */
+                foreach ($foundProducts as $prod) {
+                    $existingSlug = $prod->getSlug();
+                    $words = explode("-", $existingSlug);
+                    $lastWord = end($words);
+                    if (is_numeric($lastWord) && $lastWord > $max) $max = $lastWord;
+                }
+
+                if ($max > 0) {
+                    $max += 1;
+                    $newSlug .= "-" . $max;
+                } else {
+                    $newSlug .= "-" . 1;
+                }
+                $this->slug = $newSlug;
+            }
+        }
+    }
 
     /**
      * @return mixed
@@ -301,4 +358,8 @@ class Product
         $this->code = $code;
     }
 
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }
