@@ -12,7 +12,9 @@ use Doctrine\Common\Collections\Collection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index as Index;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -39,6 +41,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          @Index(name="lvl_ix", columns={"lvl"})
  *     })
  * @ORM\Entity(repositoryClass="Gedmo\Tree\Entity\Repository\NestedTreeRepository")
+ * @UniqueEntity("slug")
  */
 class Category
 {
@@ -61,6 +64,11 @@ class Category
      * @Groups({"category:list", "category:item"})
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     */
+    private $slug;
 
     /**
      * @ORM\Column(name="description", type="string", length=255)
@@ -198,6 +206,58 @@ class Category
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = $slug;
+    }
+
+    public function computeSlug(SluggerInterface $slugger, $em)
+    {
+        if (!$this->slug || '-' === $this->slug) {
+
+            $newSlug = (string) $slugger->slug((string) $this)->lower();
+            $this->slug = $newSlug;
+
+            /* check if exists category with same name */
+            $repo = $em->getRepository('App\Entity\Category');
+            $categoriesByName = $repo->findBy(['name' => $this->name]);
+
+            $foundCategories = array_filter($categoriesByName, function ($cat) {
+                return ($cat->getId() !== $this->getId() && $cat->getSlug() !== null);
+            });
+
+            if (count($foundCategories)) {
+                $max = 0;
+                /* extract last part of slug and check if int */
+                foreach ($foundCategories as $cat) {
+                    $existingSlug = $cat->getSlug();
+                    $words = explode("-", $existingSlug);
+                    $lastWord = end($words);
+                    if (is_numeric($lastWord) && $lastWord > $max) $max = $lastWord;
+                }
+
+                if ($max > 0) {
+                    $max += 1;
+                    $newSlug .= "-" . $max;
+                } else {
+                    $newSlug .= "-" . 1;
+                }
+                $this->slug = $newSlug;
+            }
+        }
     }
 
     /**

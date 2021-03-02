@@ -30,6 +30,7 @@ class CategoryCrudController extends AbstractCrudController
         $fields = [
             BooleanField::new('enabled'),
             TextField::new('name'),
+            TextField::new('slug'),
             TextEditorField::new('description'),
             AssociationField::new('parent')->autocomplete(),
         ];
