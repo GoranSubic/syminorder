@@ -20,7 +20,7 @@ class RegistrationFormType extends AbstractType
             ->add('username')
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
-                'label' => 'Opšti uslovi',
+                'label' => 'Slažem se',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([

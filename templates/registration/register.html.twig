@@ -15,9 +15,9 @@
                     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
                 {% endfor %}
 
-                <h1>Register</h1>
-
                 <div class="login_wrapper">
+                    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+
                     {{ form_start(registrationForm) }}
                     <div class="input_fields">
                         <div class="col-md-8">
@@ -27,7 +27,9 @@
                                 label: 'Password'
                             }) }}
                             {{ form_row(registrationForm.agreeTerms) }}
-
+                            <div>
+                                <p>This site is protected by Terms of <a href="{{ path('app_static_privacy') }}">Privacy Policy</a>. </p>
+                            </div>
                             <div class="login_btn_wrapper">
                                 <button type="submit" class="btn btn-lg btn-primary login_btn">Register</button>
                             </div>

@@ -19,4 +19,12 @@ class StaticController extends AbstractController
         return $this->render('Front/static_pages/about.html.twig');
     }
 
+    /**
+    * @Route("/privacy", name="app_static_privacy")
+    */
+    public function privacy()
+    {
+        return $this->render('Front/static_pages/privacy-policy.html.twig');
+    }
+
 }
