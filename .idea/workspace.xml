@@ -12,11 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/StaticController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StaticController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -402,6 +399,7 @@
       <workItem from="1614710330572" duration="1136000" />
       <workItem from="1614757309598" duration="2767000" />
       <workItem from="1614764815988" duration="3578000" />
+      <workItem from="1614780929100" duration="1082000" />
     </task>
     <servers />
   </component>

@@ -28,7 +28,9 @@
                             }) }}
                             {{ form_row(registrationForm.agreeTerms) }}
                             <div>
-                                <p>This site is protected by Terms of <a href="{{ path('app_static_privacy') }}">Privacy Policy</a>. </p>
+                                <p>This site is protected by Terms of
+                                    <a href="{{ path('app_static_privacy') }}">Privacy Policy</a> and
+                                    <a href="{{ path('app_static_terms') }}">Terms and Conditions</a>. </p>
                             </div>
                             <div class="login_btn_wrapper">
                                 <button type="submit" class="btn btn-lg btn-primary login_btn">Register</button>
