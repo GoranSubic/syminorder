@@ -58,7 +58,7 @@
               :user_is_logged_in="user_is_logged_in"
               :key="product['@id']"
               :product="product"
-              class="col-6 col-sm-6 col-md-4 col-lg-4 products"
+              class="col-12 col-sm-6 col-md-4 col-lg-4 products"
               :id="'product-' + product.id"
               :additions="additions"
       >

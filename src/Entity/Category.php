@@ -127,10 +127,10 @@ class Category
      *
      * @Assert\NotBlank()
      * @Assert\Image(
-     *     minWidth = 200,
-     *     maxWidth = 400,
-     *     minHeight = 200,
-     *     maxHeight = 400,
+     *     minWidth = 300,
+     *     maxWidth = 800,
+     *     minHeight = 300,
+     *     maxHeight = 600,
      *     maxSize = "1024k",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"
