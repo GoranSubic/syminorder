@@ -87,3 +87,34 @@ terms:
     protection: This site is protected by Terms of
     protection_privacy: Privacy Policy
     protection_terms: Terms and Conditions
+vuejs:
+  shopping:
+    title_part1: Prosledite porudžbinu ili o
+    title_part2: O
+    title_part3: daberite još iz ponude
+    title_article_num1: 'U korpi imate %cartcount% artikal(a)'
+    title_article_num2: ' u iznosu od  %cartproductssum%'
+    title_delivery_price: ' + Cena dostave: %citydeliverycalc%'
+    title_sum: ' = Ukupno: %cartsumwithdelivery%'
+    error: Morate ispraviti grešku/e
+    error_msg: Mesto, adresa i telefon su obavezni!
+    error_submit_post: Sistemska greska!
+    additions: Prilozi
+    placeh_short_note: Kratka napomena
+    first_place_city: Naselje / Grad
+    placeh_place_city: Naselje / Grad
+    selected: Odabrano
+    placeh_delivery_address: Adresa za dostavu
+    placeh_phone_num: Broj telefona
+    button_submit: Prosledi
+    button_submit_txt: Slanje podataka...
+    send_again: Ponovi slanje...
+    footer_info:  <p>Rok za isporuku hrane na kućnu adresu u Zrenjaninu je 60 minuta a za okolna sela je 120 minuta.</p>
+                  <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Porudžbine</p>
+    currency: RSD
+  modal:
+    order_submited:
+      title: Uspešno ste izvršili porudžbinu
+      message:  <br />Isporuka se vrši u najkraćem mogućem roku.<br />
+                Status porudžbine možete pratiti na stranici Porudžbine.<br />
+      button_ok: OK

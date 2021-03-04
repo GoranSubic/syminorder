@@ -21,7 +21,7 @@
       <!--      <form v-on:submit.prevent="handleSubmit">-->
       <form>
         <div>
-          <b v-if="error || validationErrors.length">Morate ispraviti grešku/e:</b>
+          <b v-if="error || validationErrors.length">{{ Translator.trans('vuejs.shopping.error') }}:</b>
           <div v-if="error" class="alert alert-danger">
             {{ error }}
           </div>
@@ -48,7 +48,7 @@
                   <span>{{ item.name }}</span>
                 </div>
                 <div class="additions col-12 ellipsis" v-if="item.addselected !== ''">
-                  <span>Dodaci: <i class="addvalues">{{ item.addselected }}</i></span>
+                  <span>{{ Translator.trans('vuejs.shopping.additions') }}: <i class="addvalues">{{ item.addselected }}</i></span>
                 </div>
               </div>
               <div class="row">
@@ -76,7 +76,7 @@
               </span>
             </div>
             <textarea type="text" id="cartNote" class="form-control form-control-sm" aria-describedby="cartNoteLabel"
-                    rows="2" placeholder="Kratka napomena" @keyup="formChanged" @change="formChanged"></textarea>
+                    rows="2" :placeholder="Translator.trans('vuejs.shopping.placeh_short_note')" @keyup="formChanged" @change="formChanged"></textarea>
           </div>
 
           <div class="input-group" v-if="cities.length">
@@ -94,9 +94,9 @@
                 :close-on-select="true"
                 :clear-on-select="false"
                 :preserve-search="false"
-                placeholder="Naselje / Grad" label="name" track-by="name"
+                :placeholder="Translator.trans('vuejs.shopping.placeh_place_city')" label="name" track-by="name"
                 :preselect-first="true"
-                deselectLabel=" - " selectLabel=" + " selectedLabel="Odabrano"
+                deselectLabel=" - " selectLabel=" + " :selectedLabel="Translator.trans('vuejs.shopping.selected')"
             >
               <template slot="singleLabel" slot-scope="{ option }" class="city-select" style="height: 30px; width: 35%;">
                           <span v-if="option.name">{{ option.name }}</span>
@@ -122,7 +122,7 @@
                    :data-user-id="userid" :value="datauname" aria-label="Username" hidden disabled>
 
             <input v-if="tableid === 0" required v-model="dataaddress" type="text" id="cartAddress" class="form-control" aria-describedby="cartUserNameLabel"
-                   aria-label="Address" placeholder="Adresa za dostavu" @keyup="formChanged" @change="formChanged">
+                   aria-label="Address" :placeholder="Translator.trans('vuejs.shopping.placeh_delivery_address')" @keyup="formChanged" @change="formChanged">
 
             <div class="input-group-prepend" v-if="tableid === 0">
               <span class="input-group-text" id="cartPhoneLabel">
@@ -130,18 +130,17 @@
               </span>
             </div>
             <input v-if="tableid === 0" required v-model="dataphone" type="tel" id="cartPhone" class="form-control" aria-describedby="cartPhoneLabel"
-                   aria-label="Phone" placeholder="Broj telefona" @keyup="formChanged" @change="formChanged">
+                   aria-label="Phone" :placeholder="Translator.trans('vuejs.shopping.placeh_phone_num')" @keyup="formChanged" @change="formChanged">
             <input v-else-if="tableid !== 0" required type="text" id="cartTableName" class="form-control" aria-describedby="cartUserNameLabel"
                    :data-table-id="tableid" :value="tablename" aria-label="Tablename" disabled>
           </div>
         </div>
 
-        <b-button v-if="cartCount > 0" id="btnFormSbm" @click="checkForm" variant="outline-success" block type="button">Prosledi</b-button>
+        <b-button v-if="cartCount > 0" id="btnFormSbm" @click="checkForm" variant="outline-success" block type="button">{{ Translator.trans('vuejs.shopping.button_submit') }}</b-button>
       </form>
 
       <div class="footer">
-        <p>Rok za isporuku hrane na kućnu adresu u Zrenjaninu je 60 minuta a za okolna sela je 120 minuta.</p>
-        <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Porudžbine</p>
+        <span v-html="Translator.trans('vuejs.shopping.footer_info')"></span>
       </div>
     </div>
   </b-modal>
@@ -150,17 +149,19 @@
     <div class="d-block text-center">
       <div class="margin-left-0 margin-right-0 col-xs-12 col-xs-offset-1 col-sm-12 col-md-12 col-lg-12 margin-bottom-15">
         <div class="modal-title">
-          Uspešno ste izvršili porudžbinu
+          <span v-html="Translator.trans('vuejs.modal.order_submited.title')"></span>
         </div>
       </div>
 
       <div class="margin-left-0 margin-right-0 col-xs-12 col-xs-offset-1 col-sm-12 col-md-12 col-lg-12 margin-bottom-15">
         <div id="register-modal-success-text" class="modal-text">
-          Isporuka se vrši u najkraćem mogućem roku. <br><br>
-          Status porudžbine možete pratiti na stranici Porudžbine.</div>
+          <span v-html="Translator.trans('vuejs.modal.order_submited.message')"></span>
+        </div>
       </div>
       <div class="margin-left-0 margin-right-0 col-xs-12 col-xs-offset-1 col-sm-12 col-md-12 col-lg-12">
-        <button class="btn btn-block btn-modal-submit" data-dismiss="modal" id="register-submit-success">OK</button>
+        <button class="btn btn-block btn-modal-submit" data-dismiss="modal" id="register-submit-success">
+          <span v-html="Translator.trans('vuejs.modal.order_submited.button_ok')"></span>
+        </button>
       </div>
     </div>
   </b-modal>
@@ -170,12 +171,14 @@
 <script>
 import store from '../store/index';
 import axios from 'axios';
+import {Translator} from "../main";
 
 export default {
   store,
   name: "Shopping",
   data() {
     return {
+      Translator: Translator,
       formatter: Function,
       formatterNumber: Function,
       dataaddress: '',
@@ -186,7 +189,7 @@ export default {
       isLoading: false,
       cities: [],
       cityselected: {
-        name: 'Naselje / Grad',
+        name: Translator.trans('vuejs.shopping.first_place_city'),
         value: null,
         price: 0,
         address: null,
@@ -203,31 +206,31 @@ export default {
   computed: {
     titleText() {
       var txt = '';
-      if(this.cartCount > 0) {
-        if (this.cartCount > 0) txt = 'Prosledite porudžbinu ili o';
-        else txt = 'O';
-        txt += 'daberite još iz ponude';
-      }
+
+      if (this.cartCount > 0) txt = Translator.trans('vuejs.shopping.title_part1');
+      else txt = Translator.trans('vuejs.shopping.title_part2');
+
+      txt += Translator.trans('vuejs.shopping.title_part3');
       return txt;
     },
     titleText1() {
-      var txt = 'U korpi imate ' + this.cartCount + ' artikal(a)';
+      var txt = Translator.trans('vuejs.shopping.title_article_num1', {'cartcount': this.cartCount});
       if(this.cartCount > 0 && this.cartProductsSum > 0) {
-        txt += ' u iznosu od ' + this.formatter.format(this.cartProductsSum / 100);
+        txt += Translator.trans('vuejs.shopping.title_article_num2', {'cartproductssum': this.formatter.format(this.cartProductsSum / 100)});
       }
       return txt;
     },
     titleText2() {
       var txt = '';
       // if (this.cityDeliveryCalc > 0) {
-        txt += ' + Cena dostave: ' + this.formatter.format(this.cityDeliveryCalc / 100);
+        txt += Translator.trans('vuejs.shopping.title_delivery_price', {'citydeliverycalc': this.formatter.format(this.cityDeliveryCalc / 100)});
       // }
       return txt;
     },
     titleText3() {
       var txt = '';
       if (this.cartSumWithDelivery > 0) {
-        txt += ' = Ukupno: ' + this.formatter.format(this.cartSumWithDelivery / 100);
+        txt += Translator.trans('vuejs.shopping.title_sum', {'cartsumwithdelivery': this.formatter.format(this.cartSumWithDelivery / 100)});
       }
       return txt;
     },
@@ -299,8 +302,10 @@ export default {
       if (!this.tableid) {
         if (!this.cityselected || this.cityselected === ''
             || !this.dataaddress || this.dataaddress === ''
-            || !this.dataphone || this.dataphone === '')
-        this.validationErrors.push('Mesto, adresa i telefon su obavezni!');
+            || !this.dataphone || this.dataphone === '') {
+          var error_msg = Translator.trans('vuejs.shopping.error_msg');
+          this.validationErrors.push(error_msg);
+        }
       }
     },
 
@@ -335,7 +340,7 @@ export default {
     handleSubmit() {
       var btn = document.getElementById('btnFormSbm');
       btn.disabled = true;
-      btn.innerText = 'Slanje podataka...';
+      btn.innerText = Translator.trans('vuejs.shopping.button_submit_txt');
 
       this.isLoading = true;
       this.error = '';
@@ -373,11 +378,11 @@ export default {
           } else if (error.response.data && error.response.data["hydra:description"]) {
             this.error = error.response.data["hydra:description"];
           } else {
-            this.error = 'Sistemska greska!';
+            this.error = Translator.trans('vuejs.shopping.error_submit_post');
           }
 
         btn.disabled = false;
-        btn.innerText = 'Ponovi slanje...';
+        btn.innerText = Translator.trans('vuejs.shopping.send_again');
       }).finally(() => {
         this.isLoading = false;
         this.$store.dispatch('clearStore');
@@ -424,7 +429,7 @@ export default {
     this.retrieveCityList();
     this.formatter= new Intl.NumberFormat('sr', {
       style: 'currency',
-      currency: 'RSD',
+      currency: Translator.trans('vuejs.shopping.currency'),
       minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
       maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
     });
