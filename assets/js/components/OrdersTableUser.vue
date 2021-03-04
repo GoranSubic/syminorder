@@ -2,7 +2,7 @@
 <div class="ordersdata" v-if="ordersTotalNum > 0">
   <div class="d-block text-center">
     <h4>
-      Lista porudžbina za dostavu - ukupno {{ ordersTotalNum }}
+      <span v-html="Translator.trans('vuejs.orderstableuser.orderstotalnum', { 'orderstotalnum': ordersTotalNum })"></span>
     </h4>
 
     <div v-if="error" class="alert alert-danger">
@@ -12,11 +12,11 @@
     <div class="ordertable table-responsive-md">
       <table class="table table-striped"  id="orders-list">
         <tr>
-          <th>Index</th>
-          <th>Napomena</th>
-          <th>Adresa</th>
-          <th>Telefon</th>
-          <th>Status</th>
+          <th>{{ Translator.trans('vuejs.orderstableuser.table.userinfo.index') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstableuser.table.userinfo.note') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstableuser.table.userinfo.address') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstableuser.table.userinfo.phone') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstableuser.table.userinfo.status') }}</th>
         </tr>
         <tbody>
         <template v-for="(ord, index) in orders">
@@ -37,12 +37,12 @@
             <td colspan="6">
               <table :class="'table-bordered table status-' + ord.status">
               <tr :class="'status-' + ord.status">
-                <th>Index</th>
-                <th>Slika</th>
-                <th>Naziv</th>
-                <th>Kolicina</th>
-                <th>Cena</th>
-                <th>Ukupno</th>
+                <th>{{ Translator.trans('vuejs.orderstableuser.table.productsinfo.index') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstableuser.table.productsinfo.picture') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstableuser.table.productsinfo.name') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstableuser.table.productsinfo.quantity') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstableuser.table.productsinfo.price') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstableuser.table.productsinfo.total') }}</th>
               </tr>
               <tr v-for="(item, indexitem) in orderItems" :key="indexitem">
                 <td>
@@ -57,7 +57,7 @@
                       <span>{{ item.name }}</span>
                     </div>
                     <div class="additions col-12" v-if="item.addselected !== ''">
-                      <span>Dodaci: <i class="addvalues">{{ item.addselected }}</i></span>
+                      <span>{{ Translator.trans('vuejs.orderstableuser.additions') }} <i class="addvalues">{{ item.addselected }}</i></span>
                     </div>
                   </div>
                 </td>
@@ -67,9 +67,9 @@
               </tr>
               <tr>
                 <td></td>
-                <td>Dostava:</td>
+                <td>{{ Translator.trans('vuejs.orderstableuser.delivery') }}</td>
                 <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
-                <td>Suma:</td>
+                <td>{{ Translator.trans('vuejs.orderstableuser.total') }}</td>
                 <td>{{ formatterNumber.format(orderSum/100) }}</td>
                 <td><b>{{ formatter.format((ord.deliveryPrice+orderSum)/100) }}</b></td>
               </tr>
@@ -87,8 +87,8 @@
         :total-rows="ordersTotalNum"
         :per-page="paginationItemsPerPage"
         pills
-        prev-text="Pret"
-        next-text="Sled"
+        :prev-text="Translator.trans('vuejs.orderstableuser.previous')"
+        :next-text="Translator.trans('vuejs.orderstableuser.previous')"
     ></b-pagination>
 
   </div>
@@ -97,11 +97,13 @@
 
 <script>
 import axios from 'axios';
+import {Translator} from "../main";
 
 export default {
 name: "OrdersTable",
   data() {
     return {
+      Translator: Translator,
       formatter: Function,
       pagePagin: 1,
       currentPage: 1,
@@ -130,10 +132,10 @@ name: "OrdersTable",
     bcgColorStatus: function (status, index) {
       // var colorStatus = document.getElementById('color-status-' + index);
       if (status !== 'undefined' && status !== null && status !== '') {
-        if (status === 'cart') return 'Poslato';
-        if (status === 'processing') return 'U pripremi';
-        if (status === 'driving') return 'U transportu';
-        if (status === 'delivered') return 'Preuzeto';
+        if (status === 'cart') return Translator.trans('vuejs.orderstableuser.orderstatus.cart');
+        if (status === 'processing') return Translator.trans('vuejs.orderstableuser.orderstatus.processing');
+        if (status === 'driving') return Translator.trans('vuejs.orderstableuser.orderstatus.driving');
+        if (status === 'delivered') return Translator.trans('vuejs.orderstableuser.orderstatus.delivered');
       }
     },
 
@@ -152,7 +154,7 @@ name: "OrdersTable",
       if (ord.show !== 'undefined' && ord.show === true) {
         ord.show = false;
         itemsRow.style.display = 'none';
-        showHide.innerHTML = 'Prikazi';
+        showHide.innerHTML = Translator.trans('vuejs.orderstableuser.show');
       } else {
         ord.items.forEach(itm => {
           var itemSum = itm.quantity * itm.product.price;
@@ -172,7 +174,7 @@ name: "OrdersTable",
         this.orderItems = itemsArr;
         ord.show = true;
         itemsRow.style.display = 'table-row';
-        showHide.innerHTML = 'Skupi';
+        showHide.innerHTML = Translator.trans('vuejs.orderstableuser.close');
       }
     },
 
@@ -202,7 +204,7 @@ name: "OrdersTable",
 
     this.formatter = new Intl.NumberFormat('sr', {
       style: 'currency',
-      currency: 'RSD',
+      currency: Translator.trans('vuejs.currency'),
       minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
       maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
     });

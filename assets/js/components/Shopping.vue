@@ -62,7 +62,7 @@
             </div>
             <div class="col-2">
               <b-button class="rem-btn" style="width: 100%;" variant="danger" @click="removeItem(item.id, item.addcode)">
-                <i class="fa fa-trash"></i>
+                <span v-html="Translator.trans('vuejs.shopping.button_remove')"></span>
               </b-button>
             </div>
           </div>
@@ -429,7 +429,7 @@ export default {
     this.retrieveCityList();
     this.formatter= new Intl.NumberFormat('sr', {
       style: 'currency',
-      currency: Translator.trans('vuejs.shopping.currency'),
+      currency: Translator.trans('vuejs.currency'),
       minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
       maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
     });

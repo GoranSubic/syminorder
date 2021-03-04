@@ -88,6 +88,91 @@ terms:
     protection_privacy: Privacy Policy
     protection_terms: Terms and Conditions
 vuejs:
+  currency: RSD
+  search_by: 'Pretraga po: "%searchtermfound%"'
+  maincarousel:
+    slide1: <h3>Prijatno društvo</h3>
+    slide2: <h3>Ugodan ambijent</h3>
+    slide3: <h3>Ukusno posluženje</h3>
+    button:
+      previous: <i class="fas fa-chevron-left"></i>
+      next: <i class="fas fa-chevron-right"></i>
+  mainimage:
+    greet:
+      welcome:
+        morning: Dobro jutro
+        day: Dobar dan
+        afternoon: Prijatno poslepodne
+        night: Dobro veče
+      meal:
+        morning: želimo Vam prijatno jutro, pogledajte našu ponudu za doručak
+        day: odaberite najbolji ručak
+        afternoon: odaberite obrok za kasni ručak ili ranu večeru
+        night: želimo Vam prijatno veče, pogledajte našu ponudu za večeru
+  orderstable:
+    orderstotalnum: 'Lista porudžbina za dostavu - ukupno %orderstotalnum%'
+    additions: 'Prilozi: '
+    delivery: 'Dostava: '
+    total: 'Suma: '
+    first: Prva
+    previous: Pret
+    next: Sled
+    last: Posl
+    table:
+      userinfo:
+        index: Index
+        picture: Slika
+        customer: Kupac
+        note: Napomena
+        city: Naselje
+        address: Adresa
+        phone: Telefon
+        submitto: Prosledi
+      productsinfo:
+        index: Index
+        picture: Slika
+        name: Naziv
+        code: Code
+        quantity: Kolicina
+        price: Cena
+        total: Ukupno
+  orderstableuser:
+    orderstotalnum: 'Lista porudžbina za dostavu - ukupno %orderstotalnum%'
+    additions: 'Prilozi: '
+    delivery: 'Dostava: '
+    total: 'Suma: '
+    previous: Pret
+    next: Sled
+    show: Prikazi
+    close: Skupi
+    orderstatus:
+      cart: Poslato
+      processing: U pripremi
+      driving: U transportu
+      delivered: Preuzeto
+    table:
+      userinfo:
+        index: Index
+        note: Napomena
+        address: Adresa
+        phone: Telefon
+        status: Status
+      productsinfo:
+        index: Index
+        picture: Slika
+        name: Naziv
+        quantity: Kolicina
+        price: Cena
+        total: Ukupno
+  productbuttons:
+    placeh_additions: Prilozi
+    selected_label: Dodato
+    selected_label_tmpl: 'Dodato %valueslength%'
+    button_decrease: <i class="fas fa-minus"></i>
+    button_remove: <i class="fa fa-trash"></i>
+    button_cart: <i class="fas fa-cart-plus"></i>
+  searchbar:
+    placeh_input: Pronađi obrok po nazivu...
   shopping:
     title_part1: Prosledite porudžbinu ili o
     title_part2: O
@@ -106,12 +191,12 @@ vuejs:
     selected: Odabrano
     placeh_delivery_address: Adresa za dostavu
     placeh_phone_num: Broj telefona
+    button_remove: <i class="fa fa-trash"></i>
     button_submit: Prosledi
     button_submit_txt: Slanje podataka...
     send_again: Ponovi slanje...
     footer_info:  <p>Rok za isporuku hrane na kućnu adresu u Zrenjaninu je 60 minuta a za okolna sela je 120 minuta.</p>
                   <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Porudžbine</p>
-    currency: RSD
   modal:
     order_submited:
       title: Uspešno ste izvršili porudžbinu

@@ -11,19 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainCarousel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTableUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/SearchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/SearchBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/Shopping.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/Shopping.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/messages.sr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.sr.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +413,8 @@
       <workItem from="1614757309598" duration="2767000" />
       <workItem from="1614764815988" duration="3578000" />
       <workItem from="1614780929100" duration="12850000" />
-      <workItem from="1614856286633" duration="18785000" />
+      <workItem from="1614856286633" duration="19106000" />
+      <workItem from="1614881788308" duration="11869000" />
     </task>
     <servers />
   </component>

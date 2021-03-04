@@ -6,32 +6,33 @@
 
   >
     <div class="slide">
-<!--      <h3>slide 1</h3>-->
-      <img :src="img1" alt="slide1">
+      <span v-html="imgtext1"></span>
+      <img :src="img1" :alt="imgtext1">
     </div>
 
     <div class="slide">
-<!--      <h3>slide 2</h3>-->
-      <img :src="img2" alt="slide2">
+      <span v-html="imgtext2"></span>
+      <img :src="img2" :alt="imgtext2">
     </div>
 
     <div class="slide">
-<!--      <h3>slide 3</h3>-->
-      <img :src="img3" alt="slide3">
+      <span v-html="imgtext3"></span>
+      <img :src="img3" :alt="imgtext3">
     </div>
 
     <template slot="prevButton">
-      <i class="fas fa-chevron-left"></i>
+      <span v-html="Translator.trans('vuejs.maincarousel.button.previous')"></span>
     </template>
     <template slot="nextButton">
-      <i class="fas fa-chevron-right"></i>
+      <span v-html="Translator.trans('vuejs.maincarousel.button.next')"></span>
     </template>
 
   </agile>
 </template>
 
 <script>
-import { VueAgile } from 'vue-agile'
+import { VueAgile } from 'vue-agile';
+import {Translator} from "../main";
 
 export default {
   name: "MainCarousel",
@@ -42,9 +43,13 @@ export default {
     img1: String,
     img2: String,
     img3: String,
+    imgtext1: String,
+    imgtext2: String,
+    imgtext3: String,
   },
   data () {
     return {
+      Translator: Translator,
       myOptions: {
         /*  navButtons: true,
         responsive: [

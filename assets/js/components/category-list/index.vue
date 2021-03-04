@@ -23,7 +23,7 @@
 
   <div v-if="searchtermfound !== 'undefined' && searchtermfound !== ''" class="row category-parent">
     <div class="col-12 category-info">
-      <h4 class="col-12 category-name text-left">Pretraga po: "{{ this.searchtermfound }}"</h4>
+      <h4 class="col-12 category-name text-left">{{ Translator.trans('vuejs.search_by', { 'searchtermfound': this.searchtermfound }) }}</h4>
       <!--      <div class="col-12 category-desc text-left" v-html="searchtermfound"></div>-->
     </div>
   </div>
@@ -72,9 +72,15 @@ import axios from 'axios';
 import Loading from "../Loading";
 import CategoryCard from "./CategoryCard";
 import ProductCard from "./ProductCard"
+import {Translator} from "../../main";
 
 export default {
   name: "CategoryList",
+  data() {
+    return {
+      Translator: Translator,
+    }
+  },
   components: {
     Loading,
     CategoryCard,

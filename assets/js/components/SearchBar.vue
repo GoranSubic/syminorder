@@ -2,7 +2,7 @@
   <div>
     <input
         class="form-control"
-        placeholder="Pronađi obrok po nazivu..."
+        :placeholder="Translator.trans('vuejs.searchbar.placeh_input')"
         type="search"
         v-model="searchTerm"
         @input="onInput"
@@ -11,10 +11,13 @@
 </template>
 
 <script>
+import {Translator} from "../main";
+
 export default {
   name: "SearchBar",
   data: function () {
     return {
+      Translator: Translator,
       searchTerm: '',
       searchTimeout: null,
     }

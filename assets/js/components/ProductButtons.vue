@@ -15,27 +15,27 @@
               :options="additions" :multiple="true"
               :close-on-select="false" :clear-on-select="false"
               :preserve-search="true"
-              placeholder="Prilozi" label="text" track-by="text"
+              :placeholder="Translator.trans('vuejs.productbuttons.placeh_additions')" label="text" track-by="text"
               :preselect-first="false"
-              deselectLabel=" - " selectLabel=" + " selectedLabel="Dodato"
+              deselectLabel=" - " selectLabel=" + " :selectedLabel="Translator.trans('vuejs.productbuttons.selected_label')"
           >
                     <template slot="selection" slot-scope="{ values, search, isOpen }">
                           <span class="multiselect__single"
-                                v-if="values.length &amp;&amp; !isOpen">Dodato {{ values.length }}</span>
+                                v-if="values.length &amp;&amp; !isOpen">{{ Translator.trans('vuejs.productbuttons.selected_label_tmpl', { 'valueslength': values.length }) }}</span>
                     </template>
           </multiselect>
         </div>
 
         <b-button v-if="!product.showAdditions" class="dec-btn" variant="warning" @click="decOneFromCart(product.id)">
-          <i class="fas fa-minus"></i>
+          <span v-html="Translator.trans('vuejs.productbuttons.button_decrease')"></span>
         </b-button>
         <b-button v-if="!product.showAdditions" class="rem-btn" variant="danger" @click="remFromCart(product.id)">
-          <i class="fa fa-trash"></i>
+          <span v-html="Translator.trans('vuejs.productbuttons.button_remove')"></span>
         </b-button>
         <b-button v-if="!product.showAdditions" class="amm-btn" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
 
         <b-button class="inc-btn" variant="success" @click="addToCart(product)">
-          <i class="fas fa-cart-plus"></i>
+          <span v-html="Translator.trans('vuejs.productbuttons.button_cart')"></span>
         </b-button>
       </b-button-group>
     </div>
@@ -45,6 +45,7 @@
 
 <script>
 import store from '../store/index';
+import {Translator} from "../main";
 
 export default {
   store,
@@ -54,6 +55,7 @@ export default {
   },
   data() {
     return {
+      Translator: Translator,
       addselected: [],
     }
   },

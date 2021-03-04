@@ -14,20 +14,27 @@
 </template>
 
 <script>
+import {Translator} from "../main";
+
 export default {
   name: "MainImage",
+  data() {
+    return {
+      Translator: Translator,
+    }
+  },
   computed: {
     welcome: function () {
-      if (this.hour < 10) return "Dobro jutro";
-      else if (this.hour < 12) return "Dobar dan";
-      else if (this.hour < 17) return "Prijatno poslepodne";
-      else return "Dobro veče";
+      if (this.hour < 10) return Translator.trans('vuejs.mainimage.greet.welcome.morning');
+      else if (this.hour < 12) return Translator.trans('vuejs.mainimage.greet.welcome.day');
+      else if (this.hour < 17) return Translator.trans('vuejs.mainimage.greet.welcome.afternoon');
+      else return Translator.trans('vuejs.mainimage.greet.welcome.night');
     },
     meal: function () {
-      if (this.hour < 10) return "želimo Vam prijatno jutro, pogledajte našu ponudu za doručak";
-      else if (this.hour < 12) return "odaberite najbolji ručak";
-      else if (this.hour < 17) return "odaberite obrok za kasni ručak ili ranu večeru";
-      else return "želimo Vam prijatno veče, pogledajte našu ponudu za večeru";
+      if (this.hour < 10) return Translator.trans('vuejs.mainimage.greet.meal.morning');
+      else if (this.hour < 12) return Translator.trans('vuejs.mainimage.greet.meal.day');
+      else if (this.hour < 17) return Translator.trans('vuejs.mainimage.greet.meal.afternoon');
+      else return Translator.trans('vuejs.mainimage.greet.meal.night');
     },
     date: function () { return new Date() },
     hour: function () { return this.date.getHours() },

@@ -2,7 +2,7 @@
 <div class="ordersdata" v-if="ordersTotalNum > 0">
   <div class="d-block text-center">
     <h4>
-      Lista porudžbina za dostavu - ukupno {{ ordersTotalNum }}
+      <span v-html="Translator.trans('vuejs.orderstable.orderstotalnum', { 'orderstotalnum': ordersTotalNum })"></span>
     </h4>
 
     <div v-if="error" class="alert alert-danger">
@@ -15,23 +15,23 @@
         :total-rows="ordersTotalNum"
         :per-page="paginationItemsPerPage"
         pills
-        first-text="Prva"
-        prev-text="Pret"
-        next-text="Sled"
-        last-text="Posl"
+        :first-text="Translator.trans('vuejs.orderstable.first')"
+        :prev-text="Translator.trans('vuejs.orderstable.previous')"
+        :next-text="Translator.trans('vuejs.orderstable.next')"
+        :last-text="Translator.trans('vuejs.orderstable.last')"
     ></b-pagination>
 
     <div class="ordertable table-responsive-md">
       <table class="table table-striped"  id="orders-list">
         <tr>
-          <th>Index</th>
-          <th>Slika</th>
-          <th>Kupac</th>
-          <th>Napomena</th>
-          <th>Naselje</th>
-          <th>Adresa</th>
-          <th>Telefon</th>
-          <th>Prosledi</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.index') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.picture') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.customer') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.note') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.city') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.address') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.phone') }}</th>
+          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.submitto') }}</th>
         </tr>
         <tbody>
         <template v-for="(ord, index) in orders">
@@ -59,13 +59,13 @@
             <td colspan="6">
               <table :class="'table table-bordered status-' + ord.status">
               <tr :class="'status-' + ord.status">
-                <th>Index</th>
-                <th>Slika</th>
-                <th>Naziv</th>
-                <th>Code</th>
-                <th>Kolicina</th>
-                <th>Cena</th>
-                <th>Ukupno</th>
+                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.index') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.picture') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.name') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.code') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.quantity') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.price') }}</th>
+                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.total') }}</th>
               </tr>
               <tr v-for="(item, indexitem) in orderItems" :key="indexitem">
                 <td>
@@ -80,7 +80,7 @@
                       <span>{{ item.name }}</span>
                     </div>
                     <div class="additions col-12" v-if="item.addselected !== ''">
-                      <span>Dodaci: <i class="addvalues">{{ item.addselected }}</i></span>
+                      <span>{{ Translator.trans('vuejs.orderstable.additions') }} <i class="addvalues">{{ item.addselected }}</i></span>
                     </div>
                   </div>
                 </td>
@@ -92,9 +92,9 @@
               <tr>
                 <td></td>
                 <td></td>
-                <td>Dostava:</td>
+                <td>{{ Translator.trans('vuejs.orderstable.delivery') }}</td>
                 <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
-                <td>Suma:</td>
+                <td>{{ Translator.trans('vuejs.orderstable.total') }}</td>
                 <td>{{ formatterNumber.format(orderSum/100) }}</td>
                 <td><b>{{ formatter.format((ord.deliveryPrice+orderSum)/100) }}</b></td>
               </tr>
@@ -112,11 +112,13 @@
 
 <script>
 import axios from 'axios';
+import {Translator} from "../main";
 
 export default {
 name: "OrdersTable",
   data() {
     return {
+      Translator: Translator,
       formatter: Function,
       pagePagin: 1,
       currentPage: 1,
@@ -284,7 +286,7 @@ name: "OrdersTable",
 
     this.formatter = new Intl.NumberFormat('sr', {
       style: 'currency',
-      currency: 'RSD',
+      currency: Translator.trans('vuejs.currency'),
       minimumFractionDigits: 2, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
       maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
     });
