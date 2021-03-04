@@ -1,3 +1,89 @@
-front:
-  category:
-    name: Kategorija
+homepage:
+  page_title: Olala - ponuda i poručivanje
+about:
+  page_title: O nama
+  title: O nama
+  text: <p>O La La je počeo sa radom 2012. godine.</p>
+        <p>Nalazimo se u Zrenjaninu Stražilovska 36 (bivši market 102).</p>
+        <p>Kontakt telefon <a href="tel:+381605105620">060/510-5620</a></p>
+        <p>Nudimo veliki izbor jela sa roštilja, prženih jela i kuvanih jela po porudžbini. <br />Naše proizvode možete konzumirati u našem lokalu koji poseduje 26 sedećih mesta. <br />Takođe nudimo mogućnost kućne dostave, organizovanje keteringa od predjela preko glavnih jela pa do poslastica.</p>
+        <p>Sva jela pripremamo po porudžbini tako da je, uvek, sve sveže i vruće.</p>
+footer:
+  owner: Vlasnik
+  owner_name: Nemanja Radlovački
+  phone: Telefon
+  phone_number: 060/510-5620
+  phone_number_href: 381605105620
+  email: Email
+  email_address: info@olala.co.rs
+  address: Adresa
+  street_address: Stražilovska 36
+  city_address: 23000 Zrenjanin
+  state: Srbija
+  working_time: Radno vreme
+  working_time_value: Pon-Ned 08 - 24
+  deliveries: Dostava na adresu
+  deliveries_time: 08 - 23
+  social_info: Pronađite nas na društvenim mrežama
+  social_facebook: https://www.facebook.com/olalazr/
+  social_instagram: https://www.instagram.com/o_.la_la/
+navbar:
+  brand: Olala
+  offer: Ponuda
+  orders: Porudžbine
+  about: O nama
+  cart_button:
+    upper: LogIn
+    bottom: Poručite
+    logout: Logout
+login:
+  title: Log in!
+  to_login: Uloguj se
+  logged_in: Ulogovani ste kao
+  logout: Izlogujte se
+  to_order: Ulogujte se da poručite
+  facebook: Facebook Login
+  google: Google Login
+  or: ili
+  email_placeh: Email Address
+  pass_placeh: Password
+  remember_me: Zapamti me
+  forg_pass: Zaboravljena šifra
+  no_access: Nemate nalog za pristup?
+  to_register: Registracija
+order:
+  notification:
+    title: Zdravo! Stigla Vam je nova porudžbina!
+    take_over: Preuzmi porudžbinu i prosledi na obradu
+    take_over_btn: Preuzmi porudžbinu
+    info: Podaci o kreiranoj porudžbini su
+    username: Username kupca
+    order_id: Id porudžbine
+    city_name: Naselje
+    address: Adresa
+    phone: Broj telefona
+    note: Napomena
+    item_name: Naziv
+    addition: Dodaci
+    no_addition: /
+    quantity: Kol
+    welcome: Prijatno!
+register:
+  title: Registracija
+  button: Registruj se
+  email:
+    title: Zdravo! Molim Vas da potvrdite Vaš email!
+    welcome: Prijatno!
+    message:
+      please: Molimo Vas da potvrdite da ste se ovom email adresom registrovali na Olala
+      confirm: Potvrđujem moj email
+      expiration: Ovaj link će prestati da važi za
+terms:
+  privacy:
+    title: Olala - Priprema hrane
+    company_refers: NEMANJA RADLOVACKI PR UGOSTITELJSKA RADNJA I ODRZAVANJE HIGIJENE OBJEKATA O LALA 023 ZRENJANIN, Zrenjanin, Strazilovska 36
+    website: https://olala.co.rs
+    email: info@olala.co.rs
+    protection: This site is protected by Terms of
+    protection_privacy: Privacy Policy
+    protection_terms: Terms and Conditions

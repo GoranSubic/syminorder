@@ -7,7 +7,7 @@
     <div class="container"
          style="position: relative;"
     >
-        <a class="navbar-brand" href="{{ path('homepage') }}"><strong>Olala</strong></a>
+        <a class="navbar-brand" href="{{ path('homepage') }}"><strong>{{ 'navbar.brand'|trans }}</strong></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,15 +15,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('homepage') }}">Olala<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('homepage') }}">{{ 'navbar.brand'|trans }}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_orders') }}">
-                        {% if user_is_logged_in %}Porudžbine{% else %}Ponuda{% endif %}
+                        {% if user_is_logged_in %}{{ 'navbar.orders'|trans }}{% else %}{{ 'navbar.offer'|trans }}{% endif %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_static_about') }}">O nama</a>
+                    <a class="nav-link" href="{{ path('app_static_about') }}">{{ 'navbar.about'|trans }}</a>
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">
@@ -36,7 +36,7 @@
                 {% if user_is_logged_in %}
                     <li class="nav-item user-logout">
                         <span class="user-name">{{ user_name }}</span>
-                        <a class="nav-link" href="{{ path('app_logout') }}"><strong>LogOut</strong></a>
+                        <a class="nav-link" href="{{ path('app_logout') }}"><strong>{{ 'navbar.cart_button.logout'|trans }}</strong></a>
                     </li>
                 {% endif %}
             </ul>
@@ -56,8 +56,8 @@
                     <div class="row">
                         <div class="col-4 login-bag"><i class="fa fa-shopping-bag"></i></div>
                         <div class="col-8 login-text">
-                            <div>LogIn</div>
-                            <div>Poručite</div>
+                            <div>{{ 'navbar.cart_button.upper'|trans }}</div>
+                            <div>{{ 'navbar.cart_button.bottom'|trans }}</div>
                         </div>
                     </div>
                 </a>

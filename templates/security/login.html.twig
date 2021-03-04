@@ -1,6 +1,6 @@
 {% extends 'Front/static_pages/layout.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}{{ 'login.title'|trans }}{% endblock %}
 
 {% block content %}
 
@@ -19,39 +19,39 @@
 
                                 {% if app.user %}
                                     <div class="mb-3">
-                                        Ulogovani ste kao {{ app.user.username }}, <a href="{{ path('app_logout') }}">Izlogujte se</a>
+                                        {{ 'login.logged_in'|trans }} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{{ 'login.logout'|trans }}</a>
                                     </div>
                                 {% endif %}
 
-                                <h1 class="h3 mb-3 font-weight-normal">Ulogujte se da poručite</h1>
+                                <h1 class="h3 mb-3 font-weight-normal">{{ 'login.to_order'|trans }}</h1>
 
 
                                 <div class="row row-buttons">
                                     <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 fb-button">
                                         <a href="{{ path('connect_facebook_start') }}" class="btn btn-primary facebook">
-                                            <i class="fab fa-facebook"></i> <span>Facebook Login</span>
+                                            <i class="fab fa-facebook"></i> <span>{{ 'login.facebook'|trans }}</span>
                                         </a>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 g-button">
                                         <a href="#" class="btn btn-primary google-plus disabled" tabindex="-1">
-                                            <i class="fab fa-google-plus"></i> <span>Google Login</span>
+                                            <i class="fab fa-google-plus"></i> <span>{{ 'login.google'|trans }}</span>
                                         </a>
                                     </div>
                                 </div>
-                                <h2>ili</h2>
+                                <h2>{{ 'login.or'|trans }}</h2>
 
                                 <div class="input_fields">
                                     <div class="col-md-8">
                                         <div class="formsix-pos">
                                             <div class="form-group i-email">
         {#                                                <label for="inputEmail">Email</label>#}
-                                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email Address" required autofocus>
+                                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="{{ 'login.email_placeh'|trans }}" required autofocus>
                                             </div>
                                         </div>
                                         <div class="formsix-e">
                                             <div class="form-group i-password">
         {#                                                <label for="inputPassword">Password</label>#}
-                                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="{{ 'login.pass_placeh'|trans }}" required>
                                             </div>
                                         </div>
 
@@ -65,22 +65,22 @@
                                             See https://symfony.com/doc/current/security/remember_me.html
                                             #}
                                             <div class="checkbox mb-3">
-                                                <label class="control control--checkbox">Zapamti me
+                                                <label class="control control--checkbox">{{ 'login.remember_me'|trans }}
                                                     <input type="checkbox" name="_remember_me"> <span class="control__indicator"></span>
                                                 </label>
-                                                <a href="#" class="forget_password disabled" tabindex="-1"> Zaboravljena šifra </a>
+                                                <a href="#" class="forget_password disabled" tabindex="-1"> {{ 'login.forg_pass'|trans }} </a>
                                             </div>
                                         </div>
                                     <div class="login_btn_wrapper">
                                         <button class="btn btn-lg btn-primary login_btn" type="submit">
-                                            Uloguj se
+                                            {{ 'login.to_login'|trans }}
                                         </button>
                                     </div>
                                     </div>
                                 </div>
 
                                 <div class="login_message">
-                                    <p>Nemate nalog za pristup? <a href="{{ path('app_register') }}"> Registracija </a> </p>
+                                    <p>{{ 'login.no_access'|trans }} <a href="{{ path('app_register') }}"> {{ 'login.to_register'|trans }} </a> </p>
                                 </div>
                             </form>
                         </div> <!-- /.login_wrapper-->

@@ -1,28 +1,27 @@
-<h1>Zdravo! Stigla je nova porudžbina!</h1>
+<h1>{{ 'order.notification.title'|trans }}</h1>
 
 <p>
-    Preuzmi porudžbinu i prosledi na obradu:<br>
+    {{ 'order.notification.take_over'|trans }}<br>
     <a href="{{ url('order_change_status', {'id': orderId}) }}">
-        <button class="button warning" style="background-color: lightgoldenrodyellow">Preuzmi porudžbinu</button>
+        <button class="button warning" style="background-color: lightgoldenrodyellow">{{ 'order.notification.take_over_btn'|trans }}</button>
     </a>
 </p>
 <p>
-{#    Stigla je nova porudžbina!#}
-    Podaci o kreiranoj porudžbini su:<br><br>
-    Username kupca: {{ orderUser|raw }} <br>
-    Id porudžbine: {{ orderId }} <br>
-    Naselje: {{ cityName }} <br>
-    Adresa: {{ address }} <br>
-    Broj telefona: <a href="tel:{{ phone }}">{{ phone }}</a> <br>
-    Napomena: {{ note }} <br><br>
+    {{ 'order.notification.info'|trans }}<br><br>
+    {{ 'order.notification.username'|trans }}: {{ orderUser|raw }} <br>
+    {{ 'order.notification.order_id'|trans }}: {{ orderId }} <br>
+    {{ 'order.notification.city_name'|trans }}: {{ cityName }} <br>
+    {{ 'order.notification.address'|trans }}: {{ address }} <br>
+    {{ 'order.notification.phone'|trans }}: <a href="tel:{{ phone }}">{{ phone }}</a> <br>
+    {{ 'order.notification.note'|trans }}: {{ note }} <br><br>
 </p>
 <p>
     {% for item in items %}
-        Naziv: {{ item.product.name }},
-        Dodaci: {% if item.itemAdditions is not empty %}{{ item.itemAdditions }}{% else %} / {% endif %},
-        Kol: {{ item.quantity }}<br>
+        {{ 'order.notification.item_name'|trans }}: {{ item.product.name }},
+        {{ 'order.notification.addition'|trans }}: {% if item.itemAdditions is not empty %}{{ item.itemAdditions }}{% else %} {{ 'order.notification.no_addition'|trans }} {% endif %},
+        {{ 'order.notification.quantity'|trans }}: {{ item.quantity }}<br>
     {% endfor %}
 </p>
 <p>
-    Prijatno!
+    {{ 'order.notification.welcome'|trans }}
 </p>

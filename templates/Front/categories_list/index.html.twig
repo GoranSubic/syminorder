@@ -14,7 +14,7 @@
 {% endif %}
 
 {% block title %}
-    {% if user_is_logged_in %}Porudžbine{% else %}Ponuda{% endif %}
+    {% if user_is_logged_in %}{{ 'navbar.orders'|trans }}{% else %}{{ 'navbar.offer'|trans }}{% endif %}
 {% endblock %}
 
 {% block content %}

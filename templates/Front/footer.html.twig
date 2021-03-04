@@ -5,23 +5,23 @@
         <div class="row">
             <div class="col-sm-6 col-md-3">
                 <address>
-                    <p><b>Olala</b></p>
-                    <p>Vlasnik: Nemanja Radlovački</p>
-                    <p>Telefon: <a href="tel:+381605105620">060/510-5620</a></p>
-                    <p>Email: <a href="mailto:info@gmail.com">info@olala.co.rs</a></p>
+                    <p><b>{{ 'navbar.brand'|trans }}</b></p>
+                    <p>{{ 'footer.owner'|trans }}: {{ 'footer.owner_name'|trans }}</p>
+                    <p>{{ 'footer.phone'|trans }}: <a href="tel:+{{ 'footer.phone_number_href'|trans }}">{{ 'footer.phone_number'|trans }}</a></p>
+                    <p>{{ 'footer.email'|trans }}: <a href="mailto:{{ 'footer.email_address'|trans }}">{{ 'footer.email_address'|trans }}</a></p>
                 </address>
             </div>
             <div class="col-sm-6 col-md-3">
                 <address>
                     <p>
-                        Adresa:<br>
-                        <span>Stražilovska 36</span><br>
-                        <span>23000 Zrenjanin</span><br>
-                        <span>Srbija</span>
+                        {{ 'footer.address'|trans }}:<br>
+                        <span>{{ 'footer.street_address'|trans }}</span><br>
+                        <span>{{ 'footer.city_address'|trans }}</span><br>
+                        <span>{{ 'footer.state'|trans }}</span>
                     </p>
                     <p>
-                        Radno vreme: Pon-Ned 08 - 24<br>
-                        Dostava na adresu: 08 - 23
+                        {{ 'footer.working_time'|trans }}: {{ 'footer.working_time_value'|trans }}<br>
+                        {{ 'footer.deliveries'|trans }}: {{ 'footer.deliveries_time'|trans }}
                     </p>
                 </address>
             </div>
@@ -32,25 +32,25 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="list-inline-item">
-                                Pronađite nas na društvenim mrežama:
+                                {{ 'footer.social_info'|trans }}:
                             </div>
                             <ul class="list-unstyled list-inline text-center">
                                 <li class="list-inline-item">
-                                    <a href="https://www.facebook.com/olalazr/" target="_blank" class="btn-floating btn-fb mx-1">
+                                    <a href="{{ 'footer.social_facebook'|trans }}" target="_blank" class="btn-floating btn-fb mx-1">
                                         <i class="fab fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="https://www.instagram.com/o_.la_la/" target="_blank" class="btn-floating btn-gplus mx-1">
+                                    <a href="{{ 'footer.social_instagram'|trans }}" target="_blank" class="btn-floating btn-gplus mx-1">
                                         <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-sm-12">
-                            <p>This site is protected by Terms of
-                                <a href="{{ path('app_static_privacy') }}">Privacy Policy</a> and
-                                <a href="{{ path('app_static_terms') }}">Terms and Conditions</a>.
+                            <p>{{ 'terms.privacy.protection_terms'|trans }}
+                                <a href="{{ path('app_static_privacy') }}">{{ 'terms.privacy.protection_privacy'|trans }}</a> and
+                                <a href="{{ path('app_static_terms') }}">{{ 'terms.privacy.protection_terms'|trans }}</a>.
                             </p>
                         </div>
                     </div>

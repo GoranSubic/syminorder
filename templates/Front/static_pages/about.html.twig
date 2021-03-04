@@ -1,14 +1,8 @@
 {% extends 'Front/static_pages/layout.html.twig' %}
 
-{% block title %}O nama{% endblock %}
+{% block title %}{{ 'about.page_title'|trans }}{% endblock %}
 
 {% block greet_info %}
-<!--    <div class="text-center">
-        <main-image
-                v-bind:datauname="dataUname"
-                header-height="height:100vh;"
-        ></main-image>
-    </div>-->
 {% endblock %}
 
 {% block content %}
@@ -16,12 +10,8 @@
     <div id="about">
         <div class="about container">
             <div class="about content">
-                <h1>O nama</h1>
-                <p>O La La je počeo sa radom 2012. godine.</p>
-                <p>Nalazimo se u Zrenjaninu Stražilovska 36 ( bivši market 102 ).</p>
-                <p>Kontakt telefon: <a href="tel:+381605105620">060/510-5620</a></p>
-                <p>Nudimo veliki izbor jela sa roštilja, prženih jela i kuvanih jela po porudžbini. <br />Naše proizvode možete konzumirati u našem lokalu koji poseduje 26 sedećih mesta. <br />Takođe nudimo mogućnost kućne dostave, organizovanje keteringa od predjela preko glavnih jela pa do poslastica.</p>
-                <p>Sva jela pripremamo po porudžbini tako da je, uvek, sve sveže i vruće.</p>
+                <h1>{{ 'about.title'|trans }}</h1>
+                {{ 'about.text'|trans|raw }}
             </div>
         </div>
     </div>

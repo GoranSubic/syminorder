@@ -1,11 +1,11 @@
-<h1>Zdravo! Molim Vas da potvrdite Vaš email!</h1>
+<h1>{{ 'register.email.title'|trans }}</h1>
 
 <p>
-    Molimo Vas da potvrdite da ste se ovom email adresom registrovali na Olala:<br><br>
-    <a href="{{ signedUrl|raw }}">Porvrđujem moj email</a>.
-    Ovaj link će prestati da važi za {{ expiresAt|date('g') }} sata.
+    {{ 'register.email.message.please'|trans }}<br><br>
+    <a href="{{ signedUrl|raw }}">{{ 'register.email.message.confirm'|trans }}</a>.
+    {{ 'register.email.message.expiration'|trans }} {{ expiresAt|date('g') }}h.
 </p>
 
 <p>
-    Prijatno!
+    {{ 'register.email.welcome'|trans }}
 </p>

@@ -1,6 +1,6 @@
 {% extends 'Front/static_pages/layout.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{{ 'register.title'|trans }}{% endblock %}
 
 {% block content %}
 
@@ -16,7 +16,7 @@
                 {% endfor %}
 
                 <div class="login_wrapper">
-                    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                    <h1 class="h3 mb-3 font-weight-normal">{{ 'register.title'|trans }}</h1>
 
                     {{ form_start(registrationForm) }}
                     <div class="input_fields">
@@ -28,12 +28,13 @@
                             }) }}
                             {{ form_row(registrationForm.agreeTerms) }}
                             <div>
-                                <p>This site is protected by Terms of
-                                    <a href="{{ path('app_static_privacy') }}">Privacy Policy</a> and
-                                    <a href="{{ path('app_static_terms') }}">Terms and Conditions</a>. </p>
+                                <p>{{ 'terms.privacy.protection_terms'|trans }}
+                                    <a href="{{ path('app_static_privacy') }}">{{ 'terms.privacy.protection_privacy'|trans }}</a> and
+                                    <a href="{{ path('app_static_terms') }}">{{ 'terms.privacy.protection_terms'|trans }}</a>.
+                                </p>
                             </div>
                             <div class="login_btn_wrapper">
-                                <button type="submit" class="btn btn-lg btn-primary login_btn">Register</button>
+                                <button type="submit" class="btn btn-lg btn-primary login_btn">{{ 'register.button'|trans }}</button>
                             </div>
                         </div>
                     </div>
