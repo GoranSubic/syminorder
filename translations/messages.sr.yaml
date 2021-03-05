@@ -91,9 +91,9 @@ vuejs:
   currency: RSD
   search_by: 'Pretraga po: "%searchtermfound%"'
   maincarousel:
-    slide1: <h3>Prijatno društvo</h3>
-    slide2: <h3>Ugodan ambijent</h3>
-    slide3: <h3>Ukusno posluženje</h3>
+    slide1: <h3><span>  Prijatno društvo  </span></h3>
+    slide2: <h3><span>Ugodan ambijent</span></h3>
+    slide3: <h3><span>Ukusno posluženje</span></h3>
     button:
       previous: <i class="fas fa-chevron-left"></i>
       next: <i class="fas fa-chevron-right"></i>
