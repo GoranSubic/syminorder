@@ -12,8 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.sr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.sr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +201,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Front/static_pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../alternativa8/symfony" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -402,7 +400,9 @@
       <workItem from="1614780929100" duration="12850000" />
       <workItem from="1614856286633" duration="19106000" />
       <workItem from="1614881788308" duration="12180000" />
-      <workItem from="1614927956533" duration="746000" />
+      <workItem from="1614927956533" duration="945000" />
+      <workItem from="1614943535627" duration="104000" />
+      <workItem from="1614946179193" duration="671000" />
     </task>
     <servers />
   </component>
