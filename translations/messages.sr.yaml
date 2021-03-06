@@ -1,34 +1,40 @@
 homepage:
-  page_title: Olala - ponuda i poručivanje
+  page_title: Alternativa8 - na talasu izobilja
 about:
   page_title: O nama
   title: O nama
-  text: <p>O La La je počeo sa radom 2012. godine.</p>
-        <p>Nalazimo se u Zrenjaninu Stražilovska 36 (bivši market 102).</p>
-        <p>Kontakt telefon <a href="tel:+381605105620">060/510-5620</a></p>
-        <p>Nudimo veliki izbor jela sa roštilja, prženih jela i kuvanih jela po porudžbini. <br />Naše proizvode možete konzumirati u našem lokalu koji poseduje 26 sedećih mesta. <br />Takođe nudimo mogućnost kućne dostave, organizovanje keteringa od predjela preko glavnih jela pa do poslastica.</p>
-        <p>Sva jela pripremamo po porudžbini tako da je, uvek, sve sveže i vruće.</p>
+  text:
+    intro: <p>Postojimo od 1995. godine.<br />
+        Naša matična  kuća  je ordinacija HOLITIMED.<br />
+        Bavimo se zdravljem.<br />
+        Dosegnuti ga, unaprediti i uživati u njemu.</p>
+        <br /><br />
+    desc:
+        <p>Objedinili smo medicinsku struku, bogatstvo znanja kineske tradicionalne medicine i savremeni koncept kvantne medicine. Svesni  ubrzanja vremena, svih poteškoća koje savremeni način života nosi i  jedinstvenost svakog pojedinca, želimo da  sajt ALTERNATIVA 8 pruži informacije o proverenim putevima  ka  polju DOBROBITI. Vodjeni smo ljubavlju prema čoveku i prirodi. Vodjeni smo  i potrebom da uspostavimo nit spajanja  savremenog načina življenja  i prirodnih zakona.
+        <br /><br />
+    footer:
+        <p>Dobrodošli.</p>
 footer:
   owner: Vlasnik
-  owner_name: Nemanja Radlovački
+  owner_name: Dr Dobrinka Arbanovski
   phone: Telefon
-  phone_number: 060/510-5620
-  phone_number_href: 381605105620
+  phone_number: xxx/xxx-xxxx
+  phone_number_href: 381xxxxxxxxx
   email: Email
-  email_address: info@olala.co.rs
+  email_address: info@alternativa8.rs
   address: Adresa
-  street_address: Stražilovska 36
-  city_address: 23000 Zrenjanin
+  street_address: xxxxxxxxxx xx
+  city_address: 11000 Beograd
   state: Srbija
   working_time: Radno vreme
-  working_time_value: Pon-Ned 08 - 24
-  deliveries: Dostava na adresu
-  deliveries_time: 08 - 23
+  working_time_value: Radnim danima 08-17
+  deliveries: Slanje porudžbina radnim danima
+  deliveries_time: 08-17
   social_info: Pronađite nas na društvenim mrežama
-  social_facebook: https://www.facebook.com/olalazr/
-  social_instagram: https://www.instagram.com/o_.la_la/
+  social_facebook: https://www.facebook.com/
+  social_instagram: https://www.instagram.com/
 navbar:
-  brand: Olala
+  brand: Alternativa8
   offer: Ponuda
   orders: Porudžbine
   about: O nama
@@ -36,6 +42,8 @@ navbar:
     upper: LogIn
     bottom: Poručite
     logout: Logout
+  social_facebook: https://www.facebook.com/
+  social_instagram: https://www.instagram.com/
 login:
   title: Log in!
   to_login: Uloguj se
@@ -52,6 +60,12 @@ login:
   no_access: Nemate nalog za pristup?
   to_register: Registracija
 order:
+  email:
+    address:
+      from: syminorder@gmail.com
+      to: syminorder@gmail.com
+    name: Alternativa8 Porudžbina
+    subject: Alternativa8 Nova Porudžbina
   notification:
     title: Zdravo! Stigla Vam je nova porudžbina!
     take_over: Preuzmi porudžbinu i prosledi na obradu
@@ -68,6 +82,13 @@ order:
     no_addition: /
     quantity: Kol
     welcome: Prijatno!
+registration:
+  email:
+    address:
+      from: syminorder@gmail.com
+    name: Alternativa8 Registracija
+    subject: Alternativa8 Potvrda Registracije
+    verified: Your email address has been verified.
 register:
   title: Registracija
   button: Registruj se
@@ -75,15 +96,15 @@ register:
     title: Zdravo! Molim Vas da potvrdite Vaš email!
     welcome: Prijatno!
     message:
-      please: Molimo Vas da potvrdite da ste se ovom email adresom registrovali na Olala
+      please: Molimo Vas da potvrdite da ste se ovom email adresom registrovali na sajtu Alternativa8
       confirm: Potvrđujem moj email
       expiration: Ovaj link će prestati da važi za
 terms:
   privacy:
-    title: Olala - Priprema hrane
+    title: Alternativa8 - na talasu izobilja
     company_refers: NEMANJA RADLOVACKI PR UGOSTITELJSKA RADNJA I ODRZAVANJE HIGIJENE OBJEKATA O LALA 023 ZRENJANIN, Zrenjanin, Strazilovska 36
-    website: https://olala.co.rs
-    email: info@olala.co.rs
+    website: https://alternativa8.rs
+    email: info@alternativa8.rs
     protection: This site is protected by Terms of
     protection_privacy: Privacy Policy
     protection_terms: Terms and Conditions
@@ -91,9 +112,9 @@ vuejs:
   currency: RSD
   search_by: 'Pretraga po: "%searchtermfound%"'
   maincarousel:
-    slide1: <h3><span>  Prijatno društvo  </span></h3>
-    slide2: <h3><span>Ugodan ambijent</span></h3>
-    slide3: <h3><span>Ukusno posluženje</span></h3>
+    slide1: <h3><span>Bahove kapi</span></h3>
+    slide2: <h3><span>Krema</span></h3>
+    slide3: <h3><span>Rolon</span></h3>
     button:
       previous: <i class="fas fa-chevron-left"></i>
       next: <i class="fas fa-chevron-right"></i>
@@ -105,10 +126,10 @@ vuejs:
         afternoon: Prijatno poslepodne
         night: Dobro veče
       meal:
-        morning: želimo Vam prijatno jutro, pogledajte našu ponudu za doručak
-        day: odaberite najbolji ručak
-        afternoon: odaberite obrok za kasni ručak ili ranu večeru
-        night: želimo Vam prijatno veče, pogledajte našu ponudu za večeru
+        morning: želimo Vam prijatno jutro, pogledajte našu ponudu proizvoda
+        day: odaberite najbolje proizvode
+        afternoon: odaberite najbolje proizvode
+        night: želimo Vam prijatno veče, pogledajte našu ponudu proizvoda
   orderstable:
     orderstotalnum: 'Lista porudžbina za dostavu - ukupno %orderstotalnum%'
     additions: 'Prilozi: '

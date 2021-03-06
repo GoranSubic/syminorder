@@ -1,27 +1,36 @@
-.main .bckg-image.container {
-    background-image: url("../media/greet-bckg.jpg");
-    border: 2px solid black;
-    padding: 20px !important;
+.main .bckg-image {
+    /*background-image: url("../media/greet-bckg.jpg");*/
+    /*border: 2px solid black;
+    padding: 20px !important;*/
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.homepage.container {
+.homepage.main-container {
     margin: 50px 0 50px 0;
 }
-.static.container .content {
+.static .content {
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     margin: 10px 0 10px 0;
 }
-.static.container .about.content p{
+.static .about.content p{
     color: black;
-    font-size: 1.5em;
+    font-size: 1.2em;
     padding: 10px;
 }
-.static.container .content h1 {
+.static .about.content-intro {
+    text-align: left;
+}
+.static .about.content-desc {
+    text-align: justify;
+}
+.static .about.content-footer {
+    text-align: left;
+}
+.static .content h1 {
     text-align: center;
 }
 
@@ -116,7 +125,7 @@
 .carousel .agile__nav-button {
     background: transparent;
     border: none;
-    color: #fff;
+    color: #548fad;
     cursor: pointer;
     font-size: 24px;
     height: 100%;
@@ -158,7 +167,7 @@
 }
 .agile__dot button {
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #18b3ef;
     border-radius: 50%;
     cursor: pointer;
     display: block;
@@ -172,6 +181,6 @@
     width: 10px;
 }
 .agile__dot--current button, .agile__dot:hover button {
-    background-color: #fff;
+    background-color: #548fad;
 }
 /* Main Carousel */

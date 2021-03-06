@@ -20,9 +20,11 @@
 
 {% block content %}
     <div id="homepage">
-        <div class="homepage container">
+        <div class="homepage main-container">
 
-            <div class="homepage content">
+            <div class="homepage content"
+                 style="width: 100vw;"
+            >
                 <main-carousel
                         class="carousel"
                         img1="{{ asset('images/carousel/slide1.jpg') }}"
@@ -34,9 +36,8 @@
                 >
 
                 </main-carousel>
-            </div>
 
-            <div class="homepage content" style="line-height: 3em; font-size: 1.5em; text-align: center; font-weight: bold;">
+                <div class="homepage content" style="line-height: 3em; font-size: 1.5em; text-align: center; font-weight: bold;">
                 Dobro došli,
                 <br />
                 web prezentacija je u izdradi

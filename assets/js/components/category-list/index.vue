@@ -114,10 +114,10 @@ export default {
 <style scoped>
 #parentcat-btn {
   min-height: 60px;
-  background-color: #db4c3e !important;
+  background-color: #548fad !important;
 }
 .category-name {
-  color: #db4c3e;
+  color: #548fad;
 }
 .back-icon .fa-level-up-alt {
   transform: rotateY(180deg);

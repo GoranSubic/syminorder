@@ -11,14 +11,17 @@ use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class OrderMailSubscriber implements EventSubscriberInterface
 {
     private $mailer;
+    private $translator;
 
-    public function __construct(MailerInterface $mailer)
+    public function __construct(MailerInterface $mailer, TranslatorInterface $translator)
     {
         $this->mailer = $mailer;
+        $this->translator = $translator;
     }
 
     public static function getSubscribedEvents()
@@ -38,9 +41,9 @@ final class OrderMailSubscriber implements EventSubscriberInterface
         }
 
         $templatedEmail = (new TemplatedEmail())
-                ->from(new Address('info@olala.co.rs', 'Olala Porudžbina'))
-                ->to(new Address('porudzbine@olala.co.rs'))
-                ->subject('Olala Nova Porudžbina')
+                ->from(new Address($this->translator->trans('order.email.address.from'), $this->translator->trans('order.email.name')))
+                ->to(new Address($this->translator->trans('order.email.address.to')))
+                ->subject($this->translator->trans('order.email.subject'))
                 ->htmlTemplate('notification/order_notification_email.html.twig');
 
         $context = $templatedEmail->getContext();

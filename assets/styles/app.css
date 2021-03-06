@@ -21,11 +21,11 @@ body {
 
 footer {
     width: 100%;
-    color: #999999;
-    /*background-color: #2b3c54 !important;*/
+    color: #FFFFFF;
+    background-color: #548fad;
 }
 footer a {
-    color: #999999;
+    color: #FFFFFF;
 }
 footer address {
     font-size: small;
@@ -51,7 +51,7 @@ li.user-logout {
 }
 .nav-item .user-name {
     font-size: 0.7em;
-    color: #db4c3e;
+    color: #548fad;
 }
 
 .header #mainNavbar {
@@ -65,7 +65,7 @@ li.user-logout {
 }
 .header .navbar-brand {
     content: url("../media/logo.png");
-    width: 65px;
+    width: 110px;
     display: inline-block;
     opacity: 0.9;
     padding: 0 10px 0 10px;
@@ -77,6 +77,10 @@ li.user-logout {
 
 #navbarSupportedContent {
     padding-left: 10px;
+}
+
+.header #mainNavbar .nav-item.active .nav-link {
+    color: #548fad;
 }
 
 #btnOutline {
@@ -100,9 +104,9 @@ li.user-logout {
     line-height: 18px;
 }
 
-.food-and-drinks {
+/*.food-and-drinks {
     background-image: url("../media/greet-bckg.jpg");
-}
+}*/
 
 .modal-backdrop {
     opacity: 0 !important;
@@ -222,7 +226,7 @@ li.user-logout {
 
 .login_remember_box .forget_password {
     float: right;
-    color: #db4c3e;
+    color: #548fad;
     line-height: 12px;
     text-decoration: underline
 }
@@ -248,6 +252,9 @@ p {
     color: #999999;
     font-size: 14px;
     line-height: 24px
+}
+footer p {
+    color: #FFFFFF;
 }
 
 .login_wrapper button.login_btn:hover {

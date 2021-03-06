@@ -346,7 +346,7 @@ tr.status-delivered, .btn.status-delivered {
 }
 
 table a {
-  color: #db4c3e !important;
+  color: #548fad !important;
   line-height: 12px;
   text-decoration: underline !important;
 }

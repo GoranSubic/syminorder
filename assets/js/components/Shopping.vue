@@ -454,7 +454,7 @@ export default {
   font-size: 0.8rem;
 }
 #toggle-btn .fa-shopping-bag {
-  color: #db4c3e;
+  color: #548fad;
   font-size: 2rem;
 }
 #toggle-btn span.cart-sigma {
@@ -516,13 +516,13 @@ form #cartCity, #cartDeliveryPrice, #cartAddress, #cartPhone {
   font-size: 0.7em;
 }
 .additions .addvalues {
-  color: #db4c3e;
+  color: #548fad;
 }
 
 form input[required=required]:before,
 form select[required=required]:before
 {
-  color: #db4c3e;
+  color: #548fad;
   content: " *";
 }
 </style>

@@ -18,13 +18,13 @@
     flex-wrap: wrap;
     height: 60px;
     padding: 1px;
-    border: 2px solid #db4c3e;
+    border: 2px solid #548fad;
 }
 .cat-name, .cat-image, .prod-image {
     max-height: 100%;
     overflow: hidden;
     padding: 1px !important;
-    color: #db4c3e;
+    color: #548fad;
 }
 
 .prod-image{
@@ -96,12 +96,12 @@
 .prod-name {
     height: 70%;
     font-size: 1em;
-    color: #db4c3e;
+    color: #548fad;
 }
 .prod-price {
     text-align: right;
     height: 30%;
-    text-decoration: underline solid #db4c3e;
+    text-decoration: underline solid #548fad;
     font-size: 0.8em;
 }
 .prod-desc {
