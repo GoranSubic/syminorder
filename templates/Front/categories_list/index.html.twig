@@ -18,45 +18,48 @@
 {% endblock %}
 
 {% block content %}
-    {% if app.user %}
-        <div class="orders list">
-            {% if search_by == 'userOrders' %}
-                <orders-table-user id="orders-table-user"
-                                   searchby="{{ search_by }}"
-                                   v-bind:datauname="dataUname"
-                                   v-bind:userid="{{ app.user.id }}"
-                >
 
-                </orders-table-user>
-            {% else %}
-                <orders-table id="orders-table"
-                              searchby="{{ search_by }}"
-                              v-bind:datauname="dataUname"
-                >
+    <div id="offer">
+        {% if app.user %}
+            <div class="orders list">
+                {% if search_by == 'userOrders' %}
+                    <orders-table-user id="orders-table-user"
+                                       searchby="{{ search_by }}"
+                                       v-bind:datauname="dataUname"
+                                       v-bind:userid="{{ app.user.id }}"
+                    >
 
-                </orders-table>
-            {% endif %}
-        </div>
-    {% endif %}
+                    </orders-table-user>
+                {% else %}
+                    <orders-table id="orders-table"
+                                  searchby="{{ search_by }}"
+                                  v-bind:datauname="dataUname"
+                    >
 
-{#    {% if orderchanged is defined and orderchanged is not empty %}#}
-{#        <div class="alert {% if orderchanged.status == 'processing' %} alert-success {% else %} alert-danger {% endif %}">#}
-{#            {% if orderchanged.status == 'processing' %}#}
-{#                <br />Novi status porudžbine je: "U pripremi"#}
-{#            {% else %}#}
-{#                <br />Status porudžbine je: {{ orderchanged.status }}#}
-{#            {% endif %}#}
-{#            <br />Porudžbina br: {{ orderchanged.id }}#}
-{#            <br />Vreme poručivanja: {{ orderchanged.cartAt is empty ? "" : orderchanged.cartAt|date("d/m/Y H:i:s") }}#}
-{#            <br />Kupac: {{ orderchanged.customer.username }}, {{ orderchanged.customer.email }}#}
-{#        </div>#}
-{#    {% endif %}#}
+                    </orders-table>
+                {% endif %}
+            </div>
+        {% endif %}
 
-    {% if categoriesJSON|default and categoriesJSON|length > 0 %}
-        <categories-main
-                v-bind:categories="{{ categoriesJSON }}"
-                :user_is_logged_in="{{ user_is_logged_in }}"
-        >
-        </categories-main>
-    {% endif %}
+    {#    {% if orderchanged is defined and orderchanged is not empty %}#}
+    {#        <div class="alert {% if orderchanged.status == 'processing' %} alert-success {% else %} alert-danger {% endif %}">#}
+    {#            {% if orderchanged.status == 'processing' %}#}
+    {#                <br />Novi status porudžbine je: "U pripremi"#}
+    {#            {% else %}#}
+    {#                <br />Status porudžbine je: {{ orderchanged.status }}#}
+    {#            {% endif %}#}
+    {#            <br />Porudžbina br: {{ orderchanged.id }}#}
+    {#            <br />Vreme poručivanja: {{ orderchanged.cartAt is empty ? "" : orderchanged.cartAt|date("d/m/Y H:i:s") }}#}
+    {#            <br />Kupac: {{ orderchanged.customer.username }}, {{ orderchanged.customer.email }}#}
+    {#        </div>#}
+    {#    {% endif %}#}
+
+        {% if categoriesJSON|default and categoriesJSON|length > 0 %}
+            <categories-main
+                    v-bind:categories="{{ categoriesJSON }}"
+                    :user_is_logged_in="{{ user_is_logged_in }}"
+            >
+            </categories-main>
+        {% endif %}
+    </div>
 {% endblock %}

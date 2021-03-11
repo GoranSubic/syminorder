@@ -88,7 +88,46 @@
 div.category-desc {
     text-align: justify;
 }
+/* Show more - show less */
+.category-long-desc {
+    --lh: 1.2rem;
+    line-height: var(--lh);
+}
 
+.truncate-overflow {
+    --max-lines: 3;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+    padding-right: 1rem; /* space for ellipsis */
+
+    display: inline-block;
+}
+.truncate-overflow::before {
+    position: absolute;
+    content: "   >>> >> >";
+    color: #548fad;
+    background-color: #FFFFFF;
+    inset-block-end: 0; /* "bottom" */
+    inset-inline-end: 0; /* "right" */
+}
+.truncate-overflow::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 0; /* "right" */
+    width: 1rem;
+    height: 1rem;
+    background: white;
+}
+
+.category-long-desc .moreless {
+    float: right;
+    color: #548fad;
+    cursor: default;
+}
+/* End of show more - show less */
+
+/* end of homepage each category */
 /* Main Carousel */
 .carousel .slide.agile__slide.agile__slide--current.agile__slide--active {
     display: flex;
