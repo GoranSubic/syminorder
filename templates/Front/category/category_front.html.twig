@@ -5,21 +5,26 @@
 {% block title %}{{ category.name }}{% endblock %}
 
 {% block content %}
-    <div class="category-show homepage content">
+    <div class="category-show content">
         <h1>{{ category.name }}</h1>
 
         <div id="{{ category.id }}" class="flex-container-cat">
 
             {{ include('Front/category/category_image.html.twig') }}
 
-            <div class="category-about">
+            <div class="category-desc">
                 {{ category.description|raw }}
             </div>
         </div>
     </div>
+    <div class="category-show content">
+        <div class="category-desc">
+            {{ category.longDescription|raw }}
+        </div>
+    </div>
 
     {% if productsdata|default and productsdata != "" and productsdata|length > 0 %}
-        <div class="homepage content">
+        <div class="category-show content">
             <category-selected
                     v-bind:productsdata="{{ productsdata }}"
                     :user_is_logged_in="{{ user_is_logged_in }}"

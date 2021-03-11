@@ -71,10 +71,21 @@ class Category
     private $slug;
 
     /**
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Description must be at least {{ limit }} chars long",
+     *      maxMessage = "Description cannot be longer than 240 characters"
+     * )
      * @ORM\Column(name="description", type="string", length=255)
      * @Groups({"category:list", "category:item"})
      */
     private $description;
+
+    /**
+     * @ORM\Column(name="long_description", type="text", nullable=true)
+     */
+    private $long_description;
 
     /**
      * @Gedmo\TreeLeft()
@@ -274,6 +285,22 @@ class Category
     public function setDescription($description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLongDescription()
+    {
+        return $this->long_description;
+    }
+
+    /**
+     * @param mixed $long_description
+     */
+    public function setLongDescription($long_description): void
+    {
+        $this->long_description = $long_description;
     }
 
     /**

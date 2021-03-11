@@ -39,7 +39,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/category/{slug}", name="category_show_front")
+     * @Route("/kategorija/{slug}", name="category_show_front")
      */
     public function showCategory(Category $category, SerializerInterface $serializer)
     {

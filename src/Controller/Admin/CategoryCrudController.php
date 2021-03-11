@@ -32,6 +32,7 @@ class CategoryCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('slug'),
             TextEditorField::new('description'),
+            TextEditorField::new('long_description'),
             AssociationField::new('parent')->autocomplete(),
         ];
 

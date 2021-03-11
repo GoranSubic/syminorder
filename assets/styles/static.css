@@ -85,6 +85,9 @@
     width: 100%;
     max-height: 100%;
 }
+div.category-desc {
+    text-align: justify;
+}
 
 /* Main Carousel */
 .carousel .slide.agile__slide.agile__slide--current.agile__slide--active {

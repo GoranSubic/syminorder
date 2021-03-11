@@ -36,6 +36,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('name', 'Naziv'),
             TextField::new('code', 'Code'),
             TextEditorField::new('description', 'Opis'),
+            TextEditorField::new('long_description', 'Duži opis'),
             MoneyField::new('price', 'Cena Money')
                 ->setCurrency("RSD")
                 ->setNumDecimals(2)
