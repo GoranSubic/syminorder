@@ -25,6 +25,9 @@
     overflow: hidden;
     padding: 1px !important;
     color: #548fad;
+    
+    justify-content: center;
+    display: flex;
 }
 
 .prod-image{
@@ -35,6 +38,9 @@
     top: 0;
     bottom: 0;
     margin: auto;
+
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #products {
