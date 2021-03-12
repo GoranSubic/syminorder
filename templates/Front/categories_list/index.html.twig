@@ -60,6 +60,12 @@
                     :user_is_logged_in="{{ user_is_logged_in }}"
             >
             </categories-main>
+        {% elseif tagservicesJSON|default and tagservicesJSON|length > 0 %}
+            <tag-services-main
+                    v-bind:tagservices="{{ tagservicesJSON }}"
+                    :user_is_logged_in="{{ user_is_logged_in }}"
+            >
+            </tag-services-main>
         {% endif %}
     </div>
 {% endblock %}

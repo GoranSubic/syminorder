@@ -48,13 +48,13 @@ class Product
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item", "tagservices:list", "tagservices:item"})
      */
     private $id;
 
     /**
      * @ORM\Column(name="enabled", type="boolean", nullable=true)
-     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item", "tagservices:list", "tagservices:item"})
      */
     private $enabled;
 
@@ -62,7 +62,7 @@ class Product
      * @ORM\Column(name="name", type="string", length=30)
      *
      * @Assert\NotBlank()
-     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item", "tagservices:list", "tagservices:item"})
      */
     private $name;
 
@@ -79,7 +79,7 @@ class Product
      *      maxMessage = "Description cannot be longer than 240 characters"
      * )
      * @ORM\Column(name="description", type="string", length=255)
-     * @Groups({"product:list", "category:list", "category:item"})
+     * @Groups({"product:list", "category:list", "category:item", "tagservices:item"})
      */
     private $description;
 
@@ -90,7 +90,7 @@ class Product
 
     /**
      * @ORM\Column(name="show_additions", type="boolean", nullable=true)
-     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item", "tagservices:item"})
      */
     private $showAdditions;
 
@@ -105,7 +105,7 @@ class Product
      * @ORM\Column(name="price", type="integer")
      *
      * @Assert\NotBlank()
-     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item", "tagservices:item"})
      */
     private $price;
 
@@ -130,7 +130,7 @@ class Product
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"
      * )
-     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item", "tagservices:item"})
      */
     private $picture;
 
@@ -152,7 +152,7 @@ class Product
      * @ORM\Column(name="code", type="string", length=255, unique=true)
      *
      * @Assert\NotBlank()
-     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item", "tagservices:list", "tagservices:item"})
      */
     private $code;
 

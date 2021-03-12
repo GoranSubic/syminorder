@@ -71,7 +71,7 @@ class ProductPicture
      *
      * @var string|null
      *
-     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item", "tagservices:list", "tagservices:item"})
      */
     private $imageName;
 

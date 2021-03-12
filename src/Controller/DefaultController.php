@@ -12,6 +12,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Yaml\Exception\ParseException;
+use Symfony\Component\Yaml\Yaml;
 
 class DefaultController extends AbstractController
 {
@@ -71,21 +73,30 @@ class DefaultController extends AbstractController
      */
     public function orders(SerializerInterface $serializer)
     {
+        $configDisplayOfferBy = $this->getParameter('syminorder.offer.configDisplayOfferBy');
+        $jsonCat = NULL;
+        $jsonServices = NULL;
         $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository('App\Entity\Category');
 
-        $rootNode = $repo->findOneBy(['name' => 'Home']);
-        /** @var ArrayCollection|Category[] $children */
-        $children = $repo->getChildren($rootNode, true, 'name');
+        if ($configDisplayOfferBy == 'tagservices') {
+            $repo = $em->getRepository('App\Entity\TagServices');
+            $servicesEnabled = $repo->findBy(['enabled' => true], ['name' => 'asc']);
+            $jsonServices = $serializer->serialize($servicesEnabled, 'json', ['groups' => 'tagservices:list']);
+        } else {
+            $repo = $em->getRepository('App\Entity\Category');
+            $rootNode = $repo->findOneBy(['name' => 'Home']);
+            /** @var ArrayCollection|Category[] $children */
+            $children = $repo->getChildren($rootNode, true, 'name');
+            $childrenEnabled = array_filter($children, function ($cat) {
+                return $cat->getEnabled() === true;
+            });
+            $childrenEnabledFromZero = array_values($childrenEnabled);
+            $jsonCat = $serializer->serialize($childrenEnabledFromZero, 'json', ['groups' => 'category:list']);
+        }
 
-        $childrenEnabled = array_filter($children, function ($cat) {
-           return $cat->getEnabled() === true;
-        });
-        $childrenEnabledFromZero = array_values($childrenEnabled);
-
-        $jsonCat = $serializer->serialize($childrenEnabledFromZero, 'json', ['groups' => 'category:list']);
         return $this->render('Front/categories_list/index.html.twig', [
-            'categoriesJSON' => $jsonCat
+            'categoriesJSON' => $jsonCat,
+            'tagservicesJSON' => $jsonServices
         ]);
     }
 

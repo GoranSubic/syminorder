@@ -8,6 +8,7 @@ import ProductButtons from "./components/ProductButtons";
 import OrdersTable from "./components/OrdersTable";
 import OrdersTableUser from "./components/OrdersTableUser";
 import CategoriesMain from "./components/CategoriesMain";
+import TagServicesMain from "./components/TagServicesMain";
 import CategorySelected from "./components/CategorySelected";
 import ModalPlugin from 'bootstrap-vue';
 import Multiselect from 'vue-multiselect';
@@ -38,6 +39,7 @@ new Vue({
         ProductButtons,
         OrdersTable,
         OrdersTableUser,
+        TagServicesMain,
         CategoriesMain,
         CategorySelected,
     },

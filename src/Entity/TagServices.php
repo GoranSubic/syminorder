@@ -2,9 +2,13 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -16,6 +20,17 @@ use App\Repository\TagServicesRepository;
  * @ORM\Entity(repositoryClass=TagServicesRepository::class)
  * @Vich\Uploadable
  * @UniqueEntity ("slug")
+ *
+ * @ApiResource(
+ *  collectionOperations={
+ *     "get"={"normalization_context"={"groups"="tagservices:list"}},
+ *     },
+ *  itemOperations={
+ *     "get"={"normalization_context"={"groups"="tagservices:item"}},
+ *     },
+ * )
+ * @ApiFilter(BooleanFilter::class, properties={"enabled"})
+ *
  */
 class TagServices
 {
@@ -23,16 +38,19 @@ class TagServices
      * @ORM\Column (type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     protected $id;
 
     /**
      * @ORM\Column(name="enabled", type="boolean", nullable=true)
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     private $enabled;
 
     /**
      * @ORM\Column(type="string")
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     protected $name;
 
@@ -49,6 +67,7 @@ class TagServices
      *      maxMessage = "Description cannot be longer than 240 characters"
      * )
      * @ORM\Column(name="description", type="string", length=255)
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     private $description;
 
@@ -59,6 +78,7 @@ class TagServices
 
     /**
      * @ORM\ManyToMany(targetEntity="Product", mappedBy="tagServices")
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     protected $products;
 
@@ -78,6 +98,7 @@ class TagServices
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"
      * )
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     private $picture;
 

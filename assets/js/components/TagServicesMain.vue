@@ -16,14 +16,14 @@
       <div class="row">
         <div class="col-12 wait-for">
           <div class="mt-4">
-            <loading v-show="categories.length === 0" />
+            <loading v-show="tagservices.length === 0" />
           </div>
         </div>
         <category-card
-            v-for="category in categories"
-            :key="'/api/categories/' + category.id"
-            :category="category"
-            :getSubCategoriesParent="getSubCategories"
+            v-for="tag in tagservices"
+            :key="'/api/tag_services/' + tag.id"
+            :category="tag"
+            :getSubCategoriesParent="getTagServices"
         >
         </category-card>
       </div>
@@ -31,15 +31,16 @@
   </div>
 
   <category-list
-      :categories="categories"
-      :parentcatdata="parentcatdata"
-      :categoriesdata="categoriesdata"
+      :categories="tagservices"
+      :categoriesdata="tagservicesdata"
       :productsdata="productsdata"
-      :subcategoriesdata="subcategoriesdata"
-      :getSubCategoriesParent="getSubCategories"
+      :getSubCategoriesParent="getTagServices"
       :user_is_logged_in="user_is_logged_in"
       :additions="additions"
       :searchtermfound="searchTermFound"
+
+      :parentcatdata=null
+      :subcategoriesdata=[]
   >
 
   </category-list>
@@ -55,13 +56,11 @@ import CategoryCard from "./category-list/CategoryCard";
 import SearchBar from './SearchBar';
 
 export default {
-  name: "CategoriesMain",
+  name: "TagServicesMain",
   data: function () {
     return {
-      parentcatdata: {},
-      categoriesdata: {},
+      tagservicesdata: {},
       productsdata: [],
-      subcategoriesdata: [],
       additions: [],
       searchTermFound: '',
     }
@@ -73,7 +72,7 @@ export default {
     SearchBar,
   },
   props: {
-    categories: {
+    tagservices: {
       type: Array,
       required: true,
     },
@@ -86,41 +85,26 @@ export default {
     setSearchtermfound({term}) {
       this.searchTermFound = term;
     },
-    async getSubCategories(id) {
+    // async getSubCategories(id) {
+    async getTagServices(id) {
       this.productsdata = [];
       this.searchTermFound = '';
 
-      var url = '/api/categories/' + id;
+      var url = '/api/tag_services/' + id;
       var paramsGet = {};
       paramsGet['enabled'] = true;
       const response = await axios.get(url, {
         params: paramsGet
       });
-      this.categoriesdata = response.data;
+      this.tagservicesdata = response.data;
 
-      if (this.categoriesdata['products'].length) {
-        var products = this.categoriesdata['products'];
+      if (this.tagservicesdata['products'].length) {
+        var products = this.tagservicesdata['products'];
         products.forEach(prod => {
           this.productsdata.push(prod);
         });
       }
 
-      if (this.categoriesdata['children'].length) {
-        this.subcategoriesdata = this.categoriesdata['children'];
-        if (this.productsdata.length === 0 && this.subcategoriesdata[0]['products'].length) {
-          var products = this.subcategoriesdata[0]['products'];
-          products.forEach(prod => {
-            this.productsdata.push(prod);
-          });
-        }
-      } else {
-        this.subcategoriesdata = [];
-      }
-      if (this.categoriesdata['parent'] && this.categoriesdata['parent']['name'] !== "Home") {
-        this.parentcatdata = this.categoriesdata['parent'];
-      } else {
-        this.parentcatdata = null;
-      }
     },
     retrieveAdditions() {
       var urlGet = 'api/product_additions?enabled=true';
@@ -153,7 +137,7 @@ export default {
   },
   mounted: function () {
     if (this.user_is_logged_in) this.retrieveAdditions();
-    this.getSubCategories(this.categories['0'].id);
+    this.getTagServices(this.tagservices['0'].id);
   },
 }
 </script>

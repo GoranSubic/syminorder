@@ -11,17 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/CategoriesMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/CategoriesMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/SearchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/SearchBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/AppCategorySetSlugCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/AppCategorySetSlugCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/ProductPicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPicture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/TagServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TagServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +211,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Command" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config/packages/syminorder" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -230,11 +230,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config/packages/syminorder" />
+      <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/src/Command" />
       <recent name="$PROJECT_DIR$/src/EntityListener" />
       <recent name="$PROJECT_DIR$/assets/media" />
-      <recent name="$PROJECT_DIR$/public/images/carousel" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Repository" />
@@ -423,7 +423,8 @@
       <workItem from="1615227232671" duration="116000" />
       <workItem from="1615465506149" duration="2104000" />
       <workItem from="1615470780670" duration="10882000" />
-      <workItem from="1615542747265" duration="14947000" />
+      <workItem from="1615542747265" duration="15088000" />
+      <workItem from="1615561941410" duration="21085000" />
     </task>
     <servers />
   </component>

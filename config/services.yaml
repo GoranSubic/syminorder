@@ -3,7 +3,8 @@
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
-#parameters:
+parameters:
+    syminorder.offer.configDisplayOfferBy: tagservices # tagservices | categories | null
 #    product_images_directory: '%kernel.project_dir%/public/uploads/product_images'
 
 services:
