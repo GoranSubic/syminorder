@@ -9,9 +9,12 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use App\Service\ProductImagesUploader;
 use App\Entity\ProductPicture;
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -36,6 +39,7 @@ use App\Entity\Category;
  *     "productCode": "exact"
  * })
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @UniqueEntity("slug")
  * @Vich\Uploadable
  */
 class Product
@@ -74,7 +78,7 @@ class Product
      *      minMessage = "Description must be at least {{ limit }} chars long",
      *      maxMessage = "Description cannot be longer than 240 characters"
      * )
-     * @ORM\Column(name="description", type="string", length=150)
+     * @ORM\Column(name="description", type="string", length=255)
      * @Groups({"product:list", "category:list", "category:item"})
      */
     private $description;
@@ -122,7 +126,7 @@ class Product
      *     maxWidth = 400,
      *     minHeight = 200,
      *     maxHeight = 400,
-     *     maxSize = "1024k",
+     *     maxSize = "512k",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"
      * )
@@ -139,12 +143,23 @@ class Product
     private $category;
 
     /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\TagServices", inversedBy="products", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    protected $tagServices;
+
+    /**
      * @ORM\Column(name="code", type="string", length=255, unique=true)
      *
      * @Assert\NotBlank()
      * @Groups({"product:list", "product:item", "order:list", "suborder", "category:list", "category:item"})
      */
     private $code;
+
+    public function __construct()
+    {
+        $this->tagServices = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -367,6 +382,33 @@ class Product
     public function setCategory(Category $category): void
     {
         $this->category = $category;
+    }
+
+    /**
+     * @return Collection|TagServices[]
+     */
+    public function getTagServices(): Collection
+    {
+        return $this->tagServices;
+    }
+
+    public function addTagServices(TagServices $tag): self
+    {
+        if (!$this->tagServices->contains($tag)) {
+            $this->tagServices[] = $tag;
+            $tag->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTagServices(TagServices $tag): self
+    {
+        if ($this->tagServices->removeElement($tag)) {
+            $tag->removeProduct($this);
+        }
+
+        return $this;
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Entity\CityDelivery;
 use App\Entity\Product;
 use App\Entity\ProductAdditions;
 use App\Entity\ProductPicture;
+use App\Entity\TagServices;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -62,6 +63,9 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('Category'),
             MenuItem::linkToCrud('Categories', 'fa fa-tags', Category::class),
+
+            MenuItem::section('Indication Services'),
+            MenuItem::linkToCrud('Indications', 'fa fa-tags', TagServices::class),
 
             MenuItem::section('Product'),
             MenuItem::linkToCrud('Products', 'fa fa-tags', Product::class),

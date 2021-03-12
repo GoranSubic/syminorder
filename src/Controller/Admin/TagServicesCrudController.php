@@ -2,8 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Product;
-use App\Form\MyMoneType;
+use App\Entity\TagServices;
 use App\Form\ProductPictureType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -12,18 +11,14 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Symfony\Component\Form\Extension\Core\Type\MoneyType;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class ProductCrudController extends AbstractCrudController
+class TagServicesCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Product::class;
+        return TagServices::class;
     }
 
     public function configureFields(string $pageName): iterable
@@ -33,28 +28,17 @@ class ProductCrudController extends AbstractCrudController
         $image = ImageField::new('picture.imageName')
             ->setBasePath('/images/products');
         $fields = [
-            BooleanField::new('enabled', 'Uključeno'),
-            TextField::new('name', 'Naziv'),
+            BooleanField::new('enabled'),
+            TextField::new('name'),
             TextField::new('slug'),
-            TextField::new('code', 'Code'),
-            TextEditorField::new('description', 'Opis')->hideOnIndex(),
-            TextEditorField::new('long_description', 'Duži opis')->hideOnIndex(),
-            MoneyField::new('price', 'Cena Money')
-                ->setCurrency("RSD")
-                ->setNumDecimals(2)
-                ->setFormType(MoneyType::class)
-            ,
-            AssociationField::new('category', 'Kategorija')->autocomplete(),
-            AssociationField::new('tagServices', 'Indikacije')
-                ->hideOnDetail()
-                ->autocomplete(),
-//            BooleanField::new('showAdditions', 'Prikaži dodatke'),
+            TextEditorField::new('description'),
+            TextEditorField::new('long_description'),
+            AssociationField::new('products', 'Proizvodi')->hideOnForm(),
         ];
 
-        if ($pageName == Crud::PAGE_DETAIL) {
-            $fields[] = ArrayField::new('tagServices', 'Indikacije');
+        if($pageName == Crud::PAGE_DETAIL) {
+            $fields[] = ArrayField::new('products', 'Proizvodi');
         }
-
         if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
             $fields[] = $image;
         } else {

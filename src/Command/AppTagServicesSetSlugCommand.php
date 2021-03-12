@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use App\Entity\Category;
+use App\Entity\TagServices;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -11,23 +11,23 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
- * Class AppCategorySetSlugCommand
+ * Class AppTagServicesSetSlugCommand
  * @package App\Command
  */
-class AppCategorySetSlugCommand extends Command
+class AppTagServicesSetSlugCommand extends Command
 {
     private $slugger;
 
     /**
      * @var string
      */
-    protected static $defaultName = 'app:category:set-slug';
+    protected static $defaultName = 'app:tag-services:set-slug';
 
     /** @var EntityManagerInterface */
     private $entityManager;
 
     /**
-     * AppCategorySetSlugCommand constructor.
+     * AppTagServicesSetSlugCommand constructor.
      * @param EntityManagerInterface $entityManager
      */
     public function __construct(EntityManagerInterface $entityManager, SluggerInterface $slugger)
@@ -39,7 +39,7 @@ class AppCategorySetSlugCommand extends Command
 
     protected function configure()
     {
-        $this->setDescription('Set slug (if null) to categories');
+        $this->setDescription('Set slug (if null) for tag_services');
     }
 
     /**
@@ -51,13 +51,13 @@ class AppCategorySetSlugCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $repo = $this->entityManager->getRepository(Category::class);
+        $repo = $this->entityManager->getRepository(TagServices::class);
 
 
-        $catNoSlug = $repo->findBy(['slug' => null]);
-        foreach ($catNoSlug as $category) {
-            $category->computeSlug($this->slugger, $this->entityManager);
-            $this->entityManager->persist($category);
+        $tagNoSlug = $repo->findBy(['slug' => null]);
+        foreach ($tagNoSlug as $tagService) {
+            $tagService->computeSlug($this->slugger, $this->entityManager);
+            $this->entityManager->persist($tagService);
 
             $this->entityManager->flush();
         }
