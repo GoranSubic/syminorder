@@ -90,10 +90,10 @@ class TagServices
      *
      * @Assert\NotBlank()
      * @Assert\Image(
-     *     minWidth = 400,
-     *     maxWidth = 800,
+     *     minWidth = 200,
+     *     maxWidth = 400,
      *     minHeight = 200,
-     *     maxHeight = 600,
+     *     maxHeight = 400,
      *     maxSize = "512k",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"

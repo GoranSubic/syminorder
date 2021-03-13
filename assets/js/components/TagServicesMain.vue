@@ -1,7 +1,6 @@
 <template>
-<div id="categories">
-  <div id="main-categories">
-    <div class="categories container">
+<div id="tagservices">
+    <div class="tagservices container">
       <div class="row">
         <div class="col-12 searchcat">
           <search-bar
@@ -13,37 +12,20 @@
           </search-bar>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 wait-for">
-          <div class="mt-4">
-            <loading v-show="tagservices.length === 0" />
-          </div>
-        </div>
-        <category-card
-            v-for="tag in tagservices"
-            :key="'/api/tag_services/' + tag.id"
-            :category="tag"
-            :getSubCategoriesParent="getTagServices"
-        >
-        </category-card>
-      </div>
     </div>
-  </div>
 
-  <category-list
-      :categories="tagservices"
-      :categoriesdata="tagservicesdata"
+  <tag-services-list
+      class="tagservices container"
+      :tagservices="tagservices"
+      :tagservicesdata="tagservicesdata"
       :productsdata="productsdata"
-      :getSubCategoriesParent="getTagServices"
       :user_is_logged_in="user_is_logged_in"
       :additions="additions"
       :searchtermfound="searchTermFound"
-
-      :parentcatdata=null
-      :subcategoriesdata=[]
+      :getTagServicesParent="getTagServices"
   >
 
-  </category-list>
+  </tag-services-list>
 
 </div>
 </template>
@@ -51,8 +33,8 @@
 <script>
 import axios from 'axios';
 import Loading from "./Loading";
-import CategoryList from "./category-list"
-import CategoryCard from "./category-list/CategoryCard";
+import TagServicesList from "./tagservices-list"
+import TagServicesCard from "./tagservices-list/TagServicesCard";
 import SearchBar from './SearchBar';
 
 export default {
@@ -67,8 +49,8 @@ export default {
   },
   components: {
     Loading,
-    CategoryList,
-    CategoryCard,
+    TagServicesList,
+    TagServicesCard,
     SearchBar,
   },
   props: {
@@ -85,7 +67,6 @@ export default {
     setSearchtermfound({term}) {
       this.searchTermFound = term;
     },
-    // async getSubCategories(id) {
     async getTagServices(id) {
       this.productsdata = [];
       this.searchTermFound = '';
@@ -143,11 +124,11 @@ export default {
 </script>
 
 <style scoped>
-#categories .searchcat {
+#tagservices .searchcat {
   display: flex;
   justify-content: center;
 }
-#categories .searchbar {
+#tagservices .searchbar {
   margin: 20px;
   width: 75%;
 }

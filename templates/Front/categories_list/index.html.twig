@@ -41,19 +41,6 @@
             </div>
         {% endif %}
 
-    {#    {% if orderchanged is defined and orderchanged is not empty %}#}
-    {#        <div class="alert {% if orderchanged.status == 'processing' %} alert-success {% else %} alert-danger {% endif %}">#}
-    {#            {% if orderchanged.status == 'processing' %}#}
-    {#                <br />Novi status porudžbine je: "U pripremi"#}
-    {#            {% else %}#}
-    {#                <br />Status porudžbine je: {{ orderchanged.status }}#}
-    {#            {% endif %}#}
-    {#            <br />Porudžbina br: {{ orderchanged.id }}#}
-    {#            <br />Vreme poručivanja: {{ orderchanged.cartAt is empty ? "" : orderchanged.cartAt|date("d/m/Y H:i:s") }}#}
-    {#            <br />Kupac: {{ orderchanged.customer.username }}, {{ orderchanged.customer.email }}#}
-    {#        </div>#}
-    {#    {% endif %}#}
-
         {% if categoriesJSON|default and categoriesJSON|length > 0 %}
             <categories-main
                     v-bind:categories="{{ categoriesJSON }}"

@@ -12,14 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/CategoriesMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/CategoriesMain.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/SearchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/SearchBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPicture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/TagServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TagServices.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" afterDir="false" />
     </list>
@@ -211,7 +205,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config/packages/syminorder" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -230,8 +224,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config/packages/syminorder" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
+      <recent name="$PROJECT_DIR$/config/packages/syminorder" />
       <recent name="$PROJECT_DIR$/src/Command" />
       <recent name="$PROJECT_DIR$/src/EntityListener" />
       <recent name="$PROJECT_DIR$/assets/media" />
@@ -425,6 +419,8 @@
       <workItem from="1615470780670" duration="10882000" />
       <workItem from="1615542747265" duration="15088000" />
       <workItem from="1615561941410" duration="21085000" />
+      <workItem from="1615624647698" duration="2980000" />
+      <workItem from="1615628374617" duration="5800000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,47 @@
+/* tagservices */
+#tagservices {
+    padding: 30px 0 30px 0;
+    overflow: auto;
+    background-color: white;
+    text-align: center;
+}
+.tagservices.tagservices-card {
+    margin-bottom: 10px;
+}
+.tagservice-info {
+    margin: 10px auto 10px auto;
+    padding: 0 30px 0 30px;
+}
+
+.tagservices .tagservice-border {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    padding: 1px;
+    border: 2px solid #548fad;
+    justify-content: center;
+}
+
+.tagservices .tagservice-image,
+.tagservices .tagservice-name,
+.prod-image {
+    overflow: hidden;
+    padding: 1px !important;
+    color: #548fad;
+
+    display: flex;
+}
+.tagservices .tagservice-image {
+    height: 70%;
+}
+.tagservices .tagservice-name {
+    height: 30%;
+    font-size: 0.75em;
+    line-height: 1em;
+}
+
+/* end tagservices */
+
 /* categories */
 #main-categories {
     margin: 30px auto 30px auto;
