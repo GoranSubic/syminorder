@@ -28,6 +28,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *  itemOperations={
  *     "get"={"normalization_context"={"groups"="category:item"}},
  *     },
+ *  order={"position"="ASC"},
  * )
  * @ApiFilter(BooleanFilter::class, properties={"enabled"})
  *
@@ -58,6 +59,12 @@ class Category
      * @Groups({"category:list", "category:item"})
      */
     private $enabled;
+
+    /**
+     * @ORM\Column(name="show_on_front", type="boolean", nullable=true)
+     * @Groups({"category:list", "category:item"})
+     */
+    private $showOnFront;
 
     /**
      * @ORM\Column(name="name", type="string", length=30)
@@ -150,6 +157,13 @@ class Category
      */
     private $picture;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     *
+     * @Groups({"category:list"})
+     */
+    private $position;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -202,6 +216,22 @@ class Category
     public function setEnabled($enabled): void
     {
         $this->enabled = $enabled;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShowOnFront()
+    {
+        return $this->showOnFront;
+    }
+
+    /**
+     * @param mixed $showOnFront
+     */
+    public function setShowOnFront($showOnFront): void
+    {
+        $this->showOnFront = $showOnFront;
     }
 
     /**
@@ -364,6 +394,22 @@ class Category
             $picture->setCategory($newCategory);
         }
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param mixed $position
+     */
+    public function setPosition($position): void
+    {
+        $this->position = $position;
     }
 
     public function __toString(): string

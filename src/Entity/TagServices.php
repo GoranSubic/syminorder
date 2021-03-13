@@ -28,9 +28,9 @@ use App\Repository\TagServicesRepository;
  *  itemOperations={
  *     "get"={"normalization_context"={"groups"="tagservices:item"}},
  *     },
+ *  order={"position"="ASC"},
  * )
  * @ApiFilter(BooleanFilter::class, properties={"enabled"})
- *
  */
 class TagServices
 {
@@ -101,6 +101,13 @@ class TagServices
      * @Groups({"tagservices:list", "tagservices:item"})
      */
     private $picture;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     *
+     * @Groups({"category:list"})
+     */
+    private $position;
 
     public function __construct()
     {
@@ -271,6 +278,22 @@ class TagServices
             $picture->setTagServices($newTag);
         }
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param mixed $position
+     */
+    public function setPosition($position): void
+    {
+        $this->position = $position;
     }
 
     public function __toString(): string

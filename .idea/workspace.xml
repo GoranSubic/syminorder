@@ -12,10 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/TagServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TagServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,7 +420,7 @@
       <workItem from="1615542747265" duration="15088000" />
       <workItem from="1615561941410" duration="21085000" />
       <workItem from="1615624647698" duration="2980000" />
-      <workItem from="1615628374617" duration="5800000" />
+      <workItem from="1615628374617" duration="8334000" />
     </task>
     <servers />
   </component>

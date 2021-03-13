@@ -27,10 +27,10 @@ class DefaultController extends AbstractController
 
         $rootNode = $repo->findOneBy(['name' => 'Home']);
         /** @var ArrayCollection|Category[] $children */
-        $children = $repo->getChildren($rootNode, true, 'name');
+        $children = $repo->getChildren($rootNode, true, 'position', 'desc');
 
         $childrenEnabled = array_filter($children, function ($cat) {
-            return $cat->getEnabled() === true;
+            return $cat->getEnabled() === true && $cat->getShowOnFront() === true;
         });
         $childrenEnabledFromZero = array_values($childrenEnabled);
 
