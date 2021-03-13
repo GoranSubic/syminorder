@@ -4,6 +4,7 @@
     overflow: auto;
     background-color: white;
     text-align: center;
+    justify-content: center;
 }
 .tagservices.tagservices-card {
     margin-bottom: 10px;
@@ -28,7 +29,7 @@
     overflow: hidden;
     padding: 1px !important;
     color: #548fad;
-
+    justify-content: center;
     display: flex;
 }
 .tagservices .tagservice-image {

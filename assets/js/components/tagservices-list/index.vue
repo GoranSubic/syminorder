@@ -7,7 +7,7 @@
       </div>
     </div>
     <tag-services-card
-        class="col-6 col-sm-4 col-md-3 col-lg-2 tagservices tagservices-card"
+        class="col-4 col-sm-4 col-md-3 col-lg-2 tagservices tagservices-card"
         :id="'tag-' + tag.id"
         v-for="tag in tagservices"
         :key="'/api/tag_services/' + tag.id"
