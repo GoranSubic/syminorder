@@ -130,7 +130,7 @@ class Product
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg"},
      *     mimeTypesMessage = "Please upload a valid valid IMAGE"
      * )
-     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item", "tagservices:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item", "tagservices:list", "tagservices:item"})
      */
     private $picture;
 

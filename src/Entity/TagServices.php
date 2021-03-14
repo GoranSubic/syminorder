@@ -105,7 +105,7 @@ class TagServices
     /**
      * @ORM\Column(type="integer", nullable=true)
      *
-     * @Groups({"category:list"})
+     * @Groups({"tagservices:list"})
      */
     private $position;
 
