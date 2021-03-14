@@ -11,8 +11,11 @@ $(document).ready(function (){
     if ($("#homepage").length) {
         $(".navbar-nav .nav-item.homepage").addClass('active');
     }
-    if ($("#offer").length) {
-        $(".navbar-nav .nav-item.offer").addClass('active');
+    if ($("#category-show").length) {
+        $(".navbar-nav .nav-item.categories").addClass('active');
+    }
+    if ($("#offer-indications").length) {
+        $(".navbar-nav .nav-item.indications").addClass('active');
     }
     if ($("#about").length) {
         $(".navbar-nav .nav-item.about").addClass('active');

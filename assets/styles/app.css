@@ -83,6 +83,25 @@ li.user-logout {
     color: #548fad;
 }
 
+#mainNavbar .nav-item.categories {
+    cursor: pointer;
+}
+#mainNavbar .dropdown-menu {
+    left: auto !important;
+    border: 0;
+    padding: 15px;
+    margin-left: -10px !important;
+}
+#mainNavbar .nav-item.li-categories {
+    padding-bottom: 5px;
+}
+#mainNavbar .nav-item.li-categories:last-child {
+    padding-bottom: 0;
+}
+#mainNavbar .nav-item.li-categories a:hover {
+    text-decoration: none;
+}
+
 #btnOutline {
     text-align: center;
     position: absolute;

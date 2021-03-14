@@ -123,7 +123,7 @@ div.category-desc {
 .category-long-desc .moreless {
     float: right;
     color: #548fad;
-    cursor: default;
+    cursor: pointer;
 }
 /* End of show more - show less */
 
