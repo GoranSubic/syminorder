@@ -69,9 +69,9 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/porudzbine", name="app_orders")
+     * @Route("/indikacije", name="app_inications")
      */
-    public function orders(SerializerInterface $serializer)
+    public function indications(SerializerInterface $serializer)
     {
         $configDisplayOfferBy = $this->getParameter('syminorder.offer.configDisplayOfferBy');
         $jsonCat = NULL;

@@ -31,7 +31,7 @@ class MenuBuilder
         /** @var ArrayCollection|Category[] $children */
         $children = $repo->getChildren($rootNode, true, 'position', 'desc');
         $childrenEnabled = array_filter($children, function ($cat) {
-            return $cat->getEnabled() === true;
+            return $cat->getEnabled() === true && $cat->getShowOnFront() === true;
         });
         $childrenEnabledFromZero = array_values($childrenEnabled);
 
@@ -39,12 +39,12 @@ class MenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttributes(['class' => 'navbar-nav mr-auto']);
 
-        $menu->addChild('Home', [
+        /*$menu->addChild('Home', [
                 'route' => 'homepage',
                 'label' => $this->translator->trans('navbar.brand'),
                 'attributes' => ['class' => 'nav-item homepage active']
             ])
-            ->setLinkAttribute('class', 'nav-link');
+            ->setLinkAttribute('class', 'nav-link');*/
 
         /* Main Categories Menu */
         $menu->addChild('Categories', [
@@ -68,7 +68,7 @@ class MenuBuilder
 
         /* Indications */
         $menu->addChild('Indications', [
-            'route' => 'app_orders',
+            'route' => 'app_inications',
             'label' => $this->translator->trans('navbar.indications'),
             'attributes' => ['class' => 'nav-item indications']
         ]);
