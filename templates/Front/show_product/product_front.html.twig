@@ -1,0 +1,30 @@
+{% extends 'Front/static_pages/layout.html.twig' %}
+
+{% set user_is_logged_in = app.user ? 'true' : 'false' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    <div class="category-show content" id="product-show">
+        <div id="{{ product.id }}" class="flex-container-cat">
+
+            {{ include('Front/show_product/product_image.html.twig') }}
+
+            <div class="category-about">
+                <div class="category-name">
+                    <h1>{{ product.name }}</h1>
+                </div>
+                <div class="category-desc">{{ product.description|raw }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="category-show content">
+        <div class="category-long-desc">
+            <span id="moreless" class="truncate-overflow">
+                {{ product.longDescription|raw }}
+            </span>
+            <span class="moreless more">{{ 'category.moreless.more'|trans }}</span>
+            <span class="moreless less" style="display: none;">{{ 'category.moreless.less'|trans }}</span>
+        </div>
+    </div>
+{% endblock %}

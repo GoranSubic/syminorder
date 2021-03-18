@@ -12,13 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu/MenuBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu/MenuBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/MyFacebookAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/MyFacebookAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/category/category_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/category/category_front.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +208,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Front" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -229,11 +227,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/Front" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/config/packages/syminorder" />
       <recent name="$PROJECT_DIR$/src/Command" />
       <recent name="$PROJECT_DIR$/src/EntityListener" />
-      <recent name="$PROJECT_DIR$/assets/media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Repository" />
@@ -430,7 +428,8 @@
       <workItem from="1615642191359" duration="597000" />
       <workItem from="1615709035995" duration="4199000" />
       <workItem from="1615729051557" duration="16461000" />
-      <workItem from="1616068036546" duration="2074000" />
+      <workItem from="1616068036546" duration="8144000" />
+      <workItem from="1616078430835" duration="10035000" />
     </task>
     <servers />
   </component>

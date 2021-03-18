@@ -145,6 +145,8 @@ class Product
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\TagServices", inversedBy="products", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
+     *
+     * @Groups({"product:list", "product:item"})
      */
     protected $tagServices;
 

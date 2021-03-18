@@ -41,6 +41,18 @@ class ProductRepository extends ServiceEntityRepository
         return $productsArray;
     }
 
+    public function findByTagServices($tagService)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb ->select(array('p'))
+            ->from('App:Product', 'p')
+            ->join('p.tagServices', 'c', 'WITH', $qb->expr()->in('c.id', $tagService))
+            ->orderBy('p.name', 'asc');
+        $result = $qb->getQuery()->execute();
+        return $result;
+
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
