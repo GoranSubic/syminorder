@@ -27,6 +27,7 @@ t.add("footer.social_info", "Prona\u0111ite nas na dru\u0161tvenim mre\u017eama"
 t.add("footer.social_facebook", "https:\/\/www.facebook.com\/", "messages", "sr");
 t.add("footer.social_instagram", "https:\/\/www.instagram.com\/", "messages", "sr");
 t.add("navbar.brand", "Alternativa8", "messages", "sr");
+t.add("navbar.indications", "Indikacije", "messages", "sr");
 t.add("navbar.offer", "Ponuda", "messages", "sr");
 t.add("navbar.orders", "Porud\u017ebine", "messages", "sr");
 t.add("navbar.about", "O nama", "messages", "sr");
@@ -88,6 +89,7 @@ t.add("terms.privacy.protection_privacy", "Privacy Policy", "messages", "sr");
 t.add("terms.privacy.protection_terms", "Terms and Conditions", "messages", "sr");
 t.add("vuejs.currency", "RSD", "messages", "sr");
 t.add("vuejs.search_by", "Pretraga po: \"%searchtermfound%\"", "messages", "sr");
+t.add("vuejs.indications.learn_more", "Saznaj vi\u0161e", "messages", "sr");
 t.add("vuejs.maincarousel.slide1", "<h3><span>Bahove kapi<\/span><\/h3>", "messages", "sr");
 t.add("vuejs.maincarousel.slide2", "<h3><span>Krema<\/span><\/h3>", "messages", "sr");
 t.add("vuejs.maincarousel.slide3", "<h3><span>Rolon<\/span><\/h3>", "messages", "sr");

@@ -11,23 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/CategorySelected.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/CategorySelected.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/category-list/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/tagservices-list/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/tagservices-list/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/tagservices-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/tagservices-list/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DynamicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DynamicController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/TagServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TagServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.sr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.sr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -444,7 +434,8 @@
       <workItem from="1616068036546" duration="8144000" />
       <workItem from="1616078430835" duration="10535000" />
       <workItem from="1616137567605" duration="3023000" />
-      <workItem from="1616145050623" duration="10497000" />
+      <workItem from="1616145050623" duration="11185000" />
+      <workItem from="1616156764605" duration="6825000" />
     </task>
     <servers />
   </component>

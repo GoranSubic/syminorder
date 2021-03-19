@@ -25,7 +25,12 @@
   </div>
   <div v-else class="row category-parent">
     <div class="col-10 tagservice-info">
-      <h4 class="col-12 category-name text-left" v-html="tagservicesdata['name']"></h4>
+      <a class="show-tagservice-link" :href="Routing.generate('tagservice_show_front', {slug: tagservicesdata['slug']})">
+        <h4 class="col-12 category-name tagservice-title text-left" v-html="tagservicesdata['name']"></h4>
+        <b-button size="sm" class="learn-more" variant="info">
+          {{ Translator.trans('vuejs.indications.learn_more') }}
+        </b-button>
+      </a>
       <div class="col-12 category-desc text-left" v-html="tagservicesdata['description']"></div>
     </div>
   </div>
@@ -56,6 +61,7 @@ import axios from 'axios';
 import Loading from "../Loading";
 import ProductCard from "./ProductCard"
 import {Translator} from "../../main";
+import {Routing} from "../../main";
 import TagServicesCard from "./TagServicesCard";
 
 export default {
@@ -63,6 +69,7 @@ export default {
   data() {
     return {
       Translator: Translator,
+      Routing: Routing,
     }
   },
   components: {
@@ -94,6 +101,14 @@ export default {
 </script>
 
 <style scoped>
+h4.tagservice-title {
+  margin: 0;
+  display: inline;
+}
+a.show-tagservice-link:hover {
+  text-decoration: none;
+}
+
 #parentcat-btn {
   min-height: 60px;
   background-color: #548fad !important;

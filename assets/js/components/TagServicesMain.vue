@@ -78,6 +78,7 @@ export default {
         params: paramsGet
       });
       this.tagservicesdata = response.data;
+      console.log(this.tagservicesdata);
 
       if (this.tagservicesdata['products'].length) {
         var products = this.tagservicesdata['products'];

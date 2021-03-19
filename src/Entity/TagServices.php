@@ -56,6 +56,7 @@ class TagServices
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     private $slug;
 

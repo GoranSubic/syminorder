@@ -116,6 +116,8 @@ terms:
 vuejs:
   currency: RSD
   search_by: 'Pretraga po: "%searchtermfound%"'
+  indications:
+    learn_more: Saznaj više
   maincarousel:
     slide1: <h3><span>Bahove kapi</span></h3>
     slide2: <h3><span>Krema</span></h3>
