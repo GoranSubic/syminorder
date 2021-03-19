@@ -200,7 +200,7 @@ vuejs:
     button_remove: <i class="fa fa-trash"></i>
     button_cart: <i class="fas fa-cart-plus"></i>
   searchbar:
-    placeh_input: Pronađi obrok po nazivu...
+    placeh_input: Pronađi proizvod po nazivu...
   shopping:
     title_part1: Prosledite porudžbinu ili o
     title_part2: O

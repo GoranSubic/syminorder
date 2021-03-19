@@ -17,21 +17,23 @@
     </tag-services-card>
   </div>
 
-  <div v-if="searchtermfound !== 'undefined' && searchtermfound !== ''" class="row category-parent">
-    <div class="col-12 tagservice-info">
-      <h4 class="col-12 category-name text-left">{{ Translator.trans('vuejs.search_by', { 'searchtermfound': this.searchtermfound }) }}</h4>
-      <!--      <div class="col-12 category-desc text-left" v-html="searchtermfound"></div>-->
+  <div id="about-tagservices">
+    <div v-if="searchtermfound !== 'undefined' && searchtermfound !== ''" class="row category-parent">
+      <div class="col-12 tagservice-info">
+        <h4 class="col-12 category-name text-left">{{ Translator.trans('vuejs.search_by', { 'searchtermfound': this.searchtermfound }) }}</h4>
+        <!--      <div class="col-12 category-desc text-left" v-html="searchtermfound"></div>-->
+      </div>
     </div>
-  </div>
-  <div v-else class="row category-parent">
-    <div class="col-10 tagservice-info">
-      <a class="show-tagservice-link" :href="Routing.generate('tagservice_show_front', {slug: tagservicesdata['slug']})">
-        <h4 class="col-12 category-name tagservice-title text-left" v-html="tagservicesdata['name']"></h4>
-        <b-button size="sm" class="learn-more" variant="info">
-          {{ Translator.trans('vuejs.indications.learn_more') }}
-        </b-button>
-      </a>
-      <div class="col-12 category-desc text-left" v-html="tagservicesdata['description']"></div>
+    <div v-else class="row category-parent">
+      <div class="col-10 tagservice-info">
+        <a class="show-tagservice-link" :href="Routing.generate('tagservice_show_front', {slug: tagservicesdata['slug']})">
+          <h4 class="col-12 category-name tagservice-title text-left" v-html="tagservicesdata['name']"></h4>
+          <b-button size="sm" class="learn-more" variant="info">
+            {{ Translator.trans('vuejs.indications.learn_more') }}
+          </b-button>
+        </a>
+        <div class="col-12 category-desc text-left" v-html="tagservicesdata['description']"></div>
+      </div>
     </div>
   </div>
 

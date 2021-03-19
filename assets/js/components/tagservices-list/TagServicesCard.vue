@@ -30,6 +30,11 @@ export default {
   },
   methods: {
     getTagServices(id) {
+      setTimeout(function () {
+        var elmnt = document.getElementById("about-tagservices");
+        elmnt.scrollIntoView({ behavior: 'smooth', alignToTop: true });
+      }, 500);
+
       this.getTagServicesParent(id);
     }
   },

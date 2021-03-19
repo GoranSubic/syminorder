@@ -155,7 +155,7 @@ t.add("vuejs.productbuttons.selected_label_tmpl", "Dodato %valueslength%", "mess
 t.add("vuejs.productbuttons.button_decrease", "<i class=\"fas fa-minus\"><\/i>", "messages", "sr");
 t.add("vuejs.productbuttons.button_remove", "<i class=\"fa fa-trash\"><\/i>", "messages", "sr");
 t.add("vuejs.productbuttons.button_cart", "<i class=\"fas fa-cart-plus\"><\/i>", "messages", "sr");
-t.add("vuejs.searchbar.placeh_input", "Prona\u0111i obrok po nazivu...", "messages", "sr");
+t.add("vuejs.searchbar.placeh_input", "Prona\u0111i proizvod po nazivu...", "messages", "sr");
 t.add("vuejs.shopping.title_part1", "Prosledite porud\u017ebinu ili o", "messages", "sr");
 t.add("vuejs.shopping.title_part2", "O", "messages", "sr");
 t.add("vuejs.shopping.title_part3", "daberite jo\u0161 iz ponude", "messages", "sr");
