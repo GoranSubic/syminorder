@@ -13,6 +13,12 @@ import CategorySelected from "./components/CategorySelected";
 import ModalPlugin from 'bootstrap-vue';
 import Multiselect from 'vue-multiselect';
 
+//FOSJsRoutingBundle
+const routes = require('../../public/js/fos_js_routes.json');
+export const Routing = require('../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min.js');
+Routing.setRoutingData(routes);
+global.Routing = Routing;
+
 // register globally
 Vue.component('multiselect', Multiselect)
 Vue.use(ModalPlugin);

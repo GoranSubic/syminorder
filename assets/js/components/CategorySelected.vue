@@ -7,7 +7,7 @@
         :user_is_logged_in="user_is_logged_in"
         :key="product['@id']"
         :product="product"
-        class="col-12 col-sm-12 col-md-12 col-lg-6 products category-front"
+        class="col-6 col-sm-4 col-md-3 col-lg-2 products category-front"
         :id="'product-' + product.id"
         :additions="additions"
     >

@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 class DynamicController extends AbstractController
 {
     /**
-     * @Route("/kategorija/{slug}", name="category_show_front")
+     * @Route("/kategorija/{slug}", name="category_show_front", options = { "expose" = true },)
      */
     public function showCategory(Category $category, SerializerInterface $serializer)
     {
@@ -41,7 +41,7 @@ class DynamicController extends AbstractController
     }
 
     /**
-     * @Route("/indikacija/{slug}", name="tagservice_show_front")
+     * @Route("/indikacija/{slug}", name="tagservice_show_front", options = { "expose" = true },)
      */
     public function showTagService(TagServices $tagService, SerializerInterface $serializer)
     {
@@ -60,7 +60,7 @@ class DynamicController extends AbstractController
     }
 
     /**
-     * @Route("/proizvod/{slug}", name="product_show_front")
+     * @Route("/proizvod/{slug}", name="product_show_front", options = { "expose" = true },)
      */
     public function showProduct(Product $product, SerializerInterface $serializer)
     {

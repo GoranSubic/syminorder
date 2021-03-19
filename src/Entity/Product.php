@@ -68,6 +68,7 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     * @Groups({"tagservices:item"})
      */
     private $slug;
 

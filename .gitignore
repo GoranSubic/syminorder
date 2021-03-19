@@ -17,6 +17,7 @@
 
 ###> my files to exclude
 /public/images
+/public/js
 /src/**/BackProduct*.php
 /templates/**/back*.html.twig
 ###> my files to exclude
