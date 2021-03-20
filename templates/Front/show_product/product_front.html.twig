@@ -1,6 +1,6 @@
 {% extends 'Front/static_pages/layout.html.twig' %}
 
-{% set user_is_logged_in = app.user ? 'true' : 'false' %}
+{% set user_is_logged_in = app.user ? true : false %}
 
 {% block title %}{{ product.name }}{% endblock %}
 
@@ -16,9 +16,16 @@
                 </div>
                 <div class="category-desc">{{ product.description|raw }}</div>
                 <div class="learnmore-btn">
-                    <button type="button" class="btn btn-default moreless more">{{ 'category.moreless.more'|trans }}</button>
-                    <button type="button" class="btn btn-default moreless less" style="display: none;">{{ 'category.moreless.less'|trans }}</button>
+                    <button type="button" class="btn btn-sm moreless more">{{ 'category.moreless.more'|trans }}</button>
+                    <button type="button" class="btn btn-sm moreless less" style="display: none;">{{ 'category.moreless.less'|trans }}</button>
                 </div>
+
+                {% if user_is_logged_in %}
+                    <product-buttons
+                            v-bind:product="{{ productJson }}"
+                    >
+                    </product-buttons>
+                {% endif %}
             </div>
         </div>
     </div>

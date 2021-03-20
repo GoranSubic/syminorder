@@ -64,10 +64,11 @@ class DynamicController extends AbstractController
      */
     public function showProduct(Product $product, SerializerInterface $serializer)
     {
-        $em = $this->getDoctrine()->getManager();
+        $productsJson = $serializer->serialize($product, 'json');
 
         return $this->render('Front/show_product/product_front.html.twig', [
             'product' => $product,
+            'productJson' => $productsJson
         ]);
     }
 

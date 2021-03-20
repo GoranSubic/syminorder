@@ -12,7 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/front.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/front.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DynamicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DynamicController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Front/category/category_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/category/category_front.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Front/show_product/product_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/show_product/product_front.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Front/show_tagservice/tagservice_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/show_tagservice/tagservice_front.html.twig" afterDir="false" />
@@ -436,7 +439,7 @@
       <workItem from="1616145050623" duration="11185000" />
       <workItem from="1616156764605" duration="8201000" />
       <workItem from="1616175168827" duration="7306000" />
-      <workItem from="1616228987329" duration="4995000" />
+      <workItem from="1616228987329" duration="9677000" />
     </task>
     <servers />
   </component>

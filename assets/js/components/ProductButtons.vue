@@ -115,6 +115,10 @@ export default {
 </script>
 
 <style scoped>
+.btncontainer {
+  padding-top: 5px;
+}
+
 .btn-group {
   /*padding-right: 0;*/
   /*padding-left: 0;*/
