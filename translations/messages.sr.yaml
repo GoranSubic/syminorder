@@ -119,9 +119,9 @@ vuejs:
   indications:
     learn_more: Saznaj više
   maincarousel:
-    slide1: <h3><span>Bahove kapi</span></h3>
-    slide2: <h3><span>Krema</span></h3>
-    slide3: <h3><span>Rolon</span></h3>
+    slide1: <h3><span>Bahove cvetne kapi</span></h3>
+    slide2: <h3><span>Kvantna medicina u kućnim uslovima</span></h3>
+    slide3: <h3><span>Kineska tradicionalna medicina</span></h3>
     button:
       previous: <i class="fas fa-chevron-left"></i>
       next: <i class="fas fa-chevron-right"></i>

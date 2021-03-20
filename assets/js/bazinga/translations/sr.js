@@ -29,7 +29,7 @@ t.add("footer.social_instagram", "https:\/\/www.instagram.com\/", "messages", "s
 t.add("navbar.brand", "Alternativa8", "messages", "sr");
 t.add("navbar.indications", "Indikacije", "messages", "sr");
 t.add("navbar.offer", "Ponuda", "messages", "sr");
-t.add("navbar.orders", "Porud\u017ebine", "messages", "sr");
+t.add("navbar.orders", "Odaberite proizvode", "messages", "sr");
 t.add("navbar.about", "O nama", "messages", "sr");
 t.add("navbar.cart_button.upper", "LogIn", "messages", "sr");
 t.add("navbar.cart_button.bottom", "Poru\u010dite", "messages", "sr");

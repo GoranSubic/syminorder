@@ -60,7 +60,7 @@
               <table :class="'table table-bordered status-' + ord.status">
               <tr :class="'status-' + ord.status">
                 <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.index') }}</th>
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.picture') }}</th>
+<!--                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.picture') }}</th>-->
                 <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.name') }}</th>
                 <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.code') }}</th>
                 <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.quantity') }}</th>
@@ -71,9 +71,9 @@
                 <td>
                   {{ indexitem + 1 }}
                 </td>
-                <td>
+<!--                <td>
                   <img class="img-thumbnail" :src="item.image" :alt="item.name">
-                </td>
+                </td>-->
                 <td>
                   <div class="row">
                     <div class="col-12">
@@ -91,7 +91,7 @@
               </tr>
               <tr>
                 <td></td>
-                <td></td>
+<!--                <td></td>-->
                 <td>{{ Translator.trans('vuejs.orderstable.delivery') }}</td>
                 <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
                 <td>{{ Translator.trans('vuejs.orderstable.total') }}</td>

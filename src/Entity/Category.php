@@ -67,7 +67,7 @@ class Category
     private $showOnFront;
 
     /**
-     * @ORM\Column(name="name", type="string", length=30)
+     * @ORM\Column(name="name", type="string", length=50)
      * @Groups({"category:list", "category:item"})
      */
     private $name;

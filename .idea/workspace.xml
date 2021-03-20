@@ -13,12 +13,12 @@
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainCarousel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DynamicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DynamicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/category/category_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/category/category_front.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/show_product/product_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/show_product/product_front.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/show_tagservice/tagservice_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/show_tagservice/tagservice_front.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/messages.sr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.sr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +193,6 @@
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu-bundle" />
       <path value="$PROJECT_DIR$/vendor/willdurand/jsonp-callback-validator" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/jsrouting-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -213,7 +206,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/carousel" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -232,11 +225,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/carousel" />
       <recent name="$PROJECT_DIR$/templates/Front" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
       <recent name="$PROJECT_DIR$/config/packages/syminorder" />
       <recent name="$PROJECT_DIR$/src/Command" />
-      <recent name="$PROJECT_DIR$/src/EntityListener" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Repository" />
@@ -439,7 +432,7 @@
       <workItem from="1616145050623" duration="11185000" />
       <workItem from="1616156764605" duration="8201000" />
       <workItem from="1616175168827" duration="7306000" />
-      <workItem from="1616228987329" duration="9677000" />
+      <workItem from="1616228987329" duration="15573000" />
     </task>
     <servers />
   </component>

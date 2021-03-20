@@ -11,13 +11,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-menu-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/willdurand/jsonp-callback-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofsymfony/jsrouting-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/phpunit-bridge" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-profiler-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dom-crawler" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/browser-kit" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
