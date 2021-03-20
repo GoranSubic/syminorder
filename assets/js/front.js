@@ -23,17 +23,17 @@ $(document).ready(function (){
 });
 
 /* Category long-description ShowMore/ShowLess */
-/*$(".category-long-desc span.moreless.more").click(function () {
+$("#category-show .learnmore-btn .moreless.more").click(function () {
     if ($(this).hasClass('more')) {
-        $("#moreless").removeClass('truncate-overflow');
+        $("#moreless.truncate-desc").show();
     }
     $(this).hide();
-    $(".category-long-desc span.moreless.less").show();
+    $("#category-show .learnmore-btn .moreless.less").show();
 });
-$(".category-long-desc span.moreless.less").click(function (){
+$("#category-show .learnmore-btn .moreless.less").click(function () {
     if ($(this).hasClass('less')) {
-        $("#moreless").addClass('truncate-overflow');
+        $("#moreless.truncate-desc").hide();
     }
     $(this).hide();
-    $(".category-long-desc span.moreless.more").show();
-});*/
+    $("#category-show .learnmore-btn .moreless.more").show();
+});
