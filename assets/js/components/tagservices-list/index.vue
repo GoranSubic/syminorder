@@ -111,6 +111,10 @@ a.show-tagservice-link:hover {
   text-decoration: none;
 }
 
+#about-tagservices {
+  padding-top: 50px;
+}
+
 #parentcat-btn {
   min-height: 60px;
   background-color: #548fad !important;
