@@ -68,7 +68,7 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=true)
-     * @Groups({"product:list", "product:item", "category:item", "tagservices:item"})
+     * @Groups({"product:list", "product:item", "order:list", "suborder", "category:item", "tagservices:item"})
      */
     private $slug;
 

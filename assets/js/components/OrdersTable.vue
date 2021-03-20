@@ -77,7 +77,11 @@
                 <td>
                   <div class="row">
                     <div class="col-12">
-                      <span>{{ item.name }}</span>
+                      <span>
+                        <a :href="Routing.generate('product_show_front', {slug: item.slug})">
+                          {{ item.name }}
+                        </a>
+                      </span>
                     </div>
                     <div class="additions col-12" v-if="item.addselected !== ''">
                       <span>{{ Translator.trans('vuejs.orderstable.additions') }} <i class="addvalues">{{ item.addselected }}</i></span>
@@ -113,12 +117,14 @@
 <script>
 import axios from 'axios';
 import {Translator} from "../main";
+import {Routing} from "../main";
 
 export default {
 name: "OrdersTable",
   data() {
     return {
       Translator: Translator,
+      Routing: Routing,
       formatter: Function,
       pagePagin: 1,
       currentPage: 1,
@@ -243,6 +249,7 @@ name: "OrdersTable",
           var obj = {
             "image": '/images/products/' + itm.product.picture.imageName,
             "name": itm.product.name,
+            "slug": itm.product.slug,
             "productCode": itm.product.code,
             "price": itm.product.price,
             "quantity": itm.quantity,
