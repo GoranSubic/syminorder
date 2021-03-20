@@ -72,10 +72,14 @@
     overflow: hidden;
     padding: 0 5% 0 5%;
     text-align: center;
+    flex-direction: column;
 }
 .flex-container-cat .category-image img {
     width: 100%;
     max-height: 100%;
+}
+.flex-container-cat .category-name h1 {
+    font-size: 2em;
 }
 /* Product-show page specific */
 #tagservice-show .flex-container-cat .category-image,
@@ -93,7 +97,7 @@ div.category-desc {
     text-align: center;
     padding-top: 30px;
     line-height: 1.3em;
-    font-size: 1.4em;
+    font-size: 1.3em;
 }
 @media (max-width: 800px) {
     .flex-container-cat, .flex-container-cat.reverse {
