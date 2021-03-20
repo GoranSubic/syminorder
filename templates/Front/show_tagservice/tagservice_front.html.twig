@@ -15,16 +15,18 @@
                     <h1>{{ tagService.name }}</h1>
                 </div>
                 <div class="category-desc">{{ tagService.description|raw }}</div>
+                <div class="learnmore-btn">
+                    <button type="button" class="btn btn-default moreless more">{{ 'category.moreless.more'|trans }}</button>
+                    <button type="button" class="btn btn-default moreless less" style="display: none;">{{ 'category.moreless.less'|trans }}</button>
+                </div>
             </div>
         </div>
     </div>
     <div class="category-show content">
         <div class="category-long-desc">
-            <span id="moreless" class="truncate-overflow">
+            <span id="moreless" class="truncate-desc" style="display: none;">
                 {{ tagService.longDescription|raw }}
             </span>
-{#            <span class="moreless more">{{ 'category.moreless.more'|trans }}</span>#}
-{#            <span class="moreless less" style="display: none;">{{ 'category.moreless.less'|trans }}</span>#}
         </div>
     </div>
 
