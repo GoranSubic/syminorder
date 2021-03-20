@@ -134,7 +134,18 @@ li.user-logout {
 #modal-cart.modal {
     top: 70px !important;
 }
-
+/*Registration page*/
+.reg-no-label {
+    display: none;
+}
+.reg-one-row {
+    display: flex;
+    flex-direction: row;
+}
+.input_fields .form-group.row > div {
+    padding: 0 !important;
+}
+/*End of Registration page*/
 /*Login page*/
 .login_wrapper {
     width: 100%;

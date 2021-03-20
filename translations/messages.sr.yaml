@@ -113,6 +113,28 @@ terms:
     protection: This site is protected by Terms of
     protection_privacy: Privacy Policy
     protection_terms: Terms and Conditions
+form:
+  registration:
+    firstname:
+      placeholder: Vaše ime
+    lastName:
+      placeholder: Prezime
+    company:
+      placeholder: Kompanija (opciono)
+    address:
+      placeholder: Adresa
+    postalCode:
+      placeholder: Poštanski broj
+    city:
+      placeholder: Grad / Mesto
+    country:
+      placeholder: Država
+    phone:
+      placeholder: Broj telefona
+    email:
+      placeholder: Email (obavezno polje)
+    password:
+      placeholder: Šifra koju ćete koristiti
 vuejs:
   currency: RSD
   search_by: 'Pretraga po: "%searchtermfound%"'

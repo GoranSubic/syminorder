@@ -50,6 +50,8 @@ class RegistrationController extends AbstractController
                 )
             );
 
+            $user->setUsername($user->getEmail());
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -96,6 +98,6 @@ class RegistrationController extends AbstractController
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
         $this->addFlash('success', $this->translator->trans('registration.email.verified'));
 
-        return $this->redirectToRoute('app_inications');
+        return $this->redirectToRoute('app_indications');
     }
 }
