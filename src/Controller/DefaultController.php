@@ -35,7 +35,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/indikacije", name="app_inications")
+     * @Route("/indikacije", name="app_indications")
      */
     public function indications(SerializerInterface $serializer)
     {

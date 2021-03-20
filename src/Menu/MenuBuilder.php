@@ -68,7 +68,7 @@ class MenuBuilder
 
         /* Indications */
         $menu->addChild('Indications', [
-            'route' => 'app_inications',
+            'route' => 'app_indications',
             'label' => $this->translator->trans('navbar.indications'),
             'attributes' => ['class' => 'nav-item indications']
         ]);

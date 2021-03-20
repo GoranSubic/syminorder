@@ -29,7 +29,7 @@ class OrderController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_static_orders', [
+        return $this->redirectToRoute('app_indications', [
             'id' => $order->getId(),
         ]);
     }
