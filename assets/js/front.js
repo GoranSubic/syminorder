@@ -23,7 +23,7 @@ $(document).ready(function (){
 });
 
 /* Category long-description ShowMore/ShowLess */
-$(".category-long-desc span.moreless.more").click(function () {
+/*$(".category-long-desc span.moreless.more").click(function () {
     if ($(this).hasClass('more')) {
         $("#moreless").removeClass('truncate-overflow');
     }
@@ -36,4 +36,4 @@ $(".category-long-desc span.moreless.less").click(function (){
     }
     $(this).hide();
     $(".category-long-desc span.moreless.more").show();
-});
+});*/
