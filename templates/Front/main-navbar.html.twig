@@ -41,6 +41,7 @@
                           v-bind:userid="{{ app.user.id }}"
                           v-bind:tableid="{{ table_id }}"
                           tablename="{{ table_name }}"
+                          hasdefinedcities="{{ get_parameter('syminorder.shoping.configDefinedCities') }}"
                 ></shopping>
             {% else %}
                 <a class="navbar-link" href="{{ path('app_login') }}">

@@ -79,7 +79,7 @@
                     rows="2" :placeholder="Translator.trans('vuejs.shopping.placeh_short_note')" @keyup="formChanged" @change="formChanged"></textarea>
           </div>
 
-          <div class="input-group" v-if="cities.length">
+          <div class="input-group" v-if="this.hasdefinedcities === 'define_cities' && cities.length">
             <div class="input-group-prepend">
               <span class="input-group-text" id="cartCityLabel">
                 <i class="fa fa-map-marker-alt"></i>
@@ -110,6 +110,15 @@
             </div>
             <input id="cartDeliveryPrice" class="form-control" aria-describedby="cartCityPriceLabel"
                    :value="formatter.format(cityDeliveryCalc / 100)" disabled>
+          </div>
+          <div class="input-group" v-if="this.hasdefinedcities === 'not_define_cities'">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="cartSingleCityLabel">
+                <i class="fa fa-map-marker-alt"></i>
+              </span>
+            </div>
+            <input v-if="tableid === 0" required v-model="datacity" type="text" id="cartSingleCity" class="form-control" aria-describedby="cartSingleCityLabel"
+                   aria-label="City" :placeholder="Translator.trans('vuejs.shopping.placeh_place_city')" @keyup="formChanged" @change="formChanged">
           </div>
 
           <div class="input-group">
@@ -181,6 +190,7 @@ export default {
       Translator: Translator,
       formatter: Function,
       formatterNumber: Function,
+      datacity: '',
       dataaddress: '',
       dataphone: '',
       datanote: '',
@@ -202,6 +212,7 @@ export default {
     userid: Number,
     tablename: String,
     tableid: Number,
+    hasdefinedcities: String,
   },
   computed: {
     titleText() {
@@ -292,7 +303,10 @@ export default {
     },
 
     checkForm(e) {
-      if (((this.cities.length === 0 || this.cityselected) && this.dataaddress && this.dataphone) || this.tableid) {
+      var citiesCheck = (this.hasdefinedcities === 'define_cities' && ((this.cities.length === 0 || this.cityselected) || (this.cityselected)))
+                        || (this.hasdefinedcities === 'not_define_cities' && this.datacity);
+
+      if ((citiesCheck && this.dataaddress && this.dataphone) || this.tableid) {
         // return true;
         this.handleSubmit();
       }
@@ -300,7 +314,7 @@ export default {
       this.validationErrors = [];
 
       if (!this.tableid) {
-        if (!this.cityselected || this.cityselected === ''
+        if (!citiesCheck  //!this.cityselected || this.cityselected === ''
             || !this.dataaddress || this.dataaddress === ''
             || !this.dataphone || this.dataphone === '') {
           var error_msg = Translator.trans('vuejs.shopping.error_msg');
@@ -311,16 +325,21 @@ export default {
 
     formChanged() {
       this.datanote = document.getElementById("cartNote").value;
-      if (this.cityselected !== null && this.cityselected !== '' && this.cityselected.address !== 'undefined'
+      if (this.hasdefinedcities === 'define_cities' && this.cityselected !== null && this.cityselected !== '' && this.cityselected.address !== 'undefined'
           && this.cityselected.address !== null && this.cityselected.address !== '') {
         document.getElementById("cartAddress").innerText = this.cityselected.address;
         this.dataaddress = this.cityselected.address;
       } else {
+        this.datacity = document.getElementById("cartSingleCity").value;
         this.dataaddress = document.getElementById("cartAddress").value;
       }
       this.dataphone = document.getElementById("cartPhone").value;
 
-      this.$store.dispatch("changeTextData", this.datanote, this.cityselected.name, this.dataaddress, this.dataphone);
+      if (this.hasdefinedcities === 'define_cities') {
+        this.$store.dispatch("changeTextData", this.datanote, this.cityselected.name, this.dataaddress, this.dataphone);
+      } else {
+        this.$store.dispatch("changeTextData", this.datanote, this.datacity, this.dataaddress, this.dataphone);
+      }
     },
 
     itemsArray() {
@@ -355,7 +374,7 @@ export default {
           "items": JSON.parse(this.itemsArray()),
           "noteCart": this.datanote,
           "noteAdmin": "",
-          "cityName": this.cityselected.name,
+          "cityName": (this.hasdefinedcities === "define_cities" ? this.cityselected.name : this.datacity),
           "address": this.dataaddress,
           "phone": this.dataphone,
           "status": "cart",
@@ -365,7 +384,7 @@ export default {
           "transportAt": null,
           "deliveredAt": null,
           "updatedAt": new Date(),
-          "deliveryPrice": this.cityselected.price,
+          "deliveryPrice": this.hasdefinedcities === "define_cities" ? this.cityselected.price : 0,
         })
         .then(response => {
           // console.log(response.data);
@@ -426,7 +445,9 @@ export default {
     },
   },
   created() {
-    this.retrieveCityList();
+    if (this.hasdefinedcities === 'define_cities') {
+      this.retrieveCityList();
+    }
     this.formatter= new Intl.NumberFormat('sr', {
       style: 'currency',
       currency: Translator.trans('vuejs.currency'),

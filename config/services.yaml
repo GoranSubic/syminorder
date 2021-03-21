@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     syminorder.offer.configDisplayOfferBy: tagservices # tagservices | categories | null
+    syminorder.shoping.configDefinedCities: not_define_cities # define_cities | not_define_cities | null
+    syminorder.shoping.configProductAdditions: not_define_additions # define_additions | not_define_additions | null
 #    product_images_directory: '%kernel.project_dir%/public/uploads/product_images'
 
 services:
