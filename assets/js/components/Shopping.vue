@@ -233,9 +233,9 @@ export default {
     },
     titleText2() {
       var txt = '';
-      // if (this.cityDeliveryCalc > 0) {
+      if (this.hasdefinedcities === 'define_cities' && this.cityDeliveryCalc > 0) {
         txt += Translator.trans('vuejs.shopping.title_delivery_price', {'citydeliverycalc': this.formatter.format(this.cityDeliveryCalc / 100)});
-      // }
+      }
       return txt;
     },
     titleText3() {
@@ -274,7 +274,7 @@ export default {
     cartSumWithDelivery() {
       var sum = 0;
       if (this.cartProductsSum !== 'undefined') sum += this.cartProductsSum;
-      if (this.cityDeliveryCalc !== 'undefined') sum += this.cityDeliveryCalc;
+      if (this.hasdefinedcities === 'define_cities' && this.cityDeliveryCalc !== 'undefined') sum += this.cityDeliveryCalc;
 
       return sum;
     },

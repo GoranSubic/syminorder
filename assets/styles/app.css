@@ -36,15 +36,34 @@ footer address {
     margin-left: 10px;
     margin-right: 0 !important;
 }
-#login-shopping .login-bag {
+#login-shopping .login-bag, #product-show .login-toorder-btn .login-prod-cart {
     font-size: 2em;
     padding-right: 0;
     padding-top: 0;
+
+    align-items: center;
+    display: flex;
 }
-#login-shopping .login-text {
+#login-shopping .login-text, #product-show .login-toorder-btn .login-text {
     font-size: 0.8em;
     padding-right: 0;
-    padding-top: 5%;
+    /*padding-top: 5%;*/
+    text-align: left;
+}
+#product-show .login-toorder-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+#product-show .login-toorder-btn a.login-prod-link {
+    margin: 0 auto;
+    width: 95px;
+    display: flex;
+    border: solid #548fad 1px;
+    padding: 2px;
+}
+#product-show .product-toorder-btn {
+    width: 70%;
+    margin: 0 auto;
 }
 
 li.user-logout {
