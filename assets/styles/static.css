@@ -34,6 +34,44 @@
     text-align: center;
 }
 
+#about .about h3 {
+    text-align: center;
+}
+#about ol {
+    color: #999999;
+}
+#about .about-member {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+#about .image-member {
+    max-width: 40%;
+}
+#about .image-member img {
+    width: 100%;
+    padding: 10px 0 0 0;
+}
+#about .content-member {
+    max-width: 60%;
+    text-align: justify;
+    padding: 10px 0 0 10px;
+}
+@media (max-width: 800px) {
+    #about .about-member {
+        flex-direction: column;
+    }
+    #about .about-member.reverse {
+        flex-direction: column-reverse;
+    }
+    #about .image-member {
+        max-width: 100%;
+    }
+    #about .content-member {
+        max-width: 100%;
+    }
+}
+
 /* vue template */
 #categories {
     background-color: rgba(255, 255, 255, 0.85);

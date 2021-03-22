@@ -3,17 +3,28 @@ homepage:
 about:
   page_title: O nama
   title: O nama
+  team: Naš tim
   text:
-    intro: <p>Postojimo od 1995. godine.<br />
-        Naša matična  kuća  je ordinacija HOLITIMED.<br />
-        Bavimo se zdravljem.<br />
-        Dosegnuti ga, unaprediti i uživati u njemu.</p>
-        <br /><br />
     desc:
         <p>Objedinili smo medicinsku struku, bogatstvo znanja kineske tradicionalne medicine i savremeni koncept kvantne medicine. Svesni  ubrzanja vremena, svih poteškoća koje savremeni način života nosi i  jedinstvenost svakog pojedinca, želimo da  sajt ALTERNATIVA 8 pruži informacije o proverenim putevima  ka  polju DOBROBITI. Vodjeni smo ljubavlju prema čoveku i prirodi. Vodjeni smo  i potrebom da uspostavimo nit spajanja  savremenog načina življenja  i prirodnih zakona.
         <br /><br />
     footer:
         <p>Dobrodošli.</p>
+    titlemember1: Dr Dobrinka Arbanovski
+    member1:
+      <div>Osnivač Internističke ordinacije HOLITIMED 1995. godine u Beogradu.</div>
+      <div>Završen medicinski fakultet i specijalizacija iz interne medicine.</div>
+      <br />
+      <div>Nakon 20 godina  prakse  kao klinički lekar, otvara 1995. godine  privatnu ordinaciju. uvodeći po prvi put na ovim prostorima biorezonantnu metodu. Edukujući se za to u Institutu za regulativnu medicinu  REGUMED u Nemačkoj i Sloveniji, prihvatila je biofizičku holističku medicinu kao novo polje neograničenih mogućnosti.</div>
+      <br />
+      <div>Istražujući neprekidno, uz dalje usavršavanje  iz oblasti kvantne medicine, trenutno u svojoj ordinaciji koristi najsavremenija dostignuća biofizičkih metoda (biorezonancu- Bicom, QXCI, biorezonantni Imago skener, kardiotahometar), mikroskopski pregled žive kapi krvi, aromaterapiju, homeopatiju.</div>
+      <br />
+      <div>Kao pobornik integrativnog medicinskog pristupa, koji podrazumeva kompleksno sagledavanje problematike pacijenta i izbor adekvatnog individualnog načina lečenja, u svom radu primenjuje klasičnu, alternativnu ili, pak, kombinaciju obe terapeutske metode prema potrebama pacijenta.</div>
+    titlemember2: Dr Ana Žikić
+    member2:
+      <div>Nakon završenih studija na Medicinskom fakultetu Univerziteta u Beogradu (2005), upisuje Fakultet kineske tradicionalne medicine u Pekingu (2006-2011). Pored akupunkture u svom radu koristi perskripcije kineskog bilja, dijetologije i zdravstvenog ći gonga (qi gong) u kome, kao sertifikovani instruktor, primenjuje vežbe kojima se u sastavnim delom lečenja poboljšava kvalitet života i zdravlje pacijenta.</div>
+      <br />
+      <div>Rukovodilac je edukacije zdravstvenih radnika u školi akupunkture pri centru za edukaciju, Accademia Integrativa, udruženja Quanttes, gde organizuje akreditovane edukacije akupunkture kao i seminare praktičnih tehnika u primeni ventuza, moksibustije i gvaše. Program se sprovodi u saradnji sa Srpskim lekarskim društvom i akreditovan je od strane Zdravstvenog saveta.</div>
 category:
   moreless:
     more: Saznaj više
