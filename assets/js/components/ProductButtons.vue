@@ -138,6 +138,7 @@ button.btn svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #548fad;
 }
 .inc-btn {
   background-color: #548fad;
@@ -148,13 +149,13 @@ button.btn svg {
   font-size: x-small;
 }
 .dec-btn {
-  background-color: black;
-  /*color: #ffa500;*/
+  background-color: white;
+  color: #548fad;
   font-size: x-small;
 }
 .rem-btn {
-  background-color: black;
-  /*color: #dc3545;*/
+  background-color: white;
+  color: black;
   font-size: x-small;
 }
 

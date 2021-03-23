@@ -88,17 +88,17 @@
     justify-content: space-around;
     flex-direction: column;
     text-align: center;
-    height: 180px;
+    height: 200px;
     width: 100%;
     padding: 1px;
     background-color: rgba(255, 255, 255, 0.85);
 }
 
 .prod-image {
-    height: 60%;
+    height: 70%;
 }
 .prod-info {
-    height: 40%;
+    height: 30%;
     font-size: 1em;
     line-height: 1em;
 }
