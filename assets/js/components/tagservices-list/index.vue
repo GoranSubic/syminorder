@@ -28,11 +28,11 @@
       <div class="col-10 tagservice-info">
         <a class="show-tagservice-link" :href="Routing.generate('tagservice_show_front', {slug: tagservicesdata['slug']})">
           <h4 class="col-12 category-name tagservice-title text-left" v-html="tagservicesdata['name']"></h4>
-          <b-button size="sm" class="learn-more" variant="info">
+<!--          <b-button size="sm" class="learn-more" variant="info">
             {{ Translator.trans('vuejs.indications.learn_more') }}
-          </b-button>
+          </b-button>-->
         </a>
-        <div class="col-12 category-desc text-left" v-html="tagservicesdata['description']"></div>
+        <div class="col-12 category-desc text-left" v-html="showDescByConfig"></div>
       </div>
     </div>
   </div>
@@ -92,13 +92,24 @@ export default {
       required: false
     },
     searchtermfound: String,
-    getTagServicesParent: Function
+    getTagServicesParent: Function,
+    showdescription: String,
   },
   methods: {
     getTagServices(id) {
       this.getTagServicesParent(id);
     }
   },
+  computed: {
+    showDescByConfig: function () {
+      if (this.showdescription !== null && this.showdescription !== "" && this.showdescription === "show_long_desc") {
+        if (this.tagservicesdata['long_description'] !== null && this.tagservicesdata['long_description'] !== "") {
+          return this.tagservicesdata['long_description'];
+        }
+      }
+      return this.tagservicesdata['description'];
+    }
+  }
 }
 </script>
 

@@ -74,6 +74,7 @@ class TagServices
 
     /**
      * @ORM\Column(name="long_description", type="text", nullable=true)
+     * @Groups({"tagservices:list", "tagservices:item"})
      */
     private $long_description;
 

@@ -64,6 +64,7 @@
             <tag-services-main
                     v-bind:tagservices="{{ tagservicesJSON }}"
                     :user_is_logged_in="{{ user_is_logged_in }}"
+                    showdescription="{{ get_parameter('syminorder.tagservices.configShowDesc') }}"
             >
             </tag-services-main>
         {% endif %}

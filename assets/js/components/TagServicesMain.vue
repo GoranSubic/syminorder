@@ -23,6 +23,7 @@
       :additions="additions"
       :searchtermfound="searchTermFound"
       :getTagServicesParent="getTagServices"
+      :showdescription="showdescription"
   >
 
   </tag-services-list>
@@ -59,6 +60,7 @@ export default {
       required: true,
     },
     user_is_logged_in: Boolean,
+    showdescription: String,
   },
   methods: {
     setFoundproducts({term}) {
