@@ -1,19 +1,5 @@
 <template>
 <div id="tagservices">
-    <div class="tagservices container">
-      <div class="row">
-        <div class="col-12 searchcat">
-          <search-bar
-              class="searchbar"
-              @foundproducts="setFoundproducts"
-              @searchtermfound="setSearchtermfound"
-          >
-
-          </search-bar>
-        </div>
-      </div>
-    </div>
-
   <tag-services-list
       class="tagservices container"
       :tagservices="tagservices"
@@ -24,10 +10,11 @@
       :searchtermfound="searchTermFound"
       :getTagServicesParent="getTagServices"
       :showdescription="showdescription"
+      :setFoundproductsParent="setFoundproducts"
+      :setSearchtermfoundParent="setSearchtermfound"
   >
 
   </tag-services-list>
-
 </div>
 </template>
 

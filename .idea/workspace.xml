@@ -12,10 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/ProductButtons.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/offer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/offer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/show_product/product_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/show_product/product_front.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/TagServicesMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/tagservices-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/tagservices-list/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -442,7 +440,7 @@
       <workItem from="1616346511942" duration="865000" />
       <workItem from="1616399953264" duration="7355000" />
       <workItem from="1616407897918" duration="53000" />
-      <workItem from="1616494794296" duration="8083000" />
+      <workItem from="1616494794296" duration="9365000" />
     </task>
     <servers />
   </component>
@@ -505,7 +503,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/js/components/tagservices-list/index.vue</url>
-          <line>34</line>
+          <line>49</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>

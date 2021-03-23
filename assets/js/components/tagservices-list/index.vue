@@ -15,6 +15,21 @@
         :getTagServicesParent="getTagServices"
     >
     </tag-services-card>
+
+    <div class="tagservices container">
+      <div class="row">
+        <div class="col-12 searchcat">
+          <search-bar
+              class="searchbar"
+              @foundproducts="setFoundproducts"
+              @searchtermfound="setSearchtermfound"
+          >
+
+          </search-bar>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div id="about-tagservices">
@@ -65,6 +80,7 @@ import ProductCard from "./ProductCard"
 import {Translator} from "../../main";
 import {Routing} from "../../main";
 import TagServicesCard from "./TagServicesCard";
+import SearchBar from '../SearchBar';
 
 export default {
   name: "TagServicesList",
@@ -78,6 +94,7 @@ export default {
     TagServicesCard,
     Loading,
     ProductCard,
+    SearchBar,
   },
   props: {
     tagservices: {
@@ -94,10 +111,18 @@ export default {
     searchtermfound: String,
     getTagServicesParent: Function,
     showdescription: String,
+    setFoundproductsParent: Function,
+    setSearchtermfoundParent: Function,
   },
   methods: {
     getTagServices(id) {
       this.getTagServicesParent(id);
+    },
+    setFoundproducts({term}) {
+      this.setFoundproductsParent({term});
+    },
+    setSearchtermfound({term}) {
+      this.setSearchtermfoundParent({term});
     }
   },
   computed: {
