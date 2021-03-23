@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     syminorder.offer.configDisplayOfferBy: tagservices # tagservices | categories | null
+    syminorder.mainimage.configShowVueMainImage: no_main_image # show_main_image | no_main_image | null
     syminorder.shoping.configDefinedCities: not_define_cities # define_cities | not_define_cities | null
     syminorder.shoping.configProductAdditions: not_define_additions # define_additions | not_define_additions | null
     syminorder.tagservices.configShowDesc: show_long_desc # show_desc | show_long_desc | null
