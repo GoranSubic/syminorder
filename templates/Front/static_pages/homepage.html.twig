@@ -37,15 +37,12 @@
 
                 </main-carousel>
 
-                <div class="homepage content" style="line-height: 3em; font-size: 1.5em; text-align: center; font-weight: bold;">
-                Dobro došli,
-                <br />
-                web prezentacija je u izdradi
-                <br />
-                Hvala na poseti!!!
-            </div>
+                <div class="homepage content welcome-message">
+                    {{ 'homepage.welcome_message'|trans|raw }}
+                </div>
 
-            {{ include('Front/category/category_categories.html.twig') }}
+                {{ include('Front/category/category_categories.html.twig') }}
+            </div>
         </div>
     </div>
 {% endblock %}

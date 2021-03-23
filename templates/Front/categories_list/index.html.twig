@@ -41,17 +41,9 @@
                 {% endif %}
             </div>
         {% else %}
-            <main-carousel
-                    class="carousel"
-                    img1="{{ asset('images/carousel/slide4.jpg') }}"
-                    img2="{{ asset('images/carousel/slide5.jpg') }}"
-                    img3="{{ asset('images/carousel/slide6.jpg') }}"
-                    imgtext1="{{ 'vuejs.maincarousel.slide1'|trans|raw }}"
-                    imgtext2="{{ 'vuejs.maincarousel.slide2'|trans|raw }}"
-                    imgtext3="{{ 'vuejs.maincarousel.slide3'|trans|raw }}"
-            >
-
-            </main-carousel>
+            <div class="homepage content welcome-message">
+                {{ 'homepage.welcome_message'|trans|raw }}
+            </div>
         {% endif %}
 
         {% if categoriesJSON|default and categoriesJSON|length > 0 %}

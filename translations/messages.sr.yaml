@@ -1,5 +1,11 @@
 homepage:
   page_title: Alternativa8 - na talasu izobilja
+  welcome_message:
+    Dobro došli,
+    <br />
+    web prezentacija je u izdradi
+    <br />
+    Hvala na poseti!!!
 about:
   page_title: O nama
   title: O nama

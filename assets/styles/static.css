@@ -10,6 +10,12 @@
 .homepage.main-container {
     margin: 50px 0 50px 0;
 }
+.homepage.welcome-message {
+    line-height: 1.5em;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
 .static .content {
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.85);
