@@ -15,12 +15,12 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ApiResource(
  *  collectionOperations={"get"={
- *     "security"="(is_granted('ROLE_USER') and object.getOrderRef().getCustomer() == user) or is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *     "security"="(is_granted('ROLE_USER') and object.getOrderRef().getCustomer() == user) or is_granted('ROLE_ACCOUNTANT')",
  *     "security_message"="Only workers can get collections of a orderItems!",
  *     "normalization_context"={"groups"="orderitem:list"},}
  *     },
  *  itemOperations={"get"={
- *     "security"="(is_granted('ROLE_USER') and object.getOrderRef().getCustomer() == user) or is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *     "security"="(is_granted('ROLE_USER') and object.getOrderRef().getCustomer() == user) or is_granted('ROLE_ACCOUNTANT')",
  *     "security_message"="Only the creator can get orderItem!",
  *     "normalization_context"={"groups"="orderitem:item"},}
  *     },

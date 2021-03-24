@@ -66,4 +66,12 @@ class DefaultController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/stare", name="app_delivered_orders")
+     */
+    public function oldOrders()
+    {
+        return $this->render('Front/categories_list/delivered_orders.html.twig');
+    }
+
 }

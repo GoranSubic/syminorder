@@ -5,6 +5,7 @@ import MainImage from "./components/MainImage";
 import MainCarousel from "./components/MainCarousel";
 import Shopping from "./components/Shopping";
 import ProductButtons from "./components/ProductButtons";
+import OrdersDeliveredTable from "./components/OrdersDeliveredTable";
 import OrdersTable from "./components/OrdersTable";
 import OrdersTableUser from "./components/OrdersTableUser";
 import CategoriesMain from "./components/CategoriesMain";
@@ -43,6 +44,7 @@ new Vue({
         MainCarousel,
         Shopping,
         ProductButtons,
+        OrdersDeliveredTable,
         OrdersTable,
         OrdersTableUser,
         TagServicesMain,

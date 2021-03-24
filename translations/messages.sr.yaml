@@ -185,9 +185,13 @@ vuejs:
     previous: Pret
     next: Sled
     last: Posl
+    new_orders: Vidi nove porudžbine
+    delivered_orders: Vidi završene porudžbine
     table:
       userinfo:
         index: Index
+        datetimecart: Vreme Poručivanja
+        datetimedelivery: Vreme Slanja
         picture: Slika
         customer: Kupac
         note: Napomena

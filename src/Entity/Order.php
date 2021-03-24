@@ -23,7 +23,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource(
  *  collectionOperations={
  *     "get"={
- *          "security"="is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *          "security"="is_granted('ROLE_ACCOUNTANT')",
  *          "normalization_context"={"groups"="order:list"},
  *     },
  *     "post"={
@@ -33,7 +33,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     },
  *  itemOperations={
  *     "get"={
- *              "security"="is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *              "security"="is_granted('ROLE_ACCOUNTANT')",
  *              "normalization_context"={"groups"="order:item"},
  *     },
  *     "delete"={"security"="is_granted('ROLE_ADMIN')"},
@@ -43,7 +43,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     "patch"={
  *              "input_formats"={"json"={"application/ld+json"}},
  *              "method"="PATCH",
- *              "security"="is_granted('ROLE_WAITER') or is_granted('ROLE_DRIVER')",
+ *              "security"="is_granted('ROLE_ACCOUNTANT')",
  *              "denormalization_context"={"groups"={"order:write"}},
  *      },
  *     },

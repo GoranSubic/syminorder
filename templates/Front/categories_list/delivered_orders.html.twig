@@ -1,0 +1,28 @@
+{% extends 'Front/static_pages/layout.html.twig' %}
+
+{% set user_is_logged_in = app.user ? 'true' : 'false' %}
+
+{% block title %}
+    {% if user_is_logged_in %}{{ 'navbar.orders'|trans }}{% else %}{{ 'navbar.offer'|trans }}{% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <div id="offer-indications">
+        {% if app.user and ('ROLE_ACCOUNTANT' in app.user.roles or 'ROLE_ADMIN' in app.user.roles) %}
+            <div class="orders list">
+                <orders-delivered-table id="orders-table"
+                              v-bind:datauname="dataUname"
+                              newordersurl="{{ path('app_indications') }}"
+                >
+
+                </orders-delivered-table>
+            </div>
+        {% else %}
+            <div class="homepage content welcome-message">
+                {{ 'homepage.welcome_message'|trans|raw }}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

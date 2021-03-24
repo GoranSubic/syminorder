@@ -5,10 +5,12 @@
 {% if app.user %}
     {% if 'ROLE_ADMIN' in app.user.roles %}
         {% set search_by = '' %}
-    {% elseif 'ROLE_WAITER' in app.user.roles %}
+    {% elseif 'ROLE_ACCOUNTANT' in app.user.roles %}
+        {% set search_by = '' %}
+    {#{% elseif 'ROLE_WAITER' in app.user.roles %}
         {% set search_by = 'processing' %}
     {% elseif 'ROLE_DRIVER' in app.user.roles %}
-        {% set search_by = 'driving' %}
+        {% set search_by = 'driving' %}#}
     {% elseif 'ROLE_USER' in app.user.roles %}
         {% set search_by = 'userOrders' %}
     {% endif %}
@@ -35,6 +37,7 @@
                     <orders-table id="orders-table"
                                   searchby="{{ search_by }}"
                                   v-bind:datauname="dataUname"
+                                  deliveredordersurl="{{ path('app_delivered_orders') }}"
                     >
 
                     </orders-table>

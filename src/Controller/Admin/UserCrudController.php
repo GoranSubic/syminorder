@@ -58,9 +58,7 @@ class UserCrudController extends AbstractCrudController
                 ->onlyOnForms()
                 ->setChoices([
                     'User' => 'ROLE_USER',
-                    'Table' => 'ROLE_TABLE',
-                    'Driver' => 'ROLE_DRIVER',
-                    'Waiter' => 'ROLE_WAITER',
+                    'Waiter' => 'ROLE_ACCOUNTANT',
                     'Admin' => 'ROLE_ADMIN',
                 ])->allowMultipleChoices(),
             TextField::new('facebookId'),

@@ -1,6 +1,7 @@
 (function (t) {
 // sr
 t.add("homepage.page_title", "Alternativa8 - na talasu izobilja", "messages", "sr");
+t.add("homepage.welcome_message", "Dobro do\u0161li, <br \/> web prezentacija je u izdradi <br \/> Hvala na poseti!!!", "messages", "sr");
 t.add("about.page_title", "O nama", "messages", "sr");
 t.add("about.title", "O nama", "messages", "sr");
 t.add("about.team", "Na\u0161 tim", "messages", "sr");
@@ -125,7 +126,11 @@ t.add("vuejs.orderstable.first", "Prva", "messages", "sr");
 t.add("vuejs.orderstable.previous", "Pret", "messages", "sr");
 t.add("vuejs.orderstable.next", "Sled", "messages", "sr");
 t.add("vuejs.orderstable.last", "Posl", "messages", "sr");
+t.add("vuejs.orderstable.new_orders", "Vidi nove porud\u017ebine", "messages", "sr");
+t.add("vuejs.orderstable.delivered_orders", "Vidi zavr\u0161ene porud\u017ebine", "messages", "sr");
 t.add("vuejs.orderstable.table.userinfo.index", "Index", "messages", "sr");
+t.add("vuejs.orderstable.table.userinfo.datetimecart", "Vreme Poru\u010divanja", "messages", "sr");
+t.add("vuejs.orderstable.table.userinfo.datetimedelivery", "Vreme Slanja", "messages", "sr");
 t.add("vuejs.orderstable.table.userinfo.picture", "Slika", "messages", "sr");
 t.add("vuejs.orderstable.table.userinfo.customer", "Kupac", "messages", "sr");
 t.add("vuejs.orderstable.table.userinfo.note", "Napomena", "messages", "sr");

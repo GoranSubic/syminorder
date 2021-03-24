@@ -1,8 +1,8 @@
 <template>
 <div>
   <div class="orders-btn-switch">
-    <b-button v-if="deliveredordersurl !== 'undefined' && deliveredordersurl !== ''" :href="deliveredordersurl" type="button" class="btn btn-default">
-      {{ Translator.trans('vuejs.orderstable.delivered_orders') }}
+    <b-button v-if="newordersurl !== 'undefined' && newordersurl !== ''" :href="newordersurl" type="button" class="btn btn-default">
+      {{ Translator.trans('vuejs.orderstable.new_orders') }}
     </b-button>
   </div>
 
@@ -32,7 +32,7 @@
         <table class="table table-striped"  id="orders-list">
           <tr>
             <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.index') }}</th>
-            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.datetimecart') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.datetimedelivery') }}</th>
             <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.picture') }}</th>
             <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.customer') }}</th>
             <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.note') }}</th>
@@ -69,7 +69,7 @@
                 <table :class="'table table-bordered status-' + ord.status">
                 <tr :class="'status-' + ord.status">
                   <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.index') }}</th>
-  <!--                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.picture') }}</th>-->
+    <!--                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.picture') }}</th>-->
                   <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.name') }}</th>
                   <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.code') }}</th>
                   <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.quantity') }}</th>
@@ -80,7 +80,7 @@
                   <td>
                     {{ indexitem + 1 }}
                   </td>
-  <!--                <td>
+    <!--                <td>
                     <img class="img-thumbnail" :src="item.image" :alt="item.name">
                   </td>-->
                   <td>
@@ -104,7 +104,7 @@
                 </tr>
                 <tr>
                   <td></td>
-  <!--                <td></td>-->
+    <!--                <td></td>-->
                   <td>{{ Translator.trans('vuejs.orderstable.delivery') }}</td>
                   <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
                   <td>{{ Translator.trans('vuejs.orderstable.total') }}</td>
@@ -138,7 +138,7 @@ name: "OrdersTable",
       formatter: Function,
       pagePagin: 1,
       currentPage: 1,
-      paginationItemsPerPage: 10,
+      paginationItemsPerPage: 50,
 
       patchValues: {},
       orders: [],
@@ -151,8 +151,11 @@ name: "OrdersTable",
   },
 
   props: {
-    searchby: String,
-    deliveredordersurl: {
+    searchby: {
+      type: String,
+      required: false,
+    },
+    newordersurl: {
       type: String,
       required: false,
     },
@@ -292,8 +295,8 @@ name: "OrdersTable",
     retrieveAdminOrders() {
       var paramsGet = {};
       if (this.pagePagin) paramsGet["page"] = this.pagePagin;
-      if (this.searchby !== 'undefined' && this.searchby !== '') paramsGet["status"] = this.searchby;
-      paramsGet["isDelivered"] = false;
+      // if (this.searchby !== 'undefined' && this.searchby !== '') paramsGet["status"] = this.searchby;
+      paramsGet["isDelivered"] = true;
 
       axios.get(`api/orders`, {
         params: paramsGet
@@ -370,7 +373,7 @@ tr.status-delivered, .btn.status-delivered {
 
 .ordertable {
   width: 100%;
-  max-height: 400px;
+  /*max-height: 400px;*/
   overflow: auto;
 }
 
