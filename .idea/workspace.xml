@@ -12,18 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/OrdersTable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/AppUserCreateCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/AppUserCreateCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.sr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.sr.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -453,6 +443,8 @@
       <workItem from="1616494794296" duration="9829000" />
       <workItem from="1616592159353" duration="3589000" />
       <workItem from="1616605171184" duration="9367000" />
+      <workItem from="1616692333425" duration="14933000" />
+      <workItem from="1616707848850" duration="461000" />
     </task>
     <servers />
   </component>

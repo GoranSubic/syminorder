@@ -11,6 +11,7 @@ import OrdersTableUser from "./components/OrdersTableUser";
 import CategoriesMain from "./components/CategoriesMain";
 import TagServicesMain from "./components/TagServicesMain";
 import CategorySelected from "./components/CategorySelected";
+import GameTest from "./components/GameTest";
 import ModalPlugin from 'bootstrap-vue';
 import Multiselect from 'vue-multiselect';
 
@@ -50,6 +51,7 @@ new Vue({
         TagServicesMain,
         CategoriesMain,
         CategorySelected,
+        GameTest,
     },
     data() {
         return {
