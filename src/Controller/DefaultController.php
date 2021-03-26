@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -37,7 +38,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/indikacije", name="app_indications")
      */
-    public function indications(SerializerInterface $serializer)
+    public function indications(Request $request, SerializerInterface $serializer)
     {
         $configDisplayOfferBy = $this->getParameter('syminorder.offer.configDisplayOfferBy');
         $jsonCat = NULL;
@@ -60,9 +61,12 @@ class DefaultController extends AbstractController
             $jsonCat = $serializer->serialize($childrenEnabledFromZero, 'json', ['groups' => 'category:list']);
         }
 
+        $error = $request->query->get('error');
+
         return $this->render('Front/categories_list/index.html.twig', [
             'categoriesJSON' => $jsonCat,
-            'tagservicesJSON' => $jsonServices
+            'tagservicesJSON' => $jsonServices,
+            'error' => $error ? $error : null
         ]);
     }
 
