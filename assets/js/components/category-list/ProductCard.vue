@@ -1,32 +1,32 @@
 <template>
   <div>
-  <div class="prod-border">
-      <div class="col-6 prod-image">
+    <div class="prod-border">
+      <div class="prod-image">
         <img v-if="product.picture && product.picture.imageName"
-            class="img-fluid prod-img"
+             class="img-fluid prod-img"
              :src="'/images/products/' + product.picture.imageName"
-            :alt="product.name"
+             :alt="product.name"
         />
         <span v-else>{{ product.name }}</span>
       </div>
 
-      <div class="col-6 prod-info">
-        <div class="prod-head">
-          <div class="float-left col-12 prod-name">{{ product.name }}</div>
-          <div class="col-12 prod-price">{{ formatter.format(product.price/100) }}</div>
+      <div class="prod-info">
+        <div class="prod-name">
+          <a :href="Routing.generate('product_show_front', {slug: product.slug})">
+            {{ product.name }}
+          </a>
         </div>
-        <div class="prod-body">
-          <div class="prod-desc" v-html="product.description"></div>
+
+        <div class="prod-price">{{ formatter.format(product.price/100) }}</div>
+
+        <div class="prod-border-buttons" v-if="user_is_logged_in === true">
+          <product-buttons
+              :product="product"
+              :additions="additions"
+          >
+          </product-buttons>
         </div>
       </div>
-  </div>
-
-    <div class="prod-border-buttons" v-if="user_is_logged_in === true">
-      <product-buttons
-          :product="product"
-          :additions="additions"
-      >
-      </product-buttons>
     </div>
   </div>
 </template>
@@ -34,6 +34,7 @@
 <script>
 import ProductButtons from "../ProductButtons";
 import {Translator} from "../../main";
+import {Routing} from "../../main";
 
 export default {
   name: "ProductCard",
@@ -43,6 +44,7 @@ export default {
   data() {
     return {
       Translator: Translator,
+      Routing: Routing,
       formatter: Function,
       formatterNumber: Function,
     }

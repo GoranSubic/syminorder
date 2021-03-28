@@ -18,7 +18,7 @@
 <p>
     {% for item in items %}
         {{ 'order.notification.item_name'|trans }}: {{ item.product.name }},
-        {{ 'order.notification.addition'|trans }}: {% if item.itemAdditions is not empty %}{{ item.itemAdditions }}{% else %} {{ 'order.notification.no_addition'|trans }} {% endif %},
+        {% if item.itemAdditions is not empty %}{{ 'order.notification.addition'|trans }}: {{ item.itemAdditions }}, {% endif %}
         {{ 'order.notification.quantity'|trans }}: {{ item.quantity }}<br>
     {% endfor %}
 </p>

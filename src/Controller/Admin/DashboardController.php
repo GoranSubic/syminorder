@@ -7,6 +7,7 @@ use App\Entity\CityDelivery;
 use App\Entity\Product;
 use App\Entity\ProductAdditions;
 use App\Entity\ProductPicture;
+use App\Entity\TagServices;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -56,18 +57,18 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        return [
+        $menuArr = [
             MenuItem::linktoRoute('Ponuda Front', 'fa fa-shopping-bag', 'homepage'),
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
             MenuItem::section('Category'),
             MenuItem::linkToCrud('Categories', 'fa fa-tags', Category::class),
 
+            MenuItem::section('Indication Services'),
+            MenuItem::linkToCrud('Indications', 'fa fa-tags', TagServices::class),
+
             MenuItem::section('Product'),
             MenuItem::linkToCrud('Products', 'fa fa-tags', Product::class),
-
-            MenuItem::section('Additions'),
-            MenuItem::linkToCrud('Products Additions', 'fa fa-tags', ProductAdditions::class),
 
             MenuItem::section('Images'),
             MenuItem::linkToCrud('Products images', 'fa fa-file', ProductPicture::class),
@@ -75,11 +76,21 @@ class DashboardController extends AbstractDashboardController
             MenuItem::section('Users'),
             MenuItem::linkToCrud('Users List', 'fa fa-file', User::class),
 
-            MenuItem::section('City Delivery'),
-            MenuItem::linkToCrud('Lista naselja', 'fa fa-file', CityDelivery::class),
-
-            MenuItem::section("Logout"),
-            MenuItem::linkToLogout('Logout', 'fa fa-exit'),
             ];
+
+        if ($this->getParameter("syminorder.shoping.configProductAdditions") === "define_additions") {
+            $menuArr[] = MenuItem::section('Additions');
+            $menuArr[] = MenuItem::linkToCrud('Products Additions', 'fa fa-tags', ProductAdditions::class);
+        }
+
+        if ($this->getParameter("syminorder.shoping.configDefinedCities") === "define_cities") {
+            $menuArr[] = MenuItem::section('City Delivery');
+            $menuArr[] = MenuItem::linkToCrud('Lista naselja', 'fa fa-file', CityDelivery::class);
+        }
+
+        $menuArr[] = MenuItem::section("Logout");
+        $menuArr[] = MenuItem::linkToLogout('Logout', 'fa fa-exit');
+
+        return $menuArr;
     }
 }

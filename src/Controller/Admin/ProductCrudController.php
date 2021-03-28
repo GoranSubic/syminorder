@@ -8,6 +8,7 @@ use App\Form\ProductPictureType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -34,16 +35,25 @@ class ProductCrudController extends AbstractCrudController
         $fields = [
             BooleanField::new('enabled', 'Uključeno'),
             TextField::new('name', 'Naziv'),
+            TextField::new('slug'),
             TextField::new('code', 'Code'),
-            TextEditorField::new('description', 'Opis'),
+            TextEditorField::new('description', 'Opis')->hideOnIndex(),
+            TextEditorField::new('long_description', 'Duži opis')->hideOnIndex(),
             MoneyField::new('price', 'Cena Money')
                 ->setCurrency("RSD")
                 ->setNumDecimals(2)
                 ->setFormType(MoneyType::class)
             ,
             AssociationField::new('category', 'Kategorija')->autocomplete(),
-            BooleanField::new('showAdditions', 'Prikaži dodatke'),
+            AssociationField::new('tagServices', 'Indikacije')
+                ->hideOnDetail()
+                ->autocomplete(),
+//            BooleanField::new('showAdditions', 'Prikaži dodatke'),
         ];
+
+        if ($pageName == Crud::PAGE_DETAIL) {
+            $fields[] = ArrayField::new('tagServices', 'Indikacije');
+        }
 
         if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
             $fields[] = $image;

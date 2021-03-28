@@ -11,7 +11,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
- * Class AppCategoryCreateCommand
+ * Class AppCategorySetSlugCommand
  * @package App\Command
  */
 class AppCategorySetSlugCommand extends Command
@@ -27,7 +27,7 @@ class AppCategorySetSlugCommand extends Command
     private $entityManager;
 
     /**
-     * AppCategoryCreateCommand constructor.
+     * AppCategorySetSlugCommand constructor.
      * @param EntityManagerInterface $entityManager
      */
     public function __construct(EntityManagerInterface $entityManager, SluggerInterface $slugger)

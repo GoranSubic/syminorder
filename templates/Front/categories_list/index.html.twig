@@ -1,13 +1,16 @@
-{% extends 'Front/categories_list/layout.html.twig' %}
+{#{% extends 'Front/categories_list/layout.html.twig' %}#}
+{% extends 'Front/static_pages/layout.html.twig' %}
 
 {% set user_is_logged_in = app.user ? 'true' : 'false' %}
 {% if app.user %}
     {% if 'ROLE_ADMIN' in app.user.roles %}
         {% set search_by = '' %}
-    {% elseif 'ROLE_WAITER' in app.user.roles %}
+    {% elseif 'ROLE_ACCOUNTANT' in app.user.roles %}
+        {% set search_by = '' %}
+    {#{% elseif 'ROLE_WAITER' in app.user.roles %}
         {% set search_by = 'processing' %}
     {% elseif 'ROLE_DRIVER' in app.user.roles %}
-        {% set search_by = 'driving' %}
+        {% set search_by = 'driving' %}#}
     {% elseif 'ROLE_USER' in app.user.roles %}
         {% set search_by = 'userOrders' %}
     {% endif %}
@@ -18,45 +21,50 @@
 {% endblock %}
 
 {% block content %}
-    {% if app.user %}
-        <div class="orders list">
-            {% if search_by == 'userOrders' %}
-                <orders-table-user id="orders-table-user"
-                                   searchby="{{ search_by }}"
-                                   v-bind:datauname="dataUname"
-                                   v-bind:userid="{{ app.user.id }}"
-                >
-
-                </orders-table-user>
-            {% else %}
-                <orders-table id="orders-table"
-                              searchby="{{ search_by }}"
-                              v-bind:datauname="dataUname"
-                >
-
-                </orders-table>
-            {% endif %}
-        </div>
+    {% if error %}
+        <div class="alert alert-danger">{{ error|trans }}</div>
     {% endif %}
 
-{#    {% if orderchanged is defined and orderchanged is not empty %}#}
-{#        <div class="alert {% if orderchanged.status == 'processing' %} alert-success {% else %} alert-danger {% endif %}">#}
-{#            {% if orderchanged.status == 'processing' %}#}
-{#                <br />Novi status porudžbine je: "U pripremi"#}
-{#            {% else %}#}
-{#                <br />Status porudžbine je: {{ orderchanged.status }}#}
-{#            {% endif %}#}
-{#            <br />Porudžbina br: {{ orderchanged.id }}#}
-{#            <br />Vreme poručivanja: {{ orderchanged.cartAt is empty ? "" : orderchanged.cartAt|date("d/m/Y H:i:s") }}#}
-{#            <br />Kupac: {{ orderchanged.customer.username }}, {{ orderchanged.customer.email }}#}
-{#        </div>#}
-{#    {% endif %}#}
+    <div id="offer-indications">
+        {% if app.user %}
+            <div class="orders list">
+                {% if search_by == 'userOrders' %}
+                    <orders-table-user id="orders-table-user"
+                                       searchby="{{ search_by }}"
+                                       v-bind:datauname="dataUname"
+                                       v-bind:userid="{{ app.user.id }}"
+                    >
 
-    {% if categoriesJSON|default and categoriesJSON|length > 0 %}
-        <categories-main
-                v-bind:categories="{{ categoriesJSON }}"
-                :user_is_logged_in="{{ user_is_logged_in }}"
-        >
-        </categories-main>
-    {% endif %}
+                    </orders-table-user>
+                {% else %}
+                    <orders-table id="orders-table"
+                                  searchby="{{ search_by }}"
+                                  v-bind:datauname="dataUname"
+                                  deliveredordersurl="{{ path('app_delivered_orders') }}"
+                    >
+
+                    </orders-table>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="homepage content welcome-message">
+                {{ 'homepage.welcome_message'|trans|raw }}
+            </div>
+        {% endif %}
+
+        {% if categoriesJSON|default and categoriesJSON|length > 0 %}
+            <categories-main
+                    v-bind:categories="{{ categoriesJSON }}"
+                    :user_is_logged_in="{{ user_is_logged_in }}"
+            >
+            </categories-main>
+        {% elseif tagservicesJSON|default and tagservicesJSON|length > 0 %}
+            <tag-services-main
+                    v-bind:tagservices="{{ tagservicesJSON }}"
+                    :user_is_logged_in="{{ user_is_logged_in }}"
+                    showdescription="{{ get_parameter('syminorder.tagservices.configShowDesc') }}"
+            >
+            </tag-services-main>
+        {% endif %}
+    </div>
 {% endblock %}

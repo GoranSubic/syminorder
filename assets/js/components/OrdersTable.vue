@@ -1,111 +1,125 @@
 <template>
-<div class="ordersdata" v-if="ordersTotalNum > 0">
-  <div class="d-block text-center">
-    <h4>
-      <span v-html="Translator.trans('vuejs.orderstable.orderstotalnum', { 'orderstotalnum': ordersTotalNum })"></span>
-    </h4>
+<div>
+  <div class="orders-btn-switch">
+    <b-button v-if="deliveredordersurl !== 'undefined' && deliveredordersurl !== ''" :href="deliveredordersurl" type="button" class="btn btn-default">
+      {{ Translator.trans('vuejs.orderstable.delivered_orders') }}
+    </b-button>
+  </div>
 
-    <div v-if="error" class="alert alert-danger">
-      {{ error }}
-    </div>
+  <div class="ordersdata" v-if="ordersTotalNum > 0">
+    <div class="d-block text-center">
+      <h4>
+        <span v-html="Translator.trans('vuejs.orderstable.orderstotalnum', { 'orderstotalnum': ordersTotalNum })"></span>
+      </h4>
 
-    <b-pagination
-        @change="handlePageChange"
-        v-model="currentPage"
-        :total-rows="ordersTotalNum"
-        :per-page="paginationItemsPerPage"
-        pills
-        :first-text="Translator.trans('vuejs.orderstable.first')"
-        :prev-text="Translator.trans('vuejs.orderstable.previous')"
-        :next-text="Translator.trans('vuejs.orderstable.next')"
-        :last-text="Translator.trans('vuejs.orderstable.last')"
-    ></b-pagination>
+      <div v-if="error" class="alert alert-danger">
+        {{ error }}
+      </div>
 
-    <div class="ordertable table-responsive-md">
-      <table class="table table-striped"  id="orders-list">
-        <tr>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.index') }}</th>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.picture') }}</th>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.customer') }}</th>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.note') }}</th>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.city') }}</th>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.address') }}</th>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.phone') }}</th>
-          <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.submitto') }}</th>
-        </tr>
-        <tbody>
-        <template v-for="(ord, index) in orders">
-          <tr :key="index">
-            <td>
-              {{ index + 1 }}
-              <a v-on:click="showOrderItems(ord, index)"><b :id="'show-hide-' + index">Prikazi</b></a>
-            </td>
-            <td>
-              <img class="img-thumbnail" :src="ord.customer.pictureUrl" :alt="ord.customer.username">
-            </td>
-            <td>{{ ord.customer.username }}</td>
-            <td>{{ ord.noteCart }}</td>
-            <td>{{ ord.cityName }}</td>
-            <td>{{ ord.address }}</td>
-            <td>{{ ord.phone }}</td>
-            <td>
-              <b-button @click="forwardStatusTo(ord, index)" value="Prosledi" type="button" :class="'status-' + ord.status" :id="'btn-sand-' + index">
-                {{ btnColorStatus(ord.status, index) }}
-              </b-button>
-            </td>
+      <b-pagination
+          @change="handlePageChange"
+          v-model="currentPage"
+          :total-rows="ordersTotalNum"
+          :per-page="paginationItemsPerPage"
+          pills
+          :first-text="Translator.trans('vuejs.orderstable.first')"
+          :prev-text="Translator.trans('vuejs.orderstable.previous')"
+          :next-text="Translator.trans('vuejs.orderstable.next')"
+          :last-text="Translator.trans('vuejs.orderstable.last')"
+      ></b-pagination>
+
+      <div class="ordertable table-responsive-md">
+        <table class="table table-striped"  id="orders-list">
+          <tr>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.index') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.datetimecart') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.picture') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.customer') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.note') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.city') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.address') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.phone') }}</th>
+            <th>{{ Translator.trans('vuejs.orderstable.table.userinfo.submitto') }}</th>
           </tr>
+          <tbody>
+          <template v-for="(ord, index) in orders">
+            <tr :key="index">
+              <td>
+                {{ index + 1 }}
+                <a v-on:click="showOrderItems(ord, index)"><b :id="'show-hide-' + index">Prikazi</b></a>
+              </td>
+              <td>{{ cartDateTime(ord.cartAt) }}</td>
+              <td>
+                <img class="img-thumbnail" :src="ord.customer.pictureUrl" :alt="ord.customer.username">
+              </td>
+              <td>{{ ord.customer.username }}</td>
+              <td>{{ ord.noteCart }}</td>
+              <td>{{ ord.cityName }}</td>
+              <td>{{ ord.address }}</td>
+              <td>{{ ord.phone }}</td>
+              <td>
+                <b-button @click="forwardStatusTo(ord, index)" value="Prosledi" type="button" :class="'status-' + ord.status" :id="'btn-sand-' + index">
+                  {{ btnColorStatus(ord.status, index) }}
+                </b-button>
+              </td>
+            </tr>
 
-          <tr style="display: none" :id="'items-row-' + index">
-            <td colspan="6">
-              <table :class="'table table-bordered status-' + ord.status">
-              <tr :class="'status-' + ord.status">
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.index') }}</th>
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.picture') }}</th>
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.name') }}</th>
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.code') }}</th>
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.quantity') }}</th>
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.price') }}</th>
-                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.total') }}</th>
-              </tr>
-              <tr v-for="(item, indexitem) in orderItems" :key="indexitem">
-                <td>
-                  {{ indexitem + 1 }}
-                </td>
-                <td>
-                  <img class="img-thumbnail" :src="item.image" :alt="item.name">
-                </td>
-                <td>
-                  <div class="row">
-                    <div class="col-12">
-                      <span>{{ item.name }}</span>
+            <tr style="display: none" :id="'items-row-' + index">
+              <td colspan="6">
+                <table :class="'table table-bordered status-' + ord.status">
+                <tr :class="'status-' + ord.status">
+                  <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.index') }}</th>
+  <!--                <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.picture') }}</th>-->
+                  <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.name') }}</th>
+                  <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.code') }}</th>
+                  <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.quantity') }}</th>
+                  <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.price') }}</th>
+                  <th>{{ Translator.trans('vuejs.orderstable.table.productsinfo.total') }}</th>
+                </tr>
+                <tr v-for="(item, indexitem) in orderItems" :key="indexitem">
+                  <td>
+                    {{ indexitem + 1 }}
+                  </td>
+  <!--                <td>
+                    <img class="img-thumbnail" :src="item.image" :alt="item.name">
+                  </td>-->
+                  <td>
+                    <div class="row">
+                      <div class="col-12">
+                        <span>
+                          <a :href="Routing.generate('product_show_front', {slug: item.slug})">
+                            {{ item.name }}
+                          </a>
+                        </span>
+                      </div>
+                      <div class="additions col-12" v-if="item.addselected !== ''">
+                        <span>{{ Translator.trans('vuejs.orderstable.additions') }} <i class="addvalues">{{ item.addselected }}</i></span>
+                      </div>
                     </div>
-                    <div class="additions col-12" v-if="item.addselected !== ''">
-                      <span>{{ Translator.trans('vuejs.orderstable.additions') }} <i class="addvalues">{{ item.addselected }}</i></span>
-                    </div>
-                  </div>
-                </td>
-                <td>{{ item.productCode }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ formatterNumber.format(item.price/100) }}</td>
-                <td>{{ formatterNumber.format(item.itemSum/100) }}</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>{{ Translator.trans('vuejs.orderstable.delivery') }}</td>
-                <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
-                <td>{{ Translator.trans('vuejs.orderstable.total') }}</td>
-                <td>{{ formatterNumber.format(orderSum/100) }}</td>
-                <td><b>{{ formatter.format((ord.deliveryPrice+orderSum)/100) }}</b></td>
-              </tr>
-            </table>
-            </td>
-          </tr>
-        </template>
-        </tbody>
-      </table>
+                  </td>
+                  <td>{{ item.productCode }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ formatterNumber.format(item.price/100) }}</td>
+                  <td>{{ formatterNumber.format(item.itemSum/100) }}</td>
+                </tr>
+                <tr>
+                  <td></td>
+  <!--                <td></td>-->
+                  <td>{{ Translator.trans('vuejs.orderstable.delivery') }}</td>
+                  <td>{{ formatterNumber.format(ord.deliveryPrice/100) }}</td>
+                  <td>{{ Translator.trans('vuejs.orderstable.total') }}</td>
+                  <td>{{ formatterNumber.format(orderSum/100) }}</td>
+                  <td><b>{{ formatter.format((ord.deliveryPrice+orderSum)/100) }}</b></td>
+                </tr>
+              </table>
+              </td>
+            </tr>
+          </template>
+          </tbody>
+        </table>
+      </div>
+
     </div>
-
   </div>
 </div>
 </template>
@@ -113,12 +127,14 @@
 <script>
 import axios from 'axios';
 import {Translator} from "../main";
+import {Routing} from "../main";
 
 export default {
 name: "OrdersTable",
   data() {
     return {
       Translator: Translator,
+      Routing: Routing,
       formatter: Function,
       pagePagin: 1,
       currentPage: 1,
@@ -136,7 +152,10 @@ name: "OrdersTable",
 
   props: {
     searchby: String,
-
+    deliveredordersurl: {
+      type: String,
+      required: false,
+    },
     userid: Number,
     datauname: String,
   },
@@ -146,6 +165,15 @@ name: "OrdersTable",
   },
 
   methods: {
+    cartDateTime: function (datestr) {
+      // var d = Date.parse(datestr);
+      var dateTime = new Date(datestr);
+      var localeDateString = dateTime.toLocaleDateString('sr');
+      var localeTimeString = dateTime.toLocaleTimeString('sr');
+
+      return localeDateString + " " + localeTimeString;
+    },
+
     btnColorStatus: function (status, index) {
       // var colorStatus = document.getElementById('btn-sand-' + index);
       if (status !== 'undefined' && status !== null && status !== '') {
@@ -243,6 +271,7 @@ name: "OrdersTable",
           var obj = {
             "image": '/images/products/' + itm.product.picture.imageName,
             "name": itm.product.name,
+            "slug": itm.product.slug,
             "productCode": itm.product.code,
             "price": itm.product.price,
             "quantity": itm.quantity,
@@ -299,6 +328,10 @@ name: "OrdersTable",
 </script>
 
 <style scoped>
+.orders-btn-switch {
+  padding: 10px;
+}
+
 table.status-cart {
   color: green;
 }
@@ -329,7 +362,7 @@ tr.status-delivered, .btn.status-delivered {
 }
 
 .ordersdata {
-  margin: 50px 0 50px 0;
+  margin: 0 0 50px 0;
   background-color: white;
   padding: 10px;
   border-radius: 10px;
@@ -346,7 +379,7 @@ tr.status-delivered, .btn.status-delivered {
 }
 
 table a {
-  color: #db4c3e !important;
+  color: #548fad !important;
   line-height: 12px;
   text-decoration: underline !important;
 }

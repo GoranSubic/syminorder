@@ -16,6 +16,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -43,15 +45,20 @@ class UserCrudController extends AbstractCrudController
     {
         $fields = [
 //            IdField::new('id'),
-            TextField::new('username'),
+            TextField::new('firstName'),
+            TextField::new('lastName'),
+            TelephoneField::new('phone')->hideOnIndex(),
+            TextField::new('company')->hideOnIndex(),
+            TextField::new('address')->hideOnIndex(),
+            TextField::new('city')->hideOnIndex(),
+            NumberField::new('postalCode')->hideOnIndex(),
+            TextField::new('country')->hideOnIndex(),
             EmailField::new('email'),
             ChoiceField::new('roles')
                 ->onlyOnForms()
                 ->setChoices([
                     'User' => 'ROLE_USER',
-                    'Table' => 'ROLE_TABLE',
-                    'Driver' => 'ROLE_DRIVER',
-                    'Waiter' => 'ROLE_WAITER',
+                    'Waiter' => 'ROLE_ACCOUNTANT',
                     'Admin' => 'ROLE_ADMIN',
                 ])->allowMultipleChoices(),
             TextField::new('facebookId'),

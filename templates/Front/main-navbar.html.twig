@@ -3,7 +3,8 @@
 {% set table_id = 0 %}
 {% set table_name = "Sto 1" %}
 
-<nav class="bg-dark navbar navbar-expand-lg navbar-dark" id="mainNavbar">
+{#<nav class="bg-dark navbar navbar-expand-lg navbar-dark" id="mainNavbar">#}
+<nav class="bg-light navbar navbar-expand-lg navbar-light" id="mainNavbar">
     <div class="container"
          style="position: relative;"
     >
@@ -13,25 +14,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('homepage') }}">{{ 'navbar.brand'|trans }}<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_orders') }}">
-                        {% if user_is_logged_in %}{{ 'navbar.orders'|trans }}{% else %}{{ 'navbar.offer'|trans }}{% endif %}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_static_about') }}">{{ 'navbar.about'|trans }}</a>
-                </li>
-            </ul>
+
+            {{ knp_menu_render('main') }}
+
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
-                    <a href="https://www.facebook.com/olalazr/" target="_blank" class="nav-link"><i class="fab fa-facebook"> </i></a>
+                    <a href="{{ 'navbar.social_facebook'|trans }}" target="_blank" class="nav-link"><i class="fab fa-facebook"> </i></a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://www.instagram.com/o_.la_la/" target="_blank" class="nav-link"><i class="fab fa-instagram"> </i></a>
+                    <a href="{{ 'navbar.social_instagram'|trans }}" target="_blank" class="nav-link"><i class="fab fa-instagram"> </i></a>
                 </li>
                 {% if user_is_logged_in %}
                     <li class="nav-item user-logout">
@@ -50,6 +41,7 @@
                           v-bind:userid="{{ app.user.id }}"
                           v-bind:tableid="{{ table_id }}"
                           tablename="{{ table_name }}"
+                          hasdefinedcities="{{ get_parameter('syminorder.shoping.configDefinedCities') }}"
                 ></shopping>
             {% else %}
                 <a class="navbar-link" href="{{ path('app_login') }}">

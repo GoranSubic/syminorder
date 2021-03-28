@@ -44,10 +44,17 @@ class ProductPicture
 
     /**
      *
+     * @ORM\OneToOne(targetEntity="App\Entity\TagServices", inversedBy="picture", cascade={"persist", "remove"})
+     *
+     */
+    private $tagServices;
+
+    /**
+     *
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
      * @Assert\Image(
      *     minWidth = 200,
-     *     maxWidth = 400,
+     *     maxWidth = 600,
      *     minHeight = 200,
      *     maxHeight = 400,
      *     maxSize = "1024k",
@@ -64,7 +71,7 @@ class ProductPicture
      *
      * @var string|null
      *
-     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item"})
+     * @Groups({"product:list", "order:list", "suborder", "category:list", "category:item", "tagservices:list", "tagservices:item"})
      */
     private $imageName;
 
@@ -165,8 +172,29 @@ class ProductPicture
         return $this->category;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTagServices()
+    {
+        return $this->tagServices;
+    }
+
+    /**
+     * @param mixed $tagServices
+     */
+    public function setTagServices(TagServices $tagServices): void
+    {
+        $this->tagServices = $tagServices;
+    }
+
     public function __toString(): string
     {
         return $this->imageFile ? $this->imageFile : '';
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
     }
 }

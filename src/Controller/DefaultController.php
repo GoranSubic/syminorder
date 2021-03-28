@@ -3,13 +3,10 @@
 
 namespace App\Controller;
 
-use ApiPlatform\Core\Api\IriConverterInterface;
 use App\Entity\Category;
-use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -25,10 +22,10 @@ class DefaultController extends AbstractController
 
         $rootNode = $repo->findOneBy(['name' => 'Home']);
         /** @var ArrayCollection|Category[] $children */
-        $children = $repo->getChildren($rootNode, true, 'name');
+        $children = $repo->getChildren($rootNode, true, 'position', 'desc');
 
         $childrenEnabled = array_filter($children, function ($cat) {
-            return $cat->getEnabled() === true;
+            return $cat->getEnabled() === true && $cat->getShowOnFront() === true;
         });
         $childrenEnabledFromZero = array_values($childrenEnabled);
 
@@ -39,54 +36,46 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/category/{slug}", name="category_show_front")
+     * @Route("/indikacije", name="app_indications")
      */
-    public function showCategory(Category $category, SerializerInterface $serializer)
+    public function indications(Request $request, SerializerInterface $serializer)
     {
+        $configDisplayOfferBy = $this->getParameter('syminorder.offer.configDisplayOfferBy');
+        $jsonCat = NULL;
+        $jsonServices = NULL;
         $em = $this->getDoctrine()->getManager();
 
-        /* find category direct childred */
-        $repoCat = $em->getRepository('App\Entity\Category');
-        /** @var ArrayCollection|Category[] $children */
-        $categoryChildren = $repoCat->getChildren($category, true, 'name');
-        $childrenEnabled = array_filter($categoryChildren, function ($cat) {
-            return $cat->getEnabled() === true;
-        });
-        $childrenEnabledFromZero = array_values($childrenEnabled);
+        if ($configDisplayOfferBy == 'tagservices') {
+            $repo = $em->getRepository('App\Entity\TagServices');
+            $servicesEnabled = $repo->findBy(['enabled' => true], ['name' => 'asc']);
+            $jsonServices = $serializer->serialize($servicesEnabled, 'json', ['groups' => 'tagservices:list']);
+        } else {
+            $repo = $em->getRepository('App\Entity\Category');
+            $rootNode = $repo->findOneBy(['name' => 'Home']);
+            /** @var ArrayCollection|Category[] $children */
+            $children = $repo->getChildren($rootNode, true, 'name');
+            $childrenEnabled = array_filter($children, function ($cat) {
+                return $cat->getEnabled() === true;
+            });
+            $childrenEnabledFromZero = array_values($childrenEnabled);
+            $jsonCat = $serializer->serialize($childrenEnabledFromZero, 'json', ['groups' => 'category:list']);
+        }
 
-        /* find category products */
-        $repoProducts = $em->getRepository('App\Entity\Product');
-        $products = $repoProducts->findBy(['category' => $category, 'enabled' => true]);
-        $productsJson = $serializer->serialize($products, 'json', ['groups' => 'product:list']);
+        $error = $request->query->get('error');
 
-        return $this->render('Front/category/category_front.html.twig', [
-            'category' => $category,
-            'categories' => $childrenEnabledFromZero,
-            'productsdata' => count($products) ? $productsJson : ''
+        return $this->render('Front/categories_list/index.html.twig', [
+            'categoriesJSON' => $jsonCat,
+            'tagservicesJSON' => $jsonServices,
+            'error' => $error ? $error : null
         ]);
     }
 
     /**
-     * @Route("/porudzbine", name="app_orders")
+     * @Route("/stare", name="app_delivered_orders")
      */
-    public function orders(SerializerInterface $serializer)
+    public function oldOrders()
     {
-        $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository('App\Entity\Category');
-
-        $rootNode = $repo->findOneBy(['name' => 'Home']);
-        /** @var ArrayCollection|Category[] $children */
-        $children = $repo->getChildren($rootNode, true, 'name');
-
-        $childrenEnabled = array_filter($children, function ($cat) {
-           return $cat->getEnabled() === true;
-        });
-        $childrenEnabledFromZero = array_values($childrenEnabled);
-
-        $jsonCat = $serializer->serialize($childrenEnabledFromZero, 'json', ['groups' => 'category:list']);
-        return $this->render('Front/categories_list/index.html.twig', [
-            'categoriesJSON' => $jsonCat
-        ]);
+        return $this->render('Front/categories_list/delivered_orders.html.twig');
     }
 
 }

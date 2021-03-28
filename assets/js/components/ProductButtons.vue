@@ -26,15 +26,15 @@
           </multiselect>
         </div>
 
-        <b-button v-if="!product.showAdditions" class="dec-btn" variant="warning" @click="decOneFromCart(product.id)">
+        <b-button v-if="!product.showAdditions" class="dec-btn" @click="decOneFromCart(product.id)">
           <span v-html="Translator.trans('vuejs.productbuttons.button_decrease')"></span>
         </b-button>
-        <b-button v-if="!product.showAdditions" class="rem-btn" variant="danger" @click="remFromCart(product.id)">
+        <b-button v-if="!product.showAdditions" class="rem-btn" @click="remFromCart(product.id)">
           <span v-html="Translator.trans('vuejs.productbuttons.button_remove')"></span>
         </b-button>
-        <b-button v-if="!product.showAdditions" class="amm-btn" variant="outline-secondary" disabled >{{prodAmmount}}</b-button>
+        <b-button v-if="!product.showAdditions" class="amm-btn" disabled >{{prodAmmount}}</b-button>
 
-        <b-button class="inc-btn" variant="success" @click="addToCart(product)">
+        <b-button class="inc-btn" @click="addToCart(product)">
           <span v-html="Translator.trans('vuejs.productbuttons.button_cart')"></span>
         </b-button>
       </b-button-group>
@@ -115,6 +115,10 @@ export default {
 </script>
 
 <style scoped>
+.btncontainer {
+  padding-top: 5px;
+}
+
 .btn-group {
   /*padding-right: 0;*/
   /*padding-left: 0;*/
@@ -134,6 +138,25 @@ button.btn svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #548fad;
+}
+.inc-btn {
+  background-color: #548fad;
+}
+.amm-btn {
+  background-color: whitesmoke;
+  color: black;
+  font-size: x-small;
+}
+.dec-btn {
+  background-color: white;
+  color: #548fad;
+  font-size: x-small;
+}
+.rem-btn {
+  background-color: white;
+  color: black;
+  font-size: x-small;
 }
 
 .cont-multisel {

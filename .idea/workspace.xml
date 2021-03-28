@@ -11,7 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/categories_list/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,14 +185,18 @@
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
       <path value="$PROJECT_DIR$/vendor/api-platform/core" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/vendor/willdurand/js-translation-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu-bundle" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/jsonp-callback-validator" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/jsrouting-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jgsxn89RWEWVnzGcCwKHVmKNwZ" />
@@ -201,7 +210,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../alternativa8/symfony" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -220,18 +229,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/Front/static_pages" />
-      <recent name="$PROJECT_DIR$/src/Command" />
-      <recent name="$PROJECT_DIR$/src/EntityListener" />
-      <recent name="$PROJECT_DIR$/templates/Front/category" />
       <recent name="$PROJECT_DIR$/assets/js/components" />
+      <recent name="$PROJECT_DIR$/public/images/carousel" />
+      <recent name="$PROJECT_DIR$/templates/Front" />
+      <recent name="$PROJECT_DIR$/config/packages/syminorder" />
+      <recent name="$PROJECT_DIR$/src/Command" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/aboutus" />
+      <recent name="$PROJECT_DIR$/src/Repository" />
       <recent name="$PROJECT_DIR$/assets/js/store" />
       <recent name="$PROJECT_DIR$/assets/js" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/src/Controller" />
-      <recent name="$PROJECT_DIR$/templates/Admin" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -403,6 +412,43 @@
       <workItem from="1614927956533" duration="945000" />
       <workItem from="1614943535627" duration="104000" />
       <workItem from="1614946179193" duration="671000" />
+      <workItem from="1614977264196" duration="866000" />
+      <workItem from="1615018148664" duration="680000" />
+      <workItem from="1615026407006" duration="7184000" />
+      <workItem from="1615038910995" duration="15287000" />
+      <workItem from="1615055102673" duration="122000" />
+      <workItem from="1615136193188" duration="7074000" />
+      <workItem from="1615146926003" duration="3554000" />
+      <workItem from="1615227232671" duration="116000" />
+      <workItem from="1615465506149" duration="2104000" />
+      <workItem from="1615470780670" duration="10882000" />
+      <workItem from="1615542747265" duration="15088000" />
+      <workItem from="1615561941410" duration="21085000" />
+      <workItem from="1615624647698" duration="2980000" />
+      <workItem from="1615628374617" duration="9266000" />
+      <workItem from="1615639211744" duration="1040000" />
+      <workItem from="1615642191359" duration="597000" />
+      <workItem from="1615709035995" duration="4199000" />
+      <workItem from="1615729051557" duration="16461000" />
+      <workItem from="1616068036546" duration="8144000" />
+      <workItem from="1616078430835" duration="10535000" />
+      <workItem from="1616137567605" duration="3023000" />
+      <workItem from="1616145050623" duration="11185000" />
+      <workItem from="1616156764605" duration="8201000" />
+      <workItem from="1616175168827" duration="7306000" />
+      <workItem from="1616228987329" duration="16173000" />
+      <workItem from="1616257389752" duration="15393000" />
+      <workItem from="1616312239012" duration="11953000" />
+      <workItem from="1616336553205" duration="5006000" />
+      <workItem from="1616346511942" duration="865000" />
+      <workItem from="1616399953264" duration="7355000" />
+      <workItem from="1616407897918" duration="53000" />
+      <workItem from="1616494794296" duration="9829000" />
+      <workItem from="1616592159353" duration="3589000" />
+      <workItem from="1616605171184" duration="9367000" />
+      <workItem from="1616692333425" duration="14933000" />
+      <workItem from="1616707848850" duration="461000" />
+      <workItem from="1616775722242" duration="7979000" />
     </task>
     <servers />
   </component>
@@ -426,7 +472,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php</url>
-          <line>41</line>
+          <line>43</line>
           <properties>
             <option name="className" value="\App\Controller\Admin\UserCrudController" />
             <option name="methodName" value="configureFields" />
@@ -435,18 +481,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php</url>
-          <line>38</line>
+          <line>41</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php</url>
-          <line>41</line>
+          <line>44</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/Front/main-navbar.html.twig</url>
+          <line>38</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/js/store/index.js</url>
           <line>70</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/js/components/Shopping.vue</url>
+          <line>305</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/js/components/Shopping.vue</url>
+          <line>113</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/js/components/tagservices-list/index.vue</url>
+          <line>49</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

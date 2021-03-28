@@ -49,12 +49,18 @@
                   {{ indexitem + 1 }}
                 </td>
                 <td>
-                  <img class="img-thumbnail" :src="item.image" :alt="item.name">
+                  <a :href="Routing.generate('product_show_front', {slug: item.slug})">
+                    <img class="img-thumbnail" :src="item.image" :alt="item.name">
+                  </a>
                 </td>
                 <td>
                   <div class="row">
                     <div class="col-12">
-                      <span>{{ item.name }}</span>
+                      <span>
+                        <a :href="Routing.generate('product_show_front', {slug: item.slug})">
+                          {{ item.name }}
+                        </a>
+                      </span>
                     </div>
                     <div class="additions col-12" v-if="item.addselected !== ''">
                       <span>{{ Translator.trans('vuejs.orderstableuser.additions') }} <i class="addvalues">{{ item.addselected }}</i></span>
@@ -98,12 +104,14 @@
 <script>
 import axios from 'axios';
 import {Translator} from "../main";
+import {Routing} from "../main";
 
 export default {
 name: "OrdersTable",
   data() {
     return {
       Translator: Translator,
+      Routing: Routing,
       formatter: Function,
       pagePagin: 1,
       currentPage: 1,
@@ -162,6 +170,7 @@ name: "OrdersTable",
           var obj = {
             "image": '/images/products/' + itm.product.picture.imageName,
             "name": itm.product.name,
+            "slug": itm.product.slug,
             "price": itm.product.price,
             "quantity": itm.quantity,
             "addselected": itm.itemAdditions,
@@ -260,11 +269,11 @@ tr.status-delivered, td.status-delivered {
 }
 
 .ordertable img {
-  width: 70%;
+  width: 50%;
 }
 
 table a {
-  color: #db4c3e !important;
+  color: #548fad !important;
   line-height: 12px;
   text-decoration: underline !important;
 }

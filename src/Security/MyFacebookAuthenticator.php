@@ -115,7 +115,7 @@ class MyFacebookAuthenticator extends SocialAuthenticator
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         // change "app_homepage" to some route in your app
-        $targetUrl = $this->router->generate('app_orders');
+        $targetUrl = $this->router->generate('app_indications');
 
         return new RedirectResponse($targetUrl);
 

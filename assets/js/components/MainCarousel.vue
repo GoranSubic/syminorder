@@ -77,5 +77,7 @@ export default {
 </script>
 
 <style scoped>
-
+.slide {
+  background-color: #548fad;
+}
 </style>

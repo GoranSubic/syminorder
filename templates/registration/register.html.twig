@@ -21,11 +21,20 @@
                     {{ form_start(registrationForm) }}
                     <div class="input_fields">
                         <div class="col-md-8">
-                            {{ form_row(registrationForm.username) }}
+                            <div class="reg-one-row">
+                                {{ form_row(registrationForm.firstName) }}
+                                {{ form_row(registrationForm.lastName) }}
+                            </div>
+                            {{ form_row(registrationForm.company) }}
+                            {{ form_row(registrationForm.address) }}
+                            <div class="reg-one-row">
+                                {{ form_row(registrationForm.postalCode) }}
+                                {{ form_row(registrationForm.city) }}
+                            </div>
+                            {{ form_row(registrationForm.country) }}
+                            {{ form_row(registrationForm.phone) }}
                             {{ form_row(registrationForm.email) }}
-                            {{ form_row(registrationForm.plainPassword, {
-                                label: 'Password'
-                            }) }}
+                            {{ form_row(registrationForm.plainPassword) }}
                             {{ form_row(registrationForm.agreeTerms) }}
                             <div>
                                 <p>{{ 'terms.privacy.protection'|trans }}

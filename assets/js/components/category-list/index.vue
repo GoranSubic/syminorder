@@ -58,7 +58,7 @@
               :user_is_logged_in="user_is_logged_in"
               :key="product['@id']"
               :product="product"
-              class="col-12 col-sm-6 col-md-4 col-lg-4 products"
+              class="col-6 col-sm-4 col-md-3 col-lg-2 products"
               :id="'product-' + product.id"
               :additions="additions"
       >
@@ -114,10 +114,10 @@ export default {
 <style scoped>
 #parentcat-btn {
   min-height: 60px;
-  background-color: #db4c3e !important;
+  background-color: #548fad !important;
 }
 .category-name {
-  color: #db4c3e;
+  color: #548fad;
 }
 .back-icon .fa-level-up-alt {
   transform: rotateY(180deg);

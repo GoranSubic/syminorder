@@ -1,41 +1,71 @@
 homepage:
-  page_title: Olala - ponuda i poručivanje
+  page_title: Alternativa8 - na talasu izobilja
+  welcome_message:
+    Dobro došli,
+    <br />
+    web prezentacija je u izdradi
+    <br />
+    Hvala na poseti!!!
 about:
   page_title: O nama
   title: O nama
-  text: <p>O La La je počeo sa radom 2012. godine.</p>
-        <p>Nalazimo se u Zrenjaninu Stražilovska 36 (bivši market 102).</p>
-        <p>Kontakt telefon <a href="tel:+381605105620">060/510-5620</a></p>
-        <p>Nudimo veliki izbor jela sa roštilja, prženih jela i kuvanih jela po porudžbini. <br />Naše proizvode možete konzumirati u našem lokalu koji poseduje 26 sedećih mesta. <br />Takođe nudimo mogućnost kućne dostave, organizovanje keteringa od predjela preko glavnih jela pa do poslastica.</p>
-        <p>Sva jela pripremamo po porudžbini tako da je, uvek, sve sveže i vruće.</p>
+  team: Naš tim
+  text:
+    desc:
+        <p>Objedinili smo medicinsku struku, bogatstvo znanja kineske tradicionalne medicine i savremeni koncept kvantne medicine. Svesni  ubrzanja vremena, svih poteškoća koje savremeni način života nosi i  jedinstvenost svakog pojedinca, želimo da  sajt ALTERNATIVA 8 pruži informacije o proverenim putevima  ka  polju DOBROBITI. Vodjeni smo ljubavlju prema čoveku i prirodi. Vodjeni smo  i potrebom da uspostavimo nit spajanja  savremenog načina življenja  i prirodnih zakona.
+        <br /><br />
+    footer:
+        <p>Dobrodošli.</p>
+    titlemember1: Dr Dobrinka Arbanovski
+    member1:
+      <div>Osnivač Internističke ordinacije HOLITIMED 1995. godine u Beogradu.</div>
+      <div>Završen medicinski fakultet i specijalizacija iz interne medicine.</div>
+      <br />
+      <div>Nakon 20 godina  prakse  kao klinički lekar, otvara 1995. godine  privatnu ordinaciju. uvodeći po prvi put na ovim prostorima biorezonantnu metodu. Edukujući se za to u Institutu za regulativnu medicinu  REGUMED u Nemačkoj i Sloveniji, prihvatila je biofizičku holističku medicinu kao novo polje neograničenih mogućnosti.</div>
+      <br />
+      <div>Istražujući neprekidno, uz dalje usavršavanje  iz oblasti kvantne medicine, trenutno u svojoj ordinaciji koristi najsavremenija dostignuća biofizičkih metoda (biorezonancu- Bicom, QXCI, biorezonantni Imago skener, kardiotahometar), mikroskopski pregled žive kapi krvi, aromaterapiju, homeopatiju.</div>
+      <br />
+      <div>Kao pobornik integrativnog medicinskog pristupa, koji podrazumeva kompleksno sagledavanje problematike pacijenta i izbor adekvatnog individualnog načina lečenja, u svom radu primenjuje klasičnu, alternativnu ili, pak, kombinaciju obe terapeutske metode prema potrebama pacijenta.</div>
+    titlemember2: Dr Ana Žikić
+    member2:
+      <div>Nakon završenih studija na Medicinskom fakultetu Univerziteta u Beogradu (2005), upisuje Fakultet kineske tradicionalne medicine u Pekingu (2006-2011). Pored akupunkture u svom radu koristi perskripcije kineskog bilja, dijetologije i zdravstvenog ći gonga (qi gong) u kome, kao sertifikovani instruktor, primenjuje vežbe kojima se u sastavnim delom lečenja poboljšava kvalitet života i zdravlje pacijenta.</div>
+      <br />
+      <div>Rukovodilac je edukacije zdravstvenih radnika u školi akupunkture pri centru za edukaciju, Accademia Integrativa, udruženja Quanttes, gde organizuje akreditovane edukacije akupunkture kao i seminare praktičnih tehnika u primeni ventuza, moksibustije i gvaše. Program se sprovodi u saradnji sa Srpskim lekarskim društvom i akreditovan je od strane Zdravstvenog saveta.</div>
+category:
+  moreless:
+    more: Saznaj više
+    less: Skloni opis
 footer:
   owner: Vlasnik
-  owner_name: Nemanja Radlovački
+  owner_name: Dr Dobrinka Arbanovski
   phone: Telefon
-  phone_number: 060/510-5620
-  phone_number_href: 381605105620
+  phone_number: xxx/xxx-xxxx
+  phone_number_href: 381xxxxxxxxx
   email: Email
-  email_address: info@olala.co.rs
+  email_address: info@alternativa8.rs
   address: Adresa
-  street_address: Stražilovska 36
-  city_address: 23000 Zrenjanin
+  street_address: xxxxxxxxxx xx
+  city_address: 11000 Beograd
   state: Srbija
   working_time: Radno vreme
-  working_time_value: Pon-Ned 08 - 24
-  deliveries: Dostava na adresu
-  deliveries_time: 08 - 23
+  working_time_value: Radnim danima 08-17
+  deliveries: Slanje porudžbina radnim danima
+  deliveries_time: 08-17
   social_info: Pronađite nas na društvenim mrežama
-  social_facebook: https://www.facebook.com/olalazr/
-  social_instagram: https://www.instagram.com/o_.la_la/
+  social_facebook: https://www.facebook.com/
+  social_instagram: https://www.instagram.com/
 navbar:
-  brand: Olala
+  brand: Alternativa8
+  indications: Indikacije
   offer: Ponuda
-  orders: Porudžbine
+  orders: Odaberite proizvode
   about: O nama
   cart_button:
     upper: LogIn
     bottom: Poručite
     logout: Logout
+  social_facebook: https://www.facebook.com/
+  social_instagram: https://www.instagram.com/
 login:
   title: Log in!
   to_login: Uloguj se
@@ -52,6 +82,12 @@ login:
   no_access: Nemate nalog za pristup?
   to_register: Registracija
 order:
+  email:
+    address:
+      from: syminorder@gmail.com
+      to: syminorder@gmail.com
+    name: Alternativa8 Porudžbina
+    subject: Alternativa8 Nova Porudžbina
   notification:
     title: Zdravo! Stigla Vam je nova porudžbina!
     take_over: Preuzmi porudžbinu i prosledi na obradu
@@ -68,6 +104,13 @@ order:
     no_addition: /
     quantity: Kol
     welcome: Prijatno!
+registration:
+  email:
+    address:
+      from: syminorder@gmail.com
+    name: Alternativa8 Registracija
+    subject: Alternativa8 Potvrda Registracije
+    verified: Your email address has been verified.
 register:
   title: Registracija
   button: Registruj se
@@ -75,25 +118,49 @@ register:
     title: Zdravo! Molim Vas da potvrdite Vaš email!
     welcome: Prijatno!
     message:
-      please: Molimo Vas da potvrdite da ste se ovom email adresom registrovali na Olala
+      please: Molimo Vas da potvrdite da ste se ovom email adresom registrovali na sajtu Alternativa8
       confirm: Potvrđujem moj email
       expiration: Ovaj link će prestati da važi za
 terms:
   privacy:
-    title: Olala - Priprema hrane
+    title: Alternativa8 - na talasu izobilja
     company_refers: NEMANJA RADLOVACKI PR UGOSTITELJSKA RADNJA I ODRZAVANJE HIGIJENE OBJEKATA O LALA 023 ZRENJANIN, Zrenjanin, Strazilovska 36
-    website: https://olala.co.rs
-    email: info@olala.co.rs
+    website: https://alternativa8.rs
+    email: info@alternativa8.rs
     protection: This site is protected by Terms of
     protection_privacy: Privacy Policy
     protection_terms: Terms and Conditions
+form:
+  registration:
+    firstname:
+      placeholder: Vaše ime
+    lastName:
+      placeholder: Prezime
+    company:
+      placeholder: Kompanija (opciono)
+    address:
+      placeholder: Adresa
+    postalCode:
+      placeholder: Poštanski broj
+    city:
+      placeholder: Grad / Mesto
+    country:
+      placeholder: Država
+    phone:
+      placeholder: Broj telefona
+    email:
+      placeholder: Email (obavezno polje)
+    password:
+      placeholder: Šifra koju ćete koristiti
 vuejs:
   currency: RSD
   search_by: 'Pretraga po: "%searchtermfound%"'
+  indications:
+    learn_more: Saznaj više
   maincarousel:
-    slide1: <h3><span>  Prijatno društvo  </span></h3>
-    slide2: <h3><span>Ugodan ambijent</span></h3>
-    slide3: <h3><span>Ukusno posluženje</span></h3>
+    slide1: <h3><span>Bahove cvetne kapi</span></h3>
+    slide2: <h3><span>Kvantna medicina u kućnim uslovima</span></h3>
+    slide3: <h3><span>Kineska tradicionalna medicina</span></h3>
     button:
       previous: <i class="fas fa-chevron-left"></i>
       next: <i class="fas fa-chevron-right"></i>
@@ -105,10 +172,10 @@ vuejs:
         afternoon: Prijatno poslepodne
         night: Dobro veče
       meal:
-        morning: želimo Vam prijatno jutro, pogledajte našu ponudu za doručak
-        day: odaberite najbolji ručak
-        afternoon: odaberite obrok za kasni ručak ili ranu večeru
-        night: želimo Vam prijatno veče, pogledajte našu ponudu za večeru
+        morning: želimo Vam prijatno jutro, pogledajte našu ponudu proizvoda
+        day: odaberite najbolje proizvode
+        afternoon: odaberite najbolje proizvode
+        night: želimo Vam prijatno veče, pogledajte našu ponudu proizvoda
   orderstable:
     orderstotalnum: 'Lista porudžbina za dostavu - ukupno %orderstotalnum%'
     additions: 'Prilozi: '
@@ -118,9 +185,13 @@ vuejs:
     previous: Pret
     next: Sled
     last: Posl
+    new_orders: Vidi nove porudžbine
+    delivered_orders: Vidi završene porudžbine
     table:
       userinfo:
         index: Index
+        datetimecart: Vreme Poručivanja
+        datetimedelivery: Vreme Slanja
         picture: Slika
         customer: Kupac
         note: Napomena
@@ -172,7 +243,7 @@ vuejs:
     button_remove: <i class="fa fa-trash"></i>
     button_cart: <i class="fas fa-cart-plus"></i>
   searchbar:
-    placeh_input: Pronađi obrok po nazivu...
+    placeh_input: Pronađi proizvod po nazivu...
   shopping:
     title_part1: Prosledite porudžbinu ili o
     title_part2: O

@@ -1,0 +1,44 @@
+{% extends 'Front/static_pages/layout.html.twig' %}
+
+{% set user_is_logged_in = app.user ? 'true' : 'false' %}
+
+{% block title %}{{ tagService.name }}{% endblock %}
+
+{% block content %}
+    <div class="category-show content" id="tagservice-show">
+        <div id="{{ tagService.id }}" class="flex-container-cat">
+
+            {{ include('Front/show_tagservice/tagservice_image.html.twig') }}
+
+            <div class="category-about">
+                <div class="category-name">
+                    <h1>{{ tagService.name }}</h1>
+                </div>
+                <div class="category-desc">{{ tagService.description|raw }}</div>
+                <div class="learnmore-btn">
+                    {% if tagService.longDescription is defined and tagService.longDescription != "" %}
+                        <button type="button" class="btn btn-sm moreless more">{{ 'category.moreless.more'|trans }}</button>
+                        <button type="button" class="btn btn-sm moreless less" style="display: none;">{{ 'category.moreless.less'|trans }}</button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="category-show content">
+        <div class="category-long-desc">
+            <span id="moreless" class="truncate-desc" style="display: none;">
+                {{ tagService.longDescription|raw }}
+            </span>
+        </div>
+    </div>
+
+    {% if productsdata|default and productsdata != "" and productsdata|length > 0 %}
+        <div class="category-show content">
+            <category-selected
+                    v-bind:productsdata="{{ productsdata }}"
+                    :user_is_logged_in="{{ user_is_logged_in }}"
+            >
+            </category-selected>
+        </div>
+    {% endif %}
+{% endblock %}

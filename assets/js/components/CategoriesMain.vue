@@ -6,7 +6,8 @@
         <div class="col-12 searchcat">
           <search-bar
               class="searchbar"
-              @search-products="onSearchProducts"
+              @foundproducts="setFoundproducts"
+              @searchtermfound="setSearchtermfound"
           >
 
           </search-bar>
@@ -52,7 +53,6 @@ import Loading from "./Loading";
 import CategoryList from "./category-list"
 import CategoryCard from "./category-list/CategoryCard";
 import SearchBar from './SearchBar';
-import { fetchProducts } from "../services/products-service";
 
 export default {
   name: "CategoriesMain",
@@ -80,30 +80,11 @@ export default {
     user_is_logged_in: Boolean,
   },
   methods: {
-    /**
-     * Handles a change in the searchTerm provided by the search bar and fetches new products
-     *
-     * @param {string} term
-     */
-    onSearchProducts({term}) {
-      if (term !== null && term !== '' && term.length > 2) this.loadProducts(term);
+    setFoundproducts({term}) {
+      this.productsdata = term;
     },
-    async loadProducts(searchTerm) {
-      // this.loading = true;
-      let response;
-      var currentCategoryId = null;
-      try {
-        response = await fetchProducts(currentCategoryId, searchTerm);
-        // this.loading = false;
-      } catch (e) {
-        // this.loading = false;
-        return;
-      }
-      var rspdata = response.data['hydra:member'];
-      if (rspdata.length) {
-        this.productsdata = response.data['hydra:member'];
-        this.searchTermFound = searchTerm;
-      }
+    setSearchtermfound({term}) {
+      this.searchTermFound = term;
     },
     async getSubCategories(id) {
       this.productsdata = [];

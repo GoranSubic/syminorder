@@ -11,7 +11,38 @@
         <div class="about container">
             <div class="about content">
                 <h1>{{ 'about.title'|trans }}</h1>
-                {{ 'about.text'|trans|raw }}
+                <div class="about content-desc">
+                {{ 'about.text.desc'|trans|raw }}
+                </div>
+                <div class="about content-footer">
+                {{ 'about.text.footer'|trans|raw }}
+                </div>
+            </div>
+        </div>
+
+        <div class="about container">
+            <h3>{{ 'about.team'|trans }}</h3>
+
+            <div class="about content about-all-members">
+                <h5>{{ 'about.text.titlemember1'|trans }}</h5>
+                <div class="about content about-member">
+                    <div class="about image-member">
+                        <img src="{{ asset('images/aboutus/member1.jpeg') }}" alt="Dobrinka Arbanovski" />
+                    </div>
+                    <div class="about content-member">
+                        {{ 'about.text.member1'|trans|raw }}
+                    </div>
+                </div>
+
+                <h5>{{ 'about.text.titlemember2'|trans }}</h5>
+                <div class="about content about-member reverse">
+                    <div class="about content-member">
+                        {{ 'about.text.member2'|trans|raw }}
+                    </div>
+                    <div class="about image-member">
+                        <img src="{{ asset('images/aboutus/member2.jpeg') }}" alt="Ana Žikić" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>

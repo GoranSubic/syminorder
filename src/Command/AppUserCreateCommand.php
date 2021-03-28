@@ -49,7 +49,7 @@ class AppUserCreateCommand extends Command
             // configure an argument
             ->addArgument('username', InputArgument::REQUIRED, 'The username of the user.')
             ->addArgument('password', InputArgument::REQUIRED, 'The password of the user.')
-            ->addArgument('role', InputArgument::REQUIRED, 'The role of the user ("ROLE_ADMIN", "ROLE_WAITER").')
+            ->addArgument('role', InputArgument::REQUIRED, 'The role of the user ("ROLE_ADMIN", "ROLE_ACCOUNTANT").')
         ;
     }
 

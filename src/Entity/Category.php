@@ -28,6 +28,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *  itemOperations={
  *     "get"={"normalization_context"={"groups"="category:item"}},
  *     },
+ *  order={"position"="ASC"},
  * )
  * @ApiFilter(BooleanFilter::class, properties={"enabled"})
  *
@@ -60,7 +61,13 @@ class Category
     private $enabled;
 
     /**
-     * @ORM\Column(name="name", type="string", length=30)
+     * @ORM\Column(name="show_on_front", type="boolean", nullable=true)
+     * @Groups({"category:list", "category:item"})
+     */
+    private $showOnFront;
+
+    /**
+     * @ORM\Column(name="name", type="string", length=50)
      * @Groups({"category:list", "category:item"})
      */
     private $name;
@@ -71,10 +78,21 @@ class Category
     private $slug;
 
     /**
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Description must be at least {{ limit }} chars long",
+     *      maxMessage = "Description cannot be longer than 240 characters"
+     * )
      * @ORM\Column(name="description", type="string", length=255)
      * @Groups({"category:list", "category:item"})
      */
     private $description;
+
+    /**
+     * @ORM\Column(name="long_description", type="text", nullable=true)
+     */
+    private $long_description;
 
     /**
      * @Gedmo\TreeLeft()
@@ -139,9 +157,17 @@ class Category
      */
     private $picture;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     *
+     * @Groups({"category:list"})
+     */
+    private $position;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->children = new ArrayCollection();
     }
 
     /**
@@ -190,6 +216,22 @@ class Category
     public function setEnabled($enabled): void
     {
         $this->enabled = $enabled;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShowOnFront()
+    {
+        return $this->showOnFront;
+    }
+
+    /**
+     * @param mixed $showOnFront
+     */
+    public function setShowOnFront($showOnFront): void
+    {
+        $this->showOnFront = $showOnFront;
     }
 
     /**
@@ -277,6 +319,22 @@ class Category
     }
 
     /**
+     * @return mixed
+     */
+    public function getLongDescription()
+    {
+        return $this->long_description;
+    }
+
+    /**
+     * @param mixed $long_description
+     */
+    public function setLongDescription($long_description): void
+    {
+        $this->long_description = $long_description;
+    }
+
+    /**
      * @return null|Category
      */
     public function getParent()
@@ -338,8 +396,96 @@ class Category
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param mixed $position
+     */
+    public function setPosition($position): void
+    {
+        $this->position = $position;
+    }
+
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function setLft(int $lft): self
+    {
+        $this->lft = $lft;
+
+        return $this;
+    }
+
+    public function setLvl(int $lvl): self
+    {
+        $this->lvl = $lvl;
+
+        return $this;
+    }
+
+    public function setRgt(int $rgt): self
+    {
+        $this->rgt = $rgt;
+
+        return $this;
+    }
+
+    public function setRoot(?self $root): self
+    {
+        $this->root = $root;
+
+        return $this;
+    }
+
+    public function addChild(Category $child): self
+    {
+        if (!$this->children->contains($child)) {
+            $this->children[] = $child;
+            $child->setParent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChild(Category $child): self
+    {
+        if ($this->children->removeElement($child)) {
+            // set the owning side to null (unless already changed)
+            if ($child->getParent() === $this) {
+                $child->setParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function addProduct(Product $product): self
+    {
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+            $product->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): self
+    {
+        if ($this->products->removeElement($product)) {
+            // set the owning side to null (unless already changed)
+            if ($product->getCategory() === $this) {
+                $product->setCategory(null);
+            }
+        }
+
+        return $this;
     }
 }
