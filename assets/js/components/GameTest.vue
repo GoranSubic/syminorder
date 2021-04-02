@@ -173,9 +173,16 @@ export default {
 
 <style scoped>
   .game-quiz {
-    margin: 3%;
+    line-height: 1.3em;
+    font-size: 1.3em;
+    text-align: center;
+    margin: 3% !important;
+    padding: 2% !important;
+    min-height: 250px;
+    border: 2px solid #548fad;
+    border-radius: 10px;
   }
   .game-quiz-question {
-    padding: 30px 0 30px 0;
+    padding: 10px 0 10px 0;
   }
 </style>

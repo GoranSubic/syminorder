@@ -1,11 +1,13 @@
 homepage:
   page_title: Alternativa8 - na talasu izobilja
   welcome_message:
-    Dobro došli,
-    <br />
-    web prezentacija je u izdradi
-    <br />
-    Hvala na poseti!!!
+    Sve u Univerzumu treperi, vibrira, emituje svoju karakterističnu frekvenciju. Mi smo deo te sveprisutne pojave. Sakriven u svakoj našoj ćeliji, taj suptilni frekvencijski ples ostaje neprepoznat i daleko od naše svesti.
+    <br /><br />
+    Već se zna da zdravo telo vibrira na višim frekvencijama, a da bolest nastaje kada se frekvencija spusti ispod određenog nivoa. I zato telesno zdravlje zahteva podignut nivo vibracija čitavog organizma.
+    <br /><br />
+    Na kojoj frekvenciji vibriramo - pravo je pitanje za svakog.
+    <br /><br />
+    Za više informacija kliknite <a href="http://www.holitimed.com/">ovde</a>
 about:
   page_title: O nama
   title: O nama
@@ -82,6 +84,10 @@ login:
   no_access: Nemate nalog za pristup?
   to_register: Registracija
 order:
+  welcome_message:
+    Može li pojedinac svesno da podesi vlastite vibracije na viši nivo i na taj način aktivno kreira svoje zdravlje i dobar unutrašnji osećaj?
+    <br /><br />
+    Ovo su neki od proizvoda koje koristimo u ordinaciji
   email:
     address:
       from: syminorder@gmail.com
@@ -158,9 +164,10 @@ vuejs:
   indications:
     learn_more: Saznaj više
   maincarousel:
-    slide1: <h3><span>Bahove cvetne kapi</span></h3>
-    slide2: <h3><span>Kvantna medicina u kućnim uslovima</span></h3>
-    slide3: <h3><span>Kineska tradicionalna medicina</span></h3>
+    slide1: ''
+    slide2: <h3><span>Bahove cvetne kapi</span></h3>
+    slide3: <h3><span>Kvantna medicina u kućnim uslovima</span></h3>
+    slide4: <h3><span>Kineska tradicionalna medicina</span></h3>
     button:
       previous: <i class="fas fa-chevron-left"></i>
       next: <i class="fas fa-chevron-right"></i>

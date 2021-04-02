@@ -2,7 +2,7 @@
   <agile
       :dots="true" :nav-buttons="true"
       :mobile-first="true" :infinite="true"
-      :autoplay="true" :autoplay-speed="4000" :speed="2000" :fade="true"
+      :autoplay="true" :autoplay-speed="4000" :speed="3000" :fade="true"
 
   >
     <div class="slide">
@@ -18,6 +18,11 @@
     <div class="slide">
       <span v-html="imgtext3"></span>
       <img :src="img3" :alt="imgtext3">
+    </div>
+
+    <div class="slide">
+      <span v-html="imgtext4"></span>
+      <img :src="img4" :alt="imgtext4">
     </div>
 
     <template slot="prevButton">
@@ -43,9 +48,11 @@ export default {
     img1: String,
     img2: String,
     img3: String,
+    img4: String,
     imgtext1: String,
     imgtext2: String,
     imgtext3: String,
+    imgtext4: String,
   },
   data () {
     return {
