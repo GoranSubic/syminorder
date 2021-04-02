@@ -20,6 +20,9 @@
 /public/js
 /src/**/BackProduct*.php
 /templates/**/back*.html.twig
+
+smf_script_scp_to_prod.sh
+smf_script_to_prod.sh
 ###> my files to exclude
 
 ### !!! Temporary dir to exclude until delete it !!!
