@@ -17,10 +17,11 @@
 .tagservices .tagservice-border {
     display: flex;
     flex-wrap: wrap;
-    height: 100px;
+    height: 120px;
     padding: 1px;
     border: 2px solid #548fad;
     justify-content: center;
+    cursor: pointer;
 }
 
 .tagservices .tagservice-image,
@@ -33,10 +34,10 @@
     display: flex;
 }
 .tagservices .tagservice-image {
-    height: 70%;
+    height: 80%;
 }
 .tagservices .tagservice-name {
-    height: 30%;
+    height: 20%;
     font-size: 0.75em;
     line-height: 1em;
 }

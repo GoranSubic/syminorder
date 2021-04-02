@@ -82,6 +82,7 @@ li.user-logout {
     position: fixed;
     z-index: 3;
     min-height: 40px;
+    background-color: white !important;
 }
 .header .navbar-brand {
     content: url("../media/logo.png");

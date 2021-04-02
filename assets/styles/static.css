@@ -155,7 +155,7 @@
 }
 /* End - Product-show page */
 div.category-desc {
-    text-align: center;
+    text-align: center !important;
     padding-top: 30px;
     line-height: 1.3em;
     font-size: 1.3em;
