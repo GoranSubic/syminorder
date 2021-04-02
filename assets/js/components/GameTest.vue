@@ -137,10 +137,13 @@ export default {
         if (el.answer === "Da") numYes++;
       });
 
+      var title = document.getElementById("question");
       if (numYes >= this.questions.length/3) {
         this.question_data = "Rezultat Vašeg testiranja pokazuje da je potrebno da napravite promenu, obratite nam se za savet.";
+        title.classList.add('center-title');
       } else {
         this.question_data = "Rezultat Vašeg testiranja pokazuje da je sve u redu! :)";
+        title.classList.add('center-title');
       }
     },
     nextQuestion() {
@@ -184,5 +187,10 @@ export default {
   }
   .game-quiz-question {
     padding: 10px 0 10px 0;
+    min-height: 2em;
+  }
+
+  #question.center-title {
+    padding-top: 7%;
   }
 </style>
