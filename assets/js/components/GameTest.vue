@@ -22,13 +22,18 @@
     </div>
 
     <div>
-      <b-button v-if="q_num !== null && q_num > 0 && q_num < max" class="mt-3" @click="prevQuestion">Prethodno pitanje</b-button>
+      <b-button v-if="q_num !== null && q_num > 0 && q_num < max" class="mt-3"
+                variant="default"
+                @click="prevQuestion">Prethodno pitanje</b-button>
       <b-button v-if="q_num !== null && q_num < max-1" class="mt-3"
+                variant="default"
                 :disabled="questions[q_num].answer === null ? true : false"
                 @click="nextQuestion">Sledeće   pitanje</b-button>
 
-      <b-button v-if="q_num === null" class="mt-3" @click="startQuiz">Započni kviz</b-button>
-      <b-button v-if="q_num !== null && q_num === max-1" class="mt-3" @click="finishQuiz">Završi / Vidi rezultate</b-button>
+      <b-button v-if="q_num === null" class="mt-3" variant="default"
+                @click="startQuiz">Započni kviz</b-button>
+      <b-button v-if="q_num !== null && q_num === max-1" class="mt-3" variant="default"
+                @click="finishQuiz">Završi / Vidi rezultate</b-button>
     </div>
   </div>
 </div>
@@ -188,9 +193,15 @@ export default {
   .game-quiz-question {
     padding: 10px 0 10px 0;
     min-height: 2em;
+    /*color: #548fad;*/
   }
 
   #question.center-title {
     padding-top: 7%;
+  }
+
+  button {
+    border-color: #548fad;
+    font-weight: bold;
   }
 </style>

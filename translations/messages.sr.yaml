@@ -1,13 +1,8 @@
 homepage:
   page_title: Alternativa8 - na talasu izobilja
   welcome_message:
-    Sve u Univerzumu treperi, vibrira, emituje svoju karakterističnu frekvenciju. Mi smo deo te sveprisutne pojave. Sakriven u svakoj našoj ćeliji, taj suptilni frekvencijski ples ostaje neprepoznat i daleko od naše svesti.
-    <br /><br />
-    Već se zna da zdravo telo vibrira na višim frekvencijama, a da bolest nastaje kada se frekvencija spusti ispod određenog nivoa. I zato telesno zdravlje zahteva podignut nivo vibracija čitavog organizma.
-    <br /><br />
+    <a href="http://www.holitimed.com/">Ordinacija Holitimed</a> Sve u Univerzumu treperi, vibrira, emituje svoju karakterističnu frekvenciju. Mi smo deo te sveprisutne pojave. Sakriven u svakoj našoj ćeliji, taj suptilni frekvencijski ples ostaje neprepoznat i daleko od naše svesti.
     Na kojoj frekvenciji vibriramo - pravo je pitanje za svakog.
-    <br /><br />
-    Za više informacija kliknite <a href="http://www.holitimed.com/">ovde</a>
 about:
   page_title: O nama
   title: O nama
@@ -85,9 +80,9 @@ login:
   to_register: Registracija
 order:
   welcome_message:
+    'Već se zna da zdravo telo vibrira na višim frekvencijama, a da bolest nastaje kada se frekvencija spusti ispod određenog nivoa. I zato telesno zdravlje zahteva podignut nivo vibracija čitavog organizma.
     Može li pojedinac svesno da podesi vlastite vibracije na viši nivo i na taj način aktivno kreira svoje zdravlje i dobar unutrašnji osećaj?
-    <br /><br />
-    Ovo su neki od proizvoda koje koristimo u ordinaciji
+    Ovo su neki od proizvoda koje koristimo u ordinaciji:'
   email:
     address:
       from: syminorder@gmail.com

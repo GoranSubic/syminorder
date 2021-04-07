@@ -8,25 +8,30 @@
     background-size: cover;
 }
 .homepage.main-container {
-    margin: 50px 0 50px 0;
+    margin: 50px 0 0 0;
 }
 .homepage.welcome-message {
     line-height: 1.3em;
     font-size: 1.3em;
-    text-align: center;
+    text-align: justify;
     margin: 3% !important;
     padding: 2% !important;
-    border: 2px solid #548fad;
-    border-radius: 10px;
+    /*border: 2px solid #548fad;
+    border-radius: 10px;*/
+    color: #548fad;
+}
+.homepage.welcome-message a {
+    font-size: 1.3em;
 }
 .orderpage.welcome-message {
     line-height: 1.3em;
     font-size: 1.3em;
-    text-align: center;
+    text-align: justify;
     margin: 3% !important;
     padding: 2% !important;
-    border: 2px solid #548fad;
-    border-radius: 10px;
+    /*border: 2px solid #548fad;
+    border-radius: 10px;*/
+    color: #548fad;
 }
 .static .content {
     padding: 10px;
