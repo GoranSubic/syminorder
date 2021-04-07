@@ -15,25 +15,25 @@
     <div>
       <b-button v-if="q_num !== null && q_num >= 0 && q_num < max" class="mt-3"
                 :variant="questions[q_num].answer === 'Da' ? 'warning' : 'default'"
-                @click="answerYes">Da</b-button>
+                @click="answerYes">{{ Translator.trans('vuejs.gametest.answer_yes') }}</b-button>
       <b-button v-if="q_num !== null && q_num >= 0 && q_num < max" class="mt-3"
                 :variant="questions[q_num].answer === 'Ne' ? 'info' : 'default'"
-                @click="answerNo">Ne</b-button>
+                @click="answerNo">{{ Translator.trans('vuejs.gametest.answer_no') }}</b-button>
     </div>
 
     <div>
       <b-button v-if="q_num !== null && q_num > 0 && q_num < max" class="mt-3"
                 variant="default"
-                @click="prevQuestion">Prethodno pitanje</b-button>
+                @click="prevQuestion">{{ Translator.trans('vuejs.gametest.prev_question') }}</b-button>
       <b-button v-if="q_num !== null && q_num < max-1" class="mt-3"
                 variant="default"
                 :disabled="questions[q_num].answer === null ? true : false"
-                @click="nextQuestion">Sledeće   pitanje</b-button>
+                @click="nextQuestion">{{ Translator.trans('vuejs.gametest.next_question') }}</b-button>
 
       <b-button v-if="q_num === null" class="mt-3" variant="default"
-                @click="startQuiz">Započni kviz</b-button>
+                @click="startQuiz">{{ Translator.trans('vuejs.gametest.start') }}</b-button>
       <b-button v-if="q_num !== null && q_num === max-1" class="mt-3" variant="default"
-                @click="finishQuiz">Završi / Vidi rezultate</b-button>
+                @click="finishQuiz">{{ Translator.trans('vuejs.gametest.finish') }}</b-button>
     </div>
   </div>
 </div>
@@ -48,78 +48,78 @@ export default {
     return {
       Translator: Translator,
       q_num: null,
-      question_data: "Proverite da li ste zdravi :)",
+      question_data: Translator.trans('vuejs.gametest.check_your_health'),
       max: 12,
       questions: [
         {
           id: 0,
-          title: "Da li Vam se telesna težina poveća za kratko vreme?",
+          title: Translator.trans('vuejs.gametest.questions.question1'),
           value: 0,
           answer: null,
         },
         {
           id: 1,
-          title: "Da li ste povremeno neobjašnjivo depresivni?",
+          title: Translator.trans('vuejs.gametest.questions.question2'),
           value: 0,
           answer: null,
         },
         {
           id: 2,
-          title: "Da li patite od zapušenog nosa, kijanja, curenja nosa?",
+          title: Translator.trans('vuejs.gametest.questions.question3'),
           value: 0,
           answer: null,
         },
         {
           id: 3,
-          title: "Da li patite od zatvora ili dijareje?",
+          title: Translator.trans('vuejs.gametest.questions.question4'),
           value: 0,
           answer: null,
         },
         {
           id: 4,
-          title: "Da li ste pospani posle jela?",
+          title: Translator.trans('vuejs.gametest.questions.question5'),
           value: 0,
           answer: null,
         },
         {
           id: 5,
-          title: "Da li imate crvenilo kože, svrab, astmu?",
+          title: Translator.trans('vuejs.gametest.questions.question6'),
           value: 0,
           answer: null,
         },
         {
           id: 6,
-          title: "Da li zadržavate tečnost, otičete?",
+          title: Translator.trans('vuejs.gametest.questions.question7'),
           value: 0,
           answer: null,
         },
         {
           id: 7,
-          title: "Jeste li hronično umorni?",
+          title: Translator.trans('vuejs.gametest.questions.question8'),
           value: 0,
           answer: null,
         },
         {
           id: 8,
-          title: "Da li imate bolove u stomaku?",
+          title: Translator.trans('vuejs.gametest.questions.question9'),
           value: 0,
           answer: null,
         },
         {
           id: 9,
-          title: "Da li ste često prehladjeni?",
+          title: Translator.trans('vuejs.gametest.questions.question10'),
           value: 0,
           answer: null,
         },
         {
           id: 10,
-          title: "Da li imate migrene, glavobolje?",
+          title: Translator.trans('vuejs.gametest.questions.question11'),
           value: 0,
           answer: null,
         },
         {
           id: 11,
-          title: "Da li se nadimate posle jela?",
+          title: Translator.trans('vuejs.gametest.questions.question12'),
           value: 0,
           answer: null,
         },
@@ -144,10 +144,10 @@ export default {
 
       var title = document.getElementById("question");
       if (numYes >= this.questions.length/3) {
-        this.question_data = "Rezultat Vašeg testiranja pokazuje da je potrebno da napravite promenu, obratite nam se za savet.";
+        this.question_data = Translator.trans('vuejs.gametest.result_not_good');
         title.classList.add('center-title');
       } else {
-        this.question_data = "Rezultat Vašeg testiranja pokazuje da je sve u redu! :)";
+        this.question_data = Translator.trans('vuejs.gametest.result_good');
         title.classList.add('center-title');
       }
     },

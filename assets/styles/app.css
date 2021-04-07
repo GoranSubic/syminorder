@@ -32,6 +32,19 @@ footer address {
     font-size: small;
 }
 
+footer div.footer-ul ul {
+    list-style-type: none !important;
+    /*padding: 0;*/
+    margin-bottom: 1rem;
+}
+footer .social-and-terms {
+    text-align: center;
+    padding: 10px;
+}
+footer .footer-copyright {
+    font-size: 0.9em;
+}
+
 #login-shopping {
     margin-left: 10px;
     margin-right: 0 !important;
@@ -299,12 +312,12 @@ li.user-logout {
     margin: 0
 }
 
-p {
+p, div.footer-ul {
     color: #999999;
     font-size: 14px;
     line-height: 24px
 }
-footer p {
+footer p, div.footer-ul {
     color: #FFFFFF;
 }
 

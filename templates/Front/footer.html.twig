@@ -3,30 +3,59 @@
     <!-- Footer Elements -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-6 col-md-4">
                 <address>
                     <p><b>{{ 'navbar.brand'|trans }}</b></p>
-                    <p>{{ 'footer.owner'|trans }}: {{ 'footer.owner_name'|trans }}</p>
-                    <p>{{ 'footer.phone'|trans }}: <a href="tel:+{{ 'footer.phone_number_href'|trans }}">{{ 'footer.phone_number'|trans }}</a></p>
-                    <p>{{ 'footer.email'|trans }}: <a href="mailto:{{ 'footer.email_address'|trans }}">{{ 'footer.email_address'|trans }}</a></p>
+                    <div class="footer-ul">
+                        {{ 'footer.email'|trans }}:
+                        <ul>
+                            <li><a href="mailto:{{ 'footer.email_address'|trans }}">{{ 'footer.email_address'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-ul">
+                        {{ 'footer.phone'|trans }}:
+                        <ul>
+                            <li><a href="tel:+{{ 'footer.phone_number_href1'|trans }}">{{ 'footer.phone_number1'|trans }}</a></li>
+                            <li><a href="tel:+{{ 'footer.phone_number_href2'|trans }}">{{ 'footer.phone_number2'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-ul">
+                        {{ 'footer.owner'|trans }}:
+                        <ul>
+                            <li>{{ 'footer.owner_name'|trans }}</li>
+                            <li>{{ 'footer.owner_firmname'|trans }}</li>
+                        </ul>
+                    </div>
                 </address>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-6 col-md-4">
                 <address>
-                    <p>
-                        {{ 'footer.address'|trans }}:<br>
-                        <span>{{ 'footer.street_address'|trans }}</span><br>
-                        <span>{{ 'footer.city_address'|trans }}</span><br>
-                        <span>{{ 'footer.state'|trans }}</span>
-                    </p>
-                    <p>
-                        {{ 'footer.working_time'|trans }}: {{ 'footer.working_time_value'|trans }}<br>
-                        {{ 'footer.deliveries'|trans }}: {{ 'footer.deliveries_time'|trans }}
-                    </p>
+                    <div class="footer-ul">
+                        {{ 'footer.address'|trans }}:
+                        <ul>
+                            <li><span>{{ 'footer.street_address'|trans }}</span></li>
+                            <li><span>{{ 'footer.city_address'|trans }}</span></li>
+                            <li><span>{{ 'footer.state'|trans }}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-ul">
+                        {{ 'footer.working_time'|trans }}:
+                        <ul>
+                            <li>{{ 'footer.working_time_value1'|trans }}</li>
+                            <li>{{ 'footer.working_time_value2'|trans }}</li>
+                        </ul>
+                    </div>
+                    <div class="footer-ul">
+                        {{ 'footer.deliveries'|trans }}:
+                        <ul>
+                            <li>{{ 'footer.deliveries_time'|trans }}</li>
+                        </ul>
+                    </div>
                 </address>
             </div>
             <!-- Social buttons -->
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-12 col-md-4 social-and-terms">
 
                 <div class="container">
                     <div class="row">
@@ -62,7 +91,7 @@
     <!-- Footer Elements -->
     <!-- Copyright -->
     <div class="footer-copyright text-center py-1">
-        © 2020 Copyright:
+        © 2021 Copyright:
         <a href="http://goransubic.github.io/" target="_blank"> Goran Subić</a>
     </div>
     <!-- Copyright -->
