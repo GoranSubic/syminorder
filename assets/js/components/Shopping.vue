@@ -149,7 +149,7 @@
       </form>
 
       <div class="footer">
-        <span v-html="Translator.trans('vuejs.shopping.footer_info')"></span>
+        <span class="footer-info" v-html="Translator.trans('vuejs.shopping.footer_info')"></span>
       </div>
     </div>
   </b-modal>

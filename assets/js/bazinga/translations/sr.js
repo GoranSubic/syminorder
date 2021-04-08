@@ -1,7 +1,7 @@
 (function (t) {
 // sr
 t.add("homepage.page_title", "Alternativa8 - na talasu izobilja", "messages", "sr");
-t.add("homepage.welcome_message", "<a href=\"http:\/\/www.holitimed.rs\/\">Ordinacija Holitimed<\/a> Sve u Univerzumu treperi, vibrira, emituje svoju karakteristi\u010dnu frekvenciju. Mi smo deo te sveprisutne pojave. Sakriven u svakoj na\u0161oj \u0107eliji, taj suptilni frekvencijski ples ostaje neprepoznat i daleko od na\u0161e svesti. Na kojoj frekvenciji vibriramo - pravo je pitanje za svakog.", "messages", "sr");
+t.add("homepage.welcome_message", "<a href=\"http:\/\/www.holitimed.rs\/\" target=\"_blank\">Ordinacija Holitimed<\/a> Sve u Univerzumu treperi, vibrira, emituje svoju karakteristi\u010dnu frekvenciju. Mi smo deo te sveprisutne pojave. Sakriven u svakoj na\u0161oj \u0107eliji, taj suptilni frekvencijski ples ostaje neprepoznat i daleko od na\u0161e svesti. Na kojoj frekvenciji vibriramo - pravo je pitanje za svakog.", "messages", "sr");
 t.add("about.page_title", "O nama", "messages", "sr");
 t.add("about.title", "O nama", "messages", "sr");
 t.add("about.team", "Na\u0161 tim", "messages", "sr");
@@ -59,7 +59,7 @@ t.add("login.remember_me", "Zapamti me", "messages", "sr");
 t.add("login.forg_pass", "Zaboravljena \u0161ifra", "messages", "sr");
 t.add("login.no_access", "Nemate nalog za pristup?", "messages", "sr");
 t.add("login.to_register", "Registracija", "messages", "sr");
-t.add("order.welcome_message", "Ve\u0107 se zna da zdravo telo vibrira na vi\u0161im frekvencijama, a da bolest nastaje kada se frekvencija spusti ispod odre\u0111enog nivoa. I zato telesno zdravlje zahteva podignut nivo vibracija \u010ditavog organizma. Mo\u017ee li pojedinac svesno da podesi vlastite vibracije na vi\u0161i nivo i na taj na\u010din aktivno kreira svoje zdravlje i dobar unutra\u0161nji ose\u0107aj? Naravno da mo\u017ee. <br \/> U ordinaciji sprovodimo programe prilago\u0111ene svakom pojedincu ponaosob, a ovde su neki od proizvoda koje koristimo i koje i vama preporu\u010dujemo:", "messages", "sr");
+t.add("order.welcome_message", "<a href=\"http:\/\/www.holitimed.rs\/\" target=\"_blank\">Ordinacija Holitimed<\/a> Mo\u017ee li pojedinac svesno da podesi vlastite vibracije na vi\u0161i nivo i na taj na\u010din aktivno kreira svoje zdravlje i dobar unutra\u0161nji ose\u0107aj? Naravno da mo\u017ee. <br \/> U ordinaciji sprovodimo programe prilago\u0111ene svakom pojedincu ponaosob, a ovde su neki od proizvoda koje koristimo i koje i vama preporu\u010dujemo:", "messages", "sr");
 t.add("order.email.address.from", "syminorder@gmail.com", "messages", "sr");
 t.add("order.email.address.to", "syminorder@gmail.com", "messages", "sr");
 t.add("order.email.name", "Alternativa8 Porud\u017ebina", "messages", "sr");
@@ -118,7 +118,7 @@ t.add("vuejs.gametest.answer_yes", "Da", "messages", "sr");
 t.add("vuejs.gametest.answer_no", "Ne", "messages", "sr");
 t.add("vuejs.gametest.check_your_health", "Proverite kako se hranite", "messages", "sr");
 t.add("vuejs.gametest.result_good", "Rezultat Va\u0161eg testiranja pokazuje da vam hrana koju jedete ne izaziva simptome intolerancije. Nastavite tako!", "messages", "sr");
-t.add("vuejs.gametest.result_not_good", "Rezultat Va\u0161eg testiranja pokazuje da je potrebno da napravite promenu. Na\u0161a preporuka je <a href=\"http:\/\/www.holitimed.rs\/test-intolerancije-sta-je\">test intolerancije<\/a>, obratite nam se za savet.", "messages", "sr");
+t.add("vuejs.gametest.result_not_good", "Rezultat Va\u0161eg testiranja pokazuje da je potrebno da napravite promenu. Na\u0161a preporuka je test intolerancije, obratite nam se za savet.", "messages", "sr");
 t.add("vuejs.gametest.questions.question1", "Da li Vam se telesna te\u017eina pove\u0107a za kratko vreme?", "messages", "sr");
 t.add("vuejs.gametest.questions.question2", "Da li ste povremeno neobja\u0161njivo depresivni?", "messages", "sr");
 t.add("vuejs.gametest.questions.question3", "Da li patite od zapu\u0161enog nosa, kijanja, curenja nosa?", "messages", "sr");
@@ -223,7 +223,7 @@ t.add("vuejs.shopping.button_remove", "<i class=\"fa fa-trash\"><\/i>", "message
 t.add("vuejs.shopping.button_submit", "Prosledi", "messages", "sr");
 t.add("vuejs.shopping.button_submit_txt", "Slanje podataka...", "messages", "sr");
 t.add("vuejs.shopping.send_again", "Ponovi slanje...", "messages", "sr");
-t.add("vuejs.shopping.footer_info", "<p>Za porud\u017ebine preko 5.000,00 RSD dostava je besplatna.<\/p> <p>Isporuka POST EXSPRESS do 19h<\/p> <p>Po\u0161tarina Post Express do 500g 200,00 RSD; do 2kg 250,00 RSD; do 5kg 340,00 RSD; do 10kg 460,00 RSD<\/p> <p>Nakon potvr\u0111ivanja status porud\u017ebine mo\u017eete pratiti na stranici Indikacije<\/p>", "messages", "sr");
+t.add("vuejs.shopping.footer_info", "<p>Cena isporuke nije ura\u010dunata u cenu.<\/p> <p>Na teritoriji Srbije, porud\u017ebine \u0161aljemo POST EXSPRESS-om do 19h.<\/p> <p style=\"color: #548fad\">Za porud\u017ebine preko 5.000,00 RSD dostava je <b>besplatna<\/b>.<\/p> <p>Isporuka POST EXSPRESS do 19h<\/p> <p>Po\u0161tarina Post Express do 500g 200,00 RSD; do 2kg 250,00 RSD; do 5kg 340,00 RSD; do 10kg 460,00 RSD<\/p> <p>Nakon potvr\u0111ivanja status porud\u017ebine mo\u017eete pratiti na stranici Indikacije<\/p>", "messages", "sr");
 t.add("vuejs.modal.order_submited.title", "Uspe\u0161no ste izvr\u0161ili porud\u017ebinu", "messages", "sr");
 t.add("vuejs.modal.order_submited.message", "<br \/>Isporuka se vr\u0161i u najkra\u0107em mogu\u0107em roku.<br \/> Status porud\u017ebine mo\u017eete pratiti na stranici Indikacije.<br \/>", "messages", "sr");
 t.add("vuejs.modal.order_submited.button_ok", "OK", "messages", "sr");

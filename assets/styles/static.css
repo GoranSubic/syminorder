@@ -13,25 +13,25 @@
 .homepage.welcome-message {
     line-height: 1.3em;
     font-size: 1.3em;
-    text-align: justify;
+    text-align: center;
     margin: 3% !important;
     padding: 2% !important;
     /*border: 2px solid #548fad;
-    border-radius: 10px;*/
-    color: #548fad;
-}
-.homepage.welcome-message a {
-    font-size: 1.3em;
+    border-radius: 10px;
+    color: #548fad;*/
 }
 .orderpage.welcome-message {
     line-height: 1.3em;
     font-size: 1.3em;
-    text-align: justify;
+    text-align: center;
     margin: 5% 3% 0 3% !important;
     padding: 2% !important;
     /*border: 2px solid #548fad;
-    border-radius: 10px;*/
-    color: #548fad;
+    border-radius: 10px;
+    color: #548fad;*/
+}
+.welcome-message a {
+    font-size: 1.3em;
 }
 .static .content {
     padding: 10px;

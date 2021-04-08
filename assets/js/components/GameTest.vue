@@ -23,16 +23,16 @@
 
     <div>
       <b-button v-if="q_num !== null && q_num > 0 && q_num < max" class="mt-3"
-                variant="default"
+                variant="info"
                 @click="prevQuestion">{{ Translator.trans('vuejs.gametest.prev_question') }}</b-button>
       <b-button v-if="q_num !== null && q_num < max-1" class="mt-3"
-                variant="default"
+                variant="info"
                 :disabled="questions[q_num].answer === null ? true : false"
                 @click="nextQuestion">{{ Translator.trans('vuejs.gametest.next_question') }}</b-button>
 
-      <b-button v-if="q_num === null" class="mt-3" variant="default"
+      <b-button v-if="q_num === null" class="mt-3" variant="info"
                 @click="startQuiz">{{ Translator.trans('vuejs.gametest.start') }}</b-button>
-      <b-button v-if="q_num !== null && q_num === max-1" class="mt-3" variant="default"
+      <b-button v-if="q_num !== null && q_num === max-1" class="mt-3" variant="info"
                 @click="finishQuiz">{{ Translator.trans('vuejs.gametest.finish') }}</b-button>
     </div>
   </div>
@@ -184,11 +184,12 @@ export default {
     line-height: 1.3em;
     font-size: 1.3em;
     text-align: center;
-    margin: 3% !important;
+    max-width: 800px;
+    margin: auto !important;
     padding: 2% !important;
     min-height: 250px;
-    border: 2px solid #548fad;
-    border-radius: 10px;
+    /*border: 2px solid #548fad;
+    border-radius: 10px;*/
   }
   .game-quiz-question {
     padding: 10px 0 10px 0;
@@ -201,7 +202,14 @@ export default {
   }
 
   button {
-    border-color: #548fad;
+    border: 2px solid #548fad;
     font-weight: bold;
+  }
+
+  .btn.btn-default {
+    color: #548fad;
+  }
+  .btn.btn-info, .btn.btn-warning {
+    color: #FFFFFF;
   }
 </style>

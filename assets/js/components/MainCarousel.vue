@@ -20,11 +20,6 @@
       <img :src="img3" :alt="imgtext3">
     </div>
 
-    <div class="slide">
-      <span v-html="imgtext4"></span>
-      <img :src="img4" :alt="imgtext4">
-    </div>
-
     <template slot="prevButton">
       <span v-html="Translator.trans('vuejs.maincarousel.button.previous')"></span>
     </template>
@@ -48,11 +43,9 @@ export default {
     img1: String,
     img2: String,
     img3: String,
-    img4: String,
     imgtext1: String,
     imgtext2: String,
     imgtext3: String,
-    imgtext4: String,
   },
   data () {
     return {

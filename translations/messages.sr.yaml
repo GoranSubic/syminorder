@@ -1,7 +1,7 @@
 homepage:
   page_title: Alternativa8 - na talasu izobilja
   welcome_message:
-    <a href="http://www.holitimed.rs/">Ordinacija Holitimed</a> Sve u Univerzumu treperi, vibrira, emituje svoju karakterističnu frekvenciju. Mi smo deo te sveprisutne pojave. Sakriven u svakoj našoj ćeliji, taj suptilni frekvencijski ples ostaje neprepoznat i daleko od naše svesti.
+    <a href="http://www.holitimed.rs/" target="_blank">Ordinacija Holitimed</a> Sve u Univerzumu treperi, vibrira, emituje svoju karakterističnu frekvenciju. Mi smo deo te sveprisutne pojave. Sakriven u svakoj našoj ćeliji, taj suptilni frekvencijski ples ostaje neprepoznat i daleko od naše svesti.
     Na kojoj frekvenciji vibriramo - pravo je pitanje za svakog.
 about:
   page_title: O nama
@@ -88,7 +88,7 @@ login:
   to_register: Registracija
 order:
   welcome_message:
-    'Već se zna da zdravo telo vibrira na višim frekvencijama, a da bolest nastaje kada se frekvencija spusti ispod određenog nivoa. I zato telesno zdravlje zahteva podignut nivo vibracija čitavog organizma. Može li pojedinac svesno da podesi vlastite vibracije na viši nivo i na taj način aktivno kreira svoje zdravlje i dobar unutrašnji osećaj? Naravno da može.
+    '<a href="http://www.holitimed.rs/" target="_blank">Ordinacija Holitimed</a> Može li pojedinac svesno da podesi vlastite vibracije na viši nivo i na taj način aktivno kreira svoje zdravlje i dobar unutrašnji osećaj? Naravno da može.
     <br />
     U ordinaciji sprovodimo programe prilagođene svakom pojedincu ponaosob, a ovde su neki od proizvoda koje koristimo i koje i vama preporučujemo:'
   email:
@@ -177,7 +177,7 @@ vuejs:
     result_good: Rezultat Vašeg testiranja pokazuje da vam hrana koju jedete ne izaziva simptome intolerancije. Nastavite tako!
     result_not_good:
       Rezultat Vašeg testiranja pokazuje da je potrebno da napravite promenu.
-      Naša preporuka je <a href="http://www.holitimed.rs/test-intolerancije-sta-je">test intolerancije</a>, obratite nam se za savet.
+      Naša preporuka je test intolerancije, obratite nam se za savet.
     questions:
       question1: Da li Vam se telesna težina poveća za kratko vreme?
       question2: Da li ste povremeno neobjašnjivo depresivni?
@@ -301,10 +301,12 @@ vuejs:
     button_submit: Prosledi
     button_submit_txt: Slanje podataka...
     send_again: Ponovi slanje...
-    footer_info:  <p>Za porudžbine preko 5.000,00 RSD dostava je besplatna.</p>
+    footer_info:  '<p>Cena isporuke nije uračunata u cenu.</p>
+                  <p>Na teritoriji Srbije, porudžbine šaljemo POST EXSPRESS-om do 19h.</p>
+                  <p style="color: #548fad">Za porudžbine preko 5.000,00 RSD dostava je <b>besplatna</b>.</p>
                   <p>Isporuka POST EXSPRESS do 19h</p>
                   <p>Poštarina Post Express do 500g 200,00 RSD; do 2kg 250,00 RSD; do 5kg 340,00 RSD; do 10kg 460,00 RSD</p>
-                  <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Indikacije</p>
+                  <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Indikacije</p>'
   modal:
     order_submited:
       title: Uspešno ste izvršili porudžbinu

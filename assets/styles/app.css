@@ -35,14 +35,27 @@ footer address {
 footer div.footer-ul ul {
     list-style-type: none !important;
     /*padding: 0;*/
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
+p, div.footer-ul {
+    color: #999999;
+    font-size: 1.2em;
+    line-height: 1em;
+}
+footer p, div.footer-ul {
+    color: #FFFFFF;
+}
+
+footer .privacy-terms p {
+    font-size: .8em;
+}
+
 footer .social-and-terms {
     text-align: center;
     padding: 10px;
 }
 footer .footer-copyright {
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 #login-shopping {
@@ -111,6 +124,7 @@ li.user-logout {
 
 #navbarSupportedContent {
     padding-left: 10px;
+    font-size: 1.1em;
 }
 
 .header #mainNavbar .nav-item.active .nav-link {
@@ -125,6 +139,7 @@ li.user-logout {
     border: 0;
     padding: 15px;
     margin-left: -10px !important;
+    font-size: 1em;
 }
 #mainNavbar .nav-item.li-categories {
     padding-bottom: 5px;
@@ -166,6 +181,16 @@ li.user-logout {
 }
 #modal-cart.modal {
     top: 70px !important;
+}
+
+#modal-tall div.footer {
+    text-align: left;
+}
+#modal-tall div.footer p {
+    font-size: 1em !important;
+}
+#modal-tall div.footer .footer-info {
+    padding: 5px;
 }
 /*Registration page*/
 .reg-no-label {
@@ -310,15 +335,6 @@ li.user-logout {
     text-align: center;
     font-size: 16px;
     margin: 0
-}
-
-p, div.footer-ul {
-    color: #999999;
-    font-size: 14px;
-    line-height: 24px
-}
-footer p, div.footer-ul {
-    color: #FFFFFF;
 }
 
 .login_wrapper button.login_btn:hover {
