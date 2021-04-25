@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use App\Form\UserType;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,26 +41,37 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/loginget/{uname}/$u53rm4n3@/{pass}/12345678", name="app_login_get")
+     * @Route("/loginget/{tableUserName}/$u53rm4n3@/12345678", name="app_login_get")
      *
      */
-    public function loginGet(Request $request, $uname, $pass, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $formAuthenticator, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function loginGet(
+        Request $request,
+        $tableUserName,
+        GuardAuthenticatorHandler $guardHandler,
+        LoginFormAuthenticator $formAuthenticator,
+        UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('App\Entity\User');
-        $user = $repo->findOneBy(['username' => $uname]);
+        $user = $repo->findOneBy(['username' => $tableUserName]);
+        $error = null;
 
-        if ($user && ($passwordEncoder->isPasswordValid($user, $pass))) {
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $formAuthenticator,
-                'main'
-            );
+//        $form = $this->createForm(UserType::class, $user);
+        if($request->isMethod('POST')) {
+            $pass = $request->request->get('password');
+
+            if ($user && ($passwordEncoder->isPasswordValid($user, $pass))) {
+                return $guardHandler->authenticateUserAndHandleSuccess(
+                    $user,
+                    $request,
+                    $formAuthenticator,
+                    'main'
+                );
+            }
+            $error = "Žao nam je, ipak niste ulogovani!";
         }
 
-        $error = "Žao nam je, ipak niste ulogovani!";
-        return $this->redirectToRoute('app_indications', ['error' => $error]);
+        return $this->render('security/table_login.html.twig', ['table_username' => $tableUserName, 'error' => $error]);
     }
 
 }

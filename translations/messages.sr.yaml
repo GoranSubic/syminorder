@@ -80,6 +80,7 @@ login:
   facebook: Facebook Login
   google: Google Login
   or: ili
+  uname_placeh: Korisničko ime
   email_placeh: Email Address
   pass_placeh: Password
   remember_me: Zapamti me

@@ -1,0 +1,62 @@
+{% extends 'Front/static_pages/layout.html.twig' %}
+
+{% block title %}{{ 'login.title'|trans }}{% endblock %}
+
+{% block content %}
+
+    <div id="login-page">
+        <div class="login-page container">
+            <div class="login-page content">
+
+                <div class="row">
+                        <!-- login_wrapper -->
+                        <div class="login_wrapper">
+
+                            <form method="post">
+                                {% if error %}
+{#                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+                                    <div class="alert alert-danger">{{ error }}</div>
+                                {% endif %}
+
+                                {% if app.user %}
+                                    <div class="mb-3">
+                                        {{ 'login.logged_in'|trans }} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{{ 'login.logout'|trans }}</a>
+                                    </div>
+                                {% endif %}
+
+                                <h1 class="h3 mb-3 font-weight-normal">{{ 'login.to_order'|trans }}</h1>
+
+                                <div class="input_fields">
+                                    <div class="col-md-8">
+                                        <div class="formsix-pos">
+                                            <div class="form-group i-uname">
+        {#                                                <label for="inputEmail">Email</label>#}
+                                                <input type="hidden" value="{{ table_username }}" name="username" id="inputUserName" class="form-control" placeholder="{{ 'login.uname_placeh'|trans }}" required autofocus>
+                                            </div>
+                                        </div>
+                                        <div class="formsix-e">
+                                            <div class="form-group i-password">
+        {#                                                <label for="inputPassword">Password</label>#}
+                                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="{{ 'login.pass_placeh'|trans }}" required>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" name="_csrf_token"
+                                               value="{{ csrf_token('authenticate') }}"
+                                        >
+
+                                    <div class="login_btn_wrapper">
+                                        <button class="btn btn-lg btn-primary login_btn" type="submit">
+                                            {{ 'login.to_login'|trans }}
+                                        </button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div> <!-- /.login_wrapper-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
