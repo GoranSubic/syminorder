@@ -142,6 +142,11 @@ class User implements UserInterface
      */
     private $orders;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isTable = false;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
@@ -465,6 +470,22 @@ class User implements UserInterface
         }
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isTable(): bool
+    {
+        return $this->isTable;
+    }
+
+    /**
+     * @param bool $isTable
+     */
+    public function setIsTable(bool $isTable): void
+    {
+        $this->isTable = $isTable;
     }
 
 }

@@ -26,23 +26,36 @@ class UserController extends AbstractController
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(Request $request, UserRepository $userRepository): Response
     {
+        $table = $userRepository->findBy(['isTable' => true], ['username' => 'Asc']);
+        $error = $request->query->get('error');
+
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
+            'users' => count($table) ? $table : null,
+            'error' => isset($error) ? $error : null,
         ]);
     }
 
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, UserRepository $userRepository): Response
     {
+        $numTblUsers = $userRepository->findBy(['isTable' => true]);
+        if(count($numTblUsers) >= 1) {
+            $error = "Already has max defined tables!";
+            return $this->redirectToRoute('user_index', [
+                'error' => $error,
+            ]);
+        }
+
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setIsTable(true);
 
             $plainpwd = $user->getPassword();
             $encoded = $this->passwordEncoder->encodePassword($user, $plainpwd);

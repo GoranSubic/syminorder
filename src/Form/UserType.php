@@ -18,9 +18,11 @@ class UserType extends AbstractType
         $builder
             ->add('username')
             ->add('email')
-            ->add('roles')
             ->add('password')
-            ->add('roles', ChoiceType::class, [
+            ->add('firstName')
+            ->add('lastName')
+//            ->add('isTable')
+            /*->add('roles', ChoiceType::class, [
                 'required' => true,
                 'multiple' => false,
                 'expanded' => false,
@@ -29,22 +31,22 @@ class UserType extends AbstractType
                     'Waiter' => 'ROLE_ACCOUNTANT',
                     'Admin' => 'ROLE_ADMIN',
                 ],
-            ])
+            ])*/
         ;
 
         // roles field data transformer
-        $builder->get('roles')
+        /*$builder->get('roles')
             ->addModelTransformer(new CallbackTransformer(
                 function ($rolesArray) {
                     // transform the array to a string
-//                    return count($rolesArray)? $rolesArray[0]: null;
+                    // return count($rolesArray)? $rolesArray[0]: null;
                     return is_array($rolesArray)? $rolesArray[0]: null;
                 },
                 function ($rolesString) {
                     // transform the string back to an array
                     return [$rolesString];
                 }
-            ));
+            ));*/
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -4,24 +4,29 @@
 
 {% block body %}
     <h1>User index</h1>
-
+    {% if error is defined and error is not null %}
+        {#<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>R. B.</th>
                 <th>Username</th>
                 <th>Roles</th>
                 <th>Password</th>
+                <th>Is Table</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
             <tr>
-                <td>{{ user.id }}</td>
+                <td>{{ loop.index }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>***{#{ user.password }#}</td>
+                <td>{{ user.isTable ? "Table" : '' }}</td>
                 <td>
                     <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
                     <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>

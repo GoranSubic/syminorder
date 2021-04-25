@@ -1,5 +1,5 @@
 {% set user_is_logged_in = app.user ? true : false %}
-{% set user_name = app.user ? app.user.email : "" %}
+{% set user_name = (app.user and app.user.isTable) ? (app.user.firstName ~ " " ~ app.user.lastName) : (app.user ? app.user.email : "") %}
 {% set table_id = 0 %}
 {% set table_name = "Sto 1" %}
 
