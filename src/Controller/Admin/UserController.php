@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface; // @dth: to encode the pass
 use Endroid\QrCode\Builder\BuilderInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Twig\Environment;
 
 /**
  * @Route("/admin/users")
@@ -25,7 +26,8 @@ class UserController extends AbstractController
     public function __construct(
         UserPasswordEncoderInterface $passwordEncoder,
         BuilderInterface $customQrCodeBuilder,
-        UrlGeneratorInterface $urlGenerator
+        UrlGeneratorInterface $urlGenerator,
+        Environment $twig
     )
     {
         $this->passwordEncoder = $passwordEncoder;
@@ -41,19 +43,23 @@ class UserController extends AbstractController
         $tableUsers = $userRepository->findBy(['isTable' => true], ['username' => 'Asc'], $limit = 10);
 
         $qrTables = array();
+        $i = 0;
         foreach ($tableUsers as $table) {
-            $qrTables[] = $this->qrCode
+            $qrTables[$i]['firstName'] = $table->getFirstName();
+            $qrTables[$i]['lastName'] = $table->getLastName();
+            $qrTables[$i]['qrCode'] = $this->qrCode
                 ->data(
                     $this->urlGenerator->generate(
                         'app_login_get',
                         ['tableUserName' => $table->getUsername()],
                         UrlGeneratorInterface::ABSOLUTE_URL)
                 )
-                ->size(100)
+                ->size(200)
                 ->margin(20)
                 ->build()
                 ->getDataUri()
             ;
+            $i++;
         }
 
         return $this->render('user/qr_print.html.twig', [
