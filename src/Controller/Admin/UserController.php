@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface; // @dth: to encode the pass
+use Endroid\QrCode\Builder\BuilderInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * @Route("/admin/users")
@@ -17,10 +19,47 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface; // @dt
 class UserController extends AbstractController
 {
     private $passwordEncoder;
+    private $qrCode;
+    private $urlGenerator;
 
-    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(
+        UserPasswordEncoderInterface $passwordEncoder,
+        BuilderInterface $customQrCodeBuilder,
+        UrlGeneratorInterface $urlGenerator
+    )
     {
         $this->passwordEncoder = $passwordEncoder;
+        $this->qrCode = $customQrCodeBuilder;
+        $this->urlGenerator = $urlGenerator;
+    }
+
+    /**
+     * @Route("/print", name="user_print_qr", methods={"GET"})
+     */
+    public function printQr(UserRepository $userRepository): Response
+    {
+        $tableUsers = $userRepository->findBy(['isTable' => true], ['username' => 'Asc'], $limit = 10);
+
+        $qrTables = array();
+        foreach ($tableUsers as $table) {
+            $qrTables[] = $this->qrCode
+                ->data(
+                    $this->urlGenerator->generate(
+                        'app_login_get',
+                        ['tableUserName' => $table->getUsername()],
+                        UrlGeneratorInterface::ABSOLUTE_URL)
+                )
+                ->size(100)
+                ->margin(20)
+                ->build()
+                ->getDataUri()
+            ;
+        }
+
+        return $this->render('user/qr_print.html.twig', [
+            'users' => count($tableUsers) ? $tableUsers : null,
+            'qrTables' => $qrTables,
+        ]);
     }
 
     /**
@@ -43,7 +82,7 @@ class UserController extends AbstractController
     public function new(Request $request, UserRepository $userRepository): Response
     {
         $numTblUsers = $userRepository->findBy(['isTable' => true]);
-        if(count($numTblUsers) >= 1) {
+        if(count($numTblUsers) >= 10) {
             $error = "Already has max defined tables!";
             return $this->redirectToRoute('user_index', [
                 'error' => $error,

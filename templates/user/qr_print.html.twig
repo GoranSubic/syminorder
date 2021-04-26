@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User qrCodes{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+    {% if error is defined and error is not null %}
+        {#<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+        {% for table in qrTables %}
+            <div>
+                <img src="{{ table }}" alt="qrCode">
+            </div>
+        {% else %}
+            no records found
+        {% endfor %}
+
+{% endblock %}
