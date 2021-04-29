@@ -379,32 +379,3 @@ li.user-logout {
     max-width: 300px;
 }
 /*Login page end*/
-
-/* QR Code */
-#qr-code-print {
-    display: flex;
-    flex-wrap: wrap;
-}
-#qr-code-print > div {
-    width: 300px;
-    margin: 10px;
-    text-align: center;
-    line-height: 2em;
-    font-size: 1.5em;
-}
-#qr-code-print .pass-block-parent {
-    text-align: center;
-    display: flex;
-    align-items: baseline;
-}
-#qr-code-print span {
-    width: 100px;
-}
-#qr-code-print span.pass-block {
-    height: 30px;
-    border: 2px solid black;
-}
-#qr-code-print span.pass-text {
-    height: 20px;
-}
-/* end of QR Code */

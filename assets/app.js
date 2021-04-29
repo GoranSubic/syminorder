@@ -18,6 +18,7 @@ import 'vue-multiselect/dist/vue-multiselect.min.css'
 import './styles/app.css';
 import './styles/offer.css';
 import './styles/static.css';
+import './styles/qrcode.css';
 
 import './fonts/style.css';
 

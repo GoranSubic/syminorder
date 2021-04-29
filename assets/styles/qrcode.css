@@ -1,0 +1,47 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI";
+}
+
+/* QR Code */
+#qr-code-show {
+    display: flex;
+    flex-wrap: wrap;
+}
+#qr-code-show > div {
+    width: 45%;
+    margin: 10px;
+    text-align: center;
+    line-height: 2em;
+    font-size: 1.5em;
+    border: 2px solid black;
+    display: inline-block;
+}
+#qr-code-show .pass-block-parent {
+    text-align: center;
+    display: flex;
+    align-items: baseline;
+}
+#qr-code-show .pass-block-parent {
+    width: 200px;
+    margin: 0 auto;
+}
+#qr-code-show div.pass-block {
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    border: 2px solid black;
+}
+#qr-code-show div.pass-text {
+    display: inline-block;
+    bottom: 10px;
+    position: relative;
+}
+/* end of QR Code */

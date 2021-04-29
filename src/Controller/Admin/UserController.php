@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use Knp\Snappy\Pdf;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,23 +23,29 @@ class UserController extends AbstractController
     private $passwordEncoder;
     private $qrCode;
     private $urlGenerator;
+    private Environment $twig;
+    private Pdf $pdf;
 
     public function __construct(
         UserPasswordEncoderInterface $passwordEncoder,
         BuilderInterface $customQrCodeBuilder,
         UrlGeneratorInterface $urlGenerator,
         Environment $twig
+//        Pdf $pdf
     )
     {
         $this->passwordEncoder = $passwordEncoder;
         $this->qrCode = $customQrCodeBuilder;
         $this->urlGenerator = $urlGenerator;
+        $this->twig = $twig;
+        $realpath = realpath(\h4cc\WKHTMLToPDF\WKHTMLToPDF::PATH);
+        $this->pdf = new Pdf($realpath);
     }
 
     /**
-     * @Route("/print", name="user_print_qr", methods={"GET"})
+     * @Route("/show-qr", name="user_show_qr", methods={"GET"})
      */
-    public function printQr(UserRepository $userRepository): Response
+    public function showQr(UserRepository $userRepository): Response
     {
         $tableUsers = $userRepository->findBy(['isTable' => true], ['username' => 'Asc'], $limit = 10);
 
@@ -62,10 +69,65 @@ class UserController extends AbstractController
             $i++;
         }
 
-        return $this->render('user/qr_print.html.twig', [
+        return $this->render('user/qr_codes.html.twig', [
             'users' => count($tableUsers) ? $tableUsers : null,
             'qrTables' => $qrTables,
         ]);
+    }
+
+    /**
+     * @Route("/print-action", name="user_print_qr_action", methods={"GET"})
+     */
+    public function printQrAction(UserRepository $userRepository)
+    {
+        $tableUsers = $userRepository->findBy(['isTable' => true], ['username' => 'Asc'], $limit = 10);
+
+        $qrTables = array();
+        $i = 0;
+        foreach ($tableUsers as $table) {
+            $qrTables[$i]['firstName'] = $table->getFirstName();
+            $qrTables[$i]['lastName'] = $table->getLastName();
+            $qrTables[$i]['qrCode'] = $this->qrCode
+                ->data(
+                    $this->urlGenerator->generate(
+                        'app_login_get',
+                        ['tableUserName' => $table->getUsername()],
+                        UrlGeneratorInterface::ABSOLUTE_URL)
+                )
+                ->size(300)
+                ->margin(10)
+                ->build()
+                ->getDataUri()
+            ;
+            $i++;
+        }
+
+        $html = $this->twig->render('user/qr_codes_print.html.twig', [
+            'qrTables' => $qrTables,
+        ]);
+
+        return new Response(
+            $this->pdf->getOutputFromHtml($html, array(
+                'orientation' => 'portrait',
+                'enable-javascript' => true,
+                'javascript-delay' => 1000,
+                'no-stop-slow-scripts' => true,
+                'no-background' => false,
+                'lowquality' => false,
+                'encoding' => 'utf-8',
+                'images' => true,
+                'cookie' => array(),
+                'dpi' => 300,
+                'image-dpi' => 300,
+                'enable-external-links' => true,
+                'enable-internal-links' => true
+            )),
+            200,
+            [
+                'Content-Type'        => 'application/pdf',
+                'Content-Disposition' => 'attachment; filename="qrCodeTables.pdf"',
+            ]
+        );
     }
 
     /**

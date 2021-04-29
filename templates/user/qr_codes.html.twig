@@ -1,15 +1,21 @@
 {% extends 'Front/static_pages/layout.html.twig' %}
+{#{% extends 'base.html.twig' %}#}
 
 {% block title %}User qrCodes{% endblock %}
 
 {% block content %}
     <h1>User - table qrCodes</h1>
+
     {% if error is defined and error is not null %}
         {#<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
         <div class="alert alert-danger">{{ error }}</div>
     {% endif %}
 
-    <div id="qr-code-print">
+    <div>
+        <a href="{{ path('user_print_qr_action') }}" target="_blank">Print QR Codes</a>
+    </div>
+
+    <div id="qr-code-show">
         {% for table in qrTables %}
             <div class="qr-table">
                 <div class="table-name">{{ table['firstName'] }} {{ table['lastName'] }}</div>
@@ -17,8 +23,10 @@
                     <img src="{{ table['qrCode'] }}" alt="qrCode">
                 </div>
                 <div class="pass-block-parent">
-                    <span class="pass-text">Šifra: </span>
-                    <span class="pass-block"></span>
+                    <div class="pass-block-row">
+                        <div class="pass-text">Šifra: </div>
+                        <div class="pass-block"></div>
+                    </div>
                 </div>
             </div>
         {% else %}
