@@ -131,6 +131,14 @@ class UserController extends AbstractController
     }
 
     /**
+     * @Route("/", name="user_table_qrcode", methods={"GET"})
+     */
+    public function setQrPass(Request $request, UserRepository $userRepository)
+    {
+        //ToDo
+    }
+
+    /**
      * @Route("/", name="user_index", methods={"GET"})
      */
     public function index(Request $request, UserRepository $userRepository): Response
