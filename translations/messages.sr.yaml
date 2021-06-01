@@ -61,7 +61,7 @@ footer:
   social_instagram: https://www.instagram.com/
 navbar:
   brand: Alternativa8
-  indications: Indikacije
+  indications: Preporuke
   offer: Ponuda
   orders: Odaberite proizvode
   about: O nama
@@ -302,14 +302,13 @@ vuejs:
     button_submit_txt: Slanje podataka...
     send_again: Ponovi slanje...
     footer_info:  '<p>Cena isporuke nije uračunata u cenu.</p>
-                  <p>Na teritoriji Srbije, porudžbine šaljemo POST EXSPRESS-om do 19h.</p>
+                  <p>Porudžbine šaljemo POST EXSPRESS-om, na teritoriji Srbije.</p>
                   <p style="color: #548fad">Za porudžbine preko 5.000,00 RSD dostava je <b>besplatna</b>.</p>
-                  <p>Isporuka POST EXSPRESS do 19h</p>
                   <p>Poštarina Post Express do 500g 200,00 RSD; do 2kg 250,00 RSD; do 5kg 340,00 RSD; do 10kg 460,00 RSD</p>
-                  <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Indikacije</p>'
+                  <p>Nakon potvrđivanja status porudžbine možete pratiti na stranici Preporuke</p>'
   modal:
     order_submited:
       title: Uspešno ste izvršili porudžbinu
       message:  <br />Isporuka se vrši u najkraćem mogućem roku.<br />
-                Status porudžbine možete pratiti na stranici Indikacije.<br />
+                Status porudžbine možete pratiti na stranici Preporuke.<br />
       button_ok: OK

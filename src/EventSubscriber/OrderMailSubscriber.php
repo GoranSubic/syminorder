@@ -41,8 +41,8 @@ final class OrderMailSubscriber implements EventSubscriberInterface
         }
 
         $templatedEmail = (new TemplatedEmail())
-                ->from(new Address($this->translator->trans('order.email.address.from'), $this->translator->trans('order.email.name')))
-                ->to(new Address($this->translator->trans('order.email.address.to')))
+                ->from('porudzbine@alternativa8.rs', $this->translator->trans('order.email.name'))
+                ->to('porudzbine@alternativa8.rs')
                 ->subject($this->translator->trans('order.email.subject'))
                 ->htmlTemplate('notification/order_notification_email.html.twig');
 

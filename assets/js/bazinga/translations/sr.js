@@ -36,7 +36,7 @@ t.add("footer.social_info", "Prona\u0111ite nas na dru\u0161tvenim mre\u017eama"
 t.add("footer.social_facebook", "https:\/\/www.facebook.com\/", "messages", "sr");
 t.add("footer.social_instagram", "https:\/\/www.instagram.com\/", "messages", "sr");
 t.add("navbar.brand", "Alternativa8", "messages", "sr");
-t.add("navbar.indications", "Indikacije", "messages", "sr");
+t.add("navbar.indications", "Preporuke", "messages", "sr");
 t.add("navbar.offer", "Ponuda", "messages", "sr");
 t.add("navbar.orders", "Odaberite proizvode", "messages", "sr");
 t.add("navbar.about", "O nama", "messages", "sr");
@@ -223,8 +223,8 @@ t.add("vuejs.shopping.button_remove", "<i class=\"fa fa-trash\"><\/i>", "message
 t.add("vuejs.shopping.button_submit", "Prosledi", "messages", "sr");
 t.add("vuejs.shopping.button_submit_txt", "Slanje podataka...", "messages", "sr");
 t.add("vuejs.shopping.send_again", "Ponovi slanje...", "messages", "sr");
-t.add("vuejs.shopping.footer_info", "<p>Cena isporuke nije ura\u010dunata u cenu.<\/p> <p>Na teritoriji Srbije, porud\u017ebine \u0161aljemo POST EXSPRESS-om do 19h.<\/p> <p style=\"color: #548fad\">Za porud\u017ebine preko 5.000,00 RSD dostava je <b>besplatna<\/b>.<\/p> <p>Isporuka POST EXSPRESS do 19h<\/p> <p>Po\u0161tarina Post Express do 500g 200,00 RSD; do 2kg 250,00 RSD; do 5kg 340,00 RSD; do 10kg 460,00 RSD<\/p> <p>Nakon potvr\u0111ivanja status porud\u017ebine mo\u017eete pratiti na stranici Indikacije<\/p>", "messages", "sr");
+t.add("vuejs.shopping.footer_info", "<p>Cena isporuke nije ura\u010dunata u cenu.<\/p> <p>Porud\u017ebine \u0161aljemo POST EXSPRESS-om, na teritoriji Srbije.<\/p> <p style=\"color: #548fad\">Za porud\u017ebine preko 5.000,00 RSD dostava je <b>besplatna<\/b>.<\/p> <p>Po\u0161tarina Post Express do 500g 200,00 RSD; do 2kg 250,00 RSD; do 5kg 340,00 RSD; do 10kg 460,00 RSD<\/p> <p>Nakon potvr\u0111ivanja status porud\u017ebine mo\u017eete pratiti na stranici Preporuke<\/p>", "messages", "sr");
 t.add("vuejs.modal.order_submited.title", "Uspe\u0161no ste izvr\u0161ili porud\u017ebinu", "messages", "sr");
-t.add("vuejs.modal.order_submited.message", "<br \/>Isporuka se vr\u0161i u najkra\u0107em mogu\u0107em roku.<br \/> Status porud\u017ebine mo\u017eete pratiti na stranici Indikacije.<br \/>", "messages", "sr");
+t.add("vuejs.modal.order_submited.message", "<br \/>Isporuka se vr\u0161i u najkra\u0107em mogu\u0107em roku.<br \/> Status porud\u017ebine mo\u017eete pratiti na stranici Preporuke.<br \/>", "messages", "sr");
 t.add("vuejs.modal.order_submited.button_ok", "OK", "messages", "sr");
 })(Translator);

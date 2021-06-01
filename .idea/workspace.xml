@@ -11,12 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd9c9e7c-76d2-403f-bf66-94c6e6eadb6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bazinga/translations/sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/GameTest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/GameTest.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/MainCarousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/MainCarousel.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/static.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Front/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventSubscriber/OrderMailSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Front/static_pages/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/messages.sr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.sr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -452,6 +455,21 @@
       <workItem from="1616775722242" duration="7979000" />
       <workItem from="1617364871151" duration="817000" />
       <workItem from="1617809093289" duration="12221000" />
+      <workItem from="1620558255236" duration="953000" />
+      <workItem from="1620564102284" duration="2281000" />
+      <workItem from="1621073517775" duration="2795000" />
+      <workItem from="1621094194269" duration="5027000" />
+      <workItem from="1621271102043" duration="644000" />
+      <workItem from="1621355127470" duration="56000" />
+      <workItem from="1621355224279" duration="316000" />
+      <workItem from="1621357086356" duration="9000" />
+      <workItem from="1621441030029" duration="119000" />
+      <workItem from="1621444173017" duration="1312000" />
+      <workItem from="1621702926545" duration="5610000" />
+      <workItem from="1621711958142" duration="335000" />
+      <workItem from="1622054967557" duration="1463000" />
+      <workItem from="1622130746288" duration="7990000" />
+      <workItem from="1622568807381" duration="2657000" />
     </task>
     <servers />
   </component>
