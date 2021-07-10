@@ -30,7 +30,7 @@ export default new Vuex.Store({
             var diff = parseInt(now - storeDate)/60000;
             if(diff > 60 || (typeof init !== 'undefined' && init === 'restart')) {
                 //reset localStorage and state
-                localStorage.removeItem('store-olala');
+                localStorage.removeItem('store-alter8');
                 state.products = [];
                 state.StoreCart = [];
                 state.storeCreated = new Date();
@@ -45,10 +45,10 @@ export default new Vuex.Store({
         Initialise_Store(state) {
             var createdDate = state.storeCreated;
             // Check if the ID exists
-            if(localStorage.getItem('store-olala') && createdDate) {
+            if(localStorage.getItem('store-alter8') && createdDate) {
                 // Replace the state object with the stored item
                 this.replaceState(
-                    Object.assign(state, JSON.parse(localStorage.getItem('store-olala')))
+                    Object.assign(state, JSON.parse(localStorage.getItem('store-alter8')))
                 );
             } else {
                 state.storeCreated = new Date();

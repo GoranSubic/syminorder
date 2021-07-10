@@ -91,7 +91,7 @@ t.add("register.email.message.please", "Molimo Vas da potvrdite da ste se ovom e
 t.add("register.email.message.confirm", "Potvr\u0111ujem moj email", "messages", "sr");
 t.add("register.email.message.expiration", "Ovaj link \u0107e prestati da va\u017ei za", "messages", "sr");
 t.add("terms.privacy.title", "Alternativa8 - na talasu izobilja", "messages", "sr");
-t.add("terms.privacy.company_refers", "NEMANJA RADLOVACKI PR UGOSTITELJSKA RADNJA I ODRZAVANJE HIGIJENE OBJEKATA O LALA 023 ZRENJANIN, Zrenjanin, Strazilovska 36", "messages", "sr");
+t.add("terms.privacy.company_refers", "DR DOBRINKA UZUNOVA ARBANOVSKI PR INTERNISTI\u010cKA ORDINACIJA HOLITIMED BEOGRAD (PALILULA)", "messages", "sr");
 t.add("terms.privacy.website", "https:\/\/alternativa8.rs", "messages", "sr");
 t.add("terms.privacy.email", "info@alternativa8.rs", "messages", "sr");
 t.add("terms.privacy.protection", "This site is protected by Terms of", "messages", "sr");
