@@ -38,6 +38,8 @@ footer:
     Dr Dobrinka Arbanovski
   owner_firmname:
     Ordinacija Holitimed
+  bussines_name_title: Poslovno ime
+  bussines_name: DR DOBRINKA UZUNOVA ARBANOVSKI PR INTERNISTIČKA ORDINACIJA HOLITIMED BEOGRAD (PALILULA)
   phone: Telefon
   phone_number1: 011/33 91 384
   phone_number_href1: 381113391384
@@ -57,8 +59,8 @@ footer:
   deliveries: Slanje porudžbina
   deliveries_time: radnim danima 09-17
   social_info: Pronađite nas na društvenim mrežama
-  social_facebook: https://www.facebook.com/
-  social_instagram: https://www.instagram.com/
+  social_facebook: https://www.facebook.com/Alternativa-8-177993129609371
+  social_instagram: https://www.instagram.com/alternativa_8
 navbar:
   brand: Alternativa8
   indications: Preporuke
@@ -69,8 +71,8 @@ navbar:
     upper: LogIn
     bottom: Poručite
     logout: Logout
-  social_facebook: https://www.facebook.com/
-  social_instagram: https://www.instagram.com/
+  social_facebook: https://www.facebook.com/Alternativa-8-177993129609371
+  social_instagram: https://www.instagram.com/alternativa_8
 login:
   title: Log in!
   to_login: Uloguj se
