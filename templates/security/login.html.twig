@@ -25,20 +25,21 @@
 
                                 <h1 class="h3 mb-3 font-weight-normal">{{ 'login.to_order'|trans }}</h1>
 
-
-                                <div class="row row-buttons">
-                                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 fb-button">
-                                        <a href="{{ path('connect_facebook_start') }}" class="btn btn-primary facebook">
-                                            <i class="fab fa-facebook"></i> <span>{{ 'login.facebook'|trans }}</span>
-                                        </a>
+                                {% if configDisplaySocialLogin == 'show_buttons_block' %}
+                                    <div class="row row-buttons">
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 fb-button">
+                                            <a href="{{ path('connect_facebook_start') }}" class="btn btn-primary facebook">
+                                                <i class="fab fa-facebook"></i> <span>{{ 'login.facebook'|trans }}</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 g-button">
+                                            <a href="#" class="btn btn-primary google-plus disabled" tabindex="-1">
+                                                <i class="fab fa-google-plus"></i> <span>{{ 'login.google'|trans }}</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 g-button">
-                                        <a href="#" class="btn btn-primary google-plus disabled" tabindex="-1">
-                                            <i class="fab fa-google-plus"></i> <span>{{ 'login.google'|trans }}</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h2>{{ 'login.or'|trans }}</h2>
+                                    <h2>{{ 'login.or'|trans }}</h2>
+                                {% endif %}
 
                                 <div class="input_fields">
                                     <div class="col-md-8">

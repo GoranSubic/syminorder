@@ -9,6 +9,7 @@ parameters:
     syminorder.shoping.configDefinedCities: not_define_cities # define_cities | not_define_cities | null
     syminorder.shoping.configProductAdditions: not_define_additions # define_additions | not_define_additions | null
     syminorder.tagservices.configShowDesc: show_long_desc # show_desc | show_long_desc | null
+    syminorder.login.configDisplaySocialLogin: hide_buttons_block # show_buttons_block | hide_buttons_block | null
 #    product_images_directory: '%kernel.project_dir%/public/uploads/product_images'
 
 services:
