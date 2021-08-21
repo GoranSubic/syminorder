@@ -36,7 +36,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/preporuke", name="app_indications")
+     * @Route("/online-ordinacija", name="app_indications")
      */
     public function indications(Request $request, SerializerInterface $serializer)
     {

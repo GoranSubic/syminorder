@@ -45,14 +45,14 @@ class ProductCrudController extends AbstractCrudController
                 ->setFormType(MoneyType::class)
             ,
             AssociationField::new('category', 'Kategorija')->autocomplete(),
-            AssociationField::new('tagServices', 'Preporuke')
+            AssociationField::new('tagServices', 'Online ordinacija')
                 ->hideOnDetail()
                 ->autocomplete(),
 //            BooleanField::new('showAdditions', 'Prikaži dodatke'),
         ];
 
         if ($pageName == Crud::PAGE_DETAIL) {
-            $fields[] = ArrayField::new('tagServices', 'Preporuke');
+            $fields[] = ArrayField::new('tagServices', 'Online ordinacija');
         }
 
         if($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
