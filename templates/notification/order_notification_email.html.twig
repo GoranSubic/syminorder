@@ -8,7 +8,7 @@
 </p>
 <p>
     {{ 'order.notification.info'|trans }}<br><br>
-    {{ 'order.notification.username'|trans }}: {{ orderUser|raw }} <br>
+    {{ 'order.notification.username'|trans }}: {{ orderUserFirstName }} {{ orderUserLastName }} ({{ orderUser|raw }}) <br>
     {{ 'order.notification.order_id'|trans }}: {{ orderId }} <br>
     {{ 'order.notification.city_name'|trans }}: {{ cityName }} <br>
     {{ 'order.notification.address'|trans }}: {{ address }} <br>

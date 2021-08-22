@@ -49,6 +49,8 @@ final class OrderMailSubscriber implements EventSubscriberInterface
         $context = $templatedEmail->getContext();
         $context['orderId'] = $order->getId();
         $context['orderUser'] = $order->getCustomer()->getUsername() ? $order->getCustomer()->getUsername() : "NoName ;-)";
+        $context['orderUserFirstName'] = $order->getCustomer()->getFirstName() ? $order->getCustomer()->getFirstName() : "";
+        $context['orderUserLastName'] = $order->getCustomer()->getLastName() ? $order->getCustomer()->getLastName() : "";
         $context['cityName'] = $order->getCityName();
         $context['address'] = $order->getAddress();
         $context['phone'] = $order->getPhone();

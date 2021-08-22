@@ -52,11 +52,15 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, nullable=true)
+     *
+     * @Groups({"order:list"})
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=180, nullable=true)
+     *
+     * @Groups({"order:list"})
      */
     private $lastName;
 

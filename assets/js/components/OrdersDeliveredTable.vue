@@ -52,7 +52,13 @@
               <td>
                 <img class="img-thumbnail" :src="ord.customer.pictureUrl" :alt="ord.customer.username">
               </td>
-              <td>{{ ord.customer.username }}</td>
+              <td>
+                <div>
+                  {{ ord.customer.firstName }}
+                  {{ ord.customer.lastName }}
+                </div>
+                ({{ ord.customer.username }})
+              </td>
               <td>{{ ord.noteCart }}</td>
               <td>{{ ord.cityName }}</td>
               <td>{{ ord.address }}</td>
