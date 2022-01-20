@@ -46,13 +46,16 @@
     "doctrine/dbal": {
         "version": "2.10.4"
     },
+    "doctrine/deprecations": {
+        "version": "v0.5.3"
+    },
     "doctrine/doctrine-bundle": {
         "version": "2.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "2.0",
-            "ref": "a9f2463b9f73efe74482f831f03a204a41328555"
+            "ref": "c3d09597f211294e75b221b1d97a9c22f74957e1"
         },
         "files": [
             "config/packages/doctrine.yaml",
@@ -158,6 +161,9 @@
             "config/packages/knpu_oauth2_client.yaml"
         ]
     },
+    "laminas/laminas-code": {
+        "version": "4.5.1"
+    },
     "league/oauth2-client": {
         "version": "2.6.0"
     },
@@ -207,6 +213,9 @@
         "version": "1.0.0"
     },
     "psr/http-client": {
+        "version": "1.0.1"
+    },
+    "psr/http-factory": {
         "version": "1.0.1"
     },
     "psr/http-message": {
@@ -454,6 +463,9 @@
     "symfony/orm-pack": {
         "version": "v2.0.0"
     },
+    "symfony/password-hasher": {
+        "version": "v5.4.2"
+    },
     "symfony/phpunit-bridge": {
         "version": "4.3",
         "recipe": {
@@ -489,6 +501,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.20.0"
+    },
+    "symfony/polyfill-php81": {
+        "version": "v1.24.0"
     },
     "symfony/polyfill-uuid": {
         "version": "v1.20.0"
@@ -708,11 +723,5 @@
     },
     "willdurand/negotiation": {
         "version": "3.0.0"
-    },
-    "zendframework/zend-code": {
-        "version": "3.4.1"
-    },
-    "zendframework/zend-eventmanager": {
-        "version": "3.2.1"
     }
 }

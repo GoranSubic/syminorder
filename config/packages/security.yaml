@@ -25,11 +25,11 @@ security:
 #                check_path: app_login
 #                username_path: username
 #                password_path: password
-            guard:
-                authenticators:
-                    - App\Security\LoginFormAuthenticator
-                    - App\Security\MyFacebookAuthenticator
-                entry_point: App\Security\LoginFormAuthenticator
+#            guard:
+            custom_authenticator:
+                - App\Security\LoginFormAuthenticator
+                - App\Security\MyFacebookAuthenticator
+            entry_point: App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
                 # where to redirect after logout
@@ -37,6 +37,7 @@ security:
             remember_me:
                 secret:   '%kernel.secret%'
                 lifetime: 3600 # 1 hour in seconds
+                signature_properties: [password]
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
